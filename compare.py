@@ -3,47 +3,32 @@
 Multi-provider comparison tool using the Concentrate AI unified API.
 
 Sends identical prompts to OpenAI and Anthropic models via Concentrate,
-compares response quality, latency, and cost. Tests auto-routing strategies
-and tool calling across providers.
+compares response quality, latency, and cost. Tests auto-routing strategies,
+tool calling, streaming, multi-turn conversations, and cost estimation.
 
 Usage:
-    python compare.py                  # Run all comparisons
-    python compare.py --section basic  # Run only basic comparison
-    python compare.py --section routing  # Run only auto-routing tests
-    python compare.py --section tools  # Run only tool calling tests
-    python compare.py --section edge   # Run only edge case tests
+    python compare.py                      # Run all comparisons
+    python compare.py --section basic      # Run only basic comparison
+    python compare.py --section routing    # Run only auto-routing tests
+    python compare.py --section tools      # Run only tool calling tests
+    python compare.py --section edge       # Run only edge case tests
+    python compare.py --section streaming  # Run only streaming comparison
+    python compare.py --section multiturn  # Run only multi-turn test
+    python compare.py --section cost       # Run only cost estimation
 """
 
 import argparse
 import json
-import os
-import sys
-import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-import requests
-from dotenv import load_dotenv
 from tabulate import tabulate
 
-load_dotenv()
-
-# ---------------------------------------------------------------------------
-# Configuration
-# ---------------------------------------------------------------------------
-
-BASE_URL = "https://api.concentrate.ai/v1/responses/"
-API_KEY = os.getenv("CONCENTRATE_API_KEY", "")
+from client import MODELS, call_model, extract_text, fetch_models
 
 RESULTS_DIR = Path(__file__).parent / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
-
-# Models to compare (provider-prefixed for clarity)
-MODELS = {
-    "openai": "openai/gpt-4.1",
-    "anthropic": "anthropic/claude-sonnet-4-5-20250929",
-}
 
 # Auto-routing strategies
 ROUTING_STRATEGIES = [
@@ -54,121 +39,21 @@ ROUTING_STRATEGIES = [
 
 # Test prompts — chosen to surface provider differences
 PROMPTS = {
-    "reasoning": "A farmer has 17 sheep. All but 9 die. How many sheep are left? "
-    "Explain your reasoning step by step.",
+    "reasoning": (
+        "A farmer has 17 sheep. All but 9 die. How many sheep are left? "
+        "Explain your reasoning step by step."
+    ),
     "creative": "Write a haiku about debugging code at 3am.",
-    "technical": "Explain the difference between L1 and L2 regularization in "
-    "gradient boosted trees. When would you prefer each?",
-    "structured": "List exactly 5 common Python antipatterns. For each, give the "
-    "antipattern name, a one-line code example, and the fix. "
-    "Format as a numbered list.",
+    "technical": (
+        "Explain the difference between L1 and L2 regularization in "
+        "gradient boosted trees. When would you prefer each?"
+    ),
+    "structured": (
+        "List exactly 5 common Python antipatterns. For each, give the "
+        "antipattern name, a one-line code example, and the fix. "
+        "Format as a numbered list."
+    ),
 }
-
-
-# ---------------------------------------------------------------------------
-# API helpers
-# ---------------------------------------------------------------------------
-
-
-def _headers() -> dict[str, str]:
-    """Build request headers."""
-    if not API_KEY:
-        print("ERROR: CONCENTRATE_API_KEY not set. Copy .env.example to .env and add your key.")
-        sys.exit(1)
-    return {
-        "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json",
-    }
-
-
-def call_model(
-    model: str,
-    prompt: str,
-    *,
-    temperature: float = 0.7,
-    max_output_tokens: int = 500,
-    tools: list[dict] | None = None,
-    routing: dict | None = None,
-) -> dict[str, Any]:
-    """
-    Send a request to Concentrate and return enriched result dict.
-
-    Returns dict with keys: model, text, latency_ms, status, stop_reason,
-    tokens_estimate, raw_response, error.
-    """
-    payload: dict[str, Any] = {
-        "model": model if not routing else "auto",
-        "input": prompt,
-        "temperature": temperature,
-        "max_output_tokens": max_output_tokens,
-    }
-    if tools:
-        payload["tools"] = tools
-    if routing:
-        payload["routing"] = routing
-
-    start = time.perf_counter()
-    try:
-        resp = requests.post(BASE_URL, headers=_headers(), json=payload, timeout=60)
-        elapsed_ms = (time.perf_counter() - start) * 1000
-    except requests.RequestException as e:
-        return {
-            "model": model,
-            "text": "",
-            "latency_ms": 0,
-            "status": "error",
-            "stop_reason": None,
-            "error": str(e),
-            "raw_response": None,
-        }
-
-    if resp.status_code != 200:
-        return {
-            "model": model,
-            "text": "",
-            "latency_ms": elapsed_ms,
-            "status": f"http_{resp.status_code}",
-            "stop_reason": None,
-            "error": resp.text[:500],
-            "raw_response": None,
-        }
-
-    data = resp.json()
-    # Extract text from output
-    text = ""
-    tool_calls = []
-    for output_item in data.get("output", []):
-        if output_item.get("type") == "message":
-            for content in output_item.get("content", []):
-                if content.get("type") == "output_text":
-                    text += content.get("text", "")
-        elif output_item.get("type") == "function_call":
-            tool_calls.append(
-                {
-                    "name": output_item.get("name"),
-                    "arguments": output_item.get("arguments"),
-                    "call_id": output_item.get("call_id"),
-                }
-            )
-
-    return {
-        "model": data.get("model", model),
-        "text": text,
-        "tool_calls": tool_calls,
-        "latency_ms": elapsed_ms,
-        "status": data.get("status", "unknown"),
-        "stop_reason": data.get("stop_reason"),
-        "error": None,
-        "raw_response": data,
-    }
-
-
-def extract_text(result: dict) -> str:
-    """Get display-safe text from result (truncated)."""
-    text = result.get("text", "") or ""
-    if len(text) > 200:
-        return text[:197] + "..."
-    return text
 
 
 # ---------------------------------------------------------------------------
@@ -186,7 +71,8 @@ def run_basic_comparison() -> list[dict]:
 
     for prompt_name, prompt_text in PROMPTS.items():
         print(f"\n--- Prompt: {prompt_name} ---")
-        print(f"  \"{prompt_text[:80]}...\"" if len(prompt_text) > 80 else f"  \"{prompt_text}\"")
+        display = f'  "{prompt_text[:80]}..."' if len(prompt_text) > 80 else f'  "{prompt_text}"'
+        print(display)
 
         row_results = {}
         for provider, model in MODELS.items():
@@ -197,17 +83,16 @@ def run_basic_comparison() -> list[dict]:
             print(f"  {provider:12s} | {result['latency_ms']:7.0f}ms | {status}")
 
         # Display comparison table
-        table_data = []
-        for provider, result in row_results.items():
-            table_data.append(
-                [
-                    provider,
-                    result["model"],
-                    f"{result['latency_ms']:.0f}ms",
-                    result["status"],
-                    extract_text(result),
-                ]
-            )
+        table_data = [
+            [
+                provider,
+                result["model"],
+                f"{result['latency_ms']:.0f}ms",
+                result["status"],
+                extract_text(result),
+            ]
+            for provider, result in row_results.items()
+        ]
 
         print()
         print(
@@ -218,13 +103,11 @@ def run_basic_comparison() -> list[dict]:
             )
         )
 
-        all_results.append(
-            {
-                "prompt_name": prompt_name,
-                "prompt_text": prompt_text,
-                "results": {k: {**v, "raw_response": None} for k, v in row_results.items()},
-            }
-        )
+        all_results.append({
+            "prompt_name": prompt_name,
+            "prompt_text": prompt_text,
+            "results": {k: {**v, "raw_response": None} for k, v in row_results.items()},
+        })
 
     return all_results
 
@@ -241,7 +124,7 @@ def run_routing_comparison() -> list[dict]:
     print("=" * 70)
 
     test_prompt = PROMPTS["technical"]
-    print(f"\nUsing prompt: \"{test_prompt[:80]}...\"")
+    print(f'\nUsing prompt: "{test_prompt[:80]}..."')
 
     all_results = []
 
@@ -255,15 +138,13 @@ def run_routing_comparison() -> list[dict]:
         print(f"  Model selected: {result['model']}")
         print(f"  Latency:        {result['latency_ms']:.0f}ms")
         print(f"  Status:         {status}")
-        print(f"  Response:       {extract_text(result)[:120]}")
+        print(f"  Response:       {extract_text(result, 120)}")
 
-        all_results.append(
-            {
-                "strategy": label,
-                "routing_config": routing_config,
-                "result": {**result, "raw_response": None},
-            }
-        )
+        all_results.append({
+            "strategy": label,
+            "routing_config": routing_config,
+            "result": {**result, "raw_response": None},
+        })
 
     # Summary table
     print("\n--- Auto-Routing Summary ---")
@@ -327,7 +208,7 @@ def run_tool_calling_comparison() -> list[dict]:
     )
     tools = [WEATHER_TOOL, CALCULATOR_TOOL]
 
-    print(f"\nPrompt: \"{tool_prompt}\"")
+    print(f'\nPrompt: "{tool_prompt}"')
     print(f"Tools provided: {[t['name'] for t in tools]}")
 
     all_results = []
@@ -350,18 +231,16 @@ def run_tool_calling_comparison() -> list[dict]:
         else:
             print("  Tool calls: NONE (model responded with text instead)")
             if result["text"]:
-                print(f"  Text: {extract_text(result)[:120]}")
+                print(f"  Text: {extract_text(result, 120)}")
 
-        all_results.append(
-            {
-                "provider": provider,
-                "model": result["model"],
-                "tool_calls": tool_calls,
-                "text": result["text"],
-                "latency_ms": result["latency_ms"],
-                "status": result["status"],
-            }
-        )
+        all_results.append({
+            "provider": provider,
+            "model": result["model"],
+            "tool_calls": tool_calls,
+            "text": result["text"],
+            "latency_ms": result["latency_ms"],
+            "status": result["status"],
+        })
 
     return all_results
 
@@ -417,7 +296,7 @@ def run_edge_cases() -> list[dict]:
             "name": "very_long_input",
             "desc": "Long input (5000 chars of repeated text)",
             "model": MODELS["anthropic"],
-            "prompt": ("Summarize the following text: " + "The quick brown fox jumps over the lazy dog. " * 120),
+            "prompt": "Summarize the following text: " + "The quick brown fox jumps over the lazy dog. " * 120,
             "kwargs": {"max_output_tokens": 100},
         },
     ]
@@ -439,29 +318,288 @@ def run_edge_cases() -> list[dict]:
         print(f"  Latency:     {result['latency_ms']:.0f}ms")
         print(f"  Stop reason: {result.get('stop_reason', 'N/A')}")
         if result["text"]:
-            print(f"  Response:    {extract_text(result)[:120]}")
+            print(f"  Response:    {extract_text(result, 120)}")
 
-        all_results.append(
-            {
-                "name": tc["name"],
-                "description": tc["desc"],
-                "model": tc["model"],
-                "status": result["status"],
-                "stop_reason": result.get("stop_reason"),
-                "error": result.get("error"),
-                "latency_ms": result["latency_ms"],
-                "text_length": len(result.get("text", "")),
-                "text_preview": extract_text(result)[:200],
-            }
-        )
+        all_results.append({
+            "name": tc["name"],
+            "description": tc["desc"],
+            "model": tc["model"],
+            "status": result["status"],
+            "stop_reason": result.get("stop_reason"),
+            "error": result.get("error"),
+            "latency_ms": result["latency_ms"],
+            "text_length": len(result.get("text", "")),
+            "text_preview": extract_text(result)[:200],
+        })
 
     # Summary
     print("\n--- Edge Case Summary ---")
     table_data = [
-        [r["name"], r["status"], f"{r['latency_ms']:.0f}ms", r.get("stop_reason", ""), r.get("error", "")[:50] if r.get("error") else ""]
+        [
+            r["name"],
+            r["status"],
+            f"{r['latency_ms']:.0f}ms",
+            r.get("stop_reason", ""),
+            (r.get("error", "")[:50] if r.get("error") else ""),
+        ]
         for r in all_results
     ]
     print(tabulate(table_data, headers=["Test", "Status", "Latency", "Stop Reason", "Error"], tablefmt="simple"))
+
+    return all_results
+
+
+# ---------------------------------------------------------------------------
+# Section 5: Streaming comparison
+# ---------------------------------------------------------------------------
+
+
+def run_streaming_comparison() -> list[dict]:
+    """
+    Test SSE streaming: measure time-to-first-token, total latency,
+    and event count. Compare streaming vs non-streaming for same prompt.
+    """
+    print("\n" + "=" * 70)
+    print("SECTION 5: STREAMING COMPARISON")
+    print("=" * 70)
+
+    test_prompt = "Explain gradient descent in 3 sentences."
+    test_model = MODELS["openai"]
+
+    print(f'\nModel: {test_model}')
+    print(f'Prompt: "{test_prompt}"')
+
+    all_results = []
+
+    # Non-streaming baseline
+    print("\n--- Non-streaming (baseline) ---")
+    baseline = call_model(test_model, test_prompt, stream=False)
+    print(f"  Latency:    {baseline['latency_ms']:.0f}ms")
+    print(f"  Status:     {baseline['status']}")
+    print(f"  Response:   {extract_text(baseline, 120)}")
+    all_results.append({"mode": "non-streaming", **{k: v for k, v in baseline.items() if k != "raw_response"}})
+
+    # Streaming
+    print("\n--- Streaming ---")
+    streamed = call_model(test_model, test_prompt, stream=True)
+    ttft = streamed.get("time_to_first_token_ms", 0)
+    events = streamed.get("stream_events", 0)
+    print(f"  Time to first token: {ttft:.0f}ms")
+    print(f"  Total latency:       {streamed['latency_ms']:.0f}ms")
+    print(f"  SSE events:          {events}")
+    print(f"  Response:            {extract_text(streamed, 120)}")
+    all_results.append({"mode": "streaming", **{k: v for k, v in streamed.items() if k != "raw_response"}})
+
+    # Also test streaming with Anthropic
+    print("\n--- Streaming (Anthropic) ---")
+    streamed_anth = call_model(MODELS["anthropic"], test_prompt, stream=True)
+    ttft_a = streamed_anth.get("time_to_first_token_ms", 0)
+    events_a = streamed_anth.get("stream_events", 0)
+    print(f"  Time to first token: {ttft_a:.0f}ms")
+    print(f"  Total latency:       {streamed_anth['latency_ms']:.0f}ms")
+    print(f"  SSE events:          {events_a}")
+    print(f"  Response:            {extract_text(streamed_anth, 120)}")
+    all_results.append({
+        "mode": "streaming_anthropic",
+        **{k: v for k, v in streamed_anth.items() if k != "raw_response"},
+    })
+
+    # Summary
+    print("\n--- Streaming Summary ---")
+    table_data = [
+        [
+            r["mode"],
+            r.get("model", "—"),
+            f"{r.get('time_to_first_token_ms', r.get('latency_ms', 0)):.0f}ms",
+            f"{r.get('latency_ms', 0):.0f}ms",
+            str(r.get("stream_events", "—")),
+        ]
+        for r in all_results
+    ]
+    print(tabulate(table_data, headers=["Mode", "Model", "TTFT", "Total", "Events"], tablefmt="simple"))
+
+    return all_results
+
+
+# ---------------------------------------------------------------------------
+# Section 6: Multi-turn conversation
+# ---------------------------------------------------------------------------
+
+
+def run_multiturn_comparison() -> list[dict]:
+    """
+    Test multi-turn conversations using message arrays.
+
+    The Concentrate API accepts input as a list of message objects.
+    This tests whether both providers handle conversational context correctly.
+    """
+    print("\n" + "=" * 70)
+    print("SECTION 6: MULTI-TURN CONVERSATION")
+    print("=" * 70)
+
+    # A 2-turn conversation that requires context from turn 1
+    messages = [
+        {"type": "message", "role": "user", "content": "What is 2 + 2?"},
+        {"type": "message", "role": "assistant", "content": "4"},
+        {"type": "message", "role": "user", "content": "Multiply that by 3, then subtract 1. What's the result?"},
+    ]
+
+    print("\nConversation:")
+    for msg in messages:
+        role_display = "USER" if msg["role"] == "user" else "ASST"
+        print(f"  [{role_display}] {msg['content']}")
+
+    print(f"\nExpected answer: 11  (4 * 3 - 1 = 11)")
+
+    all_results = []
+
+    for provider, model in MODELS.items():
+        print(f"\n--- Provider: {provider} ---")
+        result = call_model(model, messages, temperature=0.0, max_output_tokens=100)
+
+        print(f"  Model:    {result['model']}")
+        print(f"  Latency:  {result['latency_ms']:.0f}ms")
+        print(f"  Status:   {result['status']}")
+        print(f"  Response: {extract_text(result, 200)}")
+
+        # Check if the answer contains "11"
+        has_correct_answer = "11" in (result.get("text", "") or "")
+        print(f"  Correct:  {'YES' if has_correct_answer else 'NO (expected 11)'}")
+
+        all_results.append({
+            "provider": provider,
+            "model": result["model"],
+            "response": result.get("text", ""),
+            "correct": has_correct_answer,
+            "latency_ms": result["latency_ms"],
+            "status": result["status"],
+        })
+
+    # Summary
+    print("\n--- Multi-Turn Summary ---")
+    table_data = [
+        [r["provider"], r["model"], "PASS" if r["correct"] else "FAIL", f"{r['latency_ms']:.0f}ms"]
+        for r in all_results
+    ]
+    print(tabulate(table_data, headers=["Provider", "Model", "Correct", "Latency"], tablefmt="simple"))
+
+    return all_results
+
+
+# ---------------------------------------------------------------------------
+# Section 7: Cost estimation
+# ---------------------------------------------------------------------------
+
+
+def run_cost_estimation() -> list[dict]:
+    """
+    Fetch model pricing from /v1/models/ and estimate per-request costs.
+
+    Shows what auto-routing cost optimization actually saves by comparing
+    the cheapest vs most expensive model for the same prompt.
+    """
+    print("\n" + "=" * 70)
+    print("SECTION 7: COST ESTIMATION")
+    print("=" * 70)
+
+    # Fetch pricing data
+    print("\nFetching model pricing...")
+    catalog = fetch_models()
+
+    if catalog.get("error"):
+        print(f"  WARNING: Could not fetch model catalog: {catalog['error']}")
+        print("  Falling back to hardcoded estimates.")
+        # Fallback: reasonable estimates if catalog unavailable
+        pricing = {
+            MODELS["openai"]: {"input": 2.00 / 1_000_000, "output": 8.00 / 1_000_000},
+            MODELS["anthropic"]: {"input": 3.00 / 1_000_000, "output": 15.00 / 1_000_000},
+        }
+    else:
+        # Extract pricing from catalog
+        pricing = {}
+        models_data = catalog.get("data", catalog.get("models", []))
+        for m in models_data:
+            mid = m.get("id", "")
+            p = m.get("pricing", {})
+            if p:
+                pricing[mid] = {
+                    "input": p.get("input") or p.get("prompt") or 0,
+                    "output": p.get("output") or p.get("completion") or 0,
+                }
+        print(f"  Found pricing for {len(pricing)} models.")
+
+    # Run a test prompt and measure tokens
+    test_prompt = PROMPTS["technical"]
+    print(f'\nTest prompt: "{test_prompt[:60]}..."')
+
+    all_results = []
+
+    for provider, model in MODELS.items():
+        print(f"\n--- {provider}: {model} ---")
+        result = call_model(model, test_prompt)
+
+        # Try to get token counts from raw response
+        raw = result.get("raw_response", {}) or {}
+        usage = raw.get("usage", {})
+        input_tokens = usage.get("input_tokens") or usage.get("prompt_tokens") or 0
+        output_tokens = usage.get("output_tokens") or usage.get("completion_tokens") or 0
+
+        # Estimate tokens from text length if usage not available
+        if not input_tokens:
+            input_tokens = len(test_prompt) // 4  # rough estimate
+        if not output_tokens:
+            output_tokens = len(result.get("text", "")) // 4
+
+        # Look up pricing
+        model_pricing = pricing.get(model, {"input": 0, "output": 0})
+        input_cost = input_tokens * model_pricing["input"]
+        output_cost = output_tokens * model_pricing["output"]
+        total_cost = input_cost + output_cost
+
+        print(f"  Input tokens:  {input_tokens:,}")
+        print(f"  Output tokens: {output_tokens:,}")
+        print(f"  Input cost:    ${input_cost:.6f}")
+        print(f"  Output cost:   ${output_cost:.6f}")
+        print(f"  Total cost:    ${total_cost:.6f}")
+        print(f"  Latency:       {result['latency_ms']:.0f}ms")
+
+        all_results.append({
+            "provider": provider,
+            "model": model,
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+            "input_cost": input_cost,
+            "output_cost": output_cost,
+            "total_cost": total_cost,
+            "latency_ms": result["latency_ms"],
+        })
+
+    # Cost comparison summary
+    if len(all_results) >= 2:
+        costs = [r["total_cost"] for r in all_results]
+        cheapest = min(all_results, key=lambda r: r["total_cost"])
+        most_expensive = max(all_results, key=lambda r: r["total_cost"])
+
+        print("\n--- Cost Summary ---")
+        table_data = [
+            [
+                r["provider"],
+                r["model"],
+                f"${r['total_cost']:.6f}",
+                f"{r['latency_ms']:.0f}ms",
+                f"{r['input_tokens'] + r['output_tokens']:,} tok",
+            ]
+            for r in all_results
+        ]
+        print(tabulate(table_data, headers=["Provider", "Model", "Est. Cost", "Latency", "Tokens"], tablefmt="simple"))
+
+        if most_expensive["total_cost"] > 0:
+            savings_pct = (1 - cheapest["total_cost"] / most_expensive["total_cost"]) * 100
+            print(
+                f"\nAuto-routing to cheapest provider saves "
+                f"~{savings_pct:.0f}% per request "
+                f"(${most_expensive['total_cost'] - cheapest['total_cost']:.6f}/request)"
+            )
 
     return all_results
 
@@ -485,7 +623,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Concentrate AI multi-provider comparison tool")
     parser.add_argument(
         "--section",
-        choices=["basic", "routing", "tools", "edge", "all"],
+        choices=["basic", "routing", "tools", "edge", "streaming", "multiturn", "cost", "all"],
         default="all",
         help="Which section to run (default: all)",
     )
@@ -507,6 +645,9 @@ def main() -> None:
         "routing": ("auto_routing", run_routing_comparison),
         "tools": ("tool_calling", run_tool_calling_comparison),
         "edge": ("edge_cases", run_edge_cases),
+        "streaming": ("streaming", run_streaming_comparison),
+        "multiturn": ("multiturn", run_multiturn_comparison),
+        "cost": ("cost_estimation", run_cost_estimation),
     }
 
     if args.section == "all":

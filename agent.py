@@ -2,11 +2,14 @@
 """
 Multi-step tool-calling agent using the Concentrate AI unified API.
 
-Demonstrates a simple research agent that:
-1. Breaks a question into sub-tasks
-2. Routes each sub-task to a different provider (OpenAI vs Anthropic)
+Demonstrates a research agent that:
+1. Breaks a question into sub-tasks (Anthropic — planner)
+2. Routes each sub-task to a different provider (OpenAI — researcher)
 3. Uses tool calling to gather structured data
-4. Synthesizes a final answer
+4. Synthesizes a final answer (Anthropic — synthesizer)
+
+This cross-provider routing is the core value prop: each step uses
+the provider best-suited to that task type.
 
 Usage:
     python agent.py
@@ -15,91 +18,20 @@ Usage:
 
 import argparse
 import json
-import os
-import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-import requests
-from dotenv import load_dotenv
+from client import MODELS, call_model
 
-load_dotenv()
-
-BASE_URL = "https://api.concentrate.ai/v1/responses/"
-API_KEY = os.getenv("CONCENTRATE_API_KEY", "")
 RESULTS_DIR = Path(__file__).parent / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
 
 # Route different agent steps to different providers
-PLANNER_MODEL = "anthropic/claude-sonnet-4-5-20250929"
-RESEARCHER_MODEL = "openai/gpt-4.1"
-SYNTHESIZER_MODEL = "anthropic/claude-sonnet-4-5-20250929"
-
-
-def _headers() -> dict[str, str]:
-    if not API_KEY:
-        print("ERROR: CONCENTRATE_API_KEY not set.")
-        sys.exit(1)
-    return {
-        "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json",
-    }
-
-
-def call_concentrate(
-    model: str,
-    messages: str | list,
-    *,
-    temperature: float = 0.4,
-    max_output_tokens: int = 800,
-    tools: list[dict] | None = None,
-) -> dict[str, Any]:
-    """Send a request to Concentrate API and return parsed result."""
-    payload: dict[str, Any] = {
-        "model": model,
-        "input": messages,
-        "temperature": temperature,
-        "max_output_tokens": max_output_tokens,
-    }
-    if tools:
-        payload["tools"] = tools
-
-    start = time.perf_counter()
-    try:
-        resp = requests.post(BASE_URL, headers=_headers(), json=payload, timeout=90)
-        elapsed_ms = (time.perf_counter() - start) * 1000
-    except requests.RequestException as e:
-        return {"error": str(e), "latency_ms": 0, "model": model}
-
-    if resp.status_code != 200:
-        return {"error": resp.text[:300], "latency_ms": elapsed_ms, "model": model}
-
-    data = resp.json()
-
-    text = ""
-    tool_calls = []
-    for item in data.get("output", []):
-        if item.get("type") == "message":
-            for c in item.get("content", []):
-                if c.get("type") == "output_text":
-                    text += c.get("text", "")
-        elif item.get("type") == "function_call":
-            tool_calls.append({
-                "name": item.get("name"),
-                "arguments": item.get("arguments"),
-                "call_id": item.get("call_id"),
-            })
-
-    return {
-        "model": data.get("model", model),
-        "text": text,
-        "tool_calls": tool_calls,
-        "latency_ms": elapsed_ms,
-        "status": data.get("status"),
-        "error": None,
-    }
+PLANNER_MODEL = MODELS["anthropic"]
+RESEARCHER_MODEL = MODELS["openai"]
+SYNTHESIZER_MODEL = MODELS["anthropic"]
 
 
 # ---------------------------------------------------------------------------
@@ -110,8 +42,10 @@ AGENT_TOOLS = [
     {
         "type": "function",
         "name": "analyze_topic",
-        "description": "Analyze a specific sub-topic and return structured findings. "
-        "Use this to research individual aspects of a complex question.",
+        "description": (
+            "Analyze a specific sub-topic and return structured findings. "
+            "Use this to research individual aspects of a complex question."
+        ),
         "parameters": {
             "type": "object",
             "properties": {
@@ -154,9 +88,11 @@ AGENT_TOOLS = [
 
 def execute_tool(name: str, arguments: str) -> str:
     """
-    Simulate tool execution. In a real agent, these would call external APIs
-    or databases. Here we use a second LLM call (routed to a different provider)
-    to simulate the research step.
+    Execute a tool call by routing to a different provider (OpenAI).
+
+    In a real agent, these would call external APIs or databases. Here we
+    use a second LLM call routed to a DIFFERENT provider than the planner,
+    demonstrating Concentrate's cross-provider routing capability.
     """
     args = json.loads(arguments)
 
@@ -168,8 +104,7 @@ def execute_tool(name: str, arguments: str) -> str:
             f"Cover these aspects: {', '.join(aspects)}\n"
             f"Be specific and quantitative where possible. Max 3 bullet points per aspect."
         )
-        # Route research to a DIFFERENT provider than the planner
-        result = call_concentrate(RESEARCHER_MODEL, prompt, max_output_tokens=500)
+        result = call_model(RESEARCHER_MODEL, prompt, max_output_tokens=500, temperature=0.4)
         return result.get("text", f"[Error analyzing {topic}]")
 
     elif name == "compare_options":
@@ -180,7 +115,7 @@ def execute_tool(name: str, arguments: str) -> str:
             f"{', '.join(dimensions)}.\n"
             f"Give a brief verdict for each dimension. Be specific."
         )
-        result = call_concentrate(RESEARCHER_MODEL, prompt, max_output_tokens=500)
+        result = call_model(RESEARCHER_MODEL, prompt, max_output_tokens=500, temperature=0.4)
         return result.get("text", "[Error comparing options]")
 
     return f"[Unknown tool: {name}]"
@@ -193,7 +128,7 @@ def execute_tool(name: str, arguments: str) -> str:
 
 def run_agent(question: str) -> dict[str, Any]:
     """
-    Three-step agent:
+    Three-step agent loop:
       1. PLAN  (Anthropic) — break question into sub-tasks + decide tools
       2. EXECUTE (OpenAI via tool simulation) — run each tool call
       3. SYNTHESIZE (Anthropic) — combine findings into final answer
@@ -204,13 +139,13 @@ def run_agent(question: str) -> dict[str, Any]:
     # Step 1: Plan
     print("\n[STEP 1] PLANNING (via Anthropic)...")
     plan_prompt = (
-        f"You are a research assistant. The user asks: \"{question}\"\n\n"
+        f'You are a research assistant. The user asks: "{question}"\n\n'
         f"Break this into 2-3 research sub-tasks. For each, call the appropriate tool:\n"
         f"- analyze_topic: for researching a specific sub-topic\n"
         f"- compare_options: for comparing alternatives\n\n"
         f"Call the tools now. Do NOT answer the question directly."
     )
-    plan_result = call_concentrate(PLANNER_MODEL, plan_prompt, tools=AGENT_TOOLS)
+    plan_result = call_model(PLANNER_MODEL, plan_prompt, tools=AGENT_TOOLS, temperature=0.4)
 
     print(f"  Model: {plan_result['model']}")
     print(f"  Latency: {plan_result['latency_ms']:.0f}ms")
@@ -221,7 +156,7 @@ def run_agent(question: str) -> dict[str, Any]:
     tool_calls = plan_result.get("tool_calls", [])
 
     if not tool_calls:
-        # Model didn't use tools — it answered directly
+        # Model answered directly without using tools
         print("  (Model answered directly without using tools)")
         trace.append({"step": "direct_answer", "text": plan_result.get("text", "")})
         return {
@@ -236,11 +171,11 @@ def run_agent(question: str) -> dict[str, Any]:
     tool_results = []
     for i, tc in enumerate(tool_calls):
         name = tc["name"]
-        args = tc.get("arguments", "{}")
-        print(f"  Tool {i + 1}: {name}({args[:80]}{'...' if len(args) > 80 else ''})")
+        args_str = tc.get("arguments", "{}")
+        print(f"  Tool {i + 1}: {name}({args_str[:80]}{'...' if len(args_str) > 80 else ''})")
 
-        output = execute_tool(name, args)
-        tool_results.append({"name": name, "arguments": args, "output": output})
+        output = execute_tool(name, args_str)
+        tool_results.append({"name": name, "arguments": args_str, "output": output})
         print(f"    -> {len(output)} chars returned")
 
     trace.append({"step": "execute", "tool_results": tool_results})
@@ -251,12 +186,12 @@ def run_agent(question: str) -> dict[str, Any]:
         f"## {tr['name']}({tr['arguments'][:60]})\n{tr['output']}" for tr in tool_results
     )
     synth_prompt = (
-        f"Original question: \"{question}\"\n\n"
+        f'Original question: "{question}"\n\n'
         f"Research findings:\n{findings_text}\n\n"
         f"Synthesize these findings into a clear, concise answer. "
         f"Highlight key tradeoffs and give a recommendation if appropriate."
     )
-    synth_result = call_concentrate(SYNTHESIZER_MODEL, synth_prompt, max_output_tokens=600)
+    synth_result = call_model(SYNTHESIZER_MODEL, synth_prompt, max_output_tokens=600, temperature=0.4)
 
     print(f"  Model: {synth_result['model']}")
     print(f"  Latency: {synth_result['latency_ms']:.0f}ms")
@@ -282,9 +217,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Multi-step research agent via Concentrate AI")
     parser.add_argument(
         "--question",
-        default="What are the tradeoffs between using XGBoost vs a neural network "
-        "for tabular insurance pricing data? Consider model performance, "
-        "interpretability, and deployment complexity.",
+        default=(
+            "What are the tradeoffs between using XGBoost vs a neural network "
+            "for tabular insurance pricing data? Consider model performance, "
+            "interpretability, and deployment complexity."
+        ),
         help="Question for the agent to research",
     )
     args = parser.parse_args()
