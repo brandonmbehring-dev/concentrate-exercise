@@ -157,9 +157,9 @@ cache_control={"type": "ephemeral", "ttl": "5m"}
 
 ## Model Retirement (CRITICAL)
 
-**GPT-4o, GPT-4.1, GPT-4.1 mini, o4-mini retiring Feb 13–19, 2026.**
-- Current code uses `openai/gpt-4.1` → MUST update to `openai/gpt-5`
-- Docs quickstart default: `gpt-5.2`
+**GPT-4o, GPT-4.1, GPT-4.1 mini, o4-mini retired Feb 13–19, 2026.**
+- Code uses `openai/gpt-5.1` (updated, verified via smoke test)
+- Docs quickstart default: `gpt-5.2` (newer than our selection)
 - Run `discover.py` first to confirm available models
 
 ---

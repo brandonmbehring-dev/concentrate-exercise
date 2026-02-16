@@ -3,7 +3,7 @@
 ## Structure: D-Lite ("Strategic Enhancement")
 
 ### What You Do
-1. Update models in `client.py` (5 min) — gpt-4.1 → gpt-5, add gemini + deepseek
+1. Update models in `client.py` (5 min) — gpt-4.1 → gpt-5, add gemini + xai
 2. Add 1 new compare.py section: web search (15 min)
 3. Swap 2-3 prompts to research-backed set (10 min)
 4. Run everything: discover.py + compare.py + agent.py (30 min)
@@ -30,7 +30,7 @@
 
 ```
 00:00 - 00:05  Run discover.py → confirm available models + pricing
-00:05 - 00:10  Update client.py models (gpt-5, add gemini + deepseek)
+00:05 - 00:10  Update client.py models (gpt-5, add gemini + xai)
 00:10 - 00:25  Add web search section + update prompts in compare.py
 00:25 - 00:30  Add eval helpers (auto_eval, check_json, check_contains)
 00:30 - 00:45  Run compare.py --section all → review results
@@ -96,7 +96,7 @@ One paragraph: what I built, how many providers/prompts, top finding, overall DX
 OpenAI 100% JSON compliance vs [others].
 
 ### Finding 2: The Cost-Quality Spectrum
-DeepSeek at 20x cheaper with [quality comparison].
+xAI at 20x cheaper with [quality comparison].
 
 ### Finding 3: [Most Surprising Discovery]
 Whatever actually surprises you during testing.

@@ -2,19 +2,21 @@
 """
 Multi-provider comparison tool using the Concentrate AI unified API.
 
-Sends identical prompts to OpenAI and Anthropic models via Concentrate,
-compares response quality, latency, and cost. Tests auto-routing strategies,
-tool calling, streaming, multi-turn conversations, and cost estimation.
+Sends identical prompts to OpenAI, Anthropic, Google, and xAI models via
+Concentrate's unified API. Compares response quality, latency, and cost across
+9 test sections including 8 research-backed diagnostic prompts and web search.
 
 Usage:
-    python compare.py                      # Run all comparisons
-    python compare.py --section basic      # Run only basic comparison
-    python compare.py --section routing    # Run only auto-routing tests
-    python compare.py --section tools      # Run only tool calling tests
-    python compare.py --section edge       # Run only edge case tests
-    python compare.py --section streaming  # Run only streaming comparison
-    python compare.py --section multiturn  # Run only multi-turn test
-    python compare.py --section cost       # Run only cost estimation
+    python compare.py                       # Run all comparisons
+    python compare.py --section basic       # Basic multi-provider comparison
+    python compare.py --section routing     # Auto-routing strategies
+    python compare.py --section tools       # Tool calling across providers
+    python compare.py --section edge        # Edge cases & error handling
+    python compare.py --section streaming   # Streaming comparison
+    python compare.py --section multiturn   # Multi-turn conversation
+    python compare.py --section cost        # Cost estimation
+    python compare.py --section research    # 8 research-backed prompts × 4 providers
+    python compare.py --section websearch   # Web search across providers
 """
 
 import argparse
@@ -106,7 +108,10 @@ def run_basic_comparison() -> list[dict]:
         all_results.append({
             "prompt_name": prompt_name,
             "prompt_text": prompt_text,
-            "results": {k: {**v, "raw_response": None} for k, v in row_results.items()},
+            "results": {
+                k: {**v, "raw_response": {"usage": (v.get("raw_response") or {}).get("usage", {})}}
+                for k, v in row_results.items()
+            },
         })
 
     return all_results
@@ -143,7 +148,7 @@ def run_routing_comparison() -> list[dict]:
         all_results.append({
             "strategy": label,
             "routing_config": routing_config,
-            "result": {**result, "raw_response": None},
+            "result": {**result, "raw_response": {"usage": (result.get("raw_response") or {}).get("usage", {})}},
         })
 
     # Summary table
@@ -163,6 +168,7 @@ def run_routing_comparison() -> list[dict]:
 
 WEATHER_TOOL = {
     "type": "function",
+    "strict": False,
     "name": "get_weather",
     "description": "Get the current weather for a given city.",
     "parameters": {
@@ -181,6 +187,7 @@ WEATHER_TOOL = {
 
 CALCULATOR_TOOL = {
     "type": "function",
+    "strict": False,
     "name": "calculate",
     "description": "Evaluate a mathematical expression.",
     "parameters": {
@@ -439,9 +446,9 @@ def run_multiturn_comparison() -> list[dict]:
 
     # A 2-turn conversation that requires context from turn 1
     messages = [
-        {"type": "message", "role": "user", "content": "What is 2 + 2?"},
-        {"type": "message", "role": "assistant", "content": "4"},
-        {"type": "message", "role": "user", "content": "Multiply that by 3, then subtract 1. What's the result?"},
+        {"role": "user", "content": "What is 2 + 2?"},
+        {"role": "assistant", "content": "4"},
+        {"role": "user", "content": "Multiply that by 3, then subtract 1. What's the result?"},
     ]
 
     print("\nConversation:")
@@ -506,26 +513,36 @@ def run_cost_estimation() -> list[dict]:
     print("\nFetching model pricing...")
     catalog = fetch_models()
 
-    if catalog.get("error"):
-        print(f"  WARNING: Could not fetch model catalog: {catalog['error']}")
-        print("  Falling back to hardcoded estimates.")
-        # Fallback: reasonable estimates if catalog unavailable
+    # Handle list response (API returns bare array) or dict with error
+    models_data: list = []
+    if isinstance(catalog, list):
+        models_data = catalog
+    elif isinstance(catalog, dict):
+        if catalog.get("error"):
+            print(f"  WARNING: Could not fetch catalog: {catalog['error']}")
+        else:
+            models_data = catalog.get("data", catalog.get("models", []))
+
+    if not models_data:
+        print("  Using hardcoded pricing estimates.")
         pricing = {
-            MODELS["openai"]: {"input": 2.00 / 1_000_000, "output": 8.00 / 1_000_000},
+            MODELS["openai"]: {"input": 1.25 / 1_000_000, "output": 10.00 / 1_000_000},
             MODELS["anthropic"]: {"input": 3.00 / 1_000_000, "output": 15.00 / 1_000_000},
+            MODELS["google"]: {"input": 1.25 / 1_000_000, "output": 10.00 / 1_000_000},
+            MODELS["xai"]: {"input": 0.20 / 1_000_000, "output": 0.50 / 1_000_000},
         }
     else:
-        # Extract pricing from catalog
+        # Extract pricing from nested providers structure
         pricing = {}
-        models_data = catalog.get("data", catalog.get("models", []))
         for m in models_data:
-            mid = m.get("id", "")
-            p = m.get("pricing", {})
-            if p:
-                pricing[mid] = {
-                    "input": p.get("input") or p.get("prompt") or 0,
-                    "output": p.get("output") or p.get("completion") or 0,
-                }
+            slug = m.get("slug", "")
+            for prov_slug, prov_data in m.get("providers", {}).items():
+                model_key = f"{prov_slug}/{slug}"
+                tokens = prov_data.get("pricing", {}).get("tokens", {})
+                inp = tokens.get("input", {}).get("price", {}).get("USD", 0)
+                out = tokens.get("output", {}).get("price", {}).get("USD", 0)
+                # Docs: price is per-million-tokens (units: 1000000)
+                pricing[model_key] = {"input": inp / 1_000_000, "output": out / 1_000_000}
         print(f"  Found pricing for {len(pricing)} models.")
 
     # Run a test prompt and measure tokens
@@ -605,6 +622,372 @@ def run_cost_estimation() -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
+# Evaluation helpers
+# ---------------------------------------------------------------------------
+
+
+def auto_eval(result: dict) -> dict:
+    """Basic pass/fail evaluation for every API call."""
+    return {
+        "success": result.get("error") is None and result.get("status") == "completed",
+        "latency_ms": result.get("latency_ms", 0),
+        "response_length": len(result.get("text", "") or ""),
+        "has_content": len(result.get("text", "") or "") > 10,
+    }
+
+
+def check_json_compliance(text: str) -> dict:
+    """Attempt json.loads() on response text, report valid/invalid."""
+    # Strip markdown code fences if present
+    cleaned = text.strip()
+    if cleaned.startswith("```"):
+        lines = cleaned.split("\n")
+        # Remove first line (```json) and last line (```)
+        lines = [l for l in lines if not l.strip().startswith("```")]
+        cleaned = "\n".join(lines).strip()
+
+    try:
+        parsed = json.loads(cleaned)
+        is_list = isinstance(parsed, list)
+        count = len(parsed) if is_list else 1
+        return {"valid_json": True, "is_array": is_list, "item_count": count, "error": None}
+    except (json.JSONDecodeError, ValueError) as e:
+        return {"valid_json": False, "is_array": False, "item_count": 0, "error": str(e)[:100]}
+
+
+def check_contains(text: str, keywords: list[str]) -> dict:
+    """Check if response contains expected keywords (case-insensitive)."""
+    text_lower = text.lower()
+    found = [kw for kw in keywords if kw.lower() in text_lower]
+    missing = [kw for kw in keywords if kw.lower() not in text_lower]
+    return {
+        "found": found,
+        "missing": missing,
+        "score": len(found) / len(keywords) if keywords else 0,
+    }
+
+
+def check_word_count(text: str, target: int, tolerance: int = 5) -> dict:
+    """Check word count against target with tolerance."""
+    words = text.split()
+    count = len(words)
+    return {
+        "word_count": count,
+        "target": target,
+        "within_tolerance": abs(count - target) <= tolerance,
+        "delta": count - target,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Research-backed prompts (8 diagnostic prompts across 6 categories)
+# ---------------------------------------------------------------------------
+
+RESEARCH_PROMPTS = {
+    "simpsons_paradox": {
+        "text": (
+            "A hospital has two treatments for a condition. Treatment A has a higher "
+            "success rate in every patient subgroup (mild cases: 90% vs 85%, severe "
+            "cases: 40% vs 35%), but Treatment B has a higher overall success rate "
+            "(80% vs 75%). Explain how this is mathematically possible, identify the "
+            "bias, and recommend which treatment to choose."
+        ),
+        "category": "causal_reasoning",
+        "eval_keywords": ["simpson", "confound", "paradox"],
+    },
+    "ab_test": {
+        "text": (
+            "An A/B test shows the new checkout flow has 3% higher conversion "
+            "(p=0.04, n=5000 per group), but the Bayesian posterior puts 15% "
+            "probability on no real effect. The PM wants to ship immediately. "
+            "What do you recommend and why?"
+        ),
+        "category": "statistical",
+        "eval_keywords": ["frequentist", "bayesian", "significance"],
+    },
+    "json_schema": {
+        "text": (
+            "Generate a JSON error response for an API with this exact schema: "
+            '{"error_code": int, "message": string, "timestamp": ISO 8601, '
+            '"request_id": UUID v4, "details": [{"field": string, "constraint": string, '
+            '"received_value": any}]}. Generate exactly 3 error examples as a JSON array.'
+        ),
+        "category": "structured_output",
+        "eval_type": "json",
+    },
+    "monty_hall_4door": {
+        "text": (
+            "You're on a game show with 4 doors. Behind one is a car, behind the "
+            "others are goats. You pick door 1. The host, who knows what's behind "
+            "each door, opens door 3 (goat). Should you switch, and if so, to "
+            "which door? Calculate the exact probability for each remaining door."
+        ),
+        "category": "logic",
+        "eval_keywords": ["1/4", "3/8", "switch"],
+    },
+    "flash_fiction": {
+        "text": (
+            "Write exactly 100 words of flash fiction. Requirements: "
+            "(1) Set in a library, (2) include the word 'algorithm', "
+            "(3) the last sentence must recontextualize everything before it, "
+            "(4) no dialogue, (5) present tense only. Count your words."
+        ),
+        "category": "creative_constrained",
+        "eval_type": "word_count",
+        "eval_target": 100,
+    },
+    "cost_routing": {
+        "text": (
+            "A startup makes 100K LLM API calls per day: 70% simple classification, "
+            "20% summarization, 10% complex reasoning. Design a cost-optimized "
+            "routing strategy using multiple providers. Include specific model "
+            "recommendations, estimated costs, and quality tradeoffs."
+        ),
+        "category": "llm_meta",
+        "eval_keywords": ["routing", "cost", "quality"],
+    },
+    "fermi_estimation": {
+        "text": (
+            "Estimate the total number of API calls made to LLM providers globally "
+            "per day in February 2026. Show your reasoning chain with explicit "
+            "assumptions at each step."
+        ),
+        "category": "reasoning_chain",
+        "eval_keywords": ["assumption", "estimate"],
+    },
+    "insurance_pricing": {
+        "text": (
+            "Compare the factors that influence term life insurance pricing vs "
+            "auto insurance pricing. Which product has more pricing variables and why? "
+            "Include at least 5 factors for each."
+        ),
+        "category": "domain_expertise",
+        "eval_keywords": ["mortality", "actuarial", "risk"],
+    },
+}
+
+
+# ---------------------------------------------------------------------------
+# Section 8: Research-backed provider comparison
+# ---------------------------------------------------------------------------
+
+
+def run_research_prompts() -> list[dict]:
+    """Run 8 research-backed diagnostic prompts across all 4 providers."""
+    print("\n" + "=" * 70)
+    print("SECTION 8: RESEARCH-BACKED PROVIDER COMPARISON")
+    print(f"  {len(RESEARCH_PROMPTS)} prompts × {len(MODELS)} providers "
+          f"= {len(RESEARCH_PROMPTS) * len(MODELS)} API calls")
+    print("=" * 70)
+
+    all_results = []
+
+    for prompt_name, prompt_info in RESEARCH_PROMPTS.items():
+        prompt_text = prompt_info["text"]
+        category = prompt_info["category"]
+
+        print(f"\n--- [{category}] {prompt_name} ---")
+        display = f'  "{prompt_text[:90]}..."' if len(prompt_text) > 90 else f'  "{prompt_text}"'
+        print(display)
+
+        row_results = {}
+        for provider, model in MODELS.items():
+            result = call_model(model, prompt_text, max_output_tokens=800)
+            eval_result = auto_eval(result)
+
+            # Task-specific evaluation
+            if prompt_info.get("eval_type") == "json":
+                eval_result["json_check"] = check_json_compliance(result.get("text", ""))
+            elif prompt_info.get("eval_type") == "word_count":
+                eval_result["word_check"] = check_word_count(
+                    result.get("text", ""), prompt_info.get("eval_target", 100)
+                )
+
+            if "eval_keywords" in prompt_info:
+                eval_result["keyword_check"] = check_contains(
+                    result.get("text", ""), prompt_info["eval_keywords"]
+                )
+
+            row_results[provider] = {**result, "eval": eval_result}
+
+            status = "OK" if result["status"] == "completed" else result["status"]
+            extra = ""
+            if "json_check" in eval_result:
+                extra = f" | JSON: {'VALID' if eval_result['json_check']['valid_json'] else 'INVALID'}"
+            elif "word_check" in eval_result:
+                wc = eval_result["word_check"]
+                extra = f" | Words: {wc['word_count']} (target {wc['target']})"
+            elif "keyword_check" in eval_result:
+                kc = eval_result["keyword_check"]
+                extra = f" | Keywords: {kc['score']:.0%}"
+
+            print(f"  {provider:12s} | {result['latency_ms']:7.0f}ms | {status}{extra}")
+
+        # Comparison table
+        table_data = [
+            [
+                provider,
+                f"{r['latency_ms']:.0f}ms",
+                f"{r['eval']['response_length']}",
+                r["status"],
+                extract_text(r, 100),
+            ]
+            for provider, r in row_results.items()
+        ]
+        print()
+        print(tabulate(
+            table_data,
+            headers=["Provider", "Latency", "Length", "Status", "Response (truncated)"],
+            tablefmt="simple",
+        ))
+
+        all_results.append({
+            "prompt_name": prompt_name,
+            "category": category,
+            "prompt_text": prompt_text,
+            "results": {
+                k: {**v, "raw_response": {"usage": (v.get("raw_response") or {}).get("usage", {})}}
+                for k, v in row_results.items()
+            },
+        })
+
+    # Overall summary
+    print("\n" + "=" * 70)
+    print("RESEARCH PROMPTS — SUMMARY")
+    print("=" * 70)
+
+    summary_data = []
+    for entry in all_results:
+        row = [entry["prompt_name"]]
+        for provider in MODELS:
+            r = entry["results"].get(provider, {})
+            latency = r.get("latency_ms", 0)
+            status = "OK" if r.get("status") == "completed" else r.get("status", "?")
+            row.append(f"{latency:.0f}ms/{status}")
+        summary_data.append(row)
+
+    print(tabulate(
+        summary_data,
+        headers=["Prompt"] + list(MODELS.keys()),
+        tablefmt="simple",
+    ))
+
+    return all_results
+
+
+# ---------------------------------------------------------------------------
+# Section 9: Web search comparison
+# ---------------------------------------------------------------------------
+
+
+def run_web_search_comparison() -> list[dict]:
+    """
+    Test Concentrate's built-in web search across providers.
+
+    Web search support varies: OpenAI and Anthropic have full support,
+    Gemini/Mistral have limitations (can't combine with function tools),
+    and xAI/Google may have limitations. The failures ARE the finding.
+    """
+    print("\n" + "=" * 70)
+    print("SECTION 9: WEB SEARCH COMPARISON")
+    print("=" * 70)
+
+    web_tool = {"type": "web_search", "search_context_size": "medium"}
+    prompt = (
+        "What are the latest developments in AI regulation in the US "
+        "as of February 2026? Cite your sources with URLs."
+    )
+
+    print(f'\nPrompt: "{prompt[:80]}..."')
+    print(f"Tool: web_search (search_context_size=medium)")
+
+    all_results = []
+
+    for provider, model in MODELS.items():
+        print(f"\n--- Provider: {provider} ---")
+
+        try:
+            result = call_model(model, prompt, tools=[web_tool], max_output_tokens=800, timeout=90)
+
+            status = "OK" if result["status"] == "completed" else result["status"]
+            has_error = result.get("error") is not None
+
+            # Check for web search call in raw response
+            raw = result.get("raw_response", {}) or {}
+            output_items = raw.get("output", [])
+            web_search_items = [
+                item for item in output_items
+                if item.get("type") == "web_search_call"
+            ]
+            has_web_search = len(web_search_items) > 0
+
+            # Extract sources from web search results
+            sources = []
+            for ws in web_search_items:
+                action = ws.get("action", {})
+                for src in action.get("sources", []):
+                    sources.append(src.get("url", ""))
+
+            print(f"  Status:       {status}")
+            print(f"  Latency:      {result['latency_ms']:.0f}ms")
+            print(f"  Web search:   {'YES' if has_web_search else 'NO'}")
+            print(f"  Sources:      {len(sources)}")
+            if has_error:
+                print(f"  Error:        {result['error'][:120]}")
+            if result.get("text"):
+                print(f"  Response:     {extract_text(result, 150)}")
+
+            all_results.append({
+                "provider": provider,
+                "model": model,
+                "status": result["status"],
+                "error": result.get("error"),
+                "latency_ms": result["latency_ms"],
+                "web_search_triggered": has_web_search,
+                "source_count": len(sources),
+                "sources": sources[:5],  # cap at 5 for readability
+                "response_length": len(result.get("text", "") or ""),
+                "text_preview": extract_text(result, 200),
+            })
+
+        except Exception as e:
+            print(f"  EXCEPTION: {e}")
+            all_results.append({
+                "provider": provider,
+                "model": model,
+                "status": "exception",
+                "error": str(e),
+                "latency_ms": 0,
+                "web_search_triggered": False,
+                "source_count": 0,
+                "sources": [],
+                "response_length": 0,
+                "text_preview": "",
+            })
+
+    # Summary
+    print("\n--- Web Search Summary ---")
+    table_data = [
+        [
+            r["provider"],
+            "YES" if r["web_search_triggered"] else "NO",
+            r["source_count"],
+            f"{r['latency_ms']:.0f}ms",
+            r["status"],
+            (r.get("error", "")[:40] if r.get("error") else ""),
+        ]
+        for r in all_results
+    ]
+    print(tabulate(
+        table_data,
+        headers=["Provider", "Web Search?", "Sources", "Latency", "Status", "Error"],
+        tablefmt="simple",
+    ))
+
+    return all_results
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -623,7 +1006,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Concentrate AI multi-provider comparison tool")
     parser.add_argument(
         "--section",
-        choices=["basic", "routing", "tools", "edge", "streaming", "multiturn", "cost", "all"],
+        choices=[
+            "basic", "routing", "tools", "edge", "streaming",
+            "multiturn", "cost", "research", "websearch", "all",
+        ],
         default="all",
         help="Which section to run (default: all)",
     )
@@ -648,18 +1034,20 @@ def main() -> None:
         "streaming": ("streaming", run_streaming_comparison),
         "multiturn": ("multiturn", run_multiturn_comparison),
         "cost": ("cost_estimation", run_cost_estimation),
+        "research": ("research_prompts", run_research_prompts),
+        "websearch": ("web_search", run_web_search_comparison),
     }
+
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
 
     if args.section == "all":
         for key, (result_key, func) in sections.items():
             all_results[result_key] = func()
+            save_results(all_results, f"comparison_{ts}.json")  # incremental save
     else:
         result_key, func = sections[args.section]
         all_results[result_key] = func()
-
-    # Save
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    save_results(all_results, f"comparison_{ts}.json")
+        save_results(all_results, f"comparison_{ts}.json")
 
     print("\n" + "=" * 70)
     print("DONE. All sections complete.")

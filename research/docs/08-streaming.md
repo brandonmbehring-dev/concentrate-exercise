@@ -1,0 +1,884 @@
+# Streaming Responses
+> Source: https://docs.concentrate.ai/api-reference/endpoint/streaming
+> Fetched: 2026-02-16 via Playwright browser_snapshot (Claude Code)
+> Method: Full accessibility tree capture — verbatim page content
+
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - link "concentrate home page light logo" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e12]: concentrate home page
+          - img "light logo" [ref=e13]
+        - generic [ref=e15]:
+          - button "Open search" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]:
+              - img [ref=e18]
+              - generic [ref=e21]: Search...
+            - generic [ref=e22]: Ctrl K
+          - button "Toggle assistant panel" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - list
+          - generic [ref=e29]:
+            - heading "API documentation" [level=5] [ref=e31]
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "API Introduction" [ref=e34] [cursor=pointer]:
+                  - /url: /api-reference/introduction
+                  - generic [ref=e36]: API Introduction
+          - generic [ref=e37]:
+            - heading "Responses" [level=5] [ref=e39]
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "POST Create Response" [ref=e42] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-response
+                  - generic [ref=e44]: POST
+                  - generic [ref=e46]: Create Response
+          - generic [ref=e47]:
+            - heading "Messages (Beta)" [level=5] [ref=e49]
+            - list [ref=e50]:
+              - listitem [ref=e51]:
+                - link "POST Create Message" [ref=e52] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-message
+                  - generic [ref=e54]: POST
+                  - generic [ref=e56]: Create Message
+          - generic [ref=e57]:
+            - heading "Models" [level=5] [ref=e59]
+            - list [ref=e60]:
+              - listitem [ref=e61]:
+                - link "GET List Models" [ref=e62] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-models
+                  - generic [ref=e64]: GET
+                  - generic [ref=e66]: List Models
+              - listitem [ref=e67]:
+                - link "GET List Providers" [ref=e68] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-providers
+                  - generic [ref=e70]: GET
+                  - generic [ref=e72]: List Providers
+              - listitem [ref=e73]:
+                - link "GET Get Model" [ref=e74] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-model
+                  - generic [ref=e76]: GET
+                  - generic [ref=e78]: Get Model
+              - listitem [ref=e79]:
+                - link "GET Get Provider Info" [ref=e80] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-provider-info
+                  - generic [ref=e82]: GET
+                  - generic [ref=e84]: Get Provider Info
+          - generic [ref=e85]:
+            - heading "Utilities" [level=5] [ref=e87]
+            - list [ref=e88]:
+              - listitem [ref=e89]:
+                - link "GET Health Check" [ref=e90] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/health
+                  - generic [ref=e92]: GET
+                  - generic [ref=e94]: Health Check
+          - generic [ref=e95]:
+            - heading "Features" [level=5] [ref=e97]
+            - list [ref=e98]:
+              - listitem [ref=e99]:
+                - link "Streaming Responses" [ref=e100] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/streaming
+                  - generic [ref=e102]: Streaming Responses
+              - listitem [ref=e103]:
+                - link "Auto Routing" [ref=e104] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/auto-routing
+                  - generic [ref=e106]: Auto Routing
+              - listitem [ref=e107]:
+                - link "Tool Calling" [ref=e108] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/tool-calling
+                  - generic [ref=e110]: Tool Calling
+              - listitem [ref=e111]:
+                - link "Web Search" [ref=e112] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/web-search
+                  - generic [ref=e114]: Web Search
+          - generic [ref=e115]:
+            - heading "Reference" [level=5] [ref=e117]
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - link "Request Parameters Reference" [ref=e120] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/request-parameters
+                  - generic [ref=e122]: Request Parameters Reference
+              - listitem [ref=e123]:
+                - link "Prompt Caching" [ref=e124] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/prompt-caching
+                  - generic [ref=e126]: Prompt Caching
+              - listitem [ref=e127]:
+                - link "Error Handling" [ref=e128] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/errors
+                  - generic [ref=e130]: Error Handling
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e134]:
+            - link "API reference" [ref=e135] [cursor=pointer]:
+              - /url: /api-reference/introduction
+              - text: API reference
+            - link "Guides" [ref=e137] [cursor=pointer]:
+              - /url: /getting-started/quickstart
+              - text: Guides
+          - generic [ref=e139]:
+            - listitem [ref=e140]:
+              - link "Support" [ref=e141] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+            - listitem [ref=e142]:
+              - link "Dashboard" [ref=e143] [cursor=pointer]:
+                - /url: https://app.concentrate.ai
+                - generic [ref=e144]:
+                  - generic [ref=e145]: Dashboard
+                  - img [ref=e146]
+          - button "Toggle dark mode" [ref=e149] [cursor=pointer]:
+            - img [ref=e150]
+        - generic [ref=e157]:
+          - banner [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: Features
+              - generic [ref=e161]:
+                - heading "Streaming Responses" [level=1] [ref=e162]
+                - generic [ref=e163]:
+                  - button "Copy page" [ref=e164] [cursor=pointer]:
+                    - generic [ref=e165]:
+                      - img [ref=e166]
+                      - generic [ref=e169]: Copy page
+                  - button "More actions" [ref=e170] [cursor=pointer]:
+                    - img [ref=e171]
+            - paragraph [ref=e1091]: Real-time streaming using Server-Sent Events
+          - generic [ref=e175]:
+            - heading "Navigate to header Overview" [level=2] [ref=e1092]:
+              - link "Navigate to header" [ref=e1093] [cursor=pointer]:
+                - /url: "#overview"
+                - img [ref=e1095]
+              - generic [ref=e1097] [cursor=pointer]: Overview
+            - generic [ref=e1098]: Streaming enables real-time response generation using Server-Sent Events (SSE). Instead of waiting for the complete response, you receive content incrementally as it’s generated, providing a better user experience.
+            - heading "Navigate to header How It Works" [level=2] [ref=e1099]:
+              - link "Navigate to header" [ref=e1100] [cursor=pointer]:
+                - /url: "#how-it-works"
+                - img [ref=e1102]
+              - generic [ref=e1104] [cursor=pointer]: How It Works
+            - generic [ref=e1105]:
+              - text: When you set
+              - code [ref=e1106]: "stream: true"
+              - text: ", the API:"
+            - list [ref=e1107]:
+              - listitem [ref=e1108]: Returns an SSE stream instead of JSON
+              - listitem [ref=e1109]: Sends events incrementally as content is generated
+              - listitem [ref=e1110]: Each event contains a JSON payload with type and data
+              - listitem [ref=e1111]: Closes the connection when complete
+            - heading "Navigate to header Enable Streaming" [level=2] [ref=e1112]:
+              - link "Navigate to header" [ref=e1113] [cursor=pointer]:
+                - /url: "#enable-streaming"
+                - img [ref=e1115]
+              - generic [ref=e1117] [cursor=pointer]: Enable Streaming
+            - generic [ref=e1118]:
+              - text: Add
+              - code [ref=e1119]: "\"stream\": true"
+              - text: "to your request:"
+            - generic [ref=e1120]:
+              - generic [ref=e1121]:
+                - tablist [ref=e1122]:
+                  - tab "cURL" [selected] [ref=e1123] [cursor=pointer]:
+                    - generic [ref=e1124]: cURL
+                  - tab "Python" [ref=e1126] [cursor=pointer]:
+                    - generic [ref=e1127]: Python
+                  - tab "JavaScript / Node.js" [ref=e1128] [cursor=pointer]:
+                    - generic [ref=e1129]: JavaScript / Node.js
+                  - tab "TypeScript" [ref=e1130] [cursor=pointer]:
+                    - generic [ref=e1131]: TypeScript
+                  - tab "Python - AsyncIO" [ref=e1132] [cursor=pointer]:
+                    - generic [ref=e1133]: Python - AsyncIO
+                - generic [ref=e1134]:
+                  - generic [ref=e1135]:
+                    - button "Copy the contents from the code block" [ref=e1136] [cursor=pointer]:
+                      - img [ref=e1137]
+                    - generic [ref=e1140]: Copy
+                  - generic [ref=e1141]:
+                    - button "Ask AI" [ref=e1142] [cursor=pointer]:
+                      - img [ref=e1143]
+                    - generic [ref=e1146]: Ask AI
+              - tabpanel "cURL" [ref=e1148]:
+                - code [ref=e1152]:
+                  - generic [ref=e1153]: curl https://api.concentrate.ai/v1/responses \
+                  - generic [ref=e1154]: "-H \"Content-Type: application/json\" \\"
+                  - generic [ref=e1155]: "-H \"Authorization: Bearer YOUR_API_KEY\" \\"
+                  - generic [ref=e1156]: "-d '{"
+                  - generic [ref=e1157]: "\"model\": \"gpt-4o\","
+                  - generic [ref=e1158]: "\"input\": \"Write a short story about a robot\","
+                  - generic [ref=e1159]: "\"stream\": true"
+                  - generic [ref=e1160]: "}'"
+            - heading "Navigate to header Event Types" [level=2] [ref=e1161]:
+              - link "Navigate to header" [ref=e1162] [cursor=pointer]:
+                - /url: "#event-types"
+                - img [ref=e1164]
+              - generic [ref=e1166] [cursor=pointer]: Event Types
+            - generic [ref=e1167]: "The stream emits different event types as content is generated:"
+            - heading "Navigate to header response.created" [level=3] [ref=e1168]:
+              - link "Navigate to header" [ref=e1169] [cursor=pointer]:
+                - /url: "#response-created"
+                - img [ref=e1171]
+              - generic [ref=e1173] [cursor=pointer]: response.created
+            - generic [ref=e1174]: Sent at the beginning of the response stream.
+            - generic [ref=e1175]:
+              - generic [ref=e1176]:
+                - generic [ref=e1177]:
+                  - button "Copy the contents from the code block" [ref=e1178] [cursor=pointer]:
+                    - img [ref=e1179]
+                  - generic [ref=e1182]: Copy
+                - generic [ref=e1183]:
+                  - button "Ask AI" [ref=e1184] [cursor=pointer]:
+                    - img [ref=e1185]
+                  - generic [ref=e1188]: Ask AI
+              - code [ref=e1192]:
+                - generic [ref=e1193]: "{"
+                - generic [ref=e1194]: "\"type\": \"response.created\","
+                - generic [ref=e1195]: "\"sequence_number\": 0,"
+                - generic [ref=e1196]: "\"response\": {"
+                - generic [ref=e1197]: "\"id\": \"resp_abc123\","
+                - generic [ref=e1198]: "\"object\": \"response\","
+                - generic [ref=e1199]: "\"created_at\": 1702934400,"
+                - generic [ref=e1200]: "\"status\": \"in_progress\","
+                - generic [ref=e1201]: "\"model\": \"openai/gpt-4o\","
+                - generic [ref=e1202]: "\"output\": [],"
+                - generic [ref=e1203]: "\"usage\": null"
+                - generic [ref=e1204]: "}"
+                - generic [ref=e1205]: "}"
+            - heading "Navigate to header response.in_progress" [level=3] [ref=e1206]:
+              - link "Navigate to header" [ref=e1207] [cursor=pointer]:
+                - /url: "#response-in_progress"
+                - img [ref=e1209]
+              - generic [ref=e1211] [cursor=pointer]: response.in_progress
+            - generic [ref=e1212]: Sent periodically during response generation to indicate progress.
+            - generic [ref=e1213]:
+              - generic [ref=e1214]:
+                - generic [ref=e1215]:
+                  - button "Copy the contents from the code block" [ref=e1216] [cursor=pointer]:
+                    - img [ref=e1217]
+                  - generic [ref=e1220]: Copy
+                - generic [ref=e1221]:
+                  - button "Ask AI" [ref=e1222] [cursor=pointer]:
+                    - img [ref=e1223]
+                  - generic [ref=e1226]: Ask AI
+              - code [ref=e1230]:
+                - generic [ref=e1231]: "{"
+                - generic [ref=e1232]: "\"type\": \"response.in_progress\","
+                - generic [ref=e1233]: "\"sequence_number\": 3,"
+                - generic [ref=e1234]: "\"response\": {"
+                - generic [ref=e1235]: "\"id\": \"resp_abc123\","
+                - generic [ref=e1236]: "\"object\": \"response\","
+                - generic [ref=e1237]: "\"created_at\": 1702934400,"
+                - generic [ref=e1238]: "\"status\": \"in_progress\","
+                - generic [ref=e1239]: "\"model\": \"openai/gpt-4o\","
+                - generic [ref=e1240]: "\"output\": [...],"
+                - generic [ref=e1241]: "\"usage\": null"
+                - generic [ref=e1242]: "}"
+                - generic [ref=e1243]: "}"
+            - heading "Navigate to header response.output_item.added" [level=3] [ref=e1244]:
+              - link "Navigate to header" [ref=e1245] [cursor=pointer]:
+                - /url: "#response-output_item-added"
+                - img [ref=e1247]
+              - generic [ref=e1249] [cursor=pointer]: response.output_item.added
+            - generic [ref=e1250]: Signals the start of a new output item (message or reasoning block).
+            - generic [ref=e1251]:
+              - generic [ref=e1252]:
+                - generic [ref=e1253]:
+                  - button "Copy the contents from the code block" [ref=e1254] [cursor=pointer]:
+                    - img [ref=e1255]
+                  - generic [ref=e1258]: Copy
+                - generic [ref=e1259]:
+                  - button "Ask AI" [ref=e1260] [cursor=pointer]:
+                    - img [ref=e1261]
+                  - generic [ref=e1264]: Ask AI
+              - code [ref=e1268]:
+                - generic [ref=e1269]: "{"
+                - generic [ref=e1270]: "\"type\": \"response.output_item.added\","
+                - generic [ref=e1271]: "\"sequence_number\": 1,"
+                - generic [ref=e1272]: "\"output_index\": 0,"
+                - generic [ref=e1273]: "\"item\": {"
+                - generic [ref=e1274]: "\"type\": \"message\","
+                - generic [ref=e1275]: "\"id\": \"msg_xyz789\","
+                - generic [ref=e1276]: "\"status\": \"in_progress\","
+                - generic [ref=e1277]: "\"role\": \"assistant\","
+                - generic [ref=e1278]: "\"content\": []"
+                - generic [ref=e1279]: "}"
+                - generic [ref=e1280]: "}"
+            - heading "Navigate to header response.content_part.added" [level=3] [ref=e1281]:
+              - link "Navigate to header" [ref=e1282] [cursor=pointer]:
+                - /url: "#response-content_part-added"
+                - img [ref=e1284]
+              - generic [ref=e1286] [cursor=pointer]: response.content_part.added
+            - generic [ref=e1287]: Signals the start of a new content part within an output item.
+            - generic [ref=e1288]:
+              - generic [ref=e1289]:
+                - generic [ref=e1290]:
+                  - button "Copy the contents from the code block" [ref=e1291] [cursor=pointer]:
+                    - img [ref=e1292]
+                  - generic [ref=e1295]: Copy
+                - generic [ref=e1296]:
+                  - button "Ask AI" [ref=e1297] [cursor=pointer]:
+                    - img [ref=e1298]
+                  - generic [ref=e1301]: Ask AI
+              - code [ref=e1305]:
+                - generic [ref=e1306]: "{"
+                - generic [ref=e1307]: "\"type\": \"response.content_part.added\","
+                - generic [ref=e1308]: "\"sequence_number\": 2,"
+                - generic [ref=e1309]: "\"output_index\": 0,"
+                - generic [ref=e1310]: "\"content_index\": 0,"
+                - generic [ref=e1311]: "\"item_id\": \"msg_xyz789\","
+                - generic [ref=e1312]: "\"part\": {"
+                - generic [ref=e1313]: "\"type\": \"output_text\","
+                - generic [ref=e1314]: "\"text\": \"\""
+                - generic [ref=e1315]: "}"
+                - generic [ref=e1316]: "}"
+            - heading "Navigate to header response.output_text.delta" [level=3] [ref=e1317]:
+              - link "Navigate to header" [ref=e1318] [cursor=pointer]:
+                - /url: "#response-output_text-delta"
+                - img [ref=e1320]
+              - generic [ref=e1322] [cursor=pointer]: response.output_text.delta
+            - generic [ref=e1323]: Contains incremental text content. This is where the actual text appears.
+            - generic [ref=e1324]:
+              - generic [ref=e1325]:
+                - generic [ref=e1326]:
+                  - button "Copy the contents from the code block" [ref=e1327] [cursor=pointer]:
+                    - img [ref=e1328]
+                  - generic [ref=e1331]: Copy
+                - generic [ref=e1332]:
+                  - button "Ask AI" [ref=e1333] [cursor=pointer]:
+                    - img [ref=e1334]
+                  - generic [ref=e1337]: Ask AI
+              - code [ref=e1341]:
+                - generic [ref=e1342]: "{"
+                - generic [ref=e1343]: "\"type\": \"response.output_text.delta\","
+                - generic [ref=e1344]: "\"sequence_number\": 3,"
+                - generic [ref=e1345]: "\"output_index\": 0,"
+                - generic [ref=e1346]: "\"content_index\": 0,"
+                - generic [ref=e1347]: "\"item_id\": \"msg_xyz789\","
+                - generic [ref=e1348]: "\"delta\": \"Once upon a time\""
+                - generic [ref=e1349]: "}"
+            - heading "Navigate to header response.output_text.done" [level=3] [ref=e1350]:
+              - link "Navigate to header" [ref=e1351] [cursor=pointer]:
+                - /url: "#response-output_text-done"
+                - img [ref=e1353]
+              - generic [ref=e1355] [cursor=pointer]: response.output_text.done
+            - generic [ref=e1356]: Sent when a text content part is complete.
+            - generic [ref=e1357]:
+              - generic [ref=e1358]:
+                - generic [ref=e1359]:
+                  - button "Copy the contents from the code block" [ref=e1360] [cursor=pointer]:
+                    - img [ref=e1361]
+                  - generic [ref=e1364]: Copy
+                - generic [ref=e1365]:
+                  - button "Ask AI" [ref=e1366] [cursor=pointer]:
+                    - img [ref=e1367]
+                  - generic [ref=e1370]: Ask AI
+              - code [ref=e1374]:
+                - generic [ref=e1375]: "{"
+                - generic [ref=e1376]: "\"type\": \"response.output_text.done\","
+                - generic [ref=e1377]: "\"sequence_number\": 4,"
+                - generic [ref=e1378]: "\"output_index\": 0,"
+                - generic [ref=e1379]: "\"content_index\": 0,"
+                - generic [ref=e1380]: "\"item_id\": \"msg_xyz789\","
+                - generic [ref=e1381]: "\"text\": \"Once upon a time there was a robot...\""
+                - generic [ref=e1382]: "}"
+            - heading "Navigate to header response.content_part.done" [level=3] [ref=e1383]:
+              - link "Navigate to header" [ref=e1384] [cursor=pointer]:
+                - /url: "#response-content_part-done"
+                - img [ref=e1386]
+              - generic [ref=e1388] [cursor=pointer]: response.content_part.done
+            - generic [ref=e1389]: Signals the completion of a content part.
+            - generic [ref=e1390]:
+              - generic [ref=e1391]:
+                - generic [ref=e1392]:
+                  - button "Copy the contents from the code block" [ref=e1393] [cursor=pointer]:
+                    - img [ref=e1394]
+                  - generic [ref=e1397]: Copy
+                - generic [ref=e1398]:
+                  - button "Ask AI" [ref=e1399] [cursor=pointer]:
+                    - img [ref=e1400]
+                  - generic [ref=e1403]: Ask AI
+              - code [ref=e1407]:
+                - generic [ref=e1408]: "{"
+                - generic [ref=e1409]: "\"type\": \"response.content_part.done\","
+                - generic [ref=e1410]: "\"sequence_number\": 5,"
+                - generic [ref=e1411]: "\"output_index\": 0,"
+                - generic [ref=e1412]: "\"content_index\": 0,"
+                - generic [ref=e1413]: "\"item_id\": \"msg_xyz789\","
+                - generic [ref=e1414]: "\"part\": {"
+                - generic [ref=e1415]: "\"type\": \"output_text\","
+                - generic [ref=e1416]: "\"text\": \"Once upon a time there was a robot...\""
+                - generic [ref=e1417]: "}"
+                - generic [ref=e1418]: "}"
+            - heading "Navigate to header response.output_item.done" [level=3] [ref=e1419]:
+              - link "Navigate to header" [ref=e1420] [cursor=pointer]:
+                - /url: "#response-output_item-done"
+                - img [ref=e1422]
+              - generic [ref=e1424] [cursor=pointer]: response.output_item.done
+            - generic [ref=e1425]: Signals the completion of an output item.
+            - generic [ref=e1426]:
+              - generic [ref=e1427]:
+                - generic [ref=e1428]:
+                  - button "Copy the contents from the code block" [ref=e1429] [cursor=pointer]:
+                    - img [ref=e1430]
+                  - generic [ref=e1433]: Copy
+                - generic [ref=e1434]:
+                  - button "Ask AI" [ref=e1435] [cursor=pointer]:
+                    - img [ref=e1436]
+                  - generic [ref=e1439]: Ask AI
+              - code [ref=e1443]:
+                - generic [ref=e1444]: "{"
+                - generic [ref=e1445]: "\"type\": \"response.output_item.done\","
+                - generic [ref=e1446]: "\"sequence_number\": 6,"
+                - generic [ref=e1447]: "\"output_index\": 0,"
+                - generic [ref=e1448]: "\"item\": {"
+                - generic [ref=e1449]: "\"type\": \"message\","
+                - generic [ref=e1450]: "\"id\": \"msg_xyz789\","
+                - generic [ref=e1451]: "\"status\": \"completed\","
+                - generic [ref=e1452]: "\"role\": \"assistant\","
+                - generic [ref=e1453]: "\"content\": ["
+                - generic [ref=e1454]: "{"
+                - generic [ref=e1455]: "\"type\": \"output_text\","
+                - generic [ref=e1456]: "\"text\": \"Once upon a time there was a robot...\""
+                - generic [ref=e1457]: "}"
+                - generic [ref=e1458]: "]"
+                - generic [ref=e1459]: "}"
+                - generic [ref=e1460]: "}"
+            - heading "Navigate to header response.completed" [level=3] [ref=e1461]:
+              - link "Navigate to header" [ref=e1462] [cursor=pointer]:
+                - /url: "#response-completed"
+                - img [ref=e1464]
+              - generic [ref=e1466] [cursor=pointer]: response.completed
+            - generic [ref=e1467]: Sent when the entire response is complete, includes final usage information.
+            - generic [ref=e1468]:
+              - generic [ref=e1469]:
+                - generic [ref=e1470]:
+                  - button "Copy the contents from the code block" [ref=e1471] [cursor=pointer]:
+                    - img [ref=e1472]
+                  - generic [ref=e1475]: Copy
+                - generic [ref=e1476]:
+                  - button "Ask AI" [ref=e1477] [cursor=pointer]:
+                    - img [ref=e1478]
+                  - generic [ref=e1481]: Ask AI
+              - code [ref=e1485]:
+                - generic [ref=e1486]: "{"
+                - generic [ref=e1487]: "\"type\": \"response.completed\","
+                - generic [ref=e1488]: "\"sequence_number\": 7,"
+                - generic [ref=e1489]: "\"response\": {"
+                - generic [ref=e1490]: "\"id\": \"resp_abc123\","
+                - generic [ref=e1491]: "\"object\": \"response\","
+                - generic [ref=e1492]: "\"created_at\": 1702934400,"
+                - generic [ref=e1493]: "\"status\": \"completed\","
+                - generic [ref=e1494]: "\"model\": \"openai/gpt-4o\","
+                - generic [ref=e1495]: "\"output\": [...],"
+                - generic [ref=e1496]: "\"usage\": {"
+                - generic [ref=e1497]: "\"input_tokens\": 12,"
+                - generic [ref=e1498]: "\"input_tokens_details\": {"
+                - generic [ref=e1499]: "\"cached_tokens\": 0"
+                - generic [ref=e1500]: "},"
+                - generic [ref=e1501]: "\"output_tokens\": 156,"
+                - generic [ref=e1502]: "\"output_tokens_details\": {"
+                - generic [ref=e1503]: "\"reasoning_tokens\": 0"
+                - generic [ref=e1504]: "},"
+                - generic [ref=e1505]: "\"total_tokens\": 168"
+                - generic [ref=e1506]: "}"
+                - generic [ref=e1507]: "}"
+                - generic [ref=e1508]: "}"
+            - heading "Navigate to header response.failed" [level=3] [ref=e1509]:
+              - link "Navigate to header" [ref=e1510] [cursor=pointer]:
+                - /url: "#response-failed"
+                - img [ref=e1512]
+              - generic [ref=e1514] [cursor=pointer]: response.failed
+            - generic [ref=e1515]: Sent when the response generation fails due to an error.
+            - generic [ref=e1516]:
+              - generic [ref=e1517]:
+                - generic [ref=e1518]:
+                  - button "Copy the contents from the code block" [ref=e1519] [cursor=pointer]:
+                    - img [ref=e1520]
+                  - generic [ref=e1523]: Copy
+                - generic [ref=e1524]:
+                  - button "Ask AI" [ref=e1525] [cursor=pointer]:
+                    - img [ref=e1526]
+                  - generic [ref=e1529]: Ask AI
+              - code [ref=e1533]:
+                - generic [ref=e1534]: "{"
+                - generic [ref=e1535]: "\"type\": \"response.failed\","
+                - generic [ref=e1536]: "\"sequence_number\": 5,"
+                - generic [ref=e1537]: "\"response\": {"
+                - generic [ref=e1538]: "\"id\": \"resp_abc123\","
+                - generic [ref=e1539]: "\"object\": \"response\","
+                - generic [ref=e1540]: "\"created_at\": 1702934400,"
+                - generic [ref=e1541]: "\"status\": \"failed\","
+                - generic [ref=e1542]: "\"model\": \"openai/gpt-4o\","
+                - generic [ref=e1543]: "\"output\": [...],"
+                - generic [ref=e1544]: "\"error\": {"
+                - generic [ref=e1545]: "\"code\": \"provider_error\","
+                - generic [ref=e1546]: "\"message\": \"Provider openai/gpt-4o became unavailable\""
+                - generic [ref=e1547]: "},"
+                - generic [ref=e1548]: "\"usage\": {"
+                - generic [ref=e1549]: "\"input_tokens\": 12,"
+                - generic [ref=e1550]: "\"input_tokens_details\": {"
+                - generic [ref=e1551]: "\"cached_tokens\": 0"
+                - generic [ref=e1552]: "},"
+                - generic [ref=e1553]: "\"output_tokens\": 45,"
+                - generic [ref=e1554]: "\"output_tokens_details\": {"
+                - generic [ref=e1555]: "\"reasoning_tokens\": 0"
+                - generic [ref=e1556]: "},"
+                - generic [ref=e1557]: "\"total_tokens\": 57"
+                - generic [ref=e1558]: "}"
+                - generic [ref=e1559]: "}"
+                - generic [ref=e1560]: "}"
+            - heading "Navigate to header response.incomplete" [level=3] [ref=e1561]:
+              - link "Navigate to header" [ref=e1562] [cursor=pointer]:
+                - /url: "#response-incomplete"
+                - img [ref=e1564]
+              - generic [ref=e1566] [cursor=pointer]: response.incomplete
+            - generic [ref=e1567]: Sent when the response generation stops before completion (e.g., due to token limits or content filters).
+            - generic [ref=e1568]:
+              - generic [ref=e1569]:
+                - generic [ref=e1570]:
+                  - button "Copy the contents from the code block" [ref=e1571] [cursor=pointer]:
+                    - img [ref=e1572]
+                  - generic [ref=e1575]: Copy
+                - generic [ref=e1576]:
+                  - button "Ask AI" [ref=e1577] [cursor=pointer]:
+                    - img [ref=e1578]
+                  - generic [ref=e1581]: Ask AI
+              - code [ref=e1585]:
+                - generic [ref=e1586]: "{"
+                - generic [ref=e1587]: "\"type\": \"response.incomplete\","
+                - generic [ref=e1588]: "\"sequence_number\": 8,"
+                - generic [ref=e1589]: "\"response\": {"
+                - generic [ref=e1590]: "\"id\": \"resp_abc123\","
+                - generic [ref=e1591]: "\"object\": \"response\","
+                - generic [ref=e1592]: "\"created_at\": 1702934400,"
+                - generic [ref=e1593]: "\"status\": \"incomplete\","
+                - generic [ref=e1594]: "\"model\": \"openai/gpt-4o\","
+                - generic [ref=e1595]: "\"output\": [...],"
+                - generic [ref=e1596]: "\"incomplete_details\": {"
+                - generic [ref=e1597]: "\"reason\": \"max_output_tokens\""
+                - generic [ref=e1598]: "},"
+                - generic [ref=e1599]: "\"usage\": {"
+                - generic [ref=e1600]: "\"input_tokens\": 12,"
+                - generic [ref=e1601]: "\"input_tokens_details\": {"
+                - generic [ref=e1602]: "\"cached_tokens\": 0"
+                - generic [ref=e1603]: "},"
+                - generic [ref=e1604]: "\"output_tokens\": 1000,"
+                - generic [ref=e1605]: "\"output_tokens_details\": {"
+                - generic [ref=e1606]: "\"reasoning_tokens\": 0"
+                - generic [ref=e1607]: "},"
+                - generic [ref=e1608]: "\"total_tokens\": 1012"
+                - generic [ref=e1609]: "}"
+                - generic [ref=e1610]: "}"
+                - generic [ref=e1611]: "}"
+            - heading "Navigate to header error" [level=3] [ref=e1612]:
+              - link "Navigate to header" [ref=e1613] [cursor=pointer]:
+                - /url: "#error"
+                - img [ref=e1615]
+              - generic [ref=e1617] [cursor=pointer]: error
+            - generic [ref=e1618]: Sent when an error occurs during streaming.
+            - generic [ref=e1619]:
+              - generic [ref=e1620]:
+                - generic [ref=e1621]:
+                  - button "Copy the contents from the code block" [ref=e1622] [cursor=pointer]:
+                    - img [ref=e1623]
+                  - generic [ref=e1626]: Copy
+                - generic [ref=e1627]:
+                  - button "Ask AI" [ref=e1628] [cursor=pointer]:
+                    - img [ref=e1629]
+                  - generic [ref=e1632]: Ask AI
+              - code [ref=e1636]:
+                - generic [ref=e1637]: "{"
+                - generic [ref=e1638]: "\"type\": \"error\","
+                - generic [ref=e1639]: "\"sequence_number\": 5,"
+                - generic [ref=e1640]: "\"code\": \"provider_error\","
+                - generic [ref=e1641]: "\"message\": \"Provider openai/gpt-4o became unavailable\","
+                - generic [ref=e1642]: "\"param\": null"
+                - generic [ref=e1643]: "}"
+            - heading "Navigate to header Reasoning Model Events" [level=3] [ref=e1644]:
+              - link "Navigate to header" [ref=e1645] [cursor=pointer]:
+                - /url: "#reasoning-model-events"
+                - img [ref=e1647]
+              - generic [ref=e1649] [cursor=pointer]: Reasoning Model Events
+            - generic [ref=e1650]: "For models with reasoning capabilities (e.g., o1, command-a-reasoning), additional event types are emitted:"
+            - generic [ref=e1651]:
+              - strong [ref=e1652]: response.reasoning_summary_part.added
+              - text: "- Signals the start of a new reasoning summary part"
+              - strong [ref=e1653]: response.reasoning_summary_part.done
+              - text: "- Signals the completion of a reasoning summary part"
+              - strong [ref=e1654]: response.reasoning_summary_text.delta
+              - text: "- Incremental reasoning summary text"
+              - strong [ref=e1655]: response.reasoning_summary_text.done
+              - text: "- Completed reasoning summary"
+              - strong [ref=e1656]: response.reasoning_text.delta
+              - text: "- Incremental detailed reasoning text"
+              - strong [ref=e1657]: response.reasoning_text.done
+              - text: "- Completed detailed reasoning"
+            - strong [ref=e1659]: "Example reasoning summary part event:"
+            - generic [ref=e1660]:
+              - generic [ref=e1661]:
+                - generic [ref=e1662]:
+                  - button "Copy the contents from the code block" [ref=e1663] [cursor=pointer]:
+                    - img [ref=e1664]
+                  - generic [ref=e1667]: Copy
+                - generic [ref=e1668]:
+                  - button "Ask AI" [ref=e1669] [cursor=pointer]:
+                    - img [ref=e1670]
+                  - generic [ref=e1673]: Ask AI
+              - code [ref=e1677]:
+                - generic [ref=e1678]: "{"
+                - generic [ref=e1679]: "\"type\": \"response.reasoning_summary_part.added\","
+                - generic [ref=e1680]: "\"sequence_number\": 4,"
+                - generic [ref=e1681]: "\"output_index\": 0,"
+                - generic [ref=e1682]: "\"summary_index\": 0,"
+                - generic [ref=e1683]: "\"item_id\": \"reason_xyz123\","
+                - generic [ref=e1684]: "\"part\": {"
+                - generic [ref=e1685]: "\"type\": \"summary_text\","
+                - generic [ref=e1686]: "\"text\": \"\""
+                - generic [ref=e1687]: "}"
+                - generic [ref=e1688]: "}"
+            - strong [ref=e1690]: "Example reasoning summary text delta:"
+            - generic [ref=e1691]:
+              - generic [ref=e1692]:
+                - generic [ref=e1693]:
+                  - button "Copy the contents from the code block" [ref=e1694] [cursor=pointer]:
+                    - img [ref=e1695]
+                  - generic [ref=e1698]: Copy
+                - generic [ref=e1699]:
+                  - button "Ask AI" [ref=e1700] [cursor=pointer]:
+                    - img [ref=e1701]
+                  - generic [ref=e1704]: Ask AI
+              - code [ref=e1708]:
+                - generic [ref=e1709]: "{"
+                - generic [ref=e1710]: "\"type\": \"response.reasoning_summary_text.delta\","
+                - generic [ref=e1711]: "\"sequence_number\": 5,"
+                - generic [ref=e1712]: "\"output_index\": 0,"
+                - generic [ref=e1713]: "\"summary_index\": 0,"
+                - generic [ref=e1714]: "\"item_id\": \"reason_xyz123\","
+                - generic [ref=e1715]: "\"delta\": \"Analyzing the problem\""
+                - generic [ref=e1716]: "}"
+            - heading "Navigate to header Tool Calling Events" [level=3] [ref=e1717]:
+              - link "Navigate to header" [ref=e1718] [cursor=pointer]:
+                - /url: "#tool-calling-events"
+                - img [ref=e1720]
+              - generic [ref=e1722] [cursor=pointer]: Tool Calling Events
+            - generic [ref=e1723]: "When the model calls a tool, you’ll receive these events:"
+            - list [ref=e1724]:
+              - listitem [ref=e1725]:
+                - code [ref=e1726]: response.function_call_arguments.delta
+                - text: "- Incremental tool arguments (streaming)"
+              - listitem [ref=e1727]:
+                - code [ref=e1728]: response.function_call_arguments.done
+                - text: "- Complete tool call with final arguments"
+            - strong [ref=e1730]: "Example tool calling event:"
+            - generic [ref=e1731]:
+              - generic [ref=e1732]:
+                - generic [ref=e1733]:
+                  - button "Copy the contents from the code block" [ref=e1734] [cursor=pointer]:
+                    - img [ref=e1735]
+                  - generic [ref=e1738]: Copy
+                - generic [ref=e1739]:
+                  - button "Ask AI" [ref=e1740] [cursor=pointer]:
+                    - img [ref=e1741]
+                  - generic [ref=e1744]: Ask AI
+              - code [ref=e1748]:
+                - generic [ref=e1749]: "{"
+                - generic [ref=e1750]: "\"type\": \"response.function_call_arguments.delta\","
+                - generic [ref=e1751]: "\"sequence_number\": 5,"
+                - generic [ref=e1752]: "\"item_id\": \"func_xyz789\","
+                - generic [ref=e1753]: "\"output_index\": 0,"
+                - generic [ref=e1754]: "\"call_id\": \"call_abc123\","
+                - generic [ref=e1755]: "\"delta\": \"{\\\"location\\\": \\\"San\""
+                - generic [ref=e1756]: "}"
+            - generic [ref=e1757]:
+              - text: See
+              - link "Tool Calling" [ref=e1758] [cursor=pointer]:
+                - /url: /api-reference/endpoint/tool-calling
+              - text: for complete streaming examples.
+            - heading "Navigate to header Complete Stream Example" [level=2] [ref=e1759]:
+              - link "Navigate to header" [ref=e1760] [cursor=pointer]:
+                - /url: "#complete-stream-example"
+                - img [ref=e1762]
+              - generic [ref=e1764] [cursor=pointer]: Complete Stream Example
+            - generic [ref=e1765]: "Here’s a full example showing all events in order:"
+            - generic [ref=e1766]:
+              - generic [ref=e1767]:
+                - generic [ref=e1768]:
+                  - button "Copy the contents from the code block" [ref=e1769] [cursor=pointer]:
+                    - img [ref=e1770]
+                  - generic [ref=e1773]: Copy
+                - generic [ref=e1774]:
+                  - button "Ask AI" [ref=e1775] [cursor=pointer]:
+                    - img [ref=e1776]
+                  - generic [ref=e1779]: Ask AI
+              - code [ref=e1783]:
+                - generic [ref=e1784]: "event: response.created"
+                - generic [ref=e1785]: "data: {\"type\":\"response.created\",\"sequence_number\":0,\"response\":{\"id\":\"resp_abc123\",\"status\":\"in_progress\"}}"
+                - generic [ref=e1786]: "event: response.output_item.added"
+                - generic [ref=e1787]: "data: {\"type\":\"response.output_item.added\",\"sequence_number\":1,\"output_index\":0,\"item\":{\"type\":\"message\",\"id\":\"msg_xyz789\",\"status\":\"in_progress\",\"role\":\"assistant\",\"content\":[]}}"
+                - generic [ref=e1788]: "event: response.content_part.added"
+                - generic [ref=e1789]: "data: {\"type\":\"response.content_part.added\",\"sequence_number\":2,\"output_index\":0,\"content_index\":0,\"item_id\":\"msg_xyz789\",\"part\":{\"type\":\"output_text\",\"text\":\"\"}}"
+                - generic [ref=e1790]: "event: response.output_text.delta"
+                - generic [ref=e1791]: "data: {\"type\":\"response.output_text.delta\",\"sequence_number\":3,\"output_index\":0,\"content_index\":0,\"item_id\":\"msg_xyz789\",\"delta\":\"Once\"}"
+                - generic [ref=e1792]: "event: response.output_text.delta"
+                - generic [ref=e1793]: "data: {\"type\":\"response.output_text.delta\",\"sequence_number\":4,\"output_index\":0,\"content_index\":0,\"item_id\":\"msg_xyz789\",\"delta\":\" upon\"}"
+                - generic [ref=e1794]: "event: response.output_text.delta"
+                - generic [ref=e1795]: "data: {\"type\":\"response.output_text.delta\",\"sequence_number\":5,\"output_index\":0,\"content_index\":0,\"item_id\":\"msg_xyz789\",\"delta\":\" a\"}"
+                - generic [ref=e1796]: "event: response.output_text.delta"
+                - generic [ref=e1797]: "data: {\"type\":\"response.output_text.delta\",\"sequence_number\":6,\"output_index\":0,\"content_index\":0,\"item_id\":\"msg_xyz789\",\"delta\":\" time\"}"
+                - generic [ref=e1798]: "event: response.output_text.done"
+                - generic [ref=e1799]: "data: {\"type\":\"response.output_text.done\",\"sequence_number\":7,\"output_index\":0,\"content_index\":0,\"item_id\":\"msg_xyz789\",\"text\":\"Once upon a time\"}"
+                - generic [ref=e1800]: "event: response.content_part.done"
+                - generic [ref=e1801]: "data: {\"type\":\"response.content_part.done\",\"sequence_number\":8,\"output_index\":0,\"content_index\":0,\"item_id\":\"msg_xyz789\"}"
+                - generic [ref=e1802]: "event: response.output_item.done"
+                - generic [ref=e1803]: "data: {\"type\":\"response.output_item.done\",\"sequence_number\":9,\"output_index\":0,\"item\":{\"type\":\"message\",\"id\":\"msg_xyz789\",\"status\":\"completed\"}}"
+                - generic [ref=e1804]: "event: response.completed"
+                - generic [ref=e1805]: "data: {\"type\":\"response.completed\",\"sequence_number\":10,\"response\":{\"id\":\"resp_abc123\",\"status\":\"completed\",\"usage\":{\"input_tokens\":8,\"output_tokens\":4,\"total_tokens\":12}}}"
+            - heading "Navigate to header Client Disconnect Handling" [level=2] [ref=e1806]:
+              - link "Navigate to header" [ref=e1807] [cursor=pointer]:
+                - /url: "#client-disconnect-handling"
+                - img [ref=e1809]
+              - generic [ref=e1811] [cursor=pointer]: Client Disconnect Handling
+            - generic [ref=e1812]: "The API automatically detects when clients disconnect and aborts the request:"
+            - list [ref=e1813]:
+              - listitem [ref=e1814]: No additional charges for tokens after disconnect
+              - listitem [ref=e1815]: Resources are immediately freed
+              - listitem [ref=e1816]: Generation stops as soon as disconnect is detected
+            - generic [ref=e1817]:
+              - img "Info" [ref=e1819]
+              - generic [ref=e1822]: Client disconnects are handled gracefully. You will only be charged for tokens generated before the disconnect.
+            - heading "Navigate to header Error Handling in Streams" [level=2] [ref=e1823]:
+              - link "Navigate to header" [ref=e1824] [cursor=pointer]:
+                - /url: "#error-handling-in-streams"
+                - img [ref=e1826]
+              - generic [ref=e1828] [cursor=pointer]: Error Handling in Streams
+            - generic [ref=e1829]: "Errors during streaming are sent as special error events:"
+            - generic [ref=e1830]:
+              - generic [ref=e1831]:
+                - generic [ref=e1832]:
+                  - button "Copy the contents from the code block" [ref=e1833] [cursor=pointer]:
+                    - img [ref=e1834]
+                  - generic [ref=e1837]: Copy
+                - generic [ref=e1838]:
+                  - button "Ask AI" [ref=e1839] [cursor=pointer]:
+                    - img [ref=e1840]
+                  - generic [ref=e1843]: Ask AI
+              - code [ref=e1847]:
+                - generic [ref=e1848]: "{"
+                - generic [ref=e1849]: "\"type\": \"error\","
+                - generic [ref=e1850]: "\"sequence_number\": 5,"
+                - generic [ref=e1851]: "\"code\": \"provider_error\","
+                - generic [ref=e1852]: "\"message\": \"Provider openai/gpt-4o became unavailable\","
+                - generic [ref=e1853]: "\"param\": null"
+                - generic [ref=e1854]: "}"
+            - generic [ref=e1855]: "Common error codes:"
+            - list [ref=e1856]:
+              - listitem [ref=e1857]:
+                - code [ref=e1858]: provider_error
+                - text: ": The upstream provider failed"
+              - listitem [ref=e1859]:
+                - code [ref=e1860]: rate_limit_error
+                - text: ": Rate limit exceeded"
+              - listitem [ref=e1861]:
+                - code [ref=e1862]: insufficient_credits
+                - text: ": Not enough credits to complete"
+            - heading "Navigate to header Best Practices" [level=2] [ref=e1863]:
+              - link "Navigate to header" [ref=e1864] [cursor=pointer]:
+                - /url: "#best-practices"
+                - img [ref=e1866]
+              - generic [ref=e1868] [cursor=pointer]: Best Practices
+            - generic [ref=e1869]:
+              - group [ref=e1870]:
+                - generic "Buffer partial chunks" [ref=e1871] [cursor=pointer]:
+                  - img [ref=e1873]
+                  - img [ref=e1875]
+                  - paragraph [ref=e1877]: Buffer partial chunks
+              - group [ref=e1878]:
+                - generic "Handle reconnection" [ref=e1879] [cursor=pointer]:
+                  - img [ref=e1881]
+                  - img [ref=e1883]
+                  - paragraph [ref=e1885]: Handle reconnection
+              - group [ref=e1886]:
+                - generic "Display content incrementally" [ref=e1887] [cursor=pointer]:
+                  - img [ref=e1889]
+                  - img [ref=e1891]
+                  - paragraph [ref=e1893]: Display content incrementally
+              - group [ref=e1894]:
+                - generic "Set timeouts" [ref=e1895] [cursor=pointer]:
+                  - img [ref=e1897]
+                  - img [ref=e1899]
+                  - paragraph [ref=e1901]: Set timeouts
+              - group [ref=e1902]:
+                - generic "Monitor token usage" [ref=e1903] [cursor=pointer]:
+                  - img [ref=e1905]
+                  - img [ref=e1907]
+                  - paragraph [ref=e1909]: Monitor token usage
+            - heading "Navigate to header Framework Examples" [level=2] [ref=e1910]:
+              - link "Navigate to header" [ref=e1911] [cursor=pointer]:
+                - /url: "#framework-examples"
+                - img [ref=e1913]
+              - generic [ref=e1915] [cursor=pointer]: Framework Examples
+            - generic [ref=e1916]:
+              - group [ref=e1917]:
+                - generic "React" [ref=e1918] [cursor=pointer]:
+                  - img [ref=e1920]
+                  - img [ref=e1922]
+                  - paragraph [ref=e1924]: React
+              - group [ref=e1925]:
+                - generic "Express.js (Server-Side)" [ref=e1926] [cursor=pointer]:
+                  - img [ref=e1928]
+                  - img [ref=e1930]
+                  - paragraph [ref=e1932]: Express.js (Server-Side)
+              - group [ref=e1933]:
+                - generic "FastAPI (Python)" [ref=e1934] [cursor=pointer]:
+                  - img [ref=e1936]
+                  - img [ref=e1938]
+                  - paragraph [ref=e1940]: FastAPI (Python)
+            - heading "Navigate to header Related Documentation" [level=2] [ref=e1941]:
+              - link "Navigate to header" [ref=e1942] [cursor=pointer]:
+                - /url: "#related-documentation"
+                - img [ref=e1944]
+              - generic [ref=e1946] [cursor=pointer]: Related Documentation
+            - generic [ref=e1947]:
+              - link "Create Response Main API endpoint documentation" [ref=e1948] [cursor=pointer]:
+                - /url: /api-reference/endpoint/create-response
+                - generic [ref=e1949]:
+                  - img [ref=e1951]
+                  - generic [ref=e1952]:
+                    - heading "Create Response" [level=2] [ref=e1953]
+                    - generic [ref=e1955]: Main API endpoint documentation
+              - link "Error Handling Handle errors in streams" [ref=e1956] [cursor=pointer]:
+                - /url: /api-reference/endpoint/errors
+                - generic [ref=e1957]:
+                  - img [ref=e1959]
+                  - generic [ref=e1960]:
+                    - heading "Error Handling" [level=2] [ref=e1961]
+                    - generic [ref=e1963]: Handle errors in streams
+          - generic [ref=e1049]:
+            - paragraph [ref=e1050]: Was this page helpful?
+            - generic [ref=e1052]:
+              - button "Yes" [ref=e1053] [cursor=pointer]:
+                - img [ref=e1054]
+                - generic [ref=e1056]: "Yes"
+              - button "No" [ref=e1057] [cursor=pointer]:
+                - img [ref=e1058]
+                - generic [ref=e1060]: "No"
+          - generic [ref=e1061]:
+            - link "Health Check" [ref=e1062] [cursor=pointer]:
+              - /url: /api-reference/endpoint/health
+              - img [ref=e1063]
+              - generic [ref=e1065]: Health Check
+            - link "Auto Routing" [ref=e1066] [cursor=pointer]:
+              - /url: /api-reference/endpoint/auto-routing
+              - generic [ref=e1067]: Auto Routing
+              - img [ref=e1068]
+          - generic [ref=e1071]:
+            - textbox "Ask a question..." [ref=e1072]
+            - generic: Ctrl+I
+            - button "Send message" [disabled] [ref=e1073]:
+              - img [ref=e1074]
+          - contentinfo [ref=e1076]:
+            - link "Powered by" [ref=e1079] [cursor=pointer]:
+              - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=concentrateai-8b9c0315
+              - generic [ref=e1080]: Powered by
+              - img [ref=e1081]
+  - alert [ref=e1964]

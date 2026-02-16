@@ -1,0 +1,538 @@
+# Prompt Caching
+> Source: https://docs.concentrate.ai/api-reference/endpoint/prompt-caching
+> Fetched: 2026-02-16 via Playwright browser_snapshot (Claude Code)
+> Method: Full accessibility tree capture — verbatim page content
+
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - link "concentrate home page light logo" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e12]: concentrate home page
+          - img "light logo" [ref=e13]
+        - generic [ref=e15]:
+          - button "Open search" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]:
+              - img [ref=e18]
+              - generic [ref=e21]: Search...
+            - generic [ref=e22]: Ctrl K
+          - button "Toggle assistant panel" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - list
+          - generic [ref=e29]:
+            - heading "API documentation" [level=5] [ref=e31]
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "API Introduction" [ref=e34] [cursor=pointer]:
+                  - /url: /api-reference/introduction
+                  - generic [ref=e36]: API Introduction
+          - generic [ref=e37]:
+            - heading "Responses" [level=5] [ref=e39]
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "POST Create Response" [ref=e42] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-response
+                  - generic [ref=e44]: POST
+                  - generic [ref=e46]: Create Response
+          - generic [ref=e47]:
+            - heading "Messages (Beta)" [level=5] [ref=e49]
+            - list [ref=e50]:
+              - listitem [ref=e51]:
+                - link "POST Create Message" [ref=e52] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-message
+                  - generic [ref=e54]: POST
+                  - generic [ref=e56]: Create Message
+          - generic [ref=e57]:
+            - heading "Models" [level=5] [ref=e59]
+            - list [ref=e60]:
+              - listitem [ref=e61]:
+                - link "GET List Models" [ref=e62] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-models
+                  - generic [ref=e64]: GET
+                  - generic [ref=e66]: List Models
+              - listitem [ref=e67]:
+                - link "GET List Providers" [ref=e68] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-providers
+                  - generic [ref=e70]: GET
+                  - generic [ref=e72]: List Providers
+              - listitem [ref=e73]:
+                - link "GET Get Model" [ref=e74] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-model
+                  - generic [ref=e76]: GET
+                  - generic [ref=e78]: Get Model
+              - listitem [ref=e79]:
+                - link "GET Get Provider Info" [ref=e80] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-provider-info
+                  - generic [ref=e82]: GET
+                  - generic [ref=e84]: Get Provider Info
+          - generic [ref=e85]:
+            - heading "Utilities" [level=5] [ref=e87]
+            - list [ref=e88]:
+              - listitem [ref=e89]:
+                - link "GET Health Check" [ref=e90] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/health
+                  - generic [ref=e92]: GET
+                  - generic [ref=e94]: Health Check
+          - generic [ref=e95]:
+            - heading "Features" [level=5] [ref=e97]
+            - list [ref=e98]:
+              - listitem [ref=e99]:
+                - link "Streaming Responses" [ref=e100] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/streaming
+                  - generic [ref=e102]: Streaming Responses
+              - listitem [ref=e103]:
+                - link "Auto Routing" [ref=e104] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/auto-routing
+                  - generic [ref=e106]: Auto Routing
+              - listitem [ref=e107]:
+                - link "Tool Calling" [ref=e108] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/tool-calling
+                  - generic [ref=e110]: Tool Calling
+              - listitem [ref=e111]:
+                - link "Web Search" [ref=e112] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/web-search
+                  - generic [ref=e114]: Web Search
+          - generic [ref=e115]:
+            - heading "Reference" [level=5] [ref=e117]
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - link "Request Parameters Reference" [ref=e120] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/request-parameters
+                  - generic [ref=e122]: Request Parameters Reference
+              - listitem [ref=e123]:
+                - link "Prompt Caching" [ref=e124] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/prompt-caching
+                  - generic [ref=e126]: Prompt Caching
+              - listitem [ref=e127]:
+                - link "Error Handling" [ref=e128] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/errors
+                  - generic [ref=e130]: Error Handling
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e134]:
+            - link "API reference" [ref=e135] [cursor=pointer]:
+              - /url: /api-reference/introduction
+              - text: API reference
+            - link "Guides" [ref=e137] [cursor=pointer]:
+              - /url: /getting-started/quickstart
+              - text: Guides
+          - generic [ref=e139]:
+            - listitem [ref=e140]:
+              - link "Support" [ref=e141] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+            - listitem [ref=e142]:
+              - link "Dashboard" [ref=e143] [cursor=pointer]:
+                - /url: https://app.concentrate.ai
+                - generic [ref=e144]:
+                  - generic [ref=e145]: Dashboard
+                  - img [ref=e146]
+          - button "Toggle dark mode" [ref=e149] [cursor=pointer]:
+            - img [ref=e150]
+        - generic [ref=e157]:
+          - banner [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: Reference
+              - generic [ref=e161]:
+                - heading "Prompt Caching" [level=1] [ref=e162]
+                - generic [ref=e163]:
+                  - button "Copy page" [ref=e164] [cursor=pointer]:
+                    - generic [ref=e165]:
+                      - img [ref=e166]
+                      - generic [ref=e169]: Copy page
+                  - button "More actions" [ref=e170] [cursor=pointer]:
+                    - img [ref=e171]
+            - paragraph [ref=e632]: Reduce costs by caching frequently used prompt prefixes
+          - generic [ref=e175]:
+            - heading "Navigate to header Overview" [level=2] [ref=e633]:
+              - link "Navigate to header" [ref=e634] [cursor=pointer]:
+                - /url: "#overview"
+                - img [ref=e636]
+              - generic [ref=e638] [cursor=pointer]: Overview
+            - generic [ref=e639]: Prompt caching allows you to cache portions of your prompts that are reused across multiple requests, significantly reducing costs and improving performance. This is especially valuable for applications with large system prompts, extensive context, or documentation.
+            - generic [ref=e640]:
+              - img "Info" [ref=e642]
+              - generic [ref=e644]:
+                - generic [ref=e645]:
+                  - strong [ref=e646]: Availability
+                  - text: ": Currently supported by:"
+                - list [ref=e647]:
+                  - listitem [ref=e648]:
+                    - strong [ref=e649]: Anthropic
+                    - text: provider (Claude models via Anthropic API)
+                  - listitem [ref=e650]:
+                    - strong [ref=e651]: AWS Bedrock
+                    - text: provider (Claude models via AWS Bedrock)
+                - generic [ref=e652]: All other providers will ignore cache control settings.
+            - heading "Navigate to header How It Works" [level=2] [ref=e653]:
+              - link "Navigate to header" [ref=e654] [cursor=pointer]:
+                - /url: "#how-it-works"
+                - img [ref=e656]
+              - generic [ref=e658] [cursor=pointer]: How It Works
+            - generic [ref=e659]: "Prompt caching works by storing specific message content and reusing it across requests:"
+            - list [ref=e660]:
+              - listitem [ref=e661]:
+                - strong [ref=e662]: First Request
+                - text: ": You mark messages with"
+                - code [ref=e663]: cache_control
+                - text: settings
+              - listitem [ref=e664]:
+                - strong [ref=e665]: Cache Write
+                - text: ": The API writes those messages to a cache"
+              - listitem [ref=e666]:
+                - strong [ref=e667]: Subsequent Requests
+                - text: ": Identical cached content is retrieved instead of processed"
+              - listitem [ref=e668]:
+                - strong [ref=e669]: Cache Expiry
+                - text: ": Cache expires after the specified time-to-live (TTL)"
+            - heading "Navigate to header Benefits" [level=2] [ref=e670]:
+              - link "Navigate to header" [ref=e671] [cursor=pointer]:
+                - /url: "#benefits"
+                - img [ref=e673]
+              - generic [ref=e675] [cursor=pointer]: Benefits
+            - generic [ref=e676]:
+              - group [ref=e677]:
+                - generic "Cost Savings" [ref=e678] [cursor=pointer]:
+                  - img [ref=e680]
+                  - img [ref=e682]
+                  - paragraph [ref=e684]: Cost Savings
+              - group [ref=e685]:
+                - generic "Improved Performance" [ref=e686] [cursor=pointer]:
+                  - img [ref=e688]
+                  - img [ref=e690]
+                  - paragraph [ref=e692]: Improved Performance
+              - group [ref=e693]:
+                - generic "Consistent Context" [ref=e694] [cursor=pointer]:
+                  - img [ref=e696]
+                  - img [ref=e698]
+                  - paragraph [ref=e700]: Consistent Context
+            - heading "Navigate to header Basic Usage" [level=2] [ref=e701]:
+              - link "Navigate to header" [ref=e702] [cursor=pointer]:
+                - /url: "#basic-usage"
+                - img [ref=e704]
+              - generic [ref=e706] [cursor=pointer]: Basic Usage
+            - generic [ref=e707]:
+              - text: Add
+              - code [ref=e708]: cache_control
+              - text: "to any message in your input array:"
+            - generic [ref=e709]:
+              - generic [ref=e710]:
+                - generic [ref=e711]:
+                  - button "Copy the contents from the code block" [ref=e712] [cursor=pointer]:
+                    - img [ref=e713]
+                  - generic [ref=e716]: Copy
+                - generic [ref=e717]:
+                  - button "Ask AI" [ref=e718] [cursor=pointer]:
+                    - img [ref=e719]
+                  - generic [ref=e722]: Ask AI
+              - code [ref=e726]:
+                - generic [ref=e727]: "{"
+                - generic [ref=e728]: "\"model\": \"anthropic/claude-opus-4-5\","
+                - generic [ref=e729]: "\"input\": ["
+                - generic [ref=e730]: "{"
+                - generic [ref=e731]: "\"role\": \"system\","
+                - generic [ref=e732]: "\"content\": \"Very long system prompt with detailed instructions...\","
+                - generic [ref=e733]: "\"cache_control\": {"
+                - generic [ref=e734]: "\"type\": \"ephemeral\","
+                - generic [ref=e735]: "\"ttl\": \"5m\""
+                - generic [ref=e736]: "}"
+                - generic [ref=e737]: "},"
+                - generic [ref=e738]: "{"
+                - generic [ref=e739]: "\"role\": \"user\","
+                - generic [ref=e740]: "\"content\": \"User question here\""
+                - generic [ref=e741]: "}"
+                - generic [ref=e742]: "]"
+                - generic [ref=e743]: "}"
+            - heading "Navigate to header Cache Control Parameters" [level=2] [ref=e744]:
+              - link "Navigate to header" [ref=e745] [cursor=pointer]:
+                - /url: "#cache-control-parameters"
+                - img [ref=e747]
+              - generic [ref=e749] [cursor=pointer]: Cache Control Parameters
+            - generic [ref=e750]:
+              - generic [ref=e753]:
+                - link "Navigate to header" [ref=e754] [cursor=pointer]:
+                  - /url: "#param-cache-control-type"
+                  - img [ref=e756]
+                - generic [ref=e758] [cursor=pointer]: cache_control.type
+                - generic [ref=e759]:
+                  - generic [ref=e760]: string
+                  - text: required
+              - generic [ref=e761]:
+                - generic [ref=e762]: Type of cache to use.
+                - generic [ref=e763]:
+                  - text: Currently only
+                  - code [ref=e764]: "\"ephemeral\""
+                  - text: "is supported, which means:"
+                - list [ref=e765]:
+                  - listitem [ref=e766]: Cache is temporary and will expire
+                  - listitem [ref=e767]: Not persisted across API restarts
+                  - listitem [ref=e768]: Shared across your API key’s requests
+            - generic [ref=e769]:
+              - generic [ref=e772]:
+                - link "Navigate to header" [ref=e773] [cursor=pointer]:
+                  - /url: "#param-cache-control-ttl"
+                  - img [ref=e775]
+                - generic [ref=e777] [cursor=pointer]: cache_control.ttl
+                - generic [ref=e778]:
+                  - generic [ref=e779]: string
+                  - text: required
+              - generic [ref=e780]:
+                - generic [ref=e781]: Time-to-live for the cached content.
+                - generic [ref=e782]:
+                  - text: "Options:"
+                  - code [ref=e783]: "\"5m\""
+                  - text: (5 minutes) or
+                  - code [ref=e784]: "\"1h\""
+                  - text: (1 hour)
+                - generic [ref=e785]:
+                  - text: Use
+                  - code [ref=e786]: "\"5m\""
+                  - text: for rapid successive requests and real-time conversations (e.g., chat applications).
+                - generic [ref=e787]:
+                  - text: Use
+                  - code [ref=e788]: "\"1h\""
+                  - text: for regular usage patterns and batch processing (e.g., document analysis sessions).
+                - generic [ref=e789]: After the TTL expires, the next request will perform a cache write again.
+            - heading "Navigate to header Cost Analysis" [level=2] [ref=e790]:
+              - link "Navigate to header" [ref=e791] [cursor=pointer]:
+                - /url: "#cost-analysis"
+                - img [ref=e793]
+              - generic [ref=e795] [cursor=pointer]: Cost Analysis
+            - heading "Navigate to header Pricing Comparison" [level=3] [ref=e796]:
+              - link "Navigate to header" [ref=e797] [cursor=pointer]:
+                - /url: "#pricing-comparison"
+                - img [ref=e799]
+              - generic [ref=e801] [cursor=pointer]: Pricing Comparison
+            - generic [ref=e802]: "For Anthropic Claude models, typical pricing is:"
+            - table [ref=e805]:
+              - rowgroup [ref=e806]:
+                - row "Token Type Relative Cost Example (per 1M tokens)" [ref=e807]:
+                  - columnheader "Token Type" [ref=e808]
+                  - columnheader "Relative Cost" [ref=e809]
+                  - columnheader "Example (per 1M tokens)" [ref=e810]
+              - rowgroup [ref=e811]:
+                - row "Regular Input 1x $3.00" [ref=e812]:
+                  - cell "Regular Input" [ref=e813]
+                  - cell "1x" [ref=e814]
+                  - cell "$3.00" [ref=e815]
+                - row "Cache Write 1.25x $3.75" [ref=e816]:
+                  - cell "Cache Write" [ref=e817]
+                  - cell "1.25x" [ref=e818]
+                  - cell "$3.75" [ref=e819]
+                - row "Cache Read 0.1x $0.30" [ref=e820]:
+                  - cell "Cache Read" [ref=e821]
+                  - cell "0.1x" [ref=e822]
+                  - cell "$0.30" [ref=e823]
+            - generic [ref=e824]:
+              - img "Info" [ref=e826]
+              - generic [ref=e829]:
+                - text: Exact pricing varies by model. Check the
+                - link "Model Fortress page" [ref=e830] [cursor=pointer]:
+                  - /url: https://app.concentrate.ai/model-fortress
+                - text: for current rates.
+            - heading "Navigate to header Advanced Patterns" [level=2] [ref=e831]:
+              - link "Navigate to header" [ref=e832] [cursor=pointer]:
+                - /url: "#advanced-patterns"
+                - img [ref=e834]
+              - generic [ref=e836] [cursor=pointer]: Advanced Patterns
+            - heading "Navigate to header Hybrid Caching" [level=3] [ref=e837]:
+              - link "Navigate to header" [ref=e838] [cursor=pointer]:
+                - /url: "#hybrid-caching"
+                - img [ref=e840]
+              - generic [ref=e842] [cursor=pointer]: Hybrid Caching
+            - generic [ref=e843]: "Cache different parts with different TTLs:"
+            - generic [ref=e844]:
+              - generic [ref=e845]:
+                - generic [ref=e846]:
+                  - button "Copy the contents from the code block" [ref=e847] [cursor=pointer]:
+                    - img [ref=e848]
+                  - generic [ref=e851]: Copy
+                - generic [ref=e852]:
+                  - button "Ask AI" [ref=e853] [cursor=pointer]:
+                    - img [ref=e854]
+                  - generic [ref=e857]: Ask AI
+              - code [ref=e861]:
+                - generic [ref=e862]: "{"
+                - generic [ref=e863]: "\"model\": \"anthropic/claude-opus-4-5\","
+                - generic [ref=e864]: "\"input\": ["
+                - generic [ref=e865]: "{"
+                - generic [ref=e866]: "\"role\": \"system\","
+                - generic [ref=e867]: "\"content\": \"Static company policies...\","
+                - generic [ref=e868]: "\"cache_control\": {"
+                - generic [ref=e869]: "\"type\": \"ephemeral\","
+                - generic [ref=e870]: "\"ttl\": \"1h\" // Long TTL for static content"
+                - generic [ref=e871]: "}"
+                - generic [ref=e872]: "},"
+                - generic [ref=e873]: "{"
+                - generic [ref=e874]: "\"role\": \"user\","
+                - generic [ref=e875]: "\"content\": \"Recent conversation context...\","
+                - generic [ref=e876]: "\"cache_control\": {"
+                - generic [ref=e877]: "\"type\": \"ephemeral\","
+                - generic [ref=e878]: "\"ttl\": \"5m\" // Short TTL for dynamic context"
+                - generic [ref=e879]: "}"
+                - generic [ref=e880]: "},"
+                - generic [ref=e881]: "{"
+                - generic [ref=e882]: "\"role\": \"user\","
+                - generic [ref=e883]: "\"content\": \"Current question\""
+                - generic [ref=e884]: "}"
+                - generic [ref=e885]: "]"
+                - generic [ref=e886]: "}"
+            - heading "Navigate to header Conditional Caching" [level=3] [ref=e887]:
+              - link "Navigate to header" [ref=e888] [cursor=pointer]:
+                - /url: "#conditional-caching"
+                - img [ref=e890]
+              - generic [ref=e892] [cursor=pointer]: Conditional Caching
+            - generic [ref=e893]: "Only cache for specific use cases:"
+            - generic [ref=e894]:
+              - generic [ref=e895]:
+                - generic [ref=e896]:
+                  - button "Copy the contents from the code block" [ref=e897] [cursor=pointer]:
+                    - img [ref=e898]
+                  - generic [ref=e901]: Copy
+                - generic [ref=e902]:
+                  - button "Ask AI" [ref=e903] [cursor=pointer]:
+                    - img [ref=e904]
+                  - generic [ref=e907]: Ask AI
+              - code [ref=e911]:
+                - generic [ref=e912]: "function buildInput(systemPrompt, userMessage, enableCaching) {"
+                - generic [ref=e913]: "const systemMessage = {"
+                - generic [ref=e914]: "role: \"system\","
+                - generic [ref=e915]: "content: systemPrompt,"
+                - generic [ref=e916]: "};"
+                - generic [ref=e917]: // Only add cache_control if beneficial
+                - generic [ref=e918]: "if (enableCaching && systemPrompt.length > 1000) {"
+                - generic [ref=e919]: "systemMessage.cache_control = {"
+                - generic [ref=e920]: "type: \"ephemeral\","
+                - generic [ref=e921]: "ttl: \"1h\","
+                - generic [ref=e922]: "};"
+                - generic [ref=e923]: "}"
+                - generic [ref=e924]: "return [systemMessage, { role: \"user\", content: userMessage }];"
+                - generic [ref=e925]: "}"
+            - heading "Navigate to header Rotating Caches" [level=3] [ref=e926]:
+              - link "Navigate to header" [ref=e927] [cursor=pointer]:
+                - /url: "#rotating-caches"
+                - img [ref=e929]
+              - generic [ref=e931] [cursor=pointer]: Rotating Caches
+            - generic [ref=e932]: "For applications with multiple contexts, rotate caches strategically:"
+            - generic [ref=e933]:
+              - generic [ref=e934]:
+                - generic [ref=e935]:
+                  - button "Copy the contents from the code block" [ref=e936] [cursor=pointer]:
+                    - img [ref=e937]
+                  - generic [ref=e940]: Copy
+                - generic [ref=e941]:
+                  - button "Ask AI" [ref=e942] [cursor=pointer]:
+                    - img [ref=e943]
+                  - generic [ref=e946]: Ask AI
+              - code [ref=e950]:
+                - generic [ref=e951]: "// Example: Customer support with different department contexts"
+                - generic [ref=e952]: const departments = ["sales", "support", "billing"];
+                - generic [ref=e953]: "async function handleCustomerQuery(department, query) {"
+                - generic [ref=e954]: const departmentContext = await loadDepartmentContext(department);
+                - generic [ref=e955]: "return await fetch(\"https://api.concentrate.ai/v1/responses\", {"
+                - generic [ref=e956]: "method: \"POST\","
+                - generic [ref=e957]: "headers: {"
+                - generic [ref=e958]: /* ... */
+                - generic [ref=e959]: "},"
+                - generic [ref=e960]: "body: JSON.stringify({"
+                - generic [ref=e961]: "model: \"anthropic/claude-opus-4-5\","
+                - generic [ref=e962]: "input: ["
+                - generic [ref=e963]: "{"
+                - generic [ref=e964]: "role: \"system\","
+                - generic [ref=e965]: "content: `Department: ${department}\\n\\n${departmentContext}`,"
+                - generic [ref=e966]: "cache_control: {"
+                - generic [ref=e967]: "type: \"ephemeral\","
+                - generic [ref=e968]: "ttl: \"1h\", // Each department gets its own cache"
+                - generic [ref=e969]: "},"
+                - generic [ref=e970]: "},"
+                - generic [ref=e971]: "{"
+                - generic [ref=e972]: "role: \"user\","
+                - generic [ref=e973]: "content: query,"
+                - generic [ref=e974]: "},"
+                - generic [ref=e975]: "],"
+                - generic [ref=e976]: "}),"
+                - generic [ref=e977]: "});"
+                - generic [ref=e978]: "}"
+            - heading "Navigate to header Limitations" [level=2] [ref=e979]:
+              - link "Navigate to header" [ref=e980] [cursor=pointer]:
+                - /url: "#limitations"
+                - img [ref=e982]
+              - generic [ref=e984] [cursor=pointer]: Limitations
+            - generic [ref=e985]:
+              - img "Warning" [ref=e987]
+              - generic [ref=e990]:
+                - strong [ref=e991]: "Current Limitations:"
+                - text: "- Only supported by Anthropic and AWS Bedrock providers (Claude models) - Maximum cache size varies by model - Caches are not guaranteed (infrastructure changes can invalidate) - No cross-user caching (caches are per API key)"
+            - heading "Navigate to header Troubleshooting" [level=2] [ref=e992]:
+              - link "Navigate to header" [ref=e993] [cursor=pointer]:
+                - /url: "#troubleshooting"
+                - img [ref=e995]
+              - generic [ref=e997] [cursor=pointer]: Troubleshooting
+            - generic [ref=e998]:
+              - group [ref=e999]:
+                - generic "Cache not being used" [ref=e1000] [cursor=pointer]:
+                  - img [ref=e1002]
+                  - img [ref=e1004]
+                  - paragraph [ref=e1006]: Cache not being used
+              - group [ref=e1007]:
+                - generic "Higher costs than expected" [ref=e1008] [cursor=pointer]:
+                  - img [ref=e1010]
+                  - img [ref=e1012]
+                  - paragraph [ref=e1014]: Higher costs than expected
+              - group [ref=e1015]:
+                - generic "Unexpected cache behavior" [ref=e1016] [cursor=pointer]:
+                  - img [ref=e1018]
+                  - img [ref=e1020]
+                  - paragraph [ref=e1022]: Unexpected cache behavior
+            - heading "Navigate to header Related Documentation" [level=2] [ref=e1023]:
+              - link "Navigate to header" [ref=e1024] [cursor=pointer]:
+                - /url: "#related-documentation"
+                - img [ref=e1026]
+              - generic [ref=e1028] [cursor=pointer]: Related Documentation
+            - generic [ref=e1029]:
+              - link "Request Parameters Complete parameter reference" [ref=e1030] [cursor=pointer]:
+                - /url: /api-reference/endpoint/request-parameters
+                - generic [ref=e1031]:
+                  - img [ref=e1033]
+                  - generic [ref=e1034]:
+                    - heading "Request Parameters" [level=2] [ref=e1035]
+                    - generic [ref=e1037]: Complete parameter reference
+              - link "Create Response Main endpoint documentation" [ref=e1038] [cursor=pointer]:
+                - /url: /api-reference/endpoint/create-response
+                - generic [ref=e1039]:
+                  - img [ref=e1041]
+                  - generic [ref=e1042]:
+                    - heading "Create Response" [level=2] [ref=e1043]
+                    - generic [ref=e1045]: Main endpoint documentation
+          - generic [ref=e590]:
+            - paragraph [ref=e591]: Was this page helpful?
+            - generic [ref=e593]:
+              - button "Yes" [ref=e594] [cursor=pointer]:
+                - img [ref=e595]
+                - generic [ref=e597]: "Yes"
+              - button "No" [ref=e598] [cursor=pointer]:
+                - img [ref=e599]
+                - generic [ref=e601]: "No"
+          - generic [ref=e602]:
+            - link "Request Parameters Reference" [ref=e603] [cursor=pointer]:
+              - /url: /api-reference/endpoint/request-parameters
+              - img [ref=e604]
+              - generic [ref=e606]: Request Parameters Reference
+            - link "Error Handling" [ref=e607] [cursor=pointer]:
+              - /url: /api-reference/endpoint/errors
+              - generic [ref=e608]: Error Handling
+              - img [ref=e609]
+          - generic [ref=e612]:
+            - textbox "Ask a question..." [ref=e613]
+            - generic: Ctrl+I
+            - button "Send message" [disabled] [ref=e614]:
+              - img [ref=e615]
+          - contentinfo [ref=e617]:
+            - link "Powered by" [ref=e620] [cursor=pointer]:
+              - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=concentrateai-8b9c0315
+              - generic [ref=e621]: Powered by
+              - img [ref=e622]
+  - alert [ref=e1046]

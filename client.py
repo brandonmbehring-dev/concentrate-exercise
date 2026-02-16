@@ -13,6 +13,7 @@ import time
 from typing import Any
 
 import requests
+from requests.exceptions import RequestException
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -21,15 +22,21 @@ load_dotenv()
 # Configuration
 # ---------------------------------------------------------------------------
 
+MAX_RETRIES = 3
+RETRY_STATUSES = {429, 500, 502, 503, 504}
+
 BASE_URL = "https://api.concentrate.ai/v1"
 RESPONSES_URL = f"{BASE_URL}/responses/"
 MODELS_URL = f"{BASE_URL}/models/"
 API_KEY = os.getenv("CONCENTRATE_API_KEY", "")
 
 # Provider-prefixed model identifiers
+# Confirmed via /v1/models/ catalog — run discover.py to verify
 MODELS = {
-    "openai": "openai/gpt-4.1",
-    "anthropic": "anthropic/claude-sonnet-4-5-20250929",
+    "openai": "openai/gpt-5.1",
+    "anthropic": "anthropic/claude-sonnet-4-5",
+    "google": "vertex/gemini-2.5-pro",
+    "xai": "xai/grok-4-1-fast-reasoning",
 }
 
 
@@ -96,29 +103,50 @@ def call_model(
         payload["stream"] = True
 
     start = time.perf_counter()
-    try:
-        resp = requests.post(
-            RESPONSES_URL,
-            headers=_headers(),
-            json=payload,
-            timeout=timeout,
-            stream=stream,
-        )
-        if not stream:
-            elapsed_ms = (time.perf_counter() - start) * 1000
-        else:
-            elapsed_ms = None  # computed after reading stream
-    except requests.RequestException as e:
-        return {
-            "model": model,
-            "text": "",
-            "tool_calls": [],
-            "latency_ms": 0,
-            "status": "error",
-            "stop_reason": None,
-            "error": str(e),
-            "raw_response": None,
-        }
+    resp = None
+
+    for attempt in range(MAX_RETRIES + 1):
+        try:
+            resp = requests.post(
+                RESPONSES_URL,
+                headers=_headers(),
+                json=payload,
+                timeout=timeout,
+                stream=stream,
+            )
+            if resp.status_code in RETRY_STATUSES and attempt < MAX_RETRIES:
+                wait = 2 ** attempt  # 1s, 2s, 4s
+                retry_after = resp.headers.get("Retry-After")
+                if retry_after:
+                    try:
+                        wait = min(int(retry_after), 30)
+                    except ValueError:
+                        pass
+                print(f"  [retry {attempt + 1}/{MAX_RETRIES}] HTTP {resp.status_code}, waiting {wait}s...")
+                time.sleep(wait)
+                continue
+            break
+        except RequestException as e:
+            if attempt < MAX_RETRIES:
+                wait = 2 ** attempt
+                print(f"  [retry {attempt + 1}/{MAX_RETRIES}] {type(e).__name__}, waiting {wait}s...")
+                time.sleep(wait)
+                continue
+            return {
+                "model": model,
+                "text": "",
+                "tool_calls": [],
+                "latency_ms": (time.perf_counter() - start) * 1000,
+                "status": "error",
+                "stop_reason": None,
+                "error": str(e),
+                "raw_response": None,
+            }
+
+    if not stream:
+        elapsed_ms = (time.perf_counter() - start) * 1000
+    else:
+        elapsed_ms = None  # computed after reading stream
 
     if resp.status_code != 200:
         elapsed_ms = elapsed_ms or (time.perf_counter() - start) * 1000

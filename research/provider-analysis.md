@@ -1,14 +1,14 @@
 # Provider Analysis — 4 Providers Selected
 
-## Decision: OpenAI + Anthropic + Google Gemini + DeepSeek
+## Decision: OpenAI + Anthropic + Google Gemini + xAI
 
 ### Models Configuration
 ```python
 MODELS = {
-    "openai": "openai/gpt-5",
-    "anthropic": "anthropic/claude-sonnet-4-5-20250929",
+    "openai": "openai/gpt-5.1",
+    "anthropic": "anthropic/claude-sonnet-4-5",
     "google": "google/gemini-2.5-pro",
-    "deepseek": "deepseek/deepseek-chat",
+    "xai": "xai/grok-4-1-fast-reasoning",
 }
 ```
 
@@ -16,39 +16,39 @@ MODELS = {
 
 ## Provider Profiles
 
-### OpenAI (`openai/gpt-5`)
-- **Role in comparison**: The incumbent / default choice
+### OpenAI (`openai/gpt-5.1`)
+- **Role in comparison**: The incumbent / default choice — Comparator
 - **Strengths**: Best structured output (100% JSON schema compliance natively), strong tool calling, massive ecosystem
-- **Pricing**: Mid-range (~$2-5/M input, $8-15/M output)
-- **Note**: gpt-4.1 RETIRED Feb 13-19. Must use gpt-5 or newer.
+- **Pricing**: $1.25/M input, $10.00/M output
+- **Note**: gpt-4.1 RETIRED Feb 13-19. Using gpt-5.1.
 
-### Anthropic (`anthropic/claude-sonnet-4-5-20250929`)
-- **Role in comparison**: The reasoning/safety leader
+### Anthropic (`anthropic/claude-sonnet-4-5`)
+- **Role in comparison**: The reasoning/safety leader — Planner
 - **Strengths**: Strong reasoning, best at nuanced prompts, prompt caching support
-- **Pricing**: Mid-high (~$3/M input, $15/M output)
+- **Pricing**: $3.00/M input, $15.00/M output
 - **Note**: Only provider (with Bedrock) that supports prompt caching on Concentrate
 
 ### Google Gemini (`google/gemini-2.5-pro`)
-- **Role in comparison**: The capability leader
+- **Role in comparison**: The capability leader — Synthesizer
 - **Strengths**: #1 Chatbot Arena (1439), 1M-2M token context, native multimodal, IMO 2025 gold medal
-- **Weaknesses**: Premium pricing (4.1x more than DeepSeek), limited web search on Concentrate
-- **Pricing**: Premium (~$2/M input, $12/M output)
+- **Weaknesses**: Premium output pricing, limited web search on Concentrate
+- **Pricing**: $1.25/M input, $10.00/M output
 - **Strategic fit**: JD explicitly says "Gemini" — not including it would be an omission
 
-### DeepSeek (`deepseek/deepseek-chat`)
-- **Role in comparison**: The cost disruptor / OSS representative
-- **Strengths**: 20-50x cheaper than GPT o1, open-source (Apache 2.0), strong math/reasoning
-- **Weaknesses**: 128K context (smallest), limited multimodal
-- **Pricing**: ~$0.27-0.55/M input, $1.10-2.19/M output
-- **Strategic fit**: JD says "OSS". Creates the cost-quality spectrum that IS Concentrate's value prop
+### xAI (`xai/grok-4-1-fast-reasoning`)
+- **Role in comparison**: The cost disruptor — Researcher
+- **Strengths**: 75x cheaper input than Anthropic, strong reasoning, fast inference
+- **Weaknesses**: Newer ecosystem, less established tooling
+- **Pricing**: $0.20/M input, $0.50/M output
+- **Strategic fit**: Creates the cost-quality spectrum that IS Concentrate's value prop
 
 ---
 
 ## Decision Matrix
 
-| Criterion | Gemini | DeepSeek | Mistral | Cohere |
-|-----------|--------|----------|---------|--------|
-| JD alignment | **Explicit** | **"OSS"** | Indirect | None |
+| Criterion | Gemini | xAI | Mistral | Cohere |
+|-----------|--------|-----|---------|--------|
+| JD alignment | **Explicit** | Good (cost story) | Indirect | None |
 | Comparison interest | High (capability) | **High (cost)** | Medium | Low |
 | Narrative value | "The Big 3" | "The cost disruptor" | "The OSS coder" | "The RAG specialist" |
 | Writeup material | Good | **Excellent** | OK | Thin |
@@ -60,11 +60,13 @@ MODELS = {
 The 4 providers create a clear spectrum — this IS Concentrate's value proposition:
 
 ```
-DeepSeek (cheapest) → OpenAI (mid) → Anthropic (mid-high) → Gemini (premium)
-$0.27/M input         $2-5/M         $3/M                   $2/M (but $12/M output)
+xAI (cheapest)     → OpenAI (mid)     → Google (mid)        → Anthropic (premium)
+$0.20/M input        $1.25/M            $1.25/M               $3.00/M
+$0.50/M output       $10.00/M           $10.00/M              $15.00/M
 ```
 
 Smart routing across this spectrum = Concentrate's core product story.
+75x input price spread between xAI and Anthropic. 30x output price spread.
 
 ---
 
@@ -72,6 +74,15 @@ Smart routing across this spectrum = Concentrate's core product story.
 
 | Provider | Why Excluded |
 |----------|-------------|
-| xAI/Grok | Eliminated by Brandon (political concerns) |
-| Mistral | Overlaps with DeepSeek in "OSS" category, less interesting cost story |
+| DeepSeek | Replaced by xAI — grok-4-1-fast-reasoning is strictly better (cheaper, faster, stronger reasoning) |
+| Mistral | Overlaps with xAI in cost-optimization category, less interesting spread |
 | Cohere | Niche (RAG-focused), not in JD, doesn't add to core comparison narrative |
+
+---
+
+## Amendment (2026-02-16): DeepSeek → xAI Switch
+
+**Rationale**: xAI's grok-4-1-fast-reasoning ($0.20/$0.50) is strictly cheaper than
+DeepSeek's deepseek-chat ($0.27-0.55/$1.10-2.19) while providing stronger reasoning
+and faster inference. The cost-quality spectrum narrative is even stronger with xAI:
+75x cheaper input than Anthropic vs DeepSeek's 20-50x. No downside to the switch.

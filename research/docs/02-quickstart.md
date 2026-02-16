@@ -1,0 +1,585 @@
+# Quickstart
+> Source: https://docs.concentrate.ai/getting-started/quickstart
+> Fetched: 2026-02-16 via Playwright browser_snapshot (Claude Code)
+> Method: Full accessibility tree capture — verbatim page content
+
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - link "concentrate home page light logo" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e12]: concentrate home page
+          - img "light logo" [ref=e13]
+        - generic [ref=e15]:
+          - button "Open search" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]:
+              - img [ref=e18]
+              - generic [ref=e21]: Search...
+            - generic [ref=e22]: Ctrl K
+          - button "Toggle assistant panel" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - list
+          - generic [ref=e29]:
+            - heading "Getting started" [level=5] [ref=e31]
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "Quickstart" [ref=e34] [cursor=pointer]:
+                  - /url: /getting-started/quickstart
+                  - generic [ref=e36]: Quickstart
+          - generic [ref=e37]:
+            - heading "Integrations" [level=5] [ref=e39]
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "Claude Code (Beta)" [ref=e42] [cursor=pointer]:
+                  - /url: /integrations/claude-code
+                  - generic [ref=e44]: Claude Code (Beta)
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e48]:
+            - link "API reference" [ref=e49] [cursor=pointer]:
+              - /url: /api-reference/introduction
+              - text: API reference
+            - link "Guides" [ref=e51] [cursor=pointer]:
+              - /url: /getting-started/quickstart
+              - text: Guides
+          - generic [ref=e53]:
+            - listitem [ref=e54]:
+              - link "Support" [ref=e55] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+            - listitem [ref=e56]:
+              - link "Dashboard" [ref=e57] [cursor=pointer]:
+                - /url: https://app.concentrate.ai
+                - generic [ref=e58]:
+                  - generic [ref=e59]: Dashboard
+                  - img [ref=e60]
+          - button "Toggle dark mode" [ref=e63] [cursor=pointer]:
+            - img [ref=e64]
+        - generic [ref=e71]:
+          - banner [ref=e72]:
+            - generic [ref=e73]:
+              - generic [ref=e74]: Getting started
+              - generic [ref=e75]:
+                - heading "Quickstart" [level=1] [ref=e76]
+                - generic [ref=e77]:
+                  - button "Copy page" [ref=e78] [cursor=pointer]:
+                    - generic [ref=e79]:
+                      - img [ref=e80]
+                      - generic [ref=e83]: Copy page
+                  - button "More actions" [ref=e84] [cursor=pointer]:
+                    - img [ref=e85]
+            - paragraph [ref=e733]: Make your first API call in under 5 minutes
+          - generic [ref=e89]:
+            - heading "Navigate to header Get Started" [level=2] [ref=e734]:
+              - link "Navigate to header" [ref=e735] [cursor=pointer]:
+                - /url: "#get-started"
+                - img [ref=e737]
+              - generic [ref=e739] [cursor=pointer]: Get Started
+            - generic [ref=e740]: This quickstart guide will help you make your first request to the Concentrate AI API. You’ll be generating AI responses in minutes.
+            - list [ref=e741]:
+              - listitem [ref=e742]:
+                - generic [ref=e745]:
+                  - generic [ref=e746]: "1"
+                  - link "Navigate to header" [ref=e748] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e750]
+                - generic [ref=e752]:
+                  - paragraph [ref=e753]: Get your API key
+                  - generic [ref=e754]:
+                    - generic [ref=e755]: Sign up for a Concentrate AI account and create an API key from your dashboard.
+                    - list [ref=e756]:
+                      - listitem [ref=e757]:
+                        - text: Visit
+                        - link "app.concentrate.ai" [ref=e758] [cursor=pointer]:
+                          - /url: https://app.concentrate.ai
+                      - listitem [ref=e759]: Sign up or log in
+                      - listitem [ref=e760]:
+                        - text: Navigate to
+                        - strong [ref=e761]: API Keys
+                      - listitem [ref=e762]:
+                        - text: Click
+                        - strong [ref=e763]: Create API Key
+                      - listitem [ref=e764]: Copy your key (it starts with sk-cn)
+                    - generic [ref=e765]:
+                      - img "Warning" [ref=e767]
+                      - generic [ref=e770]: Keep your API key secure. Never commit it to version control or share it publicly.
+              - listitem [ref=e771]:
+                - generic [ref=e774]:
+                  - generic [ref=e775]: "2"
+                  - link "Navigate to header" [ref=e777] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e779]
+                - generic [ref=e781]:
+                  - paragraph [ref=e782]: Make your first request
+                  - generic [ref=e783]:
+                    - generic [ref=e784]: "Try the API with a simple cURL request:"
+                    - generic [ref=e785]:
+                      - generic [ref=e786]:
+                        - generic [ref=e787]:
+                          - button "Copy the contents from the code block" [ref=e788] [cursor=pointer]:
+                            - img [ref=e789]
+                          - generic [ref=e792]: Copy
+                        - generic [ref=e793]:
+                          - button "Ask AI" [ref=e794] [cursor=pointer]:
+                            - img [ref=e795]
+                          - generic [ref=e798]: Ask AI
+                      - code [ref=e802]:
+                        - generic [ref=e803]: curl https://api.concentrate.ai/v1/responses \
+                        - generic [ref=e804]: "-H \"Content-Type: application/json\" \\"
+                        - generic [ref=e805]: "-H 'accept: application/json' \\"
+                        - generic [ref=e806]: "-H \"Authorization: Bearer YOUR_API_KEY\" \\"
+                        - generic [ref=e807]: "-d '{"
+                        - generic [ref=e808]: "\"model\": \"gpt-5.2\","
+                        - generic [ref=e809]: "\"input\": \"What is the capital of France?\""
+                        - generic [ref=e810]: "}'"
+                    - generic [ref=e811]: "You should receive a response like this:"
+                    - generic [ref=e812]:
+                      - generic [ref=e813]:
+                        - generic [ref=e814]:
+                          - button "Copy the contents from the code block" [ref=e815] [cursor=pointer]:
+                            - img [ref=e816]
+                          - generic [ref=e819]: Copy
+                        - generic [ref=e820]:
+                          - button "Ask AI" [ref=e821] [cursor=pointer]:
+                            - img [ref=e822]
+                          - generic [ref=e825]: Ask AI
+                      - code [ref=e829]:
+                        - generic [ref=e830]: "{"
+                        - generic [ref=e831]: "\"id\": \"abcd1234-ab12-cd34-ef56-abcdef12356\","
+                        - generic [ref=e832]: "\"object\": \"response\","
+                        - generic [ref=e833]: "\"created_at\": 1702934400,"
+                        - generic [ref=e834]: "\"status\": \"completed\","
+                        - generic [ref=e835]: "\"error\": null,"
+                        - generic [ref=e836]: "\"incomplete_details\": null,"
+                        - generic [ref=e837]: "\"instructions\": null,"
+                        - generic [ref=e838]: "\"reasoning\": {"
+                        - generic [ref=e839]: "\"effort\": null,"
+                        - generic [ref=e840]: "\"summary\": null"
+                        - generic [ref=e841]: "},"
+                        - generic [ref=e842]: "\"model\": \"openai/gpt-5.2\","
+                        - generic [ref=e843]: "\"output\": ["
+                        - generic [ref=e844]: "{"
+                        - generic [ref=e845]: "\"type\": \"message\","
+                        - generic [ref=e846]: "\"role\": \"assistant\","
+                        - generic [ref=e847]: "\"id\": \"abcd1234-ab12-cd34-ef56-abcdef12356\","
+                        - generic [ref=e848]: "\"status\": \"completed\","
+                        - generic [ref=e849]: "\"content\": ["
+                        - generic [ref=e850]: "{"
+                        - generic [ref=e851]: "\"type\": \"output_text\","
+                        - generic [ref=e852]: "\"text\": \"The capital of France is Paris.\""
+                        - generic [ref=e853]: "}"
+                        - generic [ref=e854]: "]"
+                        - generic [ref=e855]: "}"
+                        - generic [ref=e856]: "],"
+                        - generic [ref=e857]: "\"tools\": [],"
+                        - generic [ref=e858]: "\"usage\": {"
+                        - generic [ref=e859]: "\"input_tokens\": 8,"
+                        - generic [ref=e860]: "\"input_tokens_details\": {"
+                        - generic [ref=e861]: "\"cached_tokens\": 0"
+                        - generic [ref=e862]: "},"
+                        - generic [ref=e863]: "\"output_tokens\": 8,"
+                        - generic [ref=e864]: "\"output_tokens_details\": {"
+                        - generic [ref=e865]: "\"reasoning_tokens\": 0"
+                        - generic [ref=e866]: "},"
+                        - generic [ref=e867]: "\"total_tokens\": 16"
+                        - generic [ref=e868]: "}"
+                        - generic [ref=e869]: "}"
+              - listitem [ref=e870]:
+                - generic [ref=e873]:
+                  - generic [ref=e874]: "3"
+                  - link "Navigate to header" [ref=e876] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e878]
+                - generic [ref=e880]:
+                  - paragraph [ref=e881]: Usage in practice
+                  - generic [ref=e882]:
+                    - generic [ref=e883]: "Below are examples of usage in a variety of different programming languages:"
+                    - generic [ref=e884]:
+                      - tablist [ref=e885]:
+                        - tab "Python" [selected] [ref=e886] [cursor=pointer]:
+                          - generic [ref=e887]: Python
+                        - tab "TypeScript" [ref=e888] [cursor=pointer]:
+                          - generic [ref=e889]: TypeScript
+                        - tab "Go" [ref=e890] [cursor=pointer]:
+                          - generic [ref=e891]: Go
+                      - 'tabpanel "Python TypeScript Go Install the requests library: Copy the contents from the code block Ask AI pip install requests Create a file called test.py: Copy the contents from the code block Ask AI import requests response = requests.post( \"https://api.concentrate.ai/v1/responses\", headers={ \"Authorization\": \"Bearer YOUR_API_KEY\", \"Content-Type\": \"application/json\" }, json={ \"model\": \"gpt-5.2\", \"input\": \"Explain quantum computing in simple terms\" } ) data = response.json() print(data[\"output\"][0][\"content\"][0][\"text\"]) Run it: Copy the contents from the code block Ask AI python test.py" [ref=e893]':
+                        - generic [ref=e894]: "Install the requests library:"
+                        - generic [ref=e895]:
+                          - generic [ref=e896]:
+                            - generic [ref=e897]:
+                              - button "Copy the contents from the code block" [ref=e898] [cursor=pointer]:
+                                - img [ref=e899]
+                              - generic [ref=e902]: Copy
+                            - generic [ref=e903]:
+                              - button "Ask AI" [ref=e904] [cursor=pointer]:
+                                - img [ref=e905]
+                              - generic [ref=e908]: Ask AI
+                          - code [ref=e912]:
+                            - generic [ref=e913]: pip install requests
+                        - generic [ref=e914]:
+                          - text: Create a file called
+                          - code [ref=e915]: test.py
+                          - text: ":"
+                        - generic [ref=e916]:
+                          - generic [ref=e917]:
+                            - generic [ref=e918]:
+                              - button "Copy the contents from the code block" [ref=e919] [cursor=pointer]:
+                                - img [ref=e920]
+                              - generic [ref=e923]: Copy
+                            - generic [ref=e924]:
+                              - button "Ask AI" [ref=e925] [cursor=pointer]:
+                                - img [ref=e926]
+                              - generic [ref=e929]: Ask AI
+                          - code [ref=e933]:
+                            - generic [ref=e934]: import requests
+                            - generic [ref=e935]: response = requests.post(
+                            - generic [ref=e936]: "\"https://api.concentrate.ai/v1/responses\","
+                            - generic [ref=e937]: "headers={"
+                            - generic [ref=e938]: "\"Authorization\": \"Bearer YOUR_API_KEY\","
+                            - generic [ref=e939]: "\"Content-Type\": \"application/json\""
+                            - generic [ref=e940]: "},"
+                            - generic [ref=e941]: "json={"
+                            - generic [ref=e942]: "\"model\": \"gpt-5.2\","
+                            - generic [ref=e943]: "\"input\": \"Explain quantum computing in simple terms\""
+                            - generic [ref=e944]: "}"
+                            - generic [ref=e945]: )
+                            - generic [ref=e946]: data = response.json()
+                            - generic [ref=e947]: print(data["output"][0]["content"][0]["text"])
+                        - generic [ref=e948]: "Run it:"
+                        - generic [ref=e949]:
+                          - generic [ref=e950]:
+                            - generic [ref=e951]:
+                              - button "Copy the contents from the code block" [ref=e952] [cursor=pointer]:
+                                - img [ref=e953]
+                              - generic [ref=e956]: Copy
+                            - generic [ref=e957]:
+                              - button "Ask AI" [ref=e958] [cursor=pointer]:
+                                - img [ref=e959]
+                              - generic [ref=e962]: Ask AI
+                          - code [ref=e966]:
+                            - generic [ref=e967]: python test.py
+            - heading "Navigate to header Try Different Models" [level=2] [ref=e968]:
+              - link "Navigate to header" [ref=e969] [cursor=pointer]:
+                - /url: "#try-different-models"
+                - img [ref=e971]
+              - generic [ref=e973] [cursor=pointer]: Try Different Models
+            - generic [ref=e974]: "Concentrate AI supports 50+ models. Try different ones to compare:"
+            - generic [ref=e975]:
+              - generic [ref=e976]:
+                - tablist [ref=e977]:
+                  - tab "Claude Opus 4.5" [selected] [ref=e978] [cursor=pointer]:
+                    - generic [ref=e979]: Claude Opus 4.5
+                  - tab "Gemini 2.5 Pro" [ref=e981] [cursor=pointer]:
+                    - generic [ref=e982]: Gemini 2.5 Pro
+                  - tab "Auto Routing (Cheapest)" [ref=e983] [cursor=pointer]:
+                    - generic [ref=e984]: Auto Routing (Cheapest)
+                - generic [ref=e985]:
+                  - generic [ref=e986]:
+                    - button "Copy the contents from the code block" [ref=e987] [cursor=pointer]:
+                      - img [ref=e988]
+                    - generic [ref=e991]: Copy
+                  - generic [ref=e992]:
+                    - button "Ask AI" [ref=e993] [cursor=pointer]:
+                      - img [ref=e994]
+                    - generic [ref=e997]: Ask AI
+              - tabpanel "Claude Opus 4.5" [ref=e999]:
+                - code [ref=e1003]:
+                  - generic [ref=e1004]: curl https://api.concentrate.ai/v1/responses \
+                  - generic [ref=e1005]: "-H \"Authorization: Bearer YOUR_API_KEY\" \\"
+                  - generic [ref=e1006]: "-H \"Content-Type: application/json\" \\"
+                  - generic [ref=e1007]: "-d '{"
+                  - generic [ref=e1008]: "\"model\": \"claude-opus-4-5\","
+                  - generic [ref=e1009]: "\"input\": \"Write a haiku about programming\""
+                  - generic [ref=e1010]: "}'"
+            - heading "Navigate to header Try Streaming" [level=2] [ref=e1011]:
+              - link "Navigate to header" [ref=e1012] [cursor=pointer]:
+                - /url: "#try-streaming"
+                - img [ref=e1014]
+              - generic [ref=e1016] [cursor=pointer]: Try Streaming
+            - generic [ref=e1017]: "Enable real-time streaming for a better user experience:"
+            - generic [ref=e1018]:
+              - generic [ref=e1019]:
+                - tablist [ref=e1020]:
+                  - tab "cURL with Streaming" [selected] [ref=e1021] [cursor=pointer]:
+                    - generic [ref=e1022]: cURL with Streaming
+                  - tab "Python with Streaming" [ref=e1024] [cursor=pointer]:
+                    - generic [ref=e1025]: Python with Streaming
+                - generic [ref=e1026]:
+                  - generic [ref=e1027]:
+                    - button "Copy the contents from the code block" [ref=e1028] [cursor=pointer]:
+                      - img [ref=e1029]
+                    - generic [ref=e1032]: Copy
+                  - generic [ref=e1033]:
+                    - button "Ask AI" [ref=e1034] [cursor=pointer]:
+                      - img [ref=e1035]
+                    - generic [ref=e1038]: Ask AI
+              - tabpanel "cURL with Streaming" [ref=e1040]:
+                - code [ref=e1044]:
+                  - generic [ref=e1045]: curl https://api.concentrate.ai/v1/responses \
+                  - generic [ref=e1046]: "-H \"Authorization: Bearer YOUR_API_KEY\" \\"
+                  - generic [ref=e1047]: "-H \"Content-Type: application/json\" \\"
+                  - generic [ref=e1048]: "-d '{"
+                  - generic [ref=e1049]: "\"model\": \"gpt-5.2\","
+                  - generic [ref=e1050]: "\"input\": \"Write a short story about a robot\","
+                  - generic [ref=e1051]: "\"stream\": true"
+                  - generic [ref=e1052]: "}'"
+            - heading "Navigate to header Try Tool Calling" [level=2] [ref=e1053]:
+              - link "Navigate to header" [ref=e1054] [cursor=pointer]:
+                - /url: "#try-tool-calling"
+                - img [ref=e1056]
+              - generic [ref=e1058] [cursor=pointer]: Try Tool Calling
+            - generic [ref=e1059]: "Enable your AI to call functions and use external tools:"
+            - generic [ref=e1060]:
+              - generic [ref=e1061]:
+                - tablist [ref=e1062]:
+                  - tab "cURL" [selected] [ref=e1063] [cursor=pointer]:
+                    - generic [ref=e1064]: cURL
+                  - tab "Python" [ref=e1066] [cursor=pointer]:
+                    - generic [ref=e1067]: Python
+                - generic [ref=e1068]:
+                  - generic [ref=e1069]:
+                    - button "Copy the contents from the code block" [ref=e1070] [cursor=pointer]:
+                      - img [ref=e1071]
+                    - generic [ref=e1074]: Copy
+                  - generic [ref=e1075]:
+                    - button "Ask AI" [ref=e1076] [cursor=pointer]:
+                      - img [ref=e1077]
+                    - generic [ref=e1080]: Ask AI
+              - tabpanel "cURL" [ref=e1082]:
+                - code [ref=e1086]:
+                  - generic [ref=e1087]: curl https://api.concentrate.ai/v1/responses \
+                  - generic [ref=e1088]: "-H \"Content-Type: application/json\" \\"
+                  - generic [ref=e1089]: "-H \"Authorization: Bearer YOUR_API_KEY\" \\"
+                  - generic [ref=e1090]: "-d '{"
+                  - generic [ref=e1091]: "\"model\": \"gpt-5.2\","
+                  - generic [ref=e1092]: "\"input\": \"What is 25 * 17?\","
+                  - generic [ref=e1093]: "\"tools\": ["
+                  - generic [ref=e1094]: "{"
+                  - generic [ref=e1095]: "\"type\": \"function\","
+                  - generic [ref=e1096]: "\"name\": \"calculate\","
+                  - generic [ref=e1097]: "\"description\": \"Perform mathematical calculations\","
+                  - generic [ref=e1098]: "\"parameters\": {"
+                  - generic [ref=e1099]: "\"type\": \"object\","
+                  - generic [ref=e1100]: "\"properties\": {"
+                  - generic [ref=e1101]: "\"expression\": {\"type\": \"string\"}"
+                  - generic [ref=e1102]: "},"
+                  - generic [ref=e1103]: "\"required\": [\"expression\"]"
+                  - generic [ref=e1104]: "}"
+                  - generic [ref=e1105]: "}"
+                  - generic [ref=e1106]: "]"
+                  - generic [ref=e1107]: "}'"
+            - generic [ref=e1108]:
+              - text: The model will respond with a
+              - code [ref=e1109]: function_call
+              - text: indicating it wants to use the tool. See the
+              - link "Tool Calling Guide" [ref=e1110] [cursor=pointer]:
+                - /url: /api-reference/endpoint/tool-calling
+              - text: for the complete multi-turn workflow.
+            - heading "Navigate to header Common Patterns" [level=2] [ref=e1111]:
+              - link "Navigate to header" [ref=e1112] [cursor=pointer]:
+                - /url: "#common-patterns"
+                - img [ref=e1114]
+              - generic [ref=e1116] [cursor=pointer]: Common Patterns
+            - heading "Navigate to header Multi-Turn Conversation" [level=3] [ref=e1117]:
+              - link "Navigate to header" [ref=e1118] [cursor=pointer]:
+                - /url: "#multi-turn-conversation"
+                - img [ref=e1120]
+              - generic [ref=e1122] [cursor=pointer]: Multi-Turn Conversation
+            - generic [ref=e1123]:
+              - generic [ref=e1124]:
+                - generic [ref=e1125]:
+                  - button "Copy the contents from the code block" [ref=e1126] [cursor=pointer]:
+                    - img [ref=e1127]
+                  - generic [ref=e1130]: Copy
+                - generic [ref=e1131]:
+                  - button "Ask AI" [ref=e1132] [cursor=pointer]:
+                    - img [ref=e1133]
+                  - generic [ref=e1136]: Ask AI
+              - code [ref=e1140]:
+                - generic [ref=e1141]: input = [
+                - generic [ref=e1142]: "{\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},"
+                - generic [ref=e1143]: "{\"role\": \"user\", \"content\": \"What is Python?\"},"
+                - generic [ref=e1144]: "{\"role\": \"assistant\", \"content\": \"Python is a high-level programming language.\"},"
+                - generic [ref=e1145]: "{\"role\": \"user\", \"content\": \"What is it used for?\"}"
+                - generic [ref=e1146]: "]"
+                - generic [ref=e1147]: response = requests.post(
+                - generic [ref=e1148]: "\"https://api.concentrate.ai/v1/responses\","
+                - generic [ref=e1149]: "headers={\"Authorization\": \"Bearer YOUR_API_KEY\"},"
+                - generic [ref=e1150]: "json={"
+                - generic [ref=e1151]: "\"model\": \"gpt-5.2\","
+                - generic [ref=e1152]: "\"input\": input"
+                - generic [ref=e1153]: "}"
+                - generic [ref=e1154]: )
+            - heading "Navigate to header Control Parameters" [level=3] [ref=e1155]:
+              - link "Navigate to header" [ref=e1156] [cursor=pointer]:
+                - /url: "#control-parameters"
+                - img [ref=e1158]
+              - generic [ref=e1160] [cursor=pointer]: Control Parameters
+            - generic [ref=e1161]:
+              - generic [ref=e1162]:
+                - generic [ref=e1163]:
+                  - button "Copy the contents from the code block" [ref=e1164] [cursor=pointer]:
+                    - img [ref=e1165]
+                  - generic [ref=e1168]: Copy
+                - generic [ref=e1169]:
+                  - button "Ask AI" [ref=e1170] [cursor=pointer]:
+                    - img [ref=e1171]
+                  - generic [ref=e1174]: Ask AI
+              - code [ref=e1178]:
+                - generic [ref=e1179]: response = requests.post(
+                - generic [ref=e1180]: "\"https://api.concentrate.ai/v1/responses\","
+                - generic [ref=e1181]: "headers={\"Authorization\": \"Bearer YOUR_API_KEY\"},"
+                - generic [ref=e1182]: "json={"
+                - generic [ref=e1183]: "\"model\": \"gpt-5.2\","
+                - generic [ref=e1184]: "\"input\": \"Write a creative story\","
+                - generic [ref=e1185]: "\"temperature\": 1.5, # More creative"
+                - generic [ref=e1186]: "\"max_output_tokens\": 500, # Limit length"
+                - generic [ref=e1187]: "\"top_p\": 0.95 # Nucleus sampling"
+                - generic [ref=e1188]: "}"
+                - generic [ref=e1189]: )
+            - heading "Navigate to header Error Handling" [level=3] [ref=e1190]:
+              - link "Navigate to header" [ref=e1191] [cursor=pointer]:
+                - /url: "#error-handling"
+                - img [ref=e1193]
+              - generic [ref=e1195] [cursor=pointer]: Error Handling
+            - generic [ref=e1196]:
+              - generic [ref=e1197]:
+                - generic [ref=e1198]:
+                  - button "Copy the contents from the code block" [ref=e1199] [cursor=pointer]:
+                    - img [ref=e1200]
+                  - generic [ref=e1203]: Copy
+                - generic [ref=e1204]:
+                  - button "Ask AI" [ref=e1205] [cursor=pointer]:
+                    - img [ref=e1206]
+                  - generic [ref=e1209]: Ask AI
+              - code [ref=e1213]:
+                - generic [ref=e1214]: "try:"
+                - generic [ref=e1215]: response = requests.post(
+                - generic [ref=e1216]: "\"https://api.concentrate.ai/v1/responses\","
+                - generic [ref=e1217]: "headers={\"Authorization\": \"Bearer YOUR_API_KEY\"},"
+                - generic [ref=e1218]: "json={"
+                - generic [ref=e1219]: "\"model\": \"gpt-5.2\","
+                - generic [ref=e1220]: "\"input\": \"Hello\""
+                - generic [ref=e1221]: "}"
+                - generic [ref=e1222]: )
+                - generic [ref=e1223]: "if response.status_code == 200:"
+                - generic [ref=e1224]: data = response.json()
+                - generic [ref=e1225]: print(data["output"][0]["content"][0]["text"])
+                - generic [ref=e1226]: "elif response.status_code == 402:"
+                - generic [ref=e1227]: print("Insufficient credits - please add funds")
+                - generic [ref=e1228]: "elif response.status_code == 424:"
+                - generic [ref=e1229]: print("Provider error - trying again with fallback")
+                - generic [ref=e1230]: "# Retry with auto routing"
+                - generic [ref=e1231]: "else:"
+                - generic [ref=e1232]: "print(f\"Error: {response.status_code}\")"
+                - generic [ref=e1233]: print(response.json())
+                - generic [ref=e1234]: "except Exception as e:"
+                - generic [ref=e1235]: "print(f\"Request failed: {e}\")"
+            - heading "Navigate to header Next Steps" [level=2] [ref=e1236]:
+              - link "Navigate to header" [ref=e1237] [cursor=pointer]:
+                - /url: "#next-steps"
+                - img [ref=e1239]
+              - generic [ref=e1241] [cursor=pointer]: Next Steps
+            - generic [ref=e1242]: "Now that you’ve made your first request, explore more features:"
+            - generic [ref=e1243]:
+              - link "API Reference Complete API documentation" [ref=e1244] [cursor=pointer]:
+                - /url: /api-reference/introduction
+                - generic [ref=e1245]:
+                  - img [ref=e1247]
+                  - generic [ref=e1248]:
+                    - heading "API Reference" [level=2] [ref=e1249]
+                    - generic [ref=e1251]: Complete API documentation
+              - link "Streaming Responses Real-time streaming guide" [ref=e1252] [cursor=pointer]:
+                - /url: /api-reference/endpoint/streaming
+                - generic [ref=e1253]:
+                  - img [ref=e1255]
+                  - generic [ref=e1256]:
+                    - heading "Streaming Responses" [level=2] [ref=e1257]
+                    - generic [ref=e1259]: Real-time streaming guide
+              - link "Auto Routing Automatic model selection" [ref=e1260] [cursor=pointer]:
+                - /url: /api-reference/endpoint/auto-routing
+                - generic [ref=e1261]:
+                  - img [ref=e1263]
+                  - generic [ref=e1264]:
+                    - heading "Auto Routing" [level=2] [ref=e1265]
+                    - generic [ref=e1267]: Automatic model selection
+              - link "Error Handling Handle errors gracefully" [ref=e1268] [cursor=pointer]:
+                - /url: /api-reference/endpoint/errors
+                - generic [ref=e1269]:
+                  - img [ref=e1271]
+                  - generic [ref=e1272]:
+                    - heading "Error Handling" [level=2] [ref=e1273]
+                    - generic [ref=e1275]: Handle errors gracefully
+            - heading "Navigate to header Best Practices" [level=2] [ref=e1276]:
+              - link "Navigate to header" [ref=e1277] [cursor=pointer]:
+                - /url: "#best-practices"
+                - img [ref=e1279]
+              - generic [ref=e1281] [cursor=pointer]: Best Practices
+            - generic [ref=e1282]:
+              - group [ref=e1283]:
+                - generic "Set token limits" [ref=e1284] [cursor=pointer]:
+                  - img [ref=e1286]
+                  - img [ref=e1288]
+                  - paragraph [ref=e1290]: Set token limits
+              - group [ref=e1291]:
+                - generic "Use environment variables" [ref=e1292] [cursor=pointer]:
+                  - img [ref=e1294]
+                  - img [ref=e1296]
+                  - paragraph [ref=e1298]: Use environment variables
+              - group [ref=e1299]:
+                - generic "Implement retry logic" [ref=e1300] [cursor=pointer]:
+                  - img [ref=e1302]
+                  - img [ref=e1304]
+                  - paragraph [ref=e1306]: Implement retry logic
+              - group [ref=e1307]:
+                - generic "Monitor usage" [ref=e1308] [cursor=pointer]:
+                  - img [ref=e1310]
+                  - img [ref=e1312]
+                  - paragraph [ref=e1314]: Monitor usage
+            - heading "Navigate to header Need Help?" [level=2] [ref=e1315]:
+              - link "Navigate to header" [ref=e1316] [cursor=pointer]:
+                - /url: "#need-help"
+                - img [ref=e1318]
+              - generic [ref=e1320] [cursor=pointer]: Need Help?
+            - generic [ref=e1321]:
+              - link "View Examples See more code examples" [ref=e1322] [cursor=pointer]:
+                - /url: /api-reference/endpoint/create-response
+                - generic [ref=e1323]:
+                  - img [ref=e1325]
+                  - generic [ref=e1326]:
+                    - heading "View Examples" [level=2] [ref=e1327]
+                    - generic [ref=e1329]: See more code examples
+              - link "Contact Support Get help from our team" [ref=e1330] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+                - generic [ref=e1331]:
+                  - img [ref=e1333]
+                  - generic [ref=e1334]:
+                    - heading "Contact Support" [level=2] [ref=e1335]
+                    - generic [ref=e1337]: Get help from our team
+          - generic [ref=e695]:
+            - paragraph [ref=e696]: Was this page helpful?
+            - generic [ref=e698]:
+              - button "Yes" [ref=e699] [cursor=pointer]:
+                - img [ref=e700]
+                - generic [ref=e702]: "Yes"
+              - button "No" [ref=e703] [cursor=pointer]:
+                - img [ref=e704]
+                - generic [ref=e706]: "No"
+          - link "Claude Code (Beta)" [ref=e708] [cursor=pointer]:
+            - /url: /integrations/claude-code
+            - generic [ref=e709]: Claude Code (Beta)
+            - img [ref=e710]
+          - generic [ref=e713]:
+            - textbox "Ask a question..." [ref=e714]
+            - generic: Ctrl+I
+            - button "Send message" [disabled] [ref=e715]:
+              - img [ref=e716]
+          - contentinfo [ref=e718]:
+            - link "Powered by" [ref=e721] [cursor=pointer]:
+              - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=concentrateai-8b9c0315
+              - generic [ref=e722]: Powered by
+              - img [ref=e723]
+  - alert [ref=e1338]

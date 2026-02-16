@@ -1,0 +1,757 @@
+# Error Handling
+> Source: https://docs.concentrate.ai/api-reference/endpoint/errors
+> Fetched: 2026-02-16 via Playwright browser_snapshot (Claude Code)
+> Method: Full accessibility tree capture — verbatim page content
+
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - link "concentrate home page light logo" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e12]: concentrate home page
+          - img "light logo" [ref=e13]
+        - generic [ref=e15]:
+          - button "Open search" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]:
+              - img [ref=e18]
+              - generic [ref=e21]: Search...
+            - generic [ref=e22]: Ctrl K
+          - button "Toggle assistant panel" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - list
+          - generic [ref=e29]:
+            - heading "API documentation" [level=5] [ref=e31]
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "API Introduction" [ref=e34] [cursor=pointer]:
+                  - /url: /api-reference/introduction
+                  - generic [ref=e36]: API Introduction
+          - generic [ref=e37]:
+            - heading "Responses" [level=5] [ref=e39]
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "POST Create Response" [ref=e42] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-response
+                  - generic [ref=e44]: POST
+                  - generic [ref=e46]: Create Response
+          - generic [ref=e47]:
+            - heading "Messages (Beta)" [level=5] [ref=e49]
+            - list [ref=e50]:
+              - listitem [ref=e51]:
+                - link "POST Create Message" [ref=e52] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-message
+                  - generic [ref=e54]: POST
+                  - generic [ref=e56]: Create Message
+          - generic [ref=e57]:
+            - heading "Models" [level=5] [ref=e59]
+            - list [ref=e60]:
+              - listitem [ref=e61]:
+                - link "GET List Models" [ref=e62] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-models
+                  - generic [ref=e64]: GET
+                  - generic [ref=e66]: List Models
+              - listitem [ref=e67]:
+                - link "GET List Providers" [ref=e68] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-providers
+                  - generic [ref=e70]: GET
+                  - generic [ref=e72]: List Providers
+              - listitem [ref=e73]:
+                - link "GET Get Model" [ref=e74] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-model
+                  - generic [ref=e76]: GET
+                  - generic [ref=e78]: Get Model
+              - listitem [ref=e79]:
+                - link "GET Get Provider Info" [ref=e80] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-provider-info
+                  - generic [ref=e82]: GET
+                  - generic [ref=e84]: Get Provider Info
+          - generic [ref=e85]:
+            - heading "Utilities" [level=5] [ref=e87]
+            - list [ref=e88]:
+              - listitem [ref=e89]:
+                - link "GET Health Check" [ref=e90] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/health
+                  - generic [ref=e92]: GET
+                  - generic [ref=e94]: Health Check
+          - generic [ref=e95]:
+            - heading "Features" [level=5] [ref=e97]
+            - list [ref=e98]:
+              - listitem [ref=e99]:
+                - link "Streaming Responses" [ref=e100] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/streaming
+                  - generic [ref=e102]: Streaming Responses
+              - listitem [ref=e103]:
+                - link "Auto Routing" [ref=e104] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/auto-routing
+                  - generic [ref=e106]: Auto Routing
+              - listitem [ref=e107]:
+                - link "Tool Calling" [ref=e108] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/tool-calling
+                  - generic [ref=e110]: Tool Calling
+              - listitem [ref=e111]:
+                - link "Web Search" [ref=e112] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/web-search
+                  - generic [ref=e114]: Web Search
+          - generic [ref=e115]:
+            - heading "Reference" [level=5] [ref=e117]
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - link "Request Parameters Reference" [ref=e120] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/request-parameters
+                  - generic [ref=e122]: Request Parameters Reference
+              - listitem [ref=e123]:
+                - link "Prompt Caching" [ref=e124] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/prompt-caching
+                  - generic [ref=e126]: Prompt Caching
+              - listitem [ref=e127]:
+                - link "Error Handling" [ref=e128] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/errors
+                  - generic [ref=e130]: Error Handling
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e134]:
+            - link "API reference" [ref=e135] [cursor=pointer]:
+              - /url: /api-reference/introduction
+              - text: API reference
+            - link "Guides" [ref=e137] [cursor=pointer]:
+              - /url: /getting-started/quickstart
+              - text: Guides
+          - generic [ref=e139]:
+            - listitem [ref=e140]:
+              - link "Support" [ref=e141] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+            - listitem [ref=e142]:
+              - link "Dashboard" [ref=e143] [cursor=pointer]:
+                - /url: https://app.concentrate.ai
+                - generic [ref=e144]:
+                  - generic [ref=e145]: Dashboard
+                  - img [ref=e146]
+          - button "Toggle dark mode" [ref=e149] [cursor=pointer]:
+            - img [ref=e150]
+        - generic [ref=e157]:
+          - banner [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: Reference
+              - generic [ref=e161]:
+                - heading "Error Handling" [level=1] [ref=e162]
+                - generic [ref=e163]:
+                  - button "Copy page" [ref=e164] [cursor=pointer]:
+                    - generic [ref=e165]:
+                      - img [ref=e166]
+                      - generic [ref=e169]: Copy page
+                  - button "More actions" [ref=e170] [cursor=pointer]:
+                    - img [ref=e171]
+            - paragraph [ref=e927]: Complete guide to API error responses and troubleshooting
+          - generic [ref=e175]:
+            - heading "Navigate to header Overview" [level=2] [ref=e928]:
+              - link "Navigate to header" [ref=e929] [cursor=pointer]:
+                - /url: "#overview"
+                - img [ref=e931]
+              - generic [ref=e933] [cursor=pointer]: Overview
+            - generic [ref=e934]: The Concentrate AI API uses standard HTTP status codes to indicate success or failure. All error responses include a JSON body with details about what went wrong.
+            - heading "Navigate to header Error Response Format" [level=2] [ref=e935]:
+              - link "Navigate to header" [ref=e936] [cursor=pointer]:
+                - /url: "#error-response-format"
+                - img [ref=e938]
+              - generic [ref=e940] [cursor=pointer]: Error Response Format
+            - generic [ref=e941]: "All errors follow this structure:"
+            - generic [ref=e942]:
+              - generic [ref=e943]:
+                - generic [ref=e944]:
+                  - button "Copy the contents from the code block" [ref=e945] [cursor=pointer]:
+                    - img [ref=e946]
+                  - generic [ref=e949]: Copy
+                - generic [ref=e950]:
+                  - button "Ask AI" [ref=e951] [cursor=pointer]:
+                    - img [ref=e952]
+                  - generic [ref=e955]: Ask AI
+              - code [ref=e959]:
+                - generic [ref=e960]: "{"
+                - generic [ref=e961]: "\"error\": \"Error type or message\","
+                - generic [ref=e962]: "\"message\": \"Detailed explanation (optional)\","
+                - generic [ref=e963]: "\"model\": \"provider/model (for provider errors only)\""
+                - generic [ref=e964]: "}"
+            - heading "Navigate to header Status Codes" [level=2] [ref=e965]:
+              - link "Navigate to header" [ref=e966] [cursor=pointer]:
+                - /url: "#status-codes"
+                - img [ref=e968]
+              - generic [ref=e970] [cursor=pointer]: Status Codes
+            - table [ref=e973]:
+              - rowgroup [ref=e974]:
+                - row "Status Code Error Type Description" [ref=e975]:
+                  - columnheader "Status Code" [ref=e976]
+                  - columnheader "Error Type" [ref=e977]
+                  - columnheader "Description" [ref=e978]
+              - rowgroup [ref=e979]:
+                - row "200 Success Request completed successfully" [ref=e980]:
+                  - cell "200" [ref=e981]:
+                    - code [ref=e982]: "200"
+                  - cell "Success" [ref=e983]
+                  - cell "Request completed successfully" [ref=e984]
+                - row "400 Bad Request Invalid request parameters" [ref=e985]:
+                  - cell "400" [ref=e986]:
+                    - code [ref=e987]: "400"
+                  - cell "Bad Request" [ref=e988]
+                  - cell "Invalid request parameters" [ref=e989]
+                - row "401 Unauthorized Missing or invalid API key" [ref=e990]:
+                  - cell "401" [ref=e991]:
+                    - code [ref=e992]: "401"
+                  - cell "Unauthorized" [ref=e993]
+                  - cell "Missing or invalid API key" [ref=e994]
+                - row "402 Payment Required Insufficient credits" [ref=e995]:
+                  - cell "402" [ref=e996]:
+                    - code [ref=e997]: "402"
+                  - cell "Payment Required" [ref=e998]
+                  - cell "Insufficient credits" [ref=e999]
+                - row "424 Failed Dependency Provider unavailable" [ref=e1000]:
+                  - cell "424" [ref=e1001]:
+                    - code [ref=e1002]: "424"
+                  - cell "Failed Dependency" [ref=e1003]
+                  - cell "Provider unavailable" [ref=e1004]
+                - row "429 Too Many Requests Rate limit exceeded" [ref=e1005]:
+                  - cell "429" [ref=e1006]:
+                    - code [ref=e1007]: "429"
+                  - cell "Too Many Requests" [ref=e1008]
+                  - cell "Rate limit exceeded" [ref=e1009]
+                - row "500 Internal Server Error Server-side error" [ref=e1010]:
+                  - cell "500" [ref=e1011]:
+                    - code [ref=e1012]: "500"
+                  - cell "Internal Server Error" [ref=e1013]
+                  - cell "Server-side error" [ref=e1014]
+            - heading "Navigate to header Error Types" [level=2] [ref=e1015]:
+              - link "Navigate to header" [ref=e1016] [cursor=pointer]:
+                - /url: "#error-types"
+                - img [ref=e1018]
+              - generic [ref=e1020] [cursor=pointer]: Error Types
+            - heading "Navigate to header 400 Bad Request" [level=3] [ref=e1021]:
+              - link "Navigate to header" [ref=e1022] [cursor=pointer]:
+                - /url: "#400-bad-request"
+                - img [ref=e1024]
+              - generic [ref=e1026] [cursor=pointer]: 400 Bad Request
+            - generic [ref=e1027]: Invalid or malformed request parameters.
+            - generic [ref=e1028]:
+              - group [ref=e1029]:
+                - generic "Invalid Model Name" [ref=e1030] [cursor=pointer]:
+                  - img [ref=e1032]
+                  - paragraph [ref=e1034]: Invalid Model Name
+              - group [ref=e1035]:
+                - generic "Missing Required Fields" [ref=e1036] [cursor=pointer]:
+                  - img [ref=e1038]
+                  - paragraph [ref=e1040]: Missing Required Fields
+              - group [ref=e1041]:
+                - generic "Invalid Parameter Type" [ref=e1042] [cursor=pointer]:
+                  - img [ref=e1044]
+                  - paragraph [ref=e1046]: Invalid Parameter Type
+              - group [ref=e1047]:
+                - generic "Invalid Parameter Value" [ref=e1048] [cursor=pointer]:
+                  - img [ref=e1050]
+                  - paragraph [ref=e1052]: Invalid Parameter Value
+            - heading "Navigate to header 401 Unauthorized" [level=3] [ref=e1053]:
+              - link "Navigate to header" [ref=e1054] [cursor=pointer]:
+                - /url: "#401-unauthorized"
+                - img [ref=e1056]
+              - generic [ref=e1058] [cursor=pointer]: 401 Unauthorized
+            - generic [ref=e1059]: Authentication failed or API key is invalid.
+            - generic [ref=e1060]:
+              - generic [ref=e1061]:
+                - generic [ref=e1062]:
+                  - button "Copy the contents from the code block" [ref=e1063] [cursor=pointer]:
+                    - img [ref=e1064]
+                  - generic [ref=e1067]: Copy
+                - generic [ref=e1068]:
+                  - button "Ask AI" [ref=e1069] [cursor=pointer]:
+                    - img [ref=e1070]
+                  - generic [ref=e1073]: Ask AI
+              - code [ref=e1077]:
+                - generic [ref=e1078]: "{"
+                - generic [ref=e1079]: "\"error\": \"Unauthorized\","
+                - generic [ref=e1080]: "\"message\": \"Invalid API key\""
+                - generic [ref=e1081]: "}"
+            - strong [ref=e1083]: "Causes:"
+            - list [ref=e1084]:
+              - listitem [ref=e1085]: API key is missing
+              - listitem [ref=e1086]: API key is invalid or revoked
+              - listitem [ref=e1087]: Wrong header format
+            - strong [ref=e1089]: "Solutions:"
+            - generic [ref=e1090]:
+              - generic [ref=e1091]:
+                - tablist [ref=e1092]:
+                  - tab "Check Header Format" [selected] [ref=e1093] [cursor=pointer]:
+                    - generic [ref=e1094]: Check Header Format
+                  - tab "Verify API Key" [ref=e1096] [cursor=pointer]:
+                    - generic [ref=e1097]: Verify API Key
+                - generic [ref=e1098]:
+                  - generic [ref=e1099]:
+                    - button "Copy the contents from the code block" [ref=e1100] [cursor=pointer]:
+                      - img [ref=e1101]
+                    - generic [ref=e1104]: Copy
+                  - generic [ref=e1105]:
+                    - button "Ask AI" [ref=e1106] [cursor=pointer]:
+                      - img [ref=e1107]
+                    - generic [ref=e1110]: Ask AI
+              - tabpanel "Check Header Format" [ref=e1112]:
+                - code [ref=e1116]:
+                  - generic [ref=e1117]: "# Correct"
+                  - generic [ref=e1118]: "Authorization: Bearer sk-cn-v1-abc123xyz789"
+                  - generic [ref=e1119]: "# Incorrect"
+                  - generic [ref=e1120]: "Authorization: sk-cn-v1-abc123xyz789 # Missing \"Bearer\""
+                  - generic [ref=e1121]: "Authorization: Bearer: sk-cn-v1-abc123xyz789 # Extra colon"
+            - generic [ref=e1122]:
+              - img "Warning" [ref=e1124]
+              - generic [ref=e1127]:
+                - text: Get a new API key from the
+                - link "Concentrate AI dashboard" [ref=e1128] [cursor=pointer]:
+                  - /url: https://app.concentrate.ai
+                - text: if yours is invalid.
+            - heading "Navigate to header 402 Payment Required" [level=3] [ref=e1129]:
+              - link "Navigate to header" [ref=e1130] [cursor=pointer]:
+                - /url: "#402-payment-required"
+                - img [ref=e1132]
+              - generic [ref=e1134] [cursor=pointer]: 402 Payment Required
+            - generic [ref=e1135]: Insufficient credits to complete the request.
+            - generic [ref=e1136]:
+              - generic [ref=e1137]:
+                - generic [ref=e1138]:
+                  - button "Copy the contents from the code block" [ref=e1139] [cursor=pointer]:
+                    - img [ref=e1140]
+                  - generic [ref=e1143]: Copy
+                - generic [ref=e1144]:
+                  - button "Ask AI" [ref=e1145] [cursor=pointer]:
+                    - img [ref=e1146]
+                  - generic [ref=e1149]: Ask AI
+              - code [ref=e1153]:
+                - generic [ref=e1154]: "{"
+                - generic [ref=e1155]: "\"error\": \"Insufficient funds\","
+                - generic [ref=e1156]: "\"message\": \"Your account has insufficient credits. Please add credits to continue.\""
+                - generic [ref=e1157]: "}"
+            - strong [ref=e1159]: "Causes:"
+            - list [ref=e1160]:
+              - listitem [ref=e1161]: Account credit balance too low
+              - listitem [ref=e1162]: Request would exceed credit limit
+              - listitem [ref=e1163]: Free tier exhausted
+            - strong [ref=e1165]: "Solutions:"
+            - list [ref=e1166]:
+              - listitem [ref=e1167]:
+                - strong [ref=e1169]: "Check your balance:"
+                - list [ref=e1170]:
+                  - listitem [ref=e1171]:
+                    - text: Visit
+                    - link "dashboard" [ref=e1172] [cursor=pointer]:
+                      - /url: https://app.concentrate.ai
+                  - listitem [ref=e1173]: View credit usage and remaining balance
+              - listitem [ref=e1174]:
+                - strong [ref=e1176]: "Add credits:"
+                - list [ref=e1177]:
+                  - listitem [ref=e1178]: Purchase additional credits
+                  - listitem [ref=e1179]: Upgrade your plan
+              - listitem [ref=e1180]:
+                - strong [ref=e1182]: "Optimize requests:"
+                - list [ref=e1183]:
+                  - listitem [ref=e1184]:
+                    - text: Reduce
+                    - code [ref=e1185]: max_output_tokens
+                  - listitem [ref=e1186]: Use cost-optimized models
+                  - listitem [ref=e1187]:
+                    - text: Enable auto routing with
+                    - code [ref=e1188]: "routing: { strategy: \"min\", metric: \"cost\" }"
+            - generic [ref=e1189]:
+              - generic [ref=e1190]:
+                - tablist [ref=e1191]:
+                  - tab "Handle Insufficient Credits" [selected] [ref=e1192] [cursor=pointer]:
+                    - generic [ref=e1193]: Handle Insufficient Credits
+                  - tab "Graceful Degradation" [ref=e1195] [cursor=pointer]:
+                    - generic [ref=e1196]: Graceful Degradation
+                - generic [ref=e1197]:
+                  - generic [ref=e1198]:
+                    - button "Copy the contents from the code block" [ref=e1199] [cursor=pointer]:
+                      - img [ref=e1200]
+                    - generic [ref=e1203]: Copy
+                  - generic [ref=e1204]:
+                    - button "Ask AI" [ref=e1205] [cursor=pointer]:
+                      - img [ref=e1206]
+                    - generic [ref=e1209]: Ask AI
+              - tabpanel "Handle Insufficient Credits" [ref=e1211]:
+                - code [ref=e1215]:
+                  - generic [ref=e1216]: import requests
+                  - generic [ref=e1217]: "def make_request_with_fallback(input_text):"
+                  - generic [ref=e1218]: "# Try with primary model"
+                  - generic [ref=e1219]: response = requests.post(
+                  - generic [ref=e1220]: "\"https://api.concentrate.ai/v1/responses\","
+                  - generic [ref=e1221]: "headers={\"Authorization\": \"Bearer YOUR_API_KEY\"},"
+                  - generic [ref=e1222]: "json={"
+                  - generic [ref=e1223]: "\"model\": \"gpt-4o\","
+                  - generic [ref=e1224]: "\"input\": input_text,"
+                  - generic [ref=e1225]: "\"max_output_tokens\": 500"
+                  - generic [ref=e1226]: "}"
+                  - generic [ref=e1227]: )
+                  - generic [ref=e1228]: "if response.status_code == 402:"
+                  - generic [ref=e1229]: "# Fallback to cheaper model"
+                  - generic [ref=e1230]: response = requests.post(
+                  - generic [ref=e1231]: "\"https://api.concentrate.ai/v1/responses\","
+                  - generic [ref=e1232]: "headers={\"Authorization\": \"Bearer YOUR_API_KEY\"},"
+                  - generic [ref=e1233]: "json={"
+                  - generic [ref=e1234]: "\"model\": \"auto\","
+                  - generic [ref=e1235]: "\"input\": input_text,"
+                  - generic [ref=e1236]: "\"routing\": {"
+                  - generic [ref=e1237]: "\"strategy\": \"min\","
+                  - generic [ref=e1238]: "\"metric\": \"cost\""
+                  - generic [ref=e1239]: "},"
+                  - generic [ref=e1240]: "\"max_output_tokens\": 300"
+                  - generic [ref=e1241]: "}"
+                  - generic [ref=e1242]: )
+                  - generic [ref=e1243]: return response.json()
+            - heading "Navigate to header 424 Failed Dependency" [level=3] [ref=e1244]:
+              - link "Navigate to header" [ref=e1245] [cursor=pointer]:
+                - /url: "#424-failed-dependency"
+                - img [ref=e1247]
+              - generic [ref=e1249] [cursor=pointer]: 424 Failed Dependency
+            - generic [ref=e1250]: The requested provider is unavailable.
+            - generic [ref=e1251]:
+              - generic [ref=e1252]:
+                - generic [ref=e1253]:
+                  - button "Copy the contents from the code block" [ref=e1254] [cursor=pointer]:
+                    - img [ref=e1255]
+                  - generic [ref=e1258]: Copy
+                - generic [ref=e1259]:
+                  - button "Ask AI" [ref=e1260] [cursor=pointer]:
+                    - img [ref=e1261]
+                  - generic [ref=e1264]: Ask AI
+              - code [ref=e1268]:
+                - generic [ref=e1269]: "{"
+                - generic [ref=e1270]: "\"error\": \"Model 'openai/gpt-4o' Errored\","
+                - generic [ref=e1271]: "\"message\": \"Request to openai/gpt-4o failed because provider was unavailable\","
+                - generic [ref=e1272]: "\"model\": \"openai/gpt-4o\""
+                - generic [ref=e1273]: "}"
+            - strong [ref=e1275]: "Causes:"
+            - list [ref=e1276]:
+              - listitem [ref=e1277]: Provider experiencing outage
+              - listitem [ref=e1278]: Model temporarily unavailable
+              - listitem [ref=e1279]: Regional restrictions
+            - strong [ref=e1281]: "Solutions:"
+            - list [ref=e1282]:
+              - listitem [ref=e1283]:
+                - strong [ref=e1284]: Retry with exponential backoff
+              - listitem [ref=e1285]:
+                - strong [ref=e1286]: Use auto routing for automatic fallback
+              - listitem [ref=e1287]:
+                - strong [ref=e1288]: Specify alternative provider
+            - generic [ref=e1289]:
+              - generic [ref=e1290]:
+                - tablist [ref=e1291]:
+                  - tab "Retry with Backoff" [selected] [ref=e1292] [cursor=pointer]:
+                    - generic [ref=e1293]: Retry with Backoff
+                  - tab "Auto Fallback" [ref=e1295] [cursor=pointer]:
+                    - generic [ref=e1296]: Auto Fallback
+                - generic [ref=e1297]:
+                  - generic [ref=e1298]:
+                    - button "Copy the contents from the code block" [ref=e1299] [cursor=pointer]:
+                      - img [ref=e1300]
+                    - generic [ref=e1303]: Copy
+                  - generic [ref=e1304]:
+                    - button "Ask AI" [ref=e1305] [cursor=pointer]:
+                      - img [ref=e1306]
+                    - generic [ref=e1309]: Ask AI
+              - tabpanel "Retry with Backoff" [ref=e1311]:
+                - code [ref=e1315]:
+                  - generic [ref=e1316]: import time
+                  - generic [ref=e1317]: import requests
+                  - generic [ref=e1318]: "def request_with_retry(payload, max_retries=3):"
+                  - generic [ref=e1319]: "for attempt in range(max_retries):"
+                  - generic [ref=e1320]: response = requests.post(
+                  - generic [ref=e1321]: "\"https://api.concentrate.ai/v1/responses\","
+                  - generic [ref=e1322]: "headers={\"Authorization\": \"Bearer YOUR_API_KEY\"},"
+                  - generic [ref=e1323]: json=payload
+                  - generic [ref=e1324]: )
+                  - generic [ref=e1325]: "if response.status_code == 424:"
+                  - generic [ref=e1326]: "if attempt < max_retries - 1:"
+                  - generic [ref=e1327]: "# Exponential backoff: 1s, 2s, 4s"
+                  - generic [ref=e1328]: wait_time = 2 ** attempt
+                  - generic [ref=e1329]: "print(f\"Provider error, retrying in {wait_time}s...\")"
+                  - generic [ref=e1330]: time.sleep(wait_time)
+                  - generic [ref=e1331]: continue
+                  - generic [ref=e1332]: return response.json()
+                  - generic [ref=e1333]: raise Exception("All retry attempts failed")
+            - generic [ref=e1334]:
+              - img "Tip" [ref=e1336]
+              - generic [ref=e1339]:
+                - text: Use
+                - code [ref=e1340]: "model: \"auto\""
+                - text: to enable automatic provider fallback for maximum reliability.
+            - heading "Navigate to header 429 Too Many Requests" [level=3] [ref=e1341]:
+              - link "Navigate to header" [ref=e1342] [cursor=pointer]:
+                - /url: "#429-too-many-requests"
+                - img [ref=e1344]
+              - generic [ref=e1346] [cursor=pointer]: 429 Too Many Requests
+            - generic [ref=e1347]: Rate limit exceeded.
+            - generic [ref=e1348]:
+              - generic [ref=e1349]:
+                - generic [ref=e1350]:
+                  - button "Copy the contents from the code block" [ref=e1351] [cursor=pointer]:
+                    - img [ref=e1352]
+                  - generic [ref=e1355]: Copy
+                - generic [ref=e1356]:
+                  - button "Ask AI" [ref=e1357] [cursor=pointer]:
+                    - img [ref=e1358]
+                  - generic [ref=e1361]: Ask AI
+              - code [ref=e1365]:
+                - generic [ref=e1366]: "{"
+                - generic [ref=e1367]: "\"error\": \"Rate limit exceeded\","
+                - generic [ref=e1368]: "\"message\": \"Too many requests. Please retry after 60 seconds.\","
+                - generic [ref=e1369]: "\"retry_after\": 60"
+                - generic [ref=e1370]: "}"
+            - strong [ref=e1372]: "Causes:"
+            - list [ref=e1373]:
+              - listitem [ref=e1374]: Exceeded requests per minute limit
+              - listitem [ref=e1375]: Too many tokens per minute
+              - listitem [ref=e1376]: Burst limit exceeded
+            - strong [ref=e1378]: "Solutions:"
+            - list [ref=e1379]:
+              - listitem [ref=e1380]:
+                - strong [ref=e1381]: Implement rate limiting in your code
+              - listitem [ref=e1382]:
+                - strong [ref=e1383]: Use exponential backoff
+              - listitem [ref=e1384]:
+                - strong [ref=e1385]: Batch requests when possible
+              - listitem [ref=e1386]:
+                - strong [ref=e1387]: Upgrade plan for higher limits
+            - generic [ref=e1388]:
+              - generic [ref=e1389]:
+                - tablist [ref=e1390]:
+                  - tab "Rate Limit Handling" [selected] [ref=e1391] [cursor=pointer]:
+                    - generic [ref=e1392]: Rate Limit Handling
+                  - tab "Token Bucket" [ref=e1394] [cursor=pointer]:
+                    - generic [ref=e1395]: Token Bucket
+                - generic [ref=e1396]:
+                  - generic [ref=e1397]:
+                    - button "Copy the contents from the code block" [ref=e1398] [cursor=pointer]:
+                      - img [ref=e1399]
+                    - generic [ref=e1402]: Copy
+                  - generic [ref=e1403]:
+                    - button "Ask AI" [ref=e1404] [cursor=pointer]:
+                      - img [ref=e1405]
+                    - generic [ref=e1408]: Ask AI
+              - tabpanel "Rate Limit Handling" [ref=e1410]:
+                - code [ref=e1414]:
+                  - generic [ref=e1415]: import time
+                  - generic [ref=e1416]: import requests
+                  - generic [ref=e1417]: "def make_request_with_rate_limit(payload):"
+                  - generic [ref=e1418]: "while True:"
+                  - generic [ref=e1419]: response = requests.post(
+                  - generic [ref=e1420]: "\"https://api.concentrate.ai/v1/responses\","
+                  - generic [ref=e1421]: "headers={\"Authorization\": \"Bearer YOUR_API_KEY\"},"
+                  - generic [ref=e1422]: json=payload
+                  - generic [ref=e1423]: )
+                  - generic [ref=e1424]: "if response.status_code == 429:"
+                  - generic [ref=e1425]: "# Get retry-after header"
+                  - generic [ref=e1426]: retry_after = int(response.headers.get('Retry-After', 60))
+                  - generic [ref=e1427]: "print(f\"Rate limited. Waiting {retry_after}s...\")"
+                  - generic [ref=e1428]: time.sleep(retry_after)
+                  - generic [ref=e1429]: continue
+                  - generic [ref=e1430]: return response.json()
+            - heading "Navigate to header 500 Internal Server Error" [level=3] [ref=e1431]:
+              - link "Navigate to header" [ref=e1432] [cursor=pointer]:
+                - /url: "#500-internal-server-error"
+                - img [ref=e1434]
+              - generic [ref=e1436] [cursor=pointer]: 500 Internal Server Error
+            - generic [ref=e1437]: Server-side error. These are rare and usually temporary.
+            - generic [ref=e1438]:
+              - generic [ref=e1439]:
+                - generic [ref=e1440]:
+                  - button "Copy the contents from the code block" [ref=e1441] [cursor=pointer]:
+                    - img [ref=e1442]
+                  - generic [ref=e1445]: Copy
+                - generic [ref=e1446]:
+                  - button "Ask AI" [ref=e1447] [cursor=pointer]:
+                    - img [ref=e1448]
+                  - generic [ref=e1451]: Ask AI
+              - code [ref=e1455]:
+                - generic [ref=e1456]: "{"
+                - generic [ref=e1457]: "\"error\": \"Internal server error\","
+                - generic [ref=e1458]: "\"message\": \"An unexpected error occurred. Please try again.\""
+                - generic [ref=e1459]: "}"
+            - strong [ref=e1461]: "Causes:"
+            - list [ref=e1462]:
+              - listitem [ref=e1463]: Temporary server issue
+              - listitem [ref=e1464]: Unexpected error condition
+              - listitem [ref=e1465]: Any provider internal error (e.g., Cloudflare server outage)
+            - strong [ref=e1467]: "Solutions:"
+            - list [ref=e1468]:
+              - listitem [ref=e1469]: Retry the request after a short delay
+              - listitem [ref=e1470]: If persists, contact support
+            - heading "Navigate to header Best Practices" [level=2] [ref=e1471]:
+              - link "Navigate to header" [ref=e1472] [cursor=pointer]:
+                - /url: "#best-practices"
+                - img [ref=e1474]
+              - generic [ref=e1476] [cursor=pointer]: Best Practices
+            - generic [ref=e1477]:
+              - group [ref=e1478]:
+                - generic "Implement comprehensive error handling" [ref=e1479] [cursor=pointer]:
+                  - img [ref=e1481]
+                  - img [ref=e1483]
+                  - paragraph [ref=e1485]: Implement comprehensive error handling
+              - group [ref=e1486]:
+                - generic "Log errors for debugging" [ref=e1487] [cursor=pointer]:
+                  - img [ref=e1489]
+                  - img [ref=e1491]
+                  - paragraph [ref=e1493]: Log errors for debugging
+              - group [ref=e1494]:
+                - generic "Use circuit breaker pattern" [ref=e1495] [cursor=pointer]:
+                  - img [ref=e1497]
+                  - img [ref=e1499]
+                  - paragraph [ref=e1501]: Use circuit breaker pattern
+              - group [ref=e1502]:
+                - generic "Validate before sending" [ref=e1503] [cursor=pointer]:
+                  - img [ref=e1505]
+                  - img [ref=e1507]
+                  - paragraph [ref=e1509]: Validate before sending
+            - heading "Navigate to header Error Monitoring" [level=2] [ref=e1510]:
+              - link "Navigate to header" [ref=e1511] [cursor=pointer]:
+                - /url: "#error-monitoring"
+                - img [ref=e1513]
+              - generic [ref=e1515] [cursor=pointer]: Error Monitoring
+            - generic [ref=e1516]: "Track and analyze errors in production:"
+            - generic [ref=e1517]:
+              - generic [ref=e1518]:
+                - tablist [ref=e1519]:
+                  - tab "Error Metrics" [selected] [ref=e1520] [cursor=pointer]:
+                    - generic [ref=e1521]: Error Metrics
+                  - tab "Error Analytics" [ref=e1523] [cursor=pointer]:
+                    - generic [ref=e1524]: Error Analytics
+                - generic [ref=e1525]:
+                  - generic [ref=e1526]:
+                    - button "Copy the contents from the code block" [ref=e1527] [cursor=pointer]:
+                      - img [ref=e1528]
+                    - generic [ref=e1531]: Copy
+                  - generic [ref=e1532]:
+                    - button "Ask AI" [ref=e1533] [cursor=pointer]:
+                      - img [ref=e1534]
+                    - generic [ref=e1537]: Ask AI
+              - tabpanel "Error Metrics" [ref=e1539]:
+                - code [ref=e1543]:
+                  - generic [ref=e1544]: from collections import Counter
+                  - generic [ref=e1545]: from datetime import datetime
+                  - generic [ref=e1546]: "class ErrorTracker:"
+                  - generic [ref=e1547]: "def __init__(self):"
+                  - generic [ref=e1548]: self.errors = []
+                  - generic [ref=e1549]: "def log_error(self, status_code, error, message):"
+                  - generic [ref=e1550]: "self.errors.append({"
+                  - generic [ref=e1551]: "\"timestamp\": datetime.now(),"
+                  - generic [ref=e1552]: "\"status_code\": status_code,"
+                  - generic [ref=e1553]: "\"error\": error,"
+                  - generic [ref=e1554]: "\"message\": message"
+                  - generic [ref=e1555]: "})"
+                  - generic [ref=e1556]: "def get_error_summary(self):"
+                  - generic [ref=e1557]: status_counts = Counter(e["status_code"] for e in self.errors)
+                  - generic [ref=e1558]: error_counts = Counter(e["error"] for e in self.errors)
+                  - generic [ref=e1559]: "return {"
+                  - generic [ref=e1560]: "\"total_errors\": len(self.errors),"
+                  - generic [ref=e1561]: "\"by_status\": dict(status_counts),"
+                  - generic [ref=e1562]: "\"by_type\": dict(error_counts)"
+                  - generic [ref=e1563]: "}"
+                  - generic [ref=e1564]: tracker = ErrorTracker()
+                  - generic [ref=e1565]: "# Log errors"
+                  - generic [ref=e1566]: "if response.status_code != 200:"
+                  - generic [ref=e1567]: data = response.json()
+                  - generic [ref=e1568]: tracker.log_error(
+                  - generic [ref=e1569]: response.status_code,
+                  - generic [ref=e1570]: data.get("error"),
+                  - generic [ref=e1571]: data.get("message")
+                  - generic [ref=e1572]: )
+                  - generic [ref=e1573]: "# Get summary"
+                  - generic [ref=e1574]: print(tracker.get_error_summary())
+            - heading "Navigate to header Debugging Checklist" [level=2] [ref=e1575]:
+              - link "Navigate to header" [ref=e1576] [cursor=pointer]:
+                - /url: "#debugging-checklist"
+                - img [ref=e1578]
+              - generic [ref=e1580] [cursor=pointer]: Debugging Checklist
+            - generic [ref=e1581]: "When encountering errors, check:"
+            - list [ref=e1582]:
+              - listitem [ref=e1583]:
+                - checkbox [disabled] [ref=e1584]
+                - text: API key is valid and properly formatted
+              - listitem [ref=e1585]:
+                - checkbox [disabled] [ref=e1586]
+                - text: Request payload matches schema requirements
+              - listitem [ref=e1587]:
+                - checkbox [disabled] [ref=e1588]
+                - text: Parameter values are within allowed ranges
+              - listitem [ref=e1589]:
+                - checkbox [disabled] [ref=e1590]
+                - text: Account has sufficient credits
+              - listitem [ref=e1591]:
+                - checkbox [disabled] [ref=e1592]
+                - text: Model name is correct and supported
+              - listitem [ref=e1593]:
+                - checkbox [disabled] [ref=e1594]
+                - text: Network connectivity is stable
+              - listitem [ref=e1595]:
+                - checkbox [disabled] [ref=e1596]
+                - text: Timeout values are appropriate
+              - listitem [ref=e1597]:
+                - checkbox [disabled] [ref=e1598]
+                - text: Error handling is implemented
+              - listitem [ref=e1599]:
+                - checkbox [disabled] [ref=e1600]
+                - text: Retry logic is in place
+            - heading "Navigate to header Related Documentation" [level=2] [ref=e1601]:
+              - link "Navigate to header" [ref=e1602] [cursor=pointer]:
+                - /url: "#related-documentation"
+                - img [ref=e1604]
+              - generic [ref=e1606] [cursor=pointer]: Related Documentation
+            - generic [ref=e1607]:
+              - link "Create Response Main endpoint documentation" [ref=e1608] [cursor=pointer]:
+                - /url: /api-reference/endpoint/create-response
+                - generic [ref=e1609]:
+                  - img [ref=e1611]
+                  - generic [ref=e1612]:
+                    - heading "Create Response" [level=2] [ref=e1613]
+                    - generic [ref=e1615]: Main endpoint documentation
+              - link "Auto Routing Automatic provider/model routing" [ref=e1616] [cursor=pointer]:
+                - /url: /api-reference/endpoint/auto-routing
+                - generic [ref=e1617]:
+                  - img [ref=e1619]
+                  - generic [ref=e1620]:
+                    - heading "Auto Routing" [level=2] [ref=e1621]
+                    - generic [ref=e1623]: Automatic provider/model routing
+              - link "Rate Limits Understanding rate limits" [ref=e1624] [cursor=pointer]:
+                - /url: /api-reference/introduction#rate-limits
+                - generic [ref=e1625]:
+                  - img [ref=e1627]
+                  - generic [ref=e1628]:
+                    - heading "Rate Limits" [level=2] [ref=e1629]
+                    - generic [ref=e1631]: Understanding rate limits
+              - link "Support Contact support for help" [ref=e1632] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+                - generic [ref=e1633]:
+                  - img [ref=e1635]
+                  - generic [ref=e1636]:
+                    - heading "Support" [level=2] [ref=e1637]
+                    - generic [ref=e1639]: Contact support for help
+          - generic [ref=e889]:
+            - paragraph [ref=e890]: Was this page helpful?
+            - generic [ref=e892]:
+              - button "Yes" [ref=e893] [cursor=pointer]:
+                - img [ref=e894]
+                - generic [ref=e896]: "Yes"
+              - button "No" [ref=e897] [cursor=pointer]:
+                - img [ref=e898]
+                - generic [ref=e900]: "No"
+          - link "Prompt Caching" [ref=e902] [cursor=pointer]:
+            - /url: /api-reference/endpoint/prompt-caching
+            - img [ref=e903]
+            - generic [ref=e905]: Prompt Caching
+          - generic [ref=e907]:
+            - textbox "Ask a question..." [ref=e908]
+            - generic: Ctrl+I
+            - button "Send message" [disabled] [ref=e909]:
+              - img [ref=e910]
+          - contentinfo [ref=e912]:
+            - link "Powered by" [ref=e915] [cursor=pointer]:
+              - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=concentrateai-8b9c0315
+              - generic [ref=e916]: Powered by
+              - img [ref=e917]
+  - alert [ref=e1640]

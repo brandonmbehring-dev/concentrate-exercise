@@ -23,28 +23,73 @@ from client import fetch_models
 
 
 def format_price(price: float | None) -> str:
-    """Format per-token price as $/1M tokens for readability."""
+    """Format per-million-token USD price for display."""
     if price is None:
         return "—"
-    per_million = price * 1_000_000
-    if per_million < 0.01:
-        return f"${per_million:.4f}/1M"
-    return f"${per_million:.2f}/1M"
+    if price < 0.01:
+        return f"${price:.4f}/1M"
+    return f"${price:.2f}/1M"
+
+
+def extract_pricing(model: dict) -> tuple[float | None, float | None]:
+    """Extract per-million-token USD pricing from nested providers structure.
+
+    The /v1/models/ response nests pricing under:
+        providers.{key}.pricing.tokens.input.price.USD
+    Price units are per-million tokens (confirmed by units field).
+    """
+    for prov_data in model.get("providers", {}).values():
+        tokens = prov_data.get("pricing", {}).get("tokens", {})
+        inp_obj = tokens.get("input", {})
+        out_obj = tokens.get("output", {})
+        inp_price = inp_obj.get("price", {}).get("USD")
+        out_price = out_obj.get("price", {}).get("USD")
+        if inp_price is not None:
+            return inp_price, out_price
+    return None, None
+
+
+def extract_capabilities(model: dict) -> tuple[list[str], int | None]:
+    """Extract capability flags and context window from providers structure.
+
+    Capabilities live under providers.{key}.supports, not at model top level.
+    """
+    caps: list[str] = []
+    ctx: int | None = None
+    for prov_data in model.get("providers", {}).values():
+        supports = prov_data.get("supports", {})
+        tools = supports.get("tools", {})
+        if tools.get("function_calling"):
+            caps.append("tools")
+        if tools.get("web_search"):
+            caps.append("web")
+        if supports.get("streaming"):
+            caps.append("stream")
+        if supports.get("reasoning"):
+            caps.append("reasoning")
+        ctx = ctx or prov_data.get("context_window")
+    return caps, ctx
 
 
 def group_by_provider(models: list[dict]) -> dict[str, list[dict]]:
-    """Group models by provider prefix (e.g., openai/, anthropic/)."""
+    """Group models by author slug (e.g., openai, anthropic, google)."""
     groups: dict[str, list[dict]] = {}
     for m in models:
-        model_id = m.get("id", "")
-        provider = model_id.split("/")[0] if "/" in model_id else "unknown"
-        groups.setdefault(provider, []).append(m)
+        author = m.get("author", {}).get("slug", "unknown")
+        groups.setdefault(author, []).append(m)
     return groups
 
 
-def display_models(data: dict[str, Any], provider_filter: str | None = None) -> None:
-    """Pretty-print the model catalog."""
-    models = data.get("data", data.get("models", []))
+def display_models(data: list | dict, provider_filter: str | None = None) -> None:
+    """Pretty-print the model catalog.
+
+    Handles both list (raw array) and dict (wrapped) responses from /v1/models/.
+    """
+    # Handle both list and dict catalog responses
+    if isinstance(data, list):
+        models = data
+    else:
+        models = data.get("data", data.get("models", []))
     if not models:
         print("No models returned. Response:")
         print(json.dumps(data, indent=2))
@@ -69,31 +114,19 @@ def display_models(data: dict[str, Any], provider_filter: str | None = None) -> 
         print(f"{'=' * 70}")
 
         table_data = []
-        for m in sorted(provider_models, key=lambda x: x.get("id", "")):
-            model_id = m.get("id", "?")
-            # Try common field names for pricing
-            pricing = m.get("pricing", {})
-            input_price = pricing.get("input") or pricing.get("prompt") or m.get("input_price")
-            output_price = pricing.get("output") or pricing.get("completion") or m.get("output_price")
+        for m in sorted(provider_models, key=lambda x: x.get("slug", "")):
+            slug = m.get("slug", "?")
+            # Build provider/model display IDs
+            prov_slugs = list(m.get("providers", {}).keys())
+            model_ids = [f"{ps}/{slug}" for ps in prov_slugs] if prov_slugs else [slug]
 
-            # Capabilities
-            caps = m.get("capabilities", {})
-            cap_flags = []
-            if caps.get("supports_tools") or caps.get("tool_use"):
-                cap_flags.append("tools")
-            if caps.get("supports_streaming") or caps.get("streaming"):
-                cap_flags.append("stream")
-            if caps.get("supports_vision") or caps.get("vision"):
-                cap_flags.append("vision")
-            if caps.get("supports_json_mode") or caps.get("json_mode"):
-                cap_flags.append("json")
-
-            ctx_window = m.get("context_window") or m.get("context_length") or m.get("max_tokens")
+            inp_price, out_price = extract_pricing(m)
+            cap_flags, ctx_window = extract_capabilities(m)
 
             table_data.append([
-                model_id,
-                format_price(input_price),
-                format_price(output_price),
+                ", ".join(model_ids),
+                format_price(inp_price),
+                format_price(out_price),
                 f"{ctx_window:,}" if ctx_window else "—",
                 ", ".join(cap_flags) if cap_flags else "—",
             ])
@@ -115,8 +148,12 @@ def main() -> None:
     print("Fetching model catalog from Concentrate AI...")
     data = fetch_models()
 
-    if "error" in data and data["error"]:
+    # Handle both list and dict responses; detect errors
+    if isinstance(data, dict) and data.get("error"):
         print(f"ERROR: {data['error']}")
+        sys.exit(1)
+    if isinstance(data, list) and not data:
+        print("ERROR: Empty model catalog")
         sys.exit(1)
 
     if args.json:
@@ -126,10 +163,13 @@ def main() -> None:
     display_models(data, provider_filter=args.provider)
 
     # Print a note about what models we're using in our scripts
+    from client import MODELS
     print("-" * 70)
     print("Models used in this exercise:")
-    print(f"  compare.py: openai/gpt-4.1 vs anthropic/claude-sonnet-4-5-20250929")
-    print(f"  agent.py:   Planner=Anthropic, Researcher=OpenAI, Synthesizer=Anthropic")
+    for provider, model_id in MODELS.items():
+        print(f"  {provider:12s} → {model_id}")
+    print(f"\n  agent.py roles: Planner=Anthropic, Researcher=xAI, "
+          f"Comparator=OpenAI, Synthesizer=Google")
     print("-" * 70)
 
 

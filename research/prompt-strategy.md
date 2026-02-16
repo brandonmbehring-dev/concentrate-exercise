@@ -50,8 +50,9 @@ others are goats. You pick door 1. The host, who knows what's behind
 each door, opens door 3 (goat). Should you switch, and if so, to
 which door? Calculate the exact probability for each remaining door.
 ```
-**Why**: Variant prevents memorization. Correct: switch to either remaining door (each 1/3 vs 1/4).
-**Eval**: Check probabilities are correct (1/4 for door 1, 1/3 for doors 2 and 4).
+**Why**: Variant prevents memorization. Correct: switch to either remaining door (each 3/8 vs 1/4).
+**Eval**: Check probabilities are correct (1/4 for door 1, 3/8 for doors 2 and 4).
+**Math**: P(host opens 3) = 1/4·1/3 + 1/4·1/2 + 0 + 1/4·1/2 = 1/3. Bayes: P(d1)=1/4, P(d2)=P(d4)=3/8.
 
 ### Prompt 5: Constrained Flash Fiction (Creative + Instruction Following)
 ```
@@ -159,7 +160,7 @@ Provider Comparison: [Prompt Name]
 │ OpenAI   │ ✓        │ 1.2s   │ $0.003    │ pass     │
 │ Anthropic│ ✓        │ 1.8s   │ $0.004    │ pass     │
 │ Google   │ ✓        │ 2.1s   │ $0.008    │ pass     │
-│ DeepSeek │ ✗        │ 0.9s   │ $0.0004   │ fail     │
+│ xAI      │ ✗        │ 0.9s   │ $0.0004   │ fail     │
 └──────────┴──────────┴────────┴───────────┴──────────┘
 ```
 

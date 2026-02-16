@@ -7,12 +7,13 @@
 ## Pre-Implementation Checklist (Monday Morning)
 
 - [ ] Create fresh production repo on `github.com/brandonmbehring-dev/`
-- [ ] Copy code files (client.py, compare.py, agent.py, discover.py)
-- [ ] Run `discover.py` to confirm model names (gpt-5 vs gpt-5.2)
+- [ ] Copy code files (client.py, compare.py, agent.py, discover.py, eval.py, guardrails.py, smoke_test.py)
+- [ ] Run `smoke_test.py` to verify setup (API key, providers, streaming)
+- [ ] Run `discover.py` to confirm model names in catalog
 - [ ] Verify API key: `curl -H "Authorization: Bearer $CONCENTRATE_API_KEY" https://api.concentrate.ai/v1/models/`
 - [ ] Check credit balance in dashboard
 - [ ] Confirm all 4 providers available in catalog
-- [ ] Install `tabulate`: `pip install tabulate`
+- [ ] Install dependencies: `pip install tabulate requests python-dotenv`
 
 ---
 
@@ -20,9 +21,9 @@
 
 | JD Responsibility | How Exercise Demonstrates |
 |---|---|
-| "Build LLM-powered services using Concentrate" | Built 4-file comparison suite on Concentrate API |
-| "Design reliable interactions with LLMs (OpenAI, Anthropic, Gemini, OSS)" | Tested 4 providers: OpenAI, Anthropic, Gemini, DeepSeek |
-| "Write tools to test system behavior at scale" | Systematic 8-prompt comparison + auto-routing + tool calling |
+| "Build LLM-powered services using Concentrate" | Built 8-file comparison suite on Concentrate API |
+| "Design reliable interactions with LLMs (OpenAI, Anthropic, Gemini, OSS)" | Tested 4 providers: OpenAI, Anthropic, Gemini, xAI |
+| "Write tools to test system behavior at scale" | Systematic 8-prompt comparison + auto-routing + tool calling + eval suite |
 | "Reproduce bugs, isolate root causes, document findings" | Discovered GPT-4.1 retirement, documented friction points |
 | "Drive improvements to APIs, defaults, and DX" | Friction section with actionable recommendations |
 | "Clear async communication" | Structured writeup with findings, numbers, opinions |
@@ -46,9 +47,9 @@
 |----------|----------------|
 | "Why these prompts?" | "I chose prompts that produce measurable cross-provider differences: structured output compliance, reasoning depth, instruction-following. Statistical reasoning prompts are my domain and show real differentiation." |
 | "What surprised you?" | "[Fill with actual finding from testing]" |
-| "How would you use this in production?" | "The cost-quality spectrum (DeepSeek 20x cheaper) maps directly to routing optimization. I'd route simple tasks to DeepSeek, complex reasoning to Claude/GPT-5, and use Concentrate's auto-routing to validate." |
+| "How would you use this in production?" | "The cost-quality spectrum (xAI 75x cheaper input) maps directly to routing optimization. I'd route simple tasks to xAI, complex reasoning to Claude/GPT-5.1, and use Concentrate's auto-routing to validate." |
 | "What would you build on day 1?" | "An eval pipeline — Promptfoo + Concentrate's routing = automated quality/cost monitoring across providers. Then a circuit breaker for provider failover." |
-| "Why 4 providers?" | "Two is the minimum. Four gives you the cost-quality spectrum that IS Concentrate's value prop. DeepSeek at $0.27/M vs Gemini at $12/M output — that's the routing story." |
+| "Why 4 providers?" | "Two is the minimum. Four gives you the cost-quality spectrum that IS Concentrate's value prop. xAI at $0.20/M vs Anthropic at $15/M output — that's the routing story." |
 | "What friction did you find?" | "[Fill with actual friction from testing]" |
 
 ---

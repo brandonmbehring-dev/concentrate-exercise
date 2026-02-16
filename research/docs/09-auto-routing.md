@@ -1,0 +1,765 @@
+# Auto Routing
+> Source: https://docs.concentrate.ai/api-reference/endpoint/auto-routing
+> Fetched: 2026-02-16 via Playwright browser_snapshot (Claude Code)
+> Method: Full accessibility tree capture — verbatim page content
+
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - link "concentrate home page light logo" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e12]: concentrate home page
+          - img "light logo" [ref=e13]
+        - generic [ref=e15]:
+          - button "Open search" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]:
+              - img [ref=e18]
+              - generic [ref=e21]: Search...
+            - generic [ref=e22]: Ctrl K
+          - button "Toggle assistant panel" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - list
+          - generic [ref=e29]:
+            - heading "API documentation" [level=5] [ref=e31]
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "API Introduction" [ref=e34] [cursor=pointer]:
+                  - /url: /api-reference/introduction
+                  - generic [ref=e36]: API Introduction
+          - generic [ref=e37]:
+            - heading "Responses" [level=5] [ref=e39]
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "POST Create Response" [ref=e42] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-response
+                  - generic [ref=e44]: POST
+                  - generic [ref=e46]: Create Response
+          - generic [ref=e47]:
+            - heading "Messages (Beta)" [level=5] [ref=e49]
+            - list [ref=e50]:
+              - listitem [ref=e51]:
+                - link "POST Create Message" [ref=e52] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-message
+                  - generic [ref=e54]: POST
+                  - generic [ref=e56]: Create Message
+          - generic [ref=e57]:
+            - heading "Models" [level=5] [ref=e59]
+            - list [ref=e60]:
+              - listitem [ref=e61]:
+                - link "GET List Models" [ref=e62] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-models
+                  - generic [ref=e64]: GET
+                  - generic [ref=e66]: List Models
+              - listitem [ref=e67]:
+                - link "GET List Providers" [ref=e68] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-providers
+                  - generic [ref=e70]: GET
+                  - generic [ref=e72]: List Providers
+              - listitem [ref=e73]:
+                - link "GET Get Model" [ref=e74] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-model
+                  - generic [ref=e76]: GET
+                  - generic [ref=e78]: Get Model
+              - listitem [ref=e79]:
+                - link "GET Get Provider Info" [ref=e80] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-provider-info
+                  - generic [ref=e82]: GET
+                  - generic [ref=e84]: Get Provider Info
+          - generic [ref=e85]:
+            - heading "Utilities" [level=5] [ref=e87]
+            - list [ref=e88]:
+              - listitem [ref=e89]:
+                - link "GET Health Check" [ref=e90] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/health
+                  - generic [ref=e92]: GET
+                  - generic [ref=e94]: Health Check
+          - generic [ref=e95]:
+            - heading "Features" [level=5] [ref=e97]
+            - list [ref=e98]:
+              - listitem [ref=e99]:
+                - link "Streaming Responses" [ref=e100] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/streaming
+                  - generic [ref=e102]: Streaming Responses
+              - listitem [ref=e103]:
+                - link "Auto Routing" [ref=e104] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/auto-routing
+                  - generic [ref=e106]: Auto Routing
+              - listitem [ref=e107]:
+                - link "Tool Calling" [ref=e108] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/tool-calling
+                  - generic [ref=e110]: Tool Calling
+              - listitem [ref=e111]:
+                - link "Web Search" [ref=e112] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/web-search
+                  - generic [ref=e114]: Web Search
+          - generic [ref=e115]:
+            - heading "Reference" [level=5] [ref=e117]
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - link "Request Parameters Reference" [ref=e120] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/request-parameters
+                  - generic [ref=e122]: Request Parameters Reference
+              - listitem [ref=e123]:
+                - link "Prompt Caching" [ref=e124] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/prompt-caching
+                  - generic [ref=e126]: Prompt Caching
+              - listitem [ref=e127]:
+                - link "Error Handling" [ref=e128] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/errors
+                  - generic [ref=e130]: Error Handling
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e134]:
+            - link "API reference" [ref=e135] [cursor=pointer]:
+              - /url: /api-reference/introduction
+              - text: API reference
+            - link "Guides" [ref=e137] [cursor=pointer]:
+              - /url: /getting-started/quickstart
+              - text: Guides
+          - generic [ref=e139]:
+            - listitem [ref=e140]:
+              - link "Support" [ref=e141] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+            - listitem [ref=e142]:
+              - link "Dashboard" [ref=e143] [cursor=pointer]:
+                - /url: https://app.concentrate.ai
+                - generic [ref=e144]:
+                  - generic [ref=e145]: Dashboard
+                  - img [ref=e146]
+          - button "Toggle dark mode" [ref=e149] [cursor=pointer]:
+            - img [ref=e150]
+        - generic [ref=e157]:
+          - banner [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: Features
+              - generic [ref=e161]:
+                - heading "Auto Routing" [level=1] [ref=e162]
+                - generic [ref=e163]:
+                  - button "Copy page" [ref=e164] [cursor=pointer]:
+                    - generic [ref=e165]:
+                      - img [ref=e166]
+                      - generic [ref=e169]: Copy page
+                  - button "More actions" [ref=e170] [cursor=pointer]:
+                    - img [ref=e171]
+            - paragraph [ref=e903]: Intelligent model selection based on cost, performance, and latency
+          - generic [ref=e175]:
+            - heading "Navigate to header Overview" [level=2] [ref=e904]:
+              - link "Navigate to header" [ref=e905] [cursor=pointer]:
+                - /url: "#overview"
+                - img [ref=e907]
+              - generic [ref=e909] [cursor=pointer]: Overview
+            - generic [ref=e910]:
+              - text: Auto routing automatically selects the best model for your request based on real-time metrics. Instead of manually choosing a model, set
+              - code [ref=e911]: "model: \"auto\""
+              - text: and let the API optimize for cost, performance, or latency.
+            - heading "Navigate to header How It Works" [level=2] [ref=e912]:
+              - link "Navigate to header" [ref=e913] [cursor=pointer]:
+                - /url: "#how-it-works"
+                - img [ref=e915]
+              - generic [ref=e917] [cursor=pointer]: How It Works
+            - generic [ref=e918]: "The routing system:"
+            - list [ref=e919]:
+              - listitem [ref=e920]: Analyzes your input and requirements
+              - listitem [ref=e921]: Evaluates available models based on real-time metrics
+              - listitem [ref=e922]: Selects the optimal model using your specified criteria
+              - listitem [ref=e923]: Routes the request to the chosen provider
+            - generic [ref=e924]:
+              - img "Info" [ref=e926]
+              - generic [ref=e929]: Auto routing decisions are made in real-time based on the last 15 minutes of metrics by default.
+            - heading "Navigate to header Basic Usage" [level=2] [ref=e930]:
+              - link "Navigate to header" [ref=e931] [cursor=pointer]:
+                - /url: "#basic-usage"
+                - img [ref=e933]
+              - generic [ref=e935] [cursor=pointer]: Basic Usage
+            - generic [ref=e936]:
+              - text: Simply set
+              - code [ref=e937]: "model: \"auto\""
+              - text: ":"
+            - generic [ref=e938]:
+              - generic [ref=e939]:
+                - tablist [ref=e940]:
+                  - tab "cURL" [selected] [ref=e941] [cursor=pointer]:
+                    - generic [ref=e942]: cURL
+                  - tab "Python" [ref=e944] [cursor=pointer]:
+                    - generic [ref=e945]: Python
+                  - tab "JavaScript" [ref=e946] [cursor=pointer]:
+                    - generic [ref=e947]: JavaScript
+                - generic [ref=e948]:
+                  - generic [ref=e949]:
+                    - button "Copy the contents from the code block" [ref=e950] [cursor=pointer]:
+                      - img [ref=e951]
+                    - generic [ref=e954]: Copy
+                  - generic [ref=e955]:
+                    - button "Ask AI" [ref=e956] [cursor=pointer]:
+                      - img [ref=e957]
+                    - generic [ref=e960]: Ask AI
+              - tabpanel "cURL" [ref=e962]:
+                - code [ref=e966]:
+                  - generic [ref=e967]: curl https://api.concentrate.ai/v1/responses \
+                  - generic [ref=e968]: "-H \"Content-Type: application/json\" \\"
+                  - generic [ref=e969]: "-H \"Authorization: Bearer YOUR_API_KEY\" \\"
+                  - generic [ref=e970]: "-d '{"
+                  - generic [ref=e971]: "\"model\": \"auto\","
+                  - generic [ref=e972]: "\"input\": \"Explain machine learning\""
+                  - generic [ref=e973]: "}'"
+            - heading "Navigate to header Routing Criteria" [level=2] [ref=e974]:
+              - link "Navigate to header" [ref=e975] [cursor=pointer]:
+                - /url: "#routing-criteria"
+                - img [ref=e977]
+              - generic [ref=e979] [cursor=pointer]: Routing Criteria
+            - generic [ref=e980]:
+              - text: Control how models are selected using the
+              - code [ref=e981]: routing
+              - text: parameter with
+              - code [ref=e982]: strategy
+              - text: and
+              - code [ref=e983]: metric
+              - text: "fields:"
+            - heading "Navigate to header strategy & metric" [level=3] [ref=e984]:
+              - link "Navigate to header" [ref=e985] [cursor=pointer]:
+                - /url: "#strategy-&-metric"
+                - img [ref=e987]
+              - generic [ref=e989] [cursor=pointer]: strategy & metric
+            - generic [ref=e990]:
+              - text: The
+              - code [ref=e991]: strategy
+              - text: determines whether to minimize or maximize the specified
+              - code [ref=e992]: metric
+              - text: ":"
+            - generic [ref=e993]:
+              - generic [ref=e994]:
+                - tablist [ref=e995]:
+                  - tab "Cost Optimization (Default)" [selected] [ref=e996] [cursor=pointer]:
+                    - generic [ref=e997]: Cost Optimization (Default)
+                  - tab "Performance Optimization" [ref=e999] [cursor=pointer]:
+                    - generic [ref=e1000]: Performance Optimization
+                  - tab "Latency Optimization" [ref=e1001] [cursor=pointer]:
+                    - generic [ref=e1002]: Latency Optimization
+                - generic [ref=e1003]:
+                  - generic [ref=e1004]:
+                    - button "Copy the contents from the code block" [ref=e1005] [cursor=pointer]:
+                      - img [ref=e1006]
+                    - generic [ref=e1009]: Copy
+                  - generic [ref=e1010]:
+                    - button "Ask AI" [ref=e1011] [cursor=pointer]:
+                      - img [ref=e1012]
+                    - generic [ref=e1015]: Ask AI
+              - tabpanel "Cost Optimization (Default)" [ref=e1017]:
+                - code [ref=e1021]:
+                  - generic [ref=e1022]: "{"
+                  - generic [ref=e1023]: "\"model\": \"auto\","
+                  - generic [ref=e1024]: "\"input\": \"What is 2+2?\","
+                  - generic [ref=e1025]: "\"routing\": {"
+                  - generic [ref=e1026]: "\"strategy\": \"min\","
+                  - generic [ref=e1027]: "\"metric\": \"cost\""
+                  - generic [ref=e1028]: "}"
+                  - generic [ref=e1029]: "}"
+            - strong [ref=e1031]: "Common Configurations:"
+            - list [ref=e1032]:
+              - listitem [ref=e1033]:
+                - text: "Cost optimization:"
+                - code [ref=e1034]: "strategy: \"min\", metric: \"cost\""
+                - text: "- Minimize cost per token"
+              - listitem [ref=e1035]:
+                - text: "Performance optimization:"
+                - code [ref=e1036]: "strategy: \"max\", metric: \"performance\""
+                - text: "- Maximize output quality"
+              - listitem [ref=e1037]:
+                - text: "Latency optimization:"
+                - code [ref=e1038]: "strategy: \"min\", metric: \"avg_latency\""
+                - text: "- Minimize response time"
+            - heading "Navigate to header Advanced Routing Configuration" [level=3] [ref=e1039]:
+              - link "Navigate to header" [ref=e1040] [cursor=pointer]:
+                - /url: "#advanced-routing-configuration"
+                - img [ref=e1042]
+              - generic [ref=e1044] [cursor=pointer]: Advanced Routing Configuration
+            - generic [ref=e1045]: "Fine-tune routing with additional parameters:"
+            - generic [ref=e1046]:
+              - generic [ref=e1049]:
+                - link "Navigate to header" [ref=e1050] [cursor=pointer]:
+                  - /url: "#param-routing-strategy"
+                  - img [ref=e1052]
+                - generic [ref=e1054] [cursor=pointer]: routing.strategy
+                - generic [ref=e1056]: string
+              - generic [ref=e1057]:
+                - generic [ref=e1058]: "Strategy for metric optimization:"
+                - list [ref=e1059]:
+                  - listitem [ref=e1060]:
+                    - code [ref=e1061]: min
+                    - text: ": Minimize the specified metric (default for cost, latency)"
+                  - listitem [ref=e1062]:
+                    - code [ref=e1063]: max
+                    - text: ": Maximize the specified metric (default for performance)"
+            - generic [ref=e1064]:
+              - generic [ref=e1067]:
+                - link "Navigate to header" [ref=e1068] [cursor=pointer]:
+                  - /url: "#param-routing-metric"
+                  - img [ref=e1070]
+                - generic [ref=e1072] [cursor=pointer]: routing.metric
+                - generic [ref=e1074]: string
+              - generic [ref=e1075]:
+                - generic [ref=e1076]: "Specific metric to optimize:"
+                - strong [ref=e1078]: "Cost & Performance:"
+                - list [ref=e1079]:
+                  - listitem [ref=e1080]:
+                    - code [ref=e1081]: cost
+                    - text: ": Cost per token"
+                  - listitem [ref=e1082]:
+                    - code [ref=e1083]: performance
+                    - text: ": Output quality score"
+                - strong [ref=e1085]: "Latency Metrics:"
+                - list [ref=e1086]:
+                  - listitem [ref=e1087]:
+                    - code [ref=e1088]: avg_latency
+                    - text: ": Average response time"
+                  - listitem [ref=e1089]:
+                    - code [ref=e1090]: min_latency
+                    - text: ": Minimum response time"
+                  - listitem [ref=e1091]:
+                    - code [ref=e1092]: max_latency
+                    - text: ": Maximum response time"
+                  - listitem [ref=e1093]:
+                    - code [ref=e1094]: p50_latency
+                    - text: ","
+                    - code [ref=e1095]: p90_latency
+                    - text: ","
+                    - code [ref=e1096]: p99_latency
+                    - text: ": Percentile latencies"
+                  - listitem [ref=e1097]:
+                    - code [ref=e1098]: avg_e2e_latency
+                    - text: ": Average end-to-end latency including overhead"
+                  - listitem [ref=e1099]:
+                    - code [ref=e1100]: min_e2e_latency
+                    - text: ","
+                    - code [ref=e1101]: max_e2e_latency
+                    - text: ": Min/max end-to-end latency"
+                - generic [ref=e1102]:
+                  - text: You can use any percentile from p0 to p100 (e.g.,
+                  - code [ref=e1103]: p75_latency
+                  - text: ","
+                  - code [ref=e1104]: p95_latency
+                  - text: ","
+                  - code [ref=e1105]: p50_e2e_latency
+                  - text: )
+                - generic [ref=e1106]:
+                  - img "Info" [ref=e1108]
+                  - generic [ref=e1111]: Latency metrics selected with percentiles other than p50, p95, and p99, will result in a slightly slower response due to cold caches.
+                - strong [ref=e1113]: "Reliability & Volume:"
+                - list [ref=e1114]:
+                  - listitem [ref=e1115]:
+                    - code [ref=e1116]: uptime
+                    - text: ": Provider availability"
+                  - listitem [ref=e1117]:
+                    - code [ref=e1118]: throughput
+                    - text: ": Requests per second"
+                  - listitem [ref=e1119]:
+                    - code [ref=e1120]: total_requests
+                    - text: ": Total request volume"
+                - strong [ref=e1122]: "Token Metrics:"
+                - list [ref=e1123]:
+                  - listitem [ref=e1124]:
+                    - code [ref=e1125]: input_tokens
+                    - text: ": Average input token count"
+                  - listitem [ref=e1126]:
+                    - code [ref=e1127]: output_tokens
+                    - text: ": Average output token count"
+                  - listitem [ref=e1128]:
+                    - code [ref=e1129]: total_tokens
+                    - text: ": Average total token count"
+            - generic [ref=e1130]:
+              - generic [ref=e1133]:
+                - link "Navigate to header" [ref=e1134] [cursor=pointer]:
+                  - /url: "#param-routing-interval"
+                  - img [ref=e1136]
+                - generic [ref=e1138] [cursor=pointer]: routing.interval
+                - generic [ref=e1140]: string
+              - generic [ref=e1141]:
+                - generic [ref=e1142]: Time window for metric calculation.
+                - generic [ref=e1143]:
+                  - strong [ref=e1144]: "Format:"
+                  - code [ref=e1145]: "\"number unit\""
+                  - text: or
+                  - code [ref=e1146]: "\"number<shorthand>\""
+                - list [ref=e1147]:
+                  - listitem [ref=e1148]: "Examples: “15 minutes” or “15m” (default), “1 hour” or “1h”, “24 hours” or “24h”, “7 days” or “7d”"
+                  - listitem [ref=e1149]: "Valid units: minutes/m, hours/h, days/d, weeks/w, years/y"
+                  - listitem [ref=e1150]: "Minimum for minutes: 15 minutes"
+            - heading "Navigate to header Examples" [level=2] [ref=e1151]:
+              - link "Navigate to header" [ref=e1152] [cursor=pointer]:
+                - /url: "#examples"
+                - img [ref=e1154]
+              - generic [ref=e1156] [cursor=pointer]: Examples
+            - heading "Navigate to header Cost-Optimized" [level=3] [ref=e1157]:
+              - link "Navigate to header" [ref=e1158] [cursor=pointer]:
+                - /url: "#cost-optimized"
+                - img [ref=e1160]
+              - generic [ref=e1162] [cursor=pointer]: Cost-Optimized
+            - generic [ref=e1163]: "Perfect for high-volume, non-critical tasks:"
+            - generic [ref=e1164]:
+              - generic [ref=e1165]:
+                - generic [ref=e1166]:
+                  - button "Copy the contents from the code block" [ref=e1167] [cursor=pointer]:
+                    - img [ref=e1168]
+                  - generic [ref=e1171]: Copy
+                - generic [ref=e1172]:
+                  - button "Ask AI" [ref=e1173] [cursor=pointer]:
+                    - img [ref=e1174]
+                  - generic [ref=e1177]: Ask AI
+              - code [ref=e1181]:
+                - generic [ref=e1182]: "{"
+                - generic [ref=e1183]: "\"model\": \"auto\","
+                - generic [ref=e1184]: "\"input\": \"Summarize this text\","
+                - generic [ref=e1185]: "\"routing\": {"
+                - generic [ref=e1186]: "\"strategy\": \"min\","
+                - generic [ref=e1187]: "\"metric\": \"cost\","
+                - generic [ref=e1188]: "\"interval\": \"15 minutes\""
+                - generic [ref=e1189]: "}"
+                - generic [ref=e1190]: "}"
+            - heading "Navigate to header Performance-Optimized" [level=3] [ref=e1191]:
+              - link "Navigate to header" [ref=e1192] [cursor=pointer]:
+                - /url: "#performance-optimized"
+                - img [ref=e1194]
+              - generic [ref=e1196] [cursor=pointer]: Performance-Optimized
+            - generic [ref=e1197]: "Best for complex reasoning, coding, or analysis:"
+            - generic [ref=e1198]:
+              - generic [ref=e1199]:
+                - generic [ref=e1200]:
+                  - button "Copy the contents from the code block" [ref=e1201] [cursor=pointer]:
+                    - img [ref=e1202]
+                  - generic [ref=e1205]: Copy
+                - generic [ref=e1206]:
+                  - button "Ask AI" [ref=e1207] [cursor=pointer]:
+                    - img [ref=e1208]
+                  - generic [ref=e1211]: Ask AI
+              - code [ref=e1215]:
+                - generic [ref=e1216]: "{"
+                - generic [ref=e1217]: "\"model\": \"auto\","
+                - generic [ref=e1218]: "\"input\": \"Design a scalable microservices architecture\","
+                - generic [ref=e1219]: "\"routing\": {"
+                - generic [ref=e1220]: "\"strategy\": \"max\","
+                - generic [ref=e1221]: "\"metric\": \"performance\","
+                - generic [ref=e1222]: "\"interval\": \"1 hour\""
+                - generic [ref=e1223]: "}"
+                - generic [ref=e1224]: "}"
+            - heading "Navigate to header Latency-Optimized" [level=3] [ref=e1225]:
+              - link "Navigate to header" [ref=e1226] [cursor=pointer]:
+                - /url: "#latency-optimized"
+                - img [ref=e1228]
+              - generic [ref=e1230] [cursor=pointer]: Latency-Optimized
+            - generic [ref=e1231]: "Ideal for real-time chat or interactive applications:"
+            - generic [ref=e1232]:
+              - generic [ref=e1233]:
+                - generic [ref=e1234]:
+                  - button "Copy the contents from the code block" [ref=e1235] [cursor=pointer]:
+                    - img [ref=e1236]
+                  - generic [ref=e1239]: Copy
+                - generic [ref=e1240]:
+                  - button "Ask AI" [ref=e1241] [cursor=pointer]:
+                    - img [ref=e1242]
+                  - generic [ref=e1245]: Ask AI
+              - code [ref=e1249]:
+                - generic [ref=e1250]: "{"
+                - generic [ref=e1251]: "\"model\": \"auto\","
+                - generic [ref=e1252]: "\"input\": \"Quick translation: Hello -> Spanish\","
+                - generic [ref=e1253]: "\"routing\": {"
+                - generic [ref=e1254]: "\"strategy\": \"min\","
+                - generic [ref=e1255]: "\"metric\": \"p50_latency\","
+                - generic [ref=e1256]: "\"interval\": \"15 minutes\""
+                - generic [ref=e1257]: "}"
+                - generic [ref=e1258]: "}"
+            - heading "Navigate to header Uptime-Optimized" [level=3] [ref=e1259]:
+              - link "Navigate to header" [ref=e1260] [cursor=pointer]:
+                - /url: "#uptime-optimized"
+                - img [ref=e1262]
+              - generic [ref=e1264] [cursor=pointer]: Uptime-Optimized
+            - generic [ref=e1265]: "Maximum reliability for production workloads:"
+            - generic [ref=e1266]:
+              - generic [ref=e1267]:
+                - generic [ref=e1268]:
+                  - button "Copy the contents from the code block" [ref=e1269] [cursor=pointer]:
+                    - img [ref=e1270]
+                  - generic [ref=e1273]: Copy
+                - generic [ref=e1274]:
+                  - button "Ask AI" [ref=e1275] [cursor=pointer]:
+                    - img [ref=e1276]
+                  - generic [ref=e1279]: Ask AI
+              - code [ref=e1283]:
+                - generic [ref=e1284]: "{"
+                - generic [ref=e1285]: "\"model\": \"auto\","
+                - generic [ref=e1286]: "\"input\": \"Process this data\","
+                - generic [ref=e1287]: "\"routing\": {"
+                - generic [ref=e1288]: "\"strategy\": \"max\","
+                - generic [ref=e1289]: "\"metric\": \"uptime\","
+                - generic [ref=e1290]: "\"interval\": \"24 hours\""
+                - generic [ref=e1291]: "}"
+                - generic [ref=e1292]: "}"
+            - heading "Navigate to header Response Information" [level=2] [ref=e1293]:
+              - link "Navigate to header" [ref=e1294] [cursor=pointer]:
+                - /url: "#response-information"
+                - img [ref=e1296]
+              - generic [ref=e1298] [cursor=pointer]: Response Information
+            - generic [ref=e1299]: "When using auto routing, the response includes which model was selected:"
+            - generic [ref=e1300]:
+              - generic [ref=e1301]:
+                - generic [ref=e1302]:
+                  - button "Copy the contents from the code block" [ref=e1303] [cursor=pointer]:
+                    - img [ref=e1304]
+                  - generic [ref=e1307]: Copy
+                - generic [ref=e1308]:
+                  - button "Ask AI" [ref=e1309] [cursor=pointer]:
+                    - img [ref=e1310]
+                  - generic [ref=e1313]: Ask AI
+              - code [ref=e1317]:
+                - generic [ref=e1318]: "{"
+                - generic [ref=e1319]: "\"id\": \"resp_xyz789\","
+                - generic [ref=e1320]: "\"created_at\": 1702934400,"
+                - generic [ref=e1321]: "\"status\": \"completed\","
+                - generic [ref=e1322]: "\"model\": \"anthropic/claude-haiku-4-5\", // Auto-selected model"
+                - generic [ref=e1323]: "\"output\": [...],"
+                - generic [ref=e1324]: "\"usage\": {...}"
+                - generic [ref=e1325]: "}"
+            - generic [ref=e1326]:
+              - img "Tip" [ref=e1328]
+              - generic [ref=e1331]: Log the selected model to understand routing decisions and optimize your configuration.
+            - heading "Navigate to header Provider Routing" [level=2] [ref=e1332]:
+              - link "Navigate to header" [ref=e1333] [cursor=pointer]:
+                - /url: "#provider-routing"
+                - img [ref=e1335]
+              - generic [ref=e1337] [cursor=pointer]: Provider Routing
+            - generic [ref=e1338]: "You can also use auto routing for provider selection while specifying the model:"
+            - generic [ref=e1339]:
+              - generic [ref=e1340]:
+                - generic [ref=e1341]:
+                  - button "Copy the contents from the code block" [ref=e1342] [cursor=pointer]:
+                    - img [ref=e1343]
+                  - generic [ref=e1346]: Copy
+                - generic [ref=e1347]:
+                  - button "Ask AI" [ref=e1348] [cursor=pointer]:
+                    - img [ref=e1349]
+                  - generic [ref=e1352]: Ask AI
+              - code [ref=e1356]:
+                - generic [ref=e1357]: "{"
+                - generic [ref=e1358]: "\"model\": \"gpt-4o\", // Model specified"
+                - generic [ref=e1359]: "\"input\": \"Hello\","
+                - generic [ref=e1360]: "\"routing\": {"
+                - generic [ref=e1361]: "\"strategy\": \"max\","
+                - generic [ref=e1362]: "\"metric\": \"uptime\""
+                - generic [ref=e1363]: "}"
+                - generic [ref=e1364]: "}"
+            - generic [ref=e1365]: This selects the best provider for GPT-4o (OpenAI vs Azure) based on uptime.
+            - heading "Navigate to header Best Practices" [level=2] [ref=e1366]:
+              - link "Navigate to header" [ref=e1367] [cursor=pointer]:
+                - /url: "#best-practices"
+                - img [ref=e1369]
+              - generic [ref=e1371] [cursor=pointer]: Best Practices
+            - generic [ref=e1372]:
+              - group [ref=e1373]:
+                - generic "Match routing to use case" [ref=e1374] [cursor=pointer]:
+                  - img [ref=e1376]
+                  - img [ref=e1378]
+                  - paragraph [ref=e1380]: Match routing to use case
+              - group [ref=e1381]:
+                - generic "Use appropriate intervals" [ref=e1382] [cursor=pointer]:
+                  - img [ref=e1384]
+                  - img [ref=e1386]
+                  - paragraph [ref=e1388]: Use appropriate intervals
+              - group [ref=e1389]:
+                - generic "Monitor selected models" [ref=e1390] [cursor=pointer]:
+                  - img [ref=e1392]
+                  - img [ref=e1394]
+                  - paragraph [ref=e1396]: Monitor selected models
+              - group [ref=e1397]:
+                - generic "Combine with max_output_tokens" [ref=e1398] [cursor=pointer]:
+                  - img [ref=e1400]
+                  - img [ref=e1402]
+                  - paragraph [ref=e1404]: Combine with max_output_tokens
+              - group [ref=e1405]:
+                - generic "Test before production" [ref=e1406] [cursor=pointer]:
+                  - img [ref=e1408]
+                  - img [ref=e1410]
+                  - paragraph [ref=e1412]: Test before production
+            - heading "Navigate to header Cost Comparison" [level=2] [ref=e1413]:
+              - link "Navigate to header" [ref=e1414] [cursor=pointer]:
+                - /url: "#cost-comparison"
+                - img [ref=e1416]
+              - generic [ref=e1418] [cursor=pointer]: Cost Comparison
+            - generic [ref=e1419]:
+              - text: Auto routing with cost optimization (
+              - code [ref=e1420]: "strategy: \"min\", metric: \"cost\""
+              - text: ") can significantly reduce costs:"
+            - table [ref=e1423]:
+              - rowgroup [ref=e1424]:
+                - row "Scenario Manual Selection Auto Routing Savings" [ref=e1425]:
+                  - columnheader "Scenario" [ref=e1426]
+                  - columnheader "Manual Selection" [ref=e1427]
+                  - columnheader "Auto Routing" [ref=e1428]
+                  - columnheader "Savings" [ref=e1429]
+              - rowgroup [ref=e1430]:
+                - 'row "Simple Q&A GPT-4o: $0.015 Haiku 4.5: $0.004 73%" [ref=e1431]':
+                  - cell "Simple Q&A" [ref=e1432]
+                  - 'cell "GPT-4o: $0.015" [ref=e1433]'
+                  - 'cell "Haiku 4.5: $0.004" [ref=e1434]'
+                  - cell "73%" [ref=e1435]
+                - 'row "Content generation Claude Opus: $0.075 GPT-4o Mini: $0.010 87%" [ref=e1436]':
+                  - cell "Content generation" [ref=e1437]
+                  - 'cell "Claude Opus: $0.075" [ref=e1438]'
+                  - 'cell "GPT-4o Mini: $0.010" [ref=e1439]'
+                  - cell "87%" [ref=e1440]
+                - 'row "Code completion GPT-4.1: $0.030 Gemini Flash: $0.008 73%" [ref=e1441]':
+                  - cell "Code completion" [ref=e1442]
+                  - 'cell "GPT-4.1: $0.030" [ref=e1443]'
+                  - 'cell "Gemini Flash: $0.008" [ref=e1444]'
+                  - cell "73%" [ref=e1445]
+            - generic [ref=e1446]:
+              - img "Info" [ref=e1448]
+              - generic [ref=e1451]: Actual costs vary based on input/output lengths and real-time pricing. These are example scenarios.
+            - heading "Navigate to header Error Handling" [level=2] [ref=e1452]:
+              - link "Navigate to header" [ref=e1453] [cursor=pointer]:
+                - /url: "#error-handling"
+                - img [ref=e1455]
+              - generic [ref=e1457] [cursor=pointer]: Error Handling
+            - generic [ref=e1458]: "When using auto routing, the system selects the optimal provider based on your routing configuration and makes a single request. If the selected provider is unavailable, the API returns a 424 error:"
+            - generic [ref=e1459]:
+              - generic [ref=e1460]:
+                - generic [ref=e1461]:
+                  - button "Copy the contents from the code block" [ref=e1462] [cursor=pointer]:
+                    - img [ref=e1463]
+                  - generic [ref=e1466]: Copy
+                - generic [ref=e1467]:
+                  - button "Ask AI" [ref=e1468] [cursor=pointer]:
+                    - img [ref=e1469]
+                  - generic [ref=e1472]: Ask AI
+              - code [ref=e1476]:
+                - generic [ref=e1477]: "{"
+                - generic [ref=e1478]: "\"error\": \"Model 'openai/gpt-4o' Errored\","
+                - generic [ref=e1479]: "\"message\": \"Request to openai/gpt-4o failed because provider was unavailable\","
+                - generic [ref=e1480]: "\"model\": \"openai/gpt-4o\""
+                - generic [ref=e1481]: "}"
+            - generic [ref=e1482]:
+              - strong [ref=e1483]: Fallback During Selection
+              - text: ": If no metrics are available for the specified routing metric, the system automatically falls back to selecting the cheapest provider for the chosen model. This fallback happens during the routing decision phase, before the request is made."
+            - generic [ref=e1484]: "To improve reliability, consider:"
+            - list [ref=e1485]:
+              - listitem [ref=e1486]:
+                - text: Using
+                - code [ref=e1487]: "metric: \"uptime\""
+                - text: with
+                - code [ref=e1488]: "strategy: \"max\""
+                - text: to select the most reliable provider
+              - listitem [ref=e1489]: Implementing client-side retry logic with exponential backoff
+              - listitem [ref=e1490]: Monitoring provider availability metrics in your application
+            - heading "Navigate to header Comparing Routing Strategies" [level=2] [ref=e1491]:
+              - link "Navigate to header" [ref=e1492] [cursor=pointer]:
+                - /url: "#comparing-routing-strategies"
+                - img [ref=e1494]
+              - generic [ref=e1496] [cursor=pointer]: Comparing Routing Strategies
+            - generic [ref=e1497]:
+              - generic [ref=e1498]:
+                - tablist [ref=e1499]:
+                  - tab "Test Different Strategies" [selected] [ref=e1500] [cursor=pointer]:
+                    - generic [ref=e1501]: Test Different Strategies
+                  - tab "Monitor Routing Decisions" [ref=e1503] [cursor=pointer]:
+                    - generic [ref=e1504]: Monitor Routing Decisions
+                - generic [ref=e1505]:
+                  - generic [ref=e1506]:
+                    - button "Copy the contents from the code block" [ref=e1507] [cursor=pointer]:
+                      - img [ref=e1508]
+                    - generic [ref=e1511]: Copy
+                  - generic [ref=e1512]:
+                    - button "Ask AI" [ref=e1513] [cursor=pointer]:
+                      - img [ref=e1514]
+                    - generic [ref=e1517]: Ask AI
+              - tabpanel "Test Different Strategies" [ref=e1519]:
+                - code [ref=e1523]:
+                  - generic [ref=e1524]: import requests
+                  - generic [ref=e1525]: "# Define different routing configurations"
+                  - generic [ref=e1526]: configs = [
+                  - generic [ref=e1527]: "{\"name\": \"Cost\", \"strategy\": \"min\", \"metric\": \"cost\"},"
+                  - generic [ref=e1528]: "{\"name\": \"Performance\", \"strategy\": \"max\", \"metric\": \"performance\"},"
+                  - generic [ref=e1529]: "{\"name\": \"Latency\", \"strategy\": \"min\", \"metric\": \"avg_latency\"}"
+                  - generic [ref=e1530]: "]"
+                  - generic [ref=e1531]: input_text = "Explain quantum computing"
+                  - generic [ref=e1532]: "for config in configs:"
+                  - generic [ref=e1533]: response = requests.post(
+                  - generic [ref=e1534]: "\"https://api.concentrate.ai/v1/responses\","
+                  - generic [ref=e1535]: "headers={\"Authorization\": \"Bearer YOUR_API_KEY\"},"
+                  - generic [ref=e1536]: "json={"
+                  - generic [ref=e1537]: "\"model\": \"auto\","
+                  - generic [ref=e1538]: "\"input\": input_text,"
+                  - generic [ref=e1539]: "\"routing\": {"
+                  - generic [ref=e1540]: "\"strategy\": config[\"strategy\"],"
+                  - generic [ref=e1541]: "\"metric\": config[\"metric\"]"
+                  - generic [ref=e1542]: "}"
+                  - generic [ref=e1543]: "}"
+                  - generic [ref=e1544]: )
+                  - generic [ref=e1545]: data = response.json()
+                  - generic [ref=e1546]: "print(f\"{config['name']}: {data['model']}\")"
+                  - generic [ref=e1547]: "print(f\" Tokens: {data['usage']['total_tokens']}\")"
+                  - generic [ref=e1548]: "print(f\" Cost: ${calculate_cost(data):.4f}\\n\")"
+            - heading "Navigate to header Related Documentation" [level=2] [ref=e1549]:
+              - link "Navigate to header" [ref=e1550] [cursor=pointer]:
+                - /url: "#related-documentation"
+                - img [ref=e1552]
+              - generic [ref=e1554] [cursor=pointer]: Related Documentation
+            - generic [ref=e1555]:
+              - link "Create Response Main endpoint documentation" [ref=e1556] [cursor=pointer]:
+                - /url: /api-reference/endpoint/create-response
+                - generic [ref=e1557]:
+                  - img [ref=e1559]
+                  - generic [ref=e1560]:
+                    - heading "Create Response" [level=2] [ref=e1561]
+                    - generic [ref=e1563]: Main endpoint documentation
+              - link "Supported Models View all available models" [ref=e1564] [cursor=pointer]:
+                - /url: /api-reference/introduction#supported-models
+                - generic [ref=e1565]:
+                  - img [ref=e1567]
+                  - generic [ref=e1568]:
+                    - heading "Supported Models" [level=2] [ref=e1569]
+                    - generic [ref=e1571]: View all available models
+              - link "Error Handling Handle routing failures" [ref=e1572] [cursor=pointer]:
+                - /url: /api-reference/endpoint/errors
+                - generic [ref=e1573]:
+                  - img [ref=e1575]
+                  - generic [ref=e1576]:
+                    - heading "Error Handling" [level=2] [ref=e1577]
+                    - generic [ref=e1579]: Handle routing failures
+              - link "Best Practices Optimization tips" [ref=e1580] [cursor=pointer]:
+                - /url: /quickstart
+                - generic [ref=e1581]:
+                  - img [ref=e1583]
+                  - generic [ref=e1584]:
+                    - heading "Best Practices" [level=2] [ref=e1585]
+                    - generic [ref=e1587]: Optimization tips
+          - generic [ref=e861]:
+            - paragraph [ref=e862]: Was this page helpful?
+            - generic [ref=e864]:
+              - button "Yes" [ref=e865] [cursor=pointer]:
+                - img [ref=e866]
+                - generic [ref=e868]: "Yes"
+              - button "No" [ref=e869] [cursor=pointer]:
+                - img [ref=e870]
+                - generic [ref=e872]: "No"
+          - generic [ref=e873]:
+            - link "Streaming Responses" [ref=e874] [cursor=pointer]:
+              - /url: /api-reference/endpoint/streaming
+              - img [ref=e875]
+              - generic [ref=e877]: Streaming Responses
+            - link "Tool Calling" [ref=e878] [cursor=pointer]:
+              - /url: /api-reference/endpoint/tool-calling
+              - generic [ref=e879]: Tool Calling
+              - img [ref=e880]
+          - generic [ref=e883]:
+            - textbox "Ask a question..." [ref=e884]
+            - generic: Ctrl+I
+            - button "Send message" [disabled] [ref=e885]:
+              - img [ref=e886]
+          - contentinfo [ref=e888]:
+            - link "Powered by" [ref=e891] [cursor=pointer]:
+              - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=concentrateai-8b9c0315
+              - generic [ref=e892]: Powered by
+              - img [ref=e893]
+  - alert [ref=e1588]

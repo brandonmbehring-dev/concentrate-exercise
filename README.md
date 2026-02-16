@@ -10,7 +10,7 @@
 
 ```bash
 # Clone
-git clone https://github.com/YOUR_USERNAME/concentrate-exercise.git
+git clone <repo-url>
 cd concentrate-exercise
 
 # Install dependencies
@@ -24,20 +24,34 @@ cp .env.example .env
 ## How to Run
 
 ```bash
-# Discover available models and pricing
+# 0. Verify setup (run this first)
+python smoke_test.py
+
+# 1. Discover available models and pricing
 python discover.py
 
-# Run all comparisons (basic, routing, tools, edge cases, streaming, multi-turn, cost)
+# 2. Run all comparisons (9 sections: basic, routing, tools, edge, streaming, multi-turn, cost, research, websearch)
 python compare.py
+python compare.py --section all
 
 # Run a specific section
 python compare.py --section basic
 python compare.py --section streaming
 python compare.py --section cost
+python compare.py --section research
+python compare.py --section websearch
 
-# Run the multi-step research agent
+# 3. Run the multi-step research agent (4-provider routing)
 python agent.py
 python agent.py --question "Your custom question here"
+python agent.py --all-questions
+
+# 4. Run Package C evaluation suite
+python eval.py results/comparison_*.json
+python eval.py results/comparison_*.json --skip-llm  # Layer 1 only (deterministic, $0)
+
+# 5. Test PII redaction guardrails
+python guardrails.py
 ```
 
 Results are saved as JSON in `results/`.
@@ -46,19 +60,22 @@ Results are saved as JSON in `results/`.
 
 | Script | Purpose | API Calls |
 |--------|---------|-----------|
+| `smoke_test.py` | Setup verification (API key, providers, streaming) | ~5 |
 | `discover.py` | Model catalog + pricing exploration | 1 (GET /v1/models/) |
-| `compare.py` | 7-section provider comparison suite | ~20 |
-| `agent.py` | Multi-step research agent (plan/execute/synthesize) | 4-6 |
-| `client.py` | Shared API client (not run directly) | — |
+| `compare.py` | 9-section provider comparison suite | ~76 |
+| `agent.py` | Multi-step research agent (plan/execute/synthesize) | ~10 |
+| `eval.py` | Package C evaluation (deterministic + LLM-judge + meta-eval) | ~70 |
+| `guardrails.py` | PII redaction test (streaming vs non-streaming) | 2 |
+| `client.py` | Shared API client with retry logic (not run directly) | -- |
 
 ## Findings
 
-<!-- What did you learn? How do providers compare on latency, cost, quality? -->
+See writeup.pdf
 
 ## Friction / API Feedback
 
-<!-- What was confusing? What would you improve about the API/docs? -->
+See writeup.pdf
 
 ## Screenshots
 
-<!-- Add screenshots from results/ or terminal output -->
+See writeup.pdf

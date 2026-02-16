@@ -2,18 +2,19 @@
 """
 Multi-step tool-calling agent using the Concentrate AI unified API.
 
-Demonstrates a research agent that:
-1. Breaks a question into sub-tasks (Anthropic — planner)
-2. Routes each sub-task to a different provider (OpenAI — researcher)
-3. Uses tool calling to gather structured data
-4. Synthesizes a final answer (Anthropic — synthesizer)
+Demonstrates a research agent that routes each step to a different provider:
+1. PLAN     (Anthropic) — structured planning, strong instruction following
+2. RESEARCH (xAI)       — cheapest provider ($0.20/$0.50), shows cost optimization
+3. COMPARE  (OpenAI)    — strong at structured comparison
+4. SYNTHESIZE (Google)   — capable synthesis and summarization
 
-This cross-provider routing is the core value prop: each step uses
-the provider best-suited to that task type.
+This 4-provider routing is the core value prop: each step uses the provider
+best-suited to that task type, all through a single API.
 
 Usage:
     python agent.py
     python agent.py --question "Compare Python and Rust for ML systems"
+    python agent.py --all-questions   # Run both default questions
 """
 
 import argparse
@@ -29,9 +30,25 @@ RESULTS_DIR = Path(__file__).parent / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
 
 # Route different agent steps to different providers
-PLANNER_MODEL = MODELS["anthropic"]
-RESEARCHER_MODEL = MODELS["openai"]
-SYNTHESIZER_MODEL = MODELS["anthropic"]
+# Each role assigned to a different provider to demonstrate cross-provider routing
+PLANNER_MODEL = MODELS["anthropic"]     # Best at structured planning
+RESEARCHER_MODEL = MODELS["xai"]        # Cheapest — $0.20/$0.50 per 1M tokens
+COMPARATOR_MODEL = MODELS["openai"]     # Strong at structured comparison
+SYNTHESIZER_MODEL = MODELS["google"]    # Capable synthesis
+
+# Default questions — chosen to produce interesting multi-step results
+DEFAULT_QUESTIONS = [
+    (
+        "Compare strategies for reducing LLM costs in production without "
+        "sacrificing quality. Include routing optimization, prompt engineering, "
+        "caching, and model selection."
+    ),
+    (
+        "Design a framework for validating LLM outputs in financial services, "
+        "where errors could cause regulatory penalties. Include quality metrics, "
+        "human-in-the-loop design, and failure modes."
+    ),
+]
 
 
 # ---------------------------------------------------------------------------
@@ -41,6 +58,7 @@ SYNTHESIZER_MODEL = MODELS["anthropic"]
 AGENT_TOOLS = [
     {
         "type": "function",
+        "strict": False,
         "name": "analyze_topic",
         "description": (
             "Analyze a specific sub-topic and return structured findings. "
@@ -64,6 +82,7 @@ AGENT_TOOLS = [
     },
     {
         "type": "function",
+        "strict": False,
         "name": "compare_options",
         "description": "Compare two or more options along specified dimensions.",
         "parameters": {
@@ -94,7 +113,10 @@ def execute_tool(name: str, arguments: str) -> str:
     use a second LLM call routed to a DIFFERENT provider than the planner,
     demonstrating Concentrate's cross-provider routing capability.
     """
-    args = json.loads(arguments)
+    try:
+        args = json.loads(arguments)
+    except (json.JSONDecodeError, ValueError) as e:
+        return f"[Error parsing tool arguments: {e}]"
 
     if name == "analyze_topic":
         topic = args["topic"]
@@ -115,7 +137,8 @@ def execute_tool(name: str, arguments: str) -> str:
             f"{', '.join(dimensions)}.\n"
             f"Give a brief verdict for each dimension. Be specific."
         )
-        result = call_model(RESEARCHER_MODEL, prompt, max_output_tokens=500, temperature=0.4)
+        # Comparisons routed to OpenAI (different provider than research)
+        result = call_model(COMPARATOR_MODEL, prompt, max_output_tokens=500, temperature=0.4)
         return result.get("text", "[Error comparing options]")
 
     return f"[Unknown tool: {name}]"
@@ -128,10 +151,10 @@ def execute_tool(name: str, arguments: str) -> str:
 
 def run_agent(question: str) -> dict[str, Any]:
     """
-    Three-step agent loop:
-      1. PLAN  (Anthropic) — break question into sub-tasks + decide tools
-      2. EXECUTE (OpenAI via tool simulation) — run each tool call
-      3. SYNTHESIZE (Anthropic) — combine findings into final answer
+    Three-step agent loop using 4 different providers:
+      1. PLAN     (Anthropic) — break question into sub-tasks + decide tools
+      2. EXECUTE  (xAI for research, OpenAI for comparison) — run each tool call
+      3. SYNTHESIZE (Google) — combine findings into final answer
     """
     trace: list[dict] = []
     total_start = time.perf_counter()
@@ -167,7 +190,7 @@ def run_agent(question: str) -> dict[str, Any]:
         }
 
     # Step 2: Execute tool calls
-    print(f"\n[STEP 2] EXECUTING {len(tool_calls)} tool calls (via OpenAI)...")
+    print(f"\n[STEP 2] EXECUTING {len(tool_calls)} tool calls (via xAI/OpenAI)...")
     tool_results = []
     for i, tc in enumerate(tool_calls):
         name = tc["name"]
@@ -181,7 +204,7 @@ def run_agent(question: str) -> dict[str, Any]:
     trace.append({"step": "execute", "tool_results": tool_results})
 
     # Step 3: Synthesize
-    print("\n[STEP 3] SYNTHESIZING (via Anthropic)...")
+    print("\n[STEP 3] SYNTHESIZING (via Google)...")
     findings_text = "\n\n".join(
         f"## {tr['name']}({tr['arguments'][:60]})\n{tr['output']}" for tr in tool_results
     )
@@ -208,6 +231,7 @@ def run_agent(question: str) -> dict[str, Any]:
         "providers_used": {
             "planner": PLANNER_MODEL,
             "researcher": RESEARCHER_MODEL,
+            "comparator": COMPARATOR_MODEL,
             "synthesizer": SYNTHESIZER_MODEL,
         },
     }
@@ -217,39 +241,53 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Multi-step research agent via Concentrate AI")
     parser.add_argument(
         "--question",
-        default=(
-            "What are the tradeoffs between using XGBoost vs a neural network "
-            "for tabular insurance pricing data? Consider model performance, "
-            "interpretability, and deployment complexity."
-        ),
+        default=DEFAULT_QUESTIONS[0],
         help="Question for the agent to research",
+    )
+    parser.add_argument(
+        "--all-questions",
+        action="store_true",
+        help="Run both default questions sequentially",
     )
     args = parser.parse_args()
 
     print("=" * 70)
-    print("CONCENTRATE AI — MULTI-STEP RESEARCH AGENT")
+    print("CONCENTRATE AI — MULTI-STEP RESEARCH AGENT (4 PROVIDERS)")
     print(f"Timestamp: {datetime.now(timezone.utc).isoformat()}")
-    print(f"Planner:     {PLANNER_MODEL}")
-    print(f"Researcher:  {RESEARCHER_MODEL}")
-    print(f"Synthesizer: {SYNTHESIZER_MODEL}")
+    print(f"Planner:     {PLANNER_MODEL} (Anthropic)")
+    print(f"Researcher:  {RESEARCHER_MODEL} (xAI)")
+    print(f"Comparator:  {COMPARATOR_MODEL} (OpenAI)")
+    print(f"Synthesizer: {SYNTHESIZER_MODEL} (Google)")
     print("=" * 70)
-    print(f"\nQuestion: {args.question}")
 
-    result = run_agent(args.question)
+    questions = DEFAULT_QUESTIONS if args.all_questions else [args.question]
+    all_results = []
 
-    print("\n" + "=" * 70)
-    print("FINAL ANSWER")
-    print("=" * 70)
-    print(result["answer"])
-    print(f"\nTotal time: {result['total_ms']:.0f}ms")
-    print(f"Steps: {len(result['trace'])}")
+    for i, question in enumerate(questions):
+        if len(questions) > 1:
+            print(f"\n{'#' * 70}")
+            print(f"# QUESTION {i + 1} of {len(questions)}")
+            print(f"{'#' * 70}")
+
+        print(f"\nQuestion: {question}")
+        result = run_agent(question)
+
+        print("\n" + "=" * 70)
+        print("FINAL ANSWER")
+        print("=" * 70)
+        print(result["answer"])
+        print(f"\nTotal time: {result['total_ms']:.0f}ms")
+        print(f"Steps: {len(result['trace'])}")
+
+        all_results.append(result)
 
     # Save
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    save_data = all_results[0] if len(all_results) == 1 else {"questions": all_results}
     filepath = RESULTS_DIR / f"agent_{ts}.json"
     with open(filepath, "w") as f:
-        json.dump(result, f, indent=2, default=str)
-    print(f"Results saved to: {filepath}")
+        json.dump(save_data, f, indent=2, default=str)
+    print(f"\nResults saved to: {filepath}")
 
 
 if __name__ == "__main__":

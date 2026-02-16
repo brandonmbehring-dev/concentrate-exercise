@@ -11,14 +11,19 @@
 **Options**:
 - (A) 2 providers — minimum viable
 - (B) 3 providers + Gemini — covers "Big 3"
-- (C) 4 providers + Gemini + DeepSeek — full spectrum
+- (C) 4 providers + Gemini + xAI — full spectrum
 - (D) 5+ providers — diminishing returns
 
-**Decision**: **(C) 4 providers — OpenAI, Anthropic, Google Gemini, DeepSeek**
+**Decision**: **(C) 4 providers — OpenAI, Anthropic, Google Gemini, xAI**
 
-**Reasoning**: Gemini explicitly in JD. DeepSeek creates cost-quality spectrum (20-50x cheaper) that demonstrates Concentrate's routing value prop. 4 providers is enough to show breadth without diluting analysis.
+**Reasoning**: Gemini explicitly in JD. xAI creates cost-quality spectrum (75x cheaper input) that demonstrates Concentrate's routing value prop. 4 providers is enough to show breadth without diluting analysis.
 
 **Tradeoffs**: More providers = more data but less depth per provider. 4 is the sweet spot.
+
+**Amendment (2026-02-16)**: Originally selected DeepSeek as 4th provider. Switched to xAI
+(grok-4-1-fast-reasoning) because it is strictly cheaper ($0.20/$0.50 vs $0.27-0.55/$1.10-2.19)
+with stronger reasoning capabilities. The cost-quality spectrum narrative is stronger: 75x input
+spread vs DeepSeek's 20-50x.
 
 ---
 
@@ -48,13 +53,13 @@
 - (A) Inline assertions only — simple, deterministic
 - (B) LLM-as-judge only — semantic but expensive
 - (C) Cross-provider agreement — clever but agreement ≠ correctness
-- (D) 3-tier: auto + task-specific + LLM-judge
+- (D) Package C: deterministic + LLM-judge + meta-evals
 
-**Decision**: **(D) 3-tier approach**
+**Decision**: **(D) Package C — 3-layer evaluation**
 
-**Reasoning**: Auto-eval on every call (free). Task-specific checks for structured outputs (5 min). LLM-as-judge for 5-10 key comparisons (10 min, ~$0.50). Shows production thinking without over-engineering.
+**Reasoning**: Layer 1 (deterministic, $0) catches ground truth errors. Layer 2 (LLM-as-judge, ~$0.45) scores all 32 responses via haiku-4-5, deep-evals all providers via gpt-5.1, creative-evals all providers via sonnet-4-5. Layer 3 (meta-evals, ~$0.40) adds self-evaluation, pairwise ranking, and cross-provider agreement. Shows production thinking without over-engineering.
 
-**Tradeoffs**: More complex than (A), but the writeup material from (D) justifies the 15 min investment.
+**Tradeoffs**: More complex than (A), but the writeup material from (D) justifies the investment.
 
 ---
 
@@ -103,9 +108,9 @@
 - (B) Story Format — chronological discovery
 - (C) Technical Brief — findings-first
 
-**Decision**: **Hybrid A+C — findings-first technical brief with DX friction section**
+**Decision**: **LaTeX Tufte handout — findings-first technical brief with DX friction section**
 
-**Reasoning**: Leads with interesting findings (not process), includes real numbers, has opinions, frames friction as product improvement suggestions. 800-1200 words, dense, every sentence carries information.
+**Reasoning**: Leads with interesting findings (not process), includes real numbers, has opinions, frames friction as product improvement suggestions. Dense, every sentence carries information.
 
 ---
 
@@ -113,8 +118,20 @@
 
 **Context**: GPT-4.1 retiring Feb 13-19, 2026. Current code uses `openai/gpt-4.1`.
 
-**Decision**: Use `openai/gpt-5`. Run `discover.py` first to confirm exact model name.
+**Decision**: Use `openai/gpt-5.1`. Confirmed via discover.py catalog fetch.
 
-**Reasoning**: Docs quickstart shows `gpt-5.2` as default. May need to adjust based on what's actually available in the catalog.
+**Reasoning**: Docs quickstart shows gpt-5.x as current. Discovery of the retirement IS a writeup finding.
 
-**Note**: The discovery of this retirement IS a writeup finding — shows debugging instinct.
+---
+
+## ADR-008: Model Names (Finalized)
+
+**Context**: Need exact model identifiers that match Concentrate catalog.
+
+**Decision**:
+- `openai/gpt-5.1` — Comparator ($1.25/$10)
+- `anthropic/claude-sonnet-4-5` — Planner ($3/$15)
+- `google/gemini-2.5-pro` — Synthesizer ($1.25/$10)
+- `xai/grok-4-1-fast-reasoning` — Researcher ($0.20/$0.50)
+
+**Reasoning**: Confirmed via /v1/models/ catalog. Agent roles assigned by cost-capability fit.

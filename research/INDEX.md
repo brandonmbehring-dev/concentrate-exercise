@@ -10,10 +10,10 @@
 | 2 | Auth Header | `Authorization: Bearer sk-cn-v1-...` |
 | 3 | Main Endpoint | `POST /v1/responses/` |
 | 4 | Models Endpoint | `GET /v1/models/` |
-| 5 | OpenAI Model | `openai/gpt-5` (gpt-4.1 RETIRED Feb 13-19) |
-| 6 | Anthropic Model | `anthropic/claude-sonnet-4-5-20250929` |
-| 7 | Google Model | `google/gemini-2.5-pro` |
-| 8 | DeepSeek Model | `deepseek/deepseek-chat` |
+| 5 | OpenAI Model | `openai/gpt-5.1` |
+| 6 | Anthropic Model | `anthropic/claude-sonnet-4-5` |
+| 7 | Google Model | `vertex/gemini-2.5-pro` |
+| 8 | xAI Model | `xai/grok-4-1-fast-reasoning` |
 | 9 | Streaming | SSE via `stream: true` |
 | 10 | No SDK | HTTP requests only (requests, fetch, curl) |
 
@@ -29,11 +29,13 @@
 | [`brainstorm-archive.md`](brainstorm-archive.md) | All 30 prompts, 7 agent Qs, 4 structures, 3 writeup formats | 6, 7, 8, 9 |
 | [`DECISIONS.md`](DECISIONS.md) | ADR-style decision log (shareable — can go in production repo) | 22 |
 | [`PREP_CHECKLIST.md`](PREP_CHECKLIST.md) | Interview prep checklist (private — research repo only) | 22 |
+| [`FINDINGS.md`](FINDINGS.md) | API discrepancy log from doc audit (16 issues, 4 categories) | Writeup |
+| [`docs/`](docs/) | Verbatim Playwright captures of 12 API documentation pages | Reference |
 
 ## Critical Reminders
 
-- **GPT-4.1 is RETIRED** — must use `openai/gpt-5` or newer
-- **Run `discover.py` FIRST** on Monday to confirm available model names
+- **GPT-4.1 is RETIRED** — using `openai/gpt-5.1`
+- **Run `smoke_test.py` FIRST** to confirm setup, then `discover.py` for catalog
 - **Writeup is 60% of evaluation** — budget 60 min minimum
 - **Zach offered unlimited credits** — no cost constraint
 - **Deadline**: Feb 18, 2026 (Tuesday)

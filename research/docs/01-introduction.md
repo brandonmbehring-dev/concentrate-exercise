@@ -1,0 +1,440 @@
+# API Introduction
+> Source: https://docs.concentrate.ai/api-reference/introduction
+> Fetched: 2026-02-16 via Playwright browser_snapshot (Claude Code)
+> Method: Full accessibility tree capture — verbatim page content
+
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - link "concentrate home page light logo" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e12]: concentrate home page
+          - img "light logo" [ref=e13]
+        - generic [ref=e15]:
+          - button "Open search" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]:
+              - img [ref=e18]
+              - generic [ref=e21]: Search...
+            - generic [ref=e22]: Ctrl K
+          - button "Toggle assistant panel" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - list
+          - generic [ref=e29]:
+            - heading "API documentation" [level=5] [ref=e31]
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "API Introduction" [ref=e34] [cursor=pointer]:
+                  - /url: /api-reference/introduction
+                  - generic [ref=e36]: API Introduction
+          - generic [ref=e37]:
+            - heading "Responses" [level=5] [ref=e39]
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "POST Create Response" [ref=e42] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-response
+                  - generic [ref=e44]: POST
+                  - generic [ref=e46]: Create Response
+          - generic [ref=e47]:
+            - heading "Messages (Beta)" [level=5] [ref=e49]
+            - list [ref=e50]:
+              - listitem [ref=e51]:
+                - link "POST Create Message" [ref=e52] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-message
+                  - generic [ref=e54]: POST
+                  - generic [ref=e56]: Create Message
+          - generic [ref=e57]:
+            - heading "Models" [level=5] [ref=e59]
+            - list [ref=e60]:
+              - listitem [ref=e61]:
+                - link "GET List Models" [ref=e62] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-models
+                  - generic [ref=e64]: GET
+                  - generic [ref=e66]: List Models
+              - listitem [ref=e67]:
+                - link "GET List Providers" [ref=e68] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-providers
+                  - generic [ref=e70]: GET
+                  - generic [ref=e72]: List Providers
+              - listitem [ref=e73]:
+                - link "GET Get Model" [ref=e74] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-model
+                  - generic [ref=e76]: GET
+                  - generic [ref=e78]: Get Model
+              - listitem [ref=e79]:
+                - link "GET Get Provider Info" [ref=e80] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-provider-info
+                  - generic [ref=e82]: GET
+                  - generic [ref=e84]: Get Provider Info
+          - generic [ref=e85]:
+            - heading "Utilities" [level=5] [ref=e87]
+            - list [ref=e88]:
+              - listitem [ref=e89]:
+                - link "GET Health Check" [ref=e90] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/health
+                  - generic [ref=e92]: GET
+                  - generic [ref=e94]: Health Check
+          - generic [ref=e95]:
+            - heading "Features" [level=5] [ref=e97]
+            - list [ref=e98]:
+              - listitem [ref=e99]:
+                - link "Streaming Responses" [ref=e100] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/streaming
+                  - generic [ref=e102]: Streaming Responses
+              - listitem [ref=e103]:
+                - link "Auto Routing" [ref=e104] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/auto-routing
+                  - generic [ref=e106]: Auto Routing
+              - listitem [ref=e107]:
+                - link "Tool Calling" [ref=e108] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/tool-calling
+                  - generic [ref=e110]: Tool Calling
+              - listitem [ref=e111]:
+                - link "Web Search" [ref=e112] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/web-search
+                  - generic [ref=e114]: Web Search
+          - generic [ref=e115]:
+            - heading "Reference" [level=5] [ref=e117]
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - link "Request Parameters Reference" [ref=e120] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/request-parameters
+                  - generic [ref=e122]: Request Parameters Reference
+              - listitem [ref=e123]:
+                - link "Prompt Caching" [ref=e124] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/prompt-caching
+                  - generic [ref=e126]: Prompt Caching
+              - listitem [ref=e127]:
+                - link "Error Handling" [ref=e128] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/errors
+                  - generic [ref=e130]: Error Handling
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e134]:
+            - link "API reference" [ref=e135] [cursor=pointer]:
+              - /url: /api-reference/introduction
+              - text: API reference
+            - link "Guides" [ref=e137] [cursor=pointer]:
+              - /url: /getting-started/quickstart
+              - text: Guides
+          - generic [ref=e139]:
+            - listitem [ref=e140]:
+              - link "Support" [ref=e141] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+            - listitem [ref=e142]:
+              - link "Dashboard" [ref=e143] [cursor=pointer]:
+                - /url: https://app.concentrate.ai
+                - generic [ref=e144]:
+                  - generic [ref=e145]: Dashboard
+                  - img [ref=e146]
+          - button "Toggle dark mode" [ref=e149] [cursor=pointer]:
+            - img [ref=e150]
+        - generic [ref=e157]:
+          - banner [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: API documentation
+              - generic [ref=e161]:
+                - heading "API Introduction" [level=1] [ref=e162]
+                - generic [ref=e163]:
+                  - button "Copy page" [ref=e164] [cursor=pointer]:
+                    - generic [ref=e165]:
+                      - img [ref=e166]
+                      - generic [ref=e169]: Copy page
+                  - button "More actions" [ref=e170] [cursor=pointer]:
+                    - img [ref=e171]
+            - paragraph [ref=e531]: Unified API for accessing 50+ AI models through a single interface
+          - generic [ref=e175]:
+            - generic [ref=e532]:
+              - img "Warning" [ref=e534]
+              - generic [ref=e537]:
+                - strong [ref=e538]: OpenAI Model Retirement
+                - text: — OpenAI is retiring
+                - strong [ref=e539]: GPT-4o
+                - text: ","
+                - strong [ref=e540]: GPT-4.1
+                - text: ","
+                - strong [ref=e541]: GPT-4.1 mini
+                - text: ", and"
+                - strong [ref=e542]: o4-mini
+                - text: on February 13, 2026. These models may become unavailable from the OpenAI provider on that date. We will officially remove them from the OpenAI provider on
+                - strong [ref=e543]: Thursday, February 19, 2026
+                - text: . If you rely on any of these models, please migrate to a newer model such as GPT-5 or GPT-5.2.
+            - heading "Navigate to header Welcome to Concentrate AI" [level=2] [ref=e544]:
+              - link "Navigate to header" [ref=e545] [cursor=pointer]:
+                - /url: "#welcome-to-concentrate-ai"
+                - img [ref=e547]
+              - generic [ref=e549] [cursor=pointer]: Welcome to Concentrate AI
+            - generic [ref=e550]: The Concentrate AI Responses API provides a unified interface for interacting with multiple AI model providers. Access GPT-5, Claude Opus 4.5, Gemini 2.5, and 50+ other models through a single, normalized API with routing, credit tracking, and multiple providers.
+            - generic [ref=e551]:
+              - link "Quickstart Get started with your first API request in minutes" [ref=e552] [cursor=pointer]:
+                - /url: /getting-started/quickstart
+                - generic [ref=e553]:
+                  - img [ref=e555]
+                  - generic [ref=e556]:
+                    - heading "Quickstart" [level=2] [ref=e557]
+                    - generic [ref=e559]: Get started with your first API request in minutes
+              - link "Responses Endpoint View detailed information on the Responses endpoint" [ref=e560] [cursor=pointer]:
+                - /url: /api-reference/endpoint/create-response
+                - generic [ref=e561]:
+                  - img [ref=e563]
+                  - generic [ref=e564]:
+                    - heading "Responses Endpoint" [level=2] [ref=e565]
+                    - generic [ref=e567]: View detailed information on the Responses endpoint
+            - heading "Navigate to header Key Features" [level=2] [ref=e568]:
+              - link "Navigate to header" [ref=e569] [cursor=pointer]:
+                - /url: "#key-features"
+                - img [ref=e571]
+              - generic [ref=e573] [cursor=pointer]: Key Features
+            - generic [ref=e574]:
+              - group [ref=e575]:
+                - generic "Unified Interface" [ref=e576] [cursor=pointer]:
+                  - img [ref=e578]
+                  - img [ref=e580]
+                  - paragraph [ref=e582]: Unified Interface
+              - group [ref=e583]:
+                - generic "Model/Provider Routing" [ref=e584] [cursor=pointer]:
+                  - img [ref=e586]
+                  - img [ref=e588]
+                  - paragraph [ref=e590]: Model/Provider Routing
+              - group [ref=e591]:
+                - generic "Multi-Provider Support" [ref=e592] [cursor=pointer]:
+                  - img [ref=e594]
+                  - img [ref=e596]
+                  - paragraph [ref=e598]: Multi-Provider Support
+              - group [ref=e599]:
+                - generic "Streaming Responses" [ref=e600] [cursor=pointer]:
+                  - img [ref=e602]
+                  - img [ref=e604]
+                  - paragraph [ref=e606]: Streaming Responses
+              - group [ref=e607]:
+                - generic "Credit Tracking" [ref=e608] [cursor=pointer]:
+                  - img [ref=e610]
+                  - img [ref=e612]
+                  - paragraph [ref=e614]: Credit Tracking
+              - group [ref=e615]:
+                - generic "Tool Calling" [ref=e616] [cursor=pointer]:
+                  - img [ref=e618]
+                  - img [ref=e620]
+                  - paragraph [ref=e622]: Tool Calling
+            - heading "Navigate to header Authentication" [level=2] [ref=e623]:
+              - link "Navigate to header" [ref=e624] [cursor=pointer]:
+                - /url: "#authentication"
+                - img [ref=e626]
+              - generic [ref=e628] [cursor=pointer]: Authentication
+            - generic [ref=e629]:
+              - text: All API requests require authentication using an API key. Get your API key from the
+              - link "Concentrate AI dashboard" [ref=e630] [cursor=pointer]:
+                - /url: https://app.concentrate.ai
+              - text: .
+            - generic [ref=e631]:
+              - text: Include your API key in the
+              - code [ref=e632]: Authorization
+              - text: "header:"
+            - generic [ref=e633]:
+              - generic [ref=e634]:
+                - generic [ref=e635]:
+                  - button "Copy the contents from the code block" [ref=e636] [cursor=pointer]:
+                    - img [ref=e637]
+                  - generic [ref=e640]: Copy
+                - generic [ref=e641]:
+                  - button "Ask AI" [ref=e642] [cursor=pointer]:
+                    - img [ref=e643]
+                  - generic [ref=e646]: Ask AI
+              - code [ref=e650]:
+                - generic [ref=e651]: "Authorization: Bearer YOUR_API_KEY"
+            - generic [ref=e652]:
+              - img "Warning" [ref=e654]
+              - generic [ref=e657]: Keep your API key secure. Never share it publicly or commit it to version control.
+            - heading "Navigate to header Base URL" [level=2] [ref=e658]:
+              - link "Navigate to header" [ref=e659] [cursor=pointer]:
+                - /url: "#base-url"
+                - img [ref=e661]
+              - generic [ref=e663] [cursor=pointer]: Base URL
+            - generic [ref=e664]:
+              - generic [ref=e665]:
+                - generic [ref=e666]:
+                  - button "Copy the contents from the code block" [ref=e667] [cursor=pointer]:
+                    - img [ref=e668]
+                  - generic [ref=e671]: Copy
+                - generic [ref=e672]:
+                  - button "Ask AI" [ref=e673] [cursor=pointer]:
+                    - img [ref=e674]
+                  - generic [ref=e677]: Ask AI
+              - code [ref=e681]:
+                - generic [ref=e682]: https://api.concentrate.ai
+            - heading "Navigate to header Supported Models" [level=2] [ref=e683]:
+              - link "Navigate to header" [ref=e684] [cursor=pointer]:
+                - /url: "#supported-models"
+                - img [ref=e686]
+              - generic [ref=e688] [cursor=pointer]: Supported Models
+            - generic [ref=e689]:
+              - text: The API supports 50+ models across multiple providers. Refer to the
+              - link "list models" [ref=e690] [cursor=pointer]:
+                - /url: /api-reference/endpoint/list-models
+              - text: endpoint for a full list of all models supported by Concentrate AI.
+            - heading "Navigate to header Model Selection" [level=2] [ref=e691]:
+              - link "Navigate to header" [ref=e692] [cursor=pointer]:
+                - /url: "#model-selection"
+                - img [ref=e694]
+              - generic [ref=e696] [cursor=pointer]: Model Selection
+            - generic [ref=e697]: "You can specify models in three ways:"
+            - list [ref=e698]:
+              - listitem [ref=e699]:
+                - strong [ref=e700]: Model name only
+                - text: ":"
+                - code [ref=e701]: "\"gpt-5\""
+                - text: "- Automatic provider routing"
+              - listitem [ref=e702]:
+                - strong [ref=e703]: Provider prefix
+                - text: ":"
+                - code [ref=e704]: "\"openai/gpt-5\""
+                - text: "- Specific provider"
+              - listitem [ref=e705]:
+                - strong [ref=e706]: Auto routing
+                - text: ":"
+                - code [ref=e707]: "\"auto\""
+                - text: "- Let the API choose based on your criteria"
+            - generic [ref=e708]:
+              - generic [ref=e709]:
+                - tablist [ref=e710]:
+                  - tab "Model Name" [selected] [ref=e711] [cursor=pointer]:
+                    - generic [ref=e712]: Model Name
+                  - tab "Provider Prefix" [ref=e714] [cursor=pointer]:
+                    - generic [ref=e715]: Provider Prefix
+                  - tab "Auto Routing" [ref=e716] [cursor=pointer]:
+                    - generic [ref=e717]: Auto Routing
+                - generic [ref=e718]:
+                  - generic [ref=e719]:
+                    - button "Copy the contents from the code block" [ref=e720] [cursor=pointer]:
+                      - img [ref=e721]
+                    - generic [ref=e724]: Copy
+                  - generic [ref=e725]:
+                    - button "Ask AI" [ref=e726] [cursor=pointer]:
+                      - img [ref=e727]
+                    - generic [ref=e730]: Ask AI
+              - tabpanel "Model Name" [ref=e732]:
+                - code [ref=e736]:
+                  - generic [ref=e737]: "{"
+                  - generic [ref=e738]: "\"model\": \"gpt-5\","
+                  - generic [ref=e739]: "\"input\": \"Hello, world!\""
+                  - generic [ref=e740]: "}"
+            - heading "Navigate to header Error Handling" [level=2] [ref=e741]:
+              - link "Navigate to header" [ref=e742] [cursor=pointer]:
+                - /url: "#error-handling"
+                - img [ref=e744]
+              - generic [ref=e746] [cursor=pointer]: Error Handling
+            - generic [ref=e747]: "The API uses standard HTTP status codes:"
+            - table [ref=e750]:
+              - rowgroup [ref=e751]:
+                - row "Status Code Description" [ref=e752]:
+                  - columnheader "Status Code" [ref=e753]
+                  - columnheader "Description" [ref=e754]
+              - rowgroup [ref=e755]:
+                - row "200 Successful request" [ref=e756]:
+                  - cell "200" [ref=e757]:
+                    - code [ref=e758]: "200"
+                  - cell "Successful request" [ref=e759]
+                - row "400 Bad request - Invalid parameters" [ref=e760]:
+                  - cell "400" [ref=e761]:
+                    - code [ref=e762]: "400"
+                  - cell "Bad request - Invalid parameters" [ref=e763]
+                - row "401 Unauthorized - Invalid API key" [ref=e764]:
+                  - cell "401" [ref=e765]:
+                    - code [ref=e766]: "401"
+                  - cell "Unauthorized - Invalid API key" [ref=e767]
+                - row "402 Payment required - Insufficient credits" [ref=e768]:
+                  - cell "402" [ref=e769]:
+                    - code [ref=e770]: "402"
+                  - cell "Payment required - Insufficient credits" [ref=e771]
+                - row "424 Failed dependency - Provider error" [ref=e772]:
+                  - cell "424" [ref=e773]:
+                    - code [ref=e774]: "424"
+                  - cell "Failed dependency - Provider error" [ref=e775]
+                - row "500 Internal server error" [ref=e776]:
+                  - cell "500" [ref=e777]:
+                    - code [ref=e778]: "500"
+                  - cell "Internal server error" [ref=e779]
+            - link "View Error Examples See detailed error response formats and troubleshooting" [ref=e780] [cursor=pointer]:
+              - /url: /api-reference/endpoint/errors
+              - generic [ref=e781]:
+                - img [ref=e783]
+                - generic [ref=e784]:
+                  - heading "View Error Examples" [level=2] [ref=e785]
+                  - generic [ref=e787]: See detailed error response formats and troubleshooting
+            - heading "Navigate to header Rate Limits" [level=2] [ref=e788]:
+              - link "Navigate to header" [ref=e789] [cursor=pointer]:
+                - /url: "#rate-limits"
+                - img [ref=e791]
+              - generic [ref=e793] [cursor=pointer]: Rate Limits
+            - generic [ref=e794]: Rate limits are applied per API key. Limits are enforced using a token bucket algorithm with per-minute windows.
+            - generic [ref=e795]:
+              - img "Info" [ref=e797]
+              - generic [ref=e800]: If you find yourself frequently reaching our rate limits, contact support to discuss further options.
+            - heading "Navigate to header Next Steps" [level=2] [ref=e801]:
+              - link "Navigate to header" [ref=e802] [cursor=pointer]:
+                - /url: "#next-steps"
+                - img [ref=e804]
+              - generic [ref=e806] [cursor=pointer]: Next Steps
+            - generic [ref=e807]:
+              - link "Quickstart Guide Make your first API call" [ref=e808] [cursor=pointer]:
+                - /url: /getting-started/quickstart
+                - generic [ref=e809]:
+                  - img [ref=e811]
+                  - generic [ref=e812]:
+                    - heading "Quickstart Guide" [level=2] [ref=e813]
+                    - generic [ref=e815]: Make your first API call
+              - link "Create Response Full endpoint documentation" [ref=e816] [cursor=pointer]:
+                - /url: /api-reference/endpoint/create-response
+                - generic [ref=e817]:
+                  - img [ref=e819]
+                  - generic [ref=e820]:
+                    - heading "Create Response" [level=2] [ref=e821]
+                    - generic [ref=e823]: Full endpoint documentation
+              - link "Streaming Learn about streaming responses" [ref=e824] [cursor=pointer]:
+                - /url: /api-reference/endpoint/streaming
+                - generic [ref=e825]:
+                  - img [ref=e827]
+                  - generic [ref=e828]:
+                    - heading "Streaming" [level=2] [ref=e829]
+                    - generic [ref=e831]: Learn about streaming responses
+              - link "Tool Calling Enable function calling and external tools" [ref=e832] [cursor=pointer]:
+                - /url: /api-reference/endpoint/tool-calling
+                - generic [ref=e833]:
+                  - img [ref=e835]
+                  - generic [ref=e836]:
+                    - heading "Tool Calling" [level=2] [ref=e837]
+                    - generic [ref=e839]: Enable function calling and external tools
+              - link "Auto Routing Automatic model selection" [ref=e840] [cursor=pointer]:
+                - /url: /api-reference/endpoint/auto-routing
+                - generic [ref=e841]:
+                  - img [ref=e843]
+                  - generic [ref=e844]:
+                    - heading "Auto Routing" [level=2] [ref=e845]
+                    - generic [ref=e847]: Automatic model selection
+          - generic [ref=e493]:
+            - paragraph [ref=e494]: Was this page helpful?
+            - generic [ref=e496]:
+              - button "Yes" [ref=e497] [cursor=pointer]:
+                - img [ref=e498]
+                - generic [ref=e500]: "Yes"
+              - button "No" [ref=e501] [cursor=pointer]:
+                - img [ref=e502]
+                - generic [ref=e504]: "No"
+          - link "Create Response" [ref=e506] [cursor=pointer]:
+            - /url: /api-reference/endpoint/create-response
+            - generic [ref=e507]: Create Response
+            - img [ref=e508]
+          - generic [ref=e511]:
+            - textbox "Ask a question..." [ref=e512]
+            - generic: Ctrl+I
+            - button "Send message" [disabled] [ref=e513]:
+              - img [ref=e514]
+          - contentinfo [ref=e516]:
+            - link "Powered by" [ref=e519] [cursor=pointer]:
+              - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=concentrateai-8b9c0315
+              - generic [ref=e520]: Powered by
+              - img [ref=e521]
+  - alert [ref=e848]

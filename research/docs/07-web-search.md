@@ -1,0 +1,585 @@
+# Web Search
+> Source: https://docs.concentrate.ai/api-reference/endpoint/web-search
+> Fetched: 2026-02-16 via Playwright browser_snapshot (Claude Code)
+> Method: Full accessibility tree capture — verbatim page content
+
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - link "concentrate home page light logo" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e12]: concentrate home page
+          - img "light logo" [ref=e13]
+        - generic [ref=e15]:
+          - button "Open search" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]:
+              - img [ref=e18]
+              - generic [ref=e21]: Search...
+            - generic [ref=e22]: Ctrl K
+          - button "Toggle assistant panel" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - list
+          - generic [ref=e29]:
+            - heading "API documentation" [level=5] [ref=e31]
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "API Introduction" [ref=e34] [cursor=pointer]:
+                  - /url: /api-reference/introduction
+                  - generic [ref=e36]: API Introduction
+          - generic [ref=e37]:
+            - heading "Responses" [level=5] [ref=e39]
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "POST Create Response" [ref=e42] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-response
+                  - generic [ref=e44]: POST
+                  - generic [ref=e46]: Create Response
+          - generic [ref=e47]:
+            - heading "Messages (Beta)" [level=5] [ref=e49]
+            - list [ref=e50]:
+              - listitem [ref=e51]:
+                - link "POST Create Message" [ref=e52] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-message
+                  - generic [ref=e54]: POST
+                  - generic [ref=e56]: Create Message
+          - generic [ref=e57]:
+            - heading "Models" [level=5] [ref=e59]
+            - list [ref=e60]:
+              - listitem [ref=e61]:
+                - link "GET List Models" [ref=e62] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-models
+                  - generic [ref=e64]: GET
+                  - generic [ref=e66]: List Models
+              - listitem [ref=e67]:
+                - link "GET List Providers" [ref=e68] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-providers
+                  - generic [ref=e70]: GET
+                  - generic [ref=e72]: List Providers
+              - listitem [ref=e73]:
+                - link "GET Get Model" [ref=e74] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-model
+                  - generic [ref=e76]: GET
+                  - generic [ref=e78]: Get Model
+              - listitem [ref=e79]:
+                - link "GET Get Provider Info" [ref=e80] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-provider-info
+                  - generic [ref=e82]: GET
+                  - generic [ref=e84]: Get Provider Info
+          - generic [ref=e85]:
+            - heading "Utilities" [level=5] [ref=e87]
+            - list [ref=e88]:
+              - listitem [ref=e89]:
+                - link "GET Health Check" [ref=e90] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/health
+                  - generic [ref=e92]: GET
+                  - generic [ref=e94]: Health Check
+          - generic [ref=e95]:
+            - heading "Features" [level=5] [ref=e97]
+            - list [ref=e98]:
+              - listitem [ref=e99]:
+                - link "Streaming Responses" [ref=e100] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/streaming
+                  - generic [ref=e102]: Streaming Responses
+              - listitem [ref=e103]:
+                - link "Auto Routing" [ref=e104] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/auto-routing
+                  - generic [ref=e106]: Auto Routing
+              - listitem [ref=e107]:
+                - link "Tool Calling" [ref=e108] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/tool-calling
+                  - generic [ref=e110]: Tool Calling
+              - listitem [ref=e111]:
+                - link "Web Search" [ref=e112] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/web-search
+                  - generic [ref=e114]: Web Search
+          - generic [ref=e115]:
+            - heading "Reference" [level=5] [ref=e117]
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - link "Request Parameters Reference" [ref=e120] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/request-parameters
+                  - generic [ref=e122]: Request Parameters Reference
+              - listitem [ref=e123]:
+                - link "Prompt Caching" [ref=e124] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/prompt-caching
+                  - generic [ref=e126]: Prompt Caching
+              - listitem [ref=e127]:
+                - link "Error Handling" [ref=e128] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/errors
+                  - generic [ref=e130]: Error Handling
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e134]:
+            - link "API reference" [ref=e135] [cursor=pointer]:
+              - /url: /api-reference/introduction
+              - text: API reference
+            - link "Guides" [ref=e137] [cursor=pointer]:
+              - /url: /getting-started/quickstart
+              - text: Guides
+          - generic [ref=e139]:
+            - listitem [ref=e140]:
+              - link "Support" [ref=e141] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+            - listitem [ref=e142]:
+              - link "Dashboard" [ref=e143] [cursor=pointer]:
+                - /url: https://app.concentrate.ai
+                - generic [ref=e144]:
+                  - generic [ref=e145]: Dashboard
+                  - img [ref=e146]
+          - button "Toggle dark mode" [ref=e149] [cursor=pointer]:
+            - img [ref=e150]
+        - generic [ref=e157]:
+          - banner [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: Features
+              - generic [ref=e161]:
+                - heading "Web Search" [level=1] [ref=e162]
+                - generic [ref=e163]:
+                  - button "Copy page" [ref=e164] [cursor=pointer]:
+                    - generic [ref=e165]:
+                      - img [ref=e166]
+                      - generic [ref=e169]: Copy page
+                  - button "More actions" [ref=e170] [cursor=pointer]:
+                    - img [ref=e171]
+            - paragraph [ref=e663]: Give models access to real-time web search results
+          - generic [ref=e175]:
+            - heading "Navigate to header Overview" [level=2] [ref=e664]:
+              - link "Navigate to header" [ref=e665] [cursor=pointer]:
+                - /url: "#overview"
+                - img [ref=e667]
+              - generic [ref=e669] [cursor=pointer]: Overview
+            - generic [ref=e670]: Web search is a built-in tool that allows models to search the web during a response. Unlike function tools, you don’t need to define a schema or handle execution yourself — the model searches the web automatically and incorporates the results into its answer.
+            - generic [ref=e671]:
+              - text: Add
+              - code [ref=e672]: "{\"type\": \"web_search\"}"
+              - text: to your
+              - code [ref=e673]: tools
+              - text: array to enable it.
+            - heading "Navigate to header Prerequisites" [level=2] [ref=e674]:
+              - link "Navigate to header" [ref=e675] [cursor=pointer]:
+                - /url: "#prerequisites"
+                - img [ref=e677]
+              - generic [ref=e679] [cursor=pointer]: Prerequisites
+            - generic [ref=e680]: "Before using web search, ensure you have:"
+            - list [ref=e681]:
+              - listitem [ref=e682]:
+                - text: A Concentrate AI API key (
+                - link "get one here" [ref=e683] [cursor=pointer]:
+                  - /url: https://app.concentrate.ai
+                - text: )
+              - listitem [ref=e684]:
+                - text: A model that supports web search (check the
+                - link "models endpoint" [ref=e685] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-models
+                - text: )
+            - heading "Navigate to header Quick Start" [level=2] [ref=e686]:
+              - link "Navigate to header" [ref=e687] [cursor=pointer]:
+                - /url: "#quick-start"
+                - img [ref=e689]
+              - generic [ref=e691] [cursor=pointer]: Quick Start
+            - generic [ref=e692]:
+              - generic [ref=e693]:
+                - tablist [ref=e694]:
+                  - tab "cURL" [selected] [ref=e695] [cursor=pointer]:
+                    - generic [ref=e696]: cURL
+                  - tab "Python" [ref=e698] [cursor=pointer]:
+                    - generic [ref=e699]: Python
+                  - tab "TypeScript" [ref=e700] [cursor=pointer]:
+                    - generic [ref=e701]: TypeScript
+                - generic [ref=e702]:
+                  - generic [ref=e703]:
+                    - button "Copy the contents from the code block" [ref=e704] [cursor=pointer]:
+                      - img [ref=e705]
+                    - generic [ref=e708]: Copy
+                  - generic [ref=e709]:
+                    - button "Ask AI" [ref=e710] [cursor=pointer]:
+                      - img [ref=e711]
+                    - generic [ref=e714]: Ask AI
+              - tabpanel "cURL" [ref=e716]:
+                - code [ref=e720]:
+                  - generic [ref=e721]: curl https://api.concentrate.ai/v1/responses \
+                  - generic [ref=e722]: "-H \"Content-Type: application/json\" \\"
+                  - generic [ref=e723]: "-H \"Authorization: Bearer YOUR_API_KEY\" \\"
+                  - generic [ref=e724]: "-d '{"
+                  - generic [ref=e725]: "\"model\": \"gpt-4o\","
+                  - generic [ref=e726]: "\"input\": \"What happened in the news today?\","
+                  - generic [ref=e727]: "\"tools\": ["
+                  - generic [ref=e728]: "{"
+                  - generic [ref=e729]: "\"type\": \"web_search\""
+                  - generic [ref=e730]: "}"
+                  - generic [ref=e731]: "]"
+                  - generic [ref=e732]: "}'"
+            - heading "Navigate to header Tool Parameters" [level=2] [ref=e733]:
+              - link "Navigate to header" [ref=e734] [cursor=pointer]:
+                - /url: "#tool-parameters"
+                - img [ref=e736]
+              - generic [ref=e738] [cursor=pointer]: Tool Parameters
+            - table [ref=e741]:
+              - rowgroup [ref=e742]:
+                - row "Parameter Type Required Description" [ref=e743]:
+                  - columnheader "Parameter" [ref=e744]
+                  - columnheader "Type" [ref=e745]
+                  - columnheader "Required" [ref=e746]
+                  - columnheader "Description" [ref=e747]
+              - rowgroup [ref=e748]:
+                - row "type string Yes Must be \"web_search\"" [ref=e749]:
+                  - cell "type" [ref=e750]:
+                    - code [ref=e751]: type
+                  - cell "string" [ref=e752]
+                  - cell "Yes" [ref=e753]
+                  - cell "Must be \"web_search\"" [ref=e754]:
+                    - text: Must be
+                    - code [ref=e755]: "\"web_search\""
+                - 'row "search_context_size string No Amount of search context: \"low\", \"medium\", or \"high\". Defaults to provider behavior" [ref=e756]':
+                  - cell "search_context_size" [ref=e757]:
+                    - code [ref=e758]: search_context_size
+                  - cell "string" [ref=e759]
+                  - cell "No" [ref=e760]
+                  - 'cell "Amount of search context: \"low\", \"medium\", or \"high\". Defaults to provider behavior" [ref=e761]':
+                    - text: "Amount of search context:"
+                    - code [ref=e762]: "\"low\""
+                    - text: ","
+                    - code [ref=e763]: "\"medium\""
+                    - text: ", or"
+                    - code [ref=e764]: "\"high\""
+                    - text: . Defaults to provider behavior
+                - row "filters object No Filter search results by domain" [ref=e765]:
+                  - cell "filters" [ref=e766]:
+                    - code [ref=e767]: filters
+                  - cell "object" [ref=e768]
+                  - cell "No" [ref=e769]
+                  - cell "Filter search results by domain" [ref=e770]
+                - row "user_location object No Approximate user location for localized results" [ref=e771]:
+                  - cell "user_location" [ref=e772]:
+                    - code [ref=e773]: user_location
+                  - cell "object" [ref=e774]
+                  - cell "No" [ref=e775]
+                  - cell "Approximate user location for localized results" [ref=e776]
+            - generic [ref=e777]:
+              - img "Note" [ref=e779]
+              - generic [ref=e782]:
+                - code [ref=e783]: search_context_size
+                - text: ","
+                - code [ref=e784]: filters
+                - text: ", and"
+                - code [ref=e785]: user_location
+                - text: are not supported by Google Vertex AI (Gemini) or Mistral models. These parameters are silently ignored for those providers.
+            - heading "Navigate to header Search Context Size" [level=3] [ref=e786]:
+              - link "Navigate to header" [ref=e787] [cursor=pointer]:
+                - /url: "#search-context-size"
+                - img [ref=e789]
+              - generic [ref=e791] [cursor=pointer]: Search Context Size
+            - generic [ref=e792]: Controls how much search context the model uses. Higher values may return more detailed results but use more tokens.
+            - generic [ref=e793]:
+              - generic [ref=e794]:
+                - generic [ref=e795]:
+                  - button "Copy the contents from the code block" [ref=e796] [cursor=pointer]:
+                    - img [ref=e797]
+                  - generic [ref=e800]: Copy
+                - generic [ref=e801]:
+                  - button "Ask AI" [ref=e802] [cursor=pointer]:
+                    - img [ref=e803]
+                  - generic [ref=e806]: Ask AI
+              - code [ref=e810]:
+                - generic [ref=e811]: "{"
+                - generic [ref=e812]: "\"type\": \"web_search\","
+                - generic [ref=e813]: "\"search_context_size\": \"medium\""
+                - generic [ref=e814]: "}"
+            - heading "Navigate to header Domain Filtering" [level=3] [ref=e815]:
+              - link "Navigate to header" [ref=e816] [cursor=pointer]:
+                - /url: "#domain-filtering"
+                - img [ref=e818]
+              - generic [ref=e820] [cursor=pointer]: Domain Filtering
+            - generic [ref=e821]: "Restrict search results to specific domains:"
+            - generic [ref=e822]:
+              - generic [ref=e823]:
+                - generic [ref=e824]:
+                  - button "Copy the contents from the code block" [ref=e825] [cursor=pointer]:
+                    - img [ref=e826]
+                  - generic [ref=e829]: Copy
+                - generic [ref=e830]:
+                  - button "Ask AI" [ref=e831] [cursor=pointer]:
+                    - img [ref=e832]
+                  - generic [ref=e835]: Ask AI
+              - code [ref=e839]:
+                - generic [ref=e840]: "{"
+                - generic [ref=e841]: "\"type\": \"web_search\","
+                - generic [ref=e842]: "\"filters\": {"
+                - generic [ref=e843]: "\"allowed_domains\": [\"wikipedia.org\", \"bbc.com\"]"
+                - generic [ref=e844]: "}"
+                - generic [ref=e845]: "}"
+            - heading "Navigate to header User Location" [level=3] [ref=e846]:
+              - link "Navigate to header" [ref=e847] [cursor=pointer]:
+                - /url: "#user-location"
+                - img [ref=e849]
+              - generic [ref=e851] [cursor=pointer]: User Location
+            - generic [ref=e852]: "Provide an approximate location for more relevant local results:"
+            - generic [ref=e853]:
+              - generic [ref=e854]:
+                - generic [ref=e855]:
+                  - button "Copy the contents from the code block" [ref=e856] [cursor=pointer]:
+                    - img [ref=e857]
+                  - generic [ref=e860]: Copy
+                - generic [ref=e861]:
+                  - button "Ask AI" [ref=e862] [cursor=pointer]:
+                    - img [ref=e863]
+                  - generic [ref=e866]: Ask AI
+              - code [ref=e870]:
+                - generic [ref=e871]: "{"
+                - generic [ref=e872]: "\"type\": \"web_search\","
+                - generic [ref=e873]: "\"user_location\": {"
+                - generic [ref=e874]: "\"type\": \"approximate\","
+                - generic [ref=e875]: "\"country\": \"US\","
+                - generic [ref=e876]: "\"region\": \"California\","
+                - generic [ref=e877]: "\"city\": \"San Francisco\","
+                - generic [ref=e878]: "\"timezone\": \"America/Los_Angeles\""
+                - generic [ref=e879]: "}"
+                - generic [ref=e880]: "}"
+            - generic [ref=e881]:
+              - text: All
+              - code [ref=e882]: user_location
+              - text: fields are optional.
+            - heading "Navigate to header Response Format" [level=2] [ref=e883]:
+              - link "Navigate to header" [ref=e884] [cursor=pointer]:
+                - /url: "#response-format"
+                - img [ref=e886]
+              - generic [ref=e888] [cursor=pointer]: Response Format
+            - generic [ref=e889]:
+              - text: When the model performs a web search, the response
+              - code [ref=e890]: output
+              - text: array includes a
+              - code [ref=e891]: web_search_call
+              - text: "item:"
+            - generic [ref=e892]:
+              - generic [ref=e893]:
+                - generic [ref=e894]:
+                  - button "Copy the contents from the code block" [ref=e895] [cursor=pointer]:
+                    - img [ref=e896]
+                  - generic [ref=e899]: Copy
+                - generic [ref=e900]:
+                  - button "Ask AI" [ref=e901] [cursor=pointer]:
+                    - img [ref=e902]
+                  - generic [ref=e905]: Ask AI
+              - code [ref=e909]:
+                - generic [ref=e910]: "{"
+                - generic [ref=e911]: "\"output\": ["
+                - generic [ref=e912]: "{"
+                - generic [ref=e913]: "\"type\": \"web_search_call\","
+                - generic [ref=e914]: "\"id\": \"ws_abc123\","
+                - generic [ref=e915]: "\"status\": \"completed\","
+                - generic [ref=e916]: "\"action\": {"
+                - generic [ref=e917]: "\"type\": \"search\","
+                - generic [ref=e918]: "\"query\": \"latest news today\","
+                - generic [ref=e919]: "\"sources\": ["
+                - generic [ref=e920]: "{"
+                - generic [ref=e921]: "\"type\": \"url\","
+                - generic [ref=e922]: "\"url\": \"https://example.com/article\""
+                - generic [ref=e923]: "}"
+                - generic [ref=e924]: "]"
+                - generic [ref=e925]: "}"
+                - generic [ref=e926]: "},"
+                - generic [ref=e927]: "{"
+                - generic [ref=e928]: "\"type\": \"message\","
+                - generic [ref=e929]: "\"role\": \"assistant\","
+                - generic [ref=e930]: "\"content\": ["
+                - generic [ref=e931]: "{"
+                - generic [ref=e932]: "\"type\": \"output_text\","
+                - generic [ref=e933]: "\"text\": \"Here's what's happening today...\""
+                - generic [ref=e934]: "}"
+                - generic [ref=e935]: "]"
+                - generic [ref=e936]: "}"
+                - generic [ref=e937]: "]"
+                - generic [ref=e938]: "}"
+            - generic [ref=e939]:
+              - text: The
+              - code [ref=e940]: sources
+              - text: array contains the URLs the model referenced. Use these to provide citations in your application.
+            - heading "Navigate to header Combining with Function Tools" [level=2] [ref=e941]:
+              - link "Navigate to header" [ref=e942] [cursor=pointer]:
+                - /url: "#combining-with-function-tools"
+                - img [ref=e944]
+              - generic [ref=e946] [cursor=pointer]: Combining with Function Tools
+            - generic [ref=e947]: "Web search works alongside function tools in the same request:"
+            - generic [ref=e948]:
+              - generic [ref=e949]:
+                - generic [ref=e950]:
+                  - button "Copy the contents from the code block" [ref=e951] [cursor=pointer]:
+                    - img [ref=e952]
+                  - generic [ref=e955]: Copy
+                - generic [ref=e956]:
+                  - button "Ask AI" [ref=e957] [cursor=pointer]:
+                    - img [ref=e958]
+                  - generic [ref=e961]: Ask AI
+              - code [ref=e965]:
+                - generic [ref=e966]: "{"
+                - generic [ref=e967]: "\"model\": \"gpt-4o\","
+                - generic [ref=e968]: "\"input\": \"Search for the latest Tesla stock price and convert it to EUR\","
+                - generic [ref=e969]: "\"tools\": ["
+                - generic [ref=e970]: "{"
+                - generic [ref=e971]: "\"type\": \"web_search\""
+                - generic [ref=e972]: "},"
+                - generic [ref=e973]: "{"
+                - generic [ref=e974]: "\"type\": \"function\","
+                - generic [ref=e975]: "\"name\": \"convert_currency\","
+                - generic [ref=e976]: "\"description\": \"Convert between currencies\","
+                - generic [ref=e977]: "\"parameters\": {"
+                - generic [ref=e978]: "\"type\": \"object\","
+                - generic [ref=e979]: "\"properties\": {"
+                - generic [ref=e980]: "\"amount\": { \"type\": \"number\" },"
+                - generic [ref=e981]: "\"from\": { \"type\": \"string\" },"
+                - generic [ref=e982]: "\"to\": { \"type\": \"string\" }"
+                - generic [ref=e983]: "},"
+                - generic [ref=e984]: "\"required\": [\"amount\", \"from\", \"to\"]"
+                - generic [ref=e985]: "}"
+                - generic [ref=e986]: "}"
+                - generic [ref=e987]: "]"
+                - generic [ref=e988]: "}"
+            - heading "Navigate to header Provider Limitations" [level=3] [ref=e989]:
+              - link "Navigate to header" [ref=e990] [cursor=pointer]:
+                - /url: "#provider-limitations"
+                - img [ref=e992]
+              - generic [ref=e994] [cursor=pointer]: Provider Limitations
+            - generic [ref=e995]: Google Vertex AI (Gemini) and Mistral models do not support using web search and function tools together in the same request. When both are provided, function tool calling takes priority and web search is ignored.
+            - generic [ref=e996]:
+              - text: To use web search with these providers, use
+              - code [ref=e997]: tool_choice
+              - text: "to explicitly select it:"
+            - generic [ref=e998]:
+              - generic [ref=e999]:
+                - generic [ref=e1000]:
+                  - button "Copy the contents from the code block" [ref=e1001] [cursor=pointer]:
+                    - img [ref=e1002]
+                  - generic [ref=e1005]: Copy
+                - generic [ref=e1006]:
+                  - button "Ask AI" [ref=e1007] [cursor=pointer]:
+                    - img [ref=e1008]
+                  - generic [ref=e1011]: Ask AI
+              - code [ref=e1015]:
+                - generic [ref=e1016]: "{"
+                - generic [ref=e1017]: "\"model\": \"gemini-2.5-pro\","
+                - generic [ref=e1018]: "\"input\": \"What happened in the news today?\","
+                - generic [ref=e1019]: "\"tools\": ["
+                - generic [ref=e1020]: "{ \"type\": \"web_search\" },"
+                - generic [ref=e1021]: "{"
+                - generic [ref=e1022]: "\"type\": \"function\","
+                - generic [ref=e1023]: "\"name\": \"convert_currency\","
+                - generic [ref=e1024]: "\"description\": \"Convert between currencies\","
+                - generic [ref=e1025]: "\"parameters\": {"
+                - generic [ref=e1026]: "\"type\": \"object\","
+                - generic [ref=e1027]: "\"properties\": {"
+                - generic [ref=e1028]: "\"amount\": { \"type\": \"number\" },"
+                - generic [ref=e1029]: "\"from\": { \"type\": \"string\" },"
+                - generic [ref=e1030]: "\"to\": { \"type\": \"string\" }"
+                - generic [ref=e1031]: "},"
+                - generic [ref=e1032]: "\"required\": [\"amount\", \"from\", \"to\"]"
+                - generic [ref=e1033]: "}"
+                - generic [ref=e1034]: "}"
+                - generic [ref=e1035]: "],"
+                - generic [ref=e1036]: "\"tool_choice\": {"
+                - generic [ref=e1037]: "\"type\": \"allowed_tools\","
+                - generic [ref=e1038]: "\"mode\": \"auto\","
+                - generic [ref=e1039]: "\"tools\": [{ \"type\": \"web_search\" }]"
+                - generic [ref=e1040]: "}"
+                - generic [ref=e1041]: "}"
+            - heading "Navigate to header Provider Support" [level=2] [ref=e1042]:
+              - link "Navigate to header" [ref=e1043] [cursor=pointer]:
+                - /url: "#provider-support"
+                - img [ref=e1045]
+              - generic [ref=e1047] [cursor=pointer]: Provider Support
+            - generic [ref=e1048]: "Web search is supported across multiple providers:"
+            - table [ref=e1051]:
+              - rowgroup [ref=e1052]:
+                - row "Provider Supported Notes" [ref=e1053]:
+                  - columnheader "Provider" [ref=e1054]
+                  - columnheader "Supported" [ref=e1055]
+                  - columnheader "Notes" [ref=e1056]
+              - rowgroup [ref=e1057]:
+                - row "OpenAI Yes GPT-4o, GPT-4.1, GPT-5 family" [ref=e1058]:
+                  - cell "OpenAI" [ref=e1059]
+                  - cell "Yes" [ref=e1060]
+                  - cell "GPT-4o, GPT-4.1, GPT-5 family" [ref=e1061]
+                - row "Anthropic Yes Claude Sonnet, Opus, Haiku models" [ref=e1062]:
+                  - cell "Anthropic" [ref=e1063]
+                  - cell "Yes" [ref=e1064]
+                  - cell "Claude Sonnet, Opus, Haiku models" [ref=e1065]
+                - row "xAI Yes Grok-4 family" [ref=e1066]:
+                  - cell "xAI" [ref=e1067]
+                  - cell "Yes" [ref=e1068]
+                  - cell "Grok-4 family" [ref=e1069]
+                - row "Google Vertex AI Yes Gemini models. No search_context_size/filters support. Cannot combine with function tools" [ref=e1070]:
+                  - cell "Google Vertex AI" [ref=e1071]
+                  - cell "Yes" [ref=e1072]
+                  - cell "Gemini models. No search_context_size/filters support. Cannot combine with function tools" [ref=e1073]:
+                    - text: Gemini models. No
+                    - code [ref=e1074]: search_context_size
+                    - text: /
+                    - code [ref=e1075]: filters
+                    - text: support. Cannot combine with function tools
+                - row "Mistral Yes Mistral Small, Medium, Magistral. No search_context_size/filters support. Cannot combine with function tools" [ref=e1076]:
+                  - cell "Mistral" [ref=e1077]
+                  - cell "Yes" [ref=e1078]
+                  - cell "Mistral Small, Medium, Magistral. No search_context_size/filters support. Cannot combine with function tools" [ref=e1079]:
+                    - text: Mistral Small, Medium, Magistral. No
+                    - code [ref=e1080]: search_context_size
+                    - text: /
+                    - code [ref=e1081]: filters
+                    - text: support. Cannot combine with function tools
+            - generic [ref=e1082]:
+              - text: Check specific model support using the
+              - link "List Models" [ref=e1083] [cursor=pointer]:
+                - /url: /api-reference/endpoint/list-models
+              - text: endpoint.
+            - separator [ref=e1084]
+            - heading "Navigate to header Related Pages" [level=2] [ref=e1085]:
+              - link "Navigate to header" [ref=e1086] [cursor=pointer]:
+                - /url: "#related-pages"
+                - img [ref=e1088]
+              - generic [ref=e1090] [cursor=pointer]: Related Pages
+            - generic [ref=e1091]:
+              - link "Tool Calling Define custom function tools" [ref=e1092] [cursor=pointer]:
+                - /url: /api-reference/endpoint/tool-calling
+                - generic [ref=e1093]:
+                  - img [ref=e1095]
+                  - generic [ref=e1096]:
+                    - heading "Tool Calling" [level=2] [ref=e1097]
+                    - generic [ref=e1099]: Define custom function tools
+              - link "Create Response Main API endpoint reference" [ref=e1100] [cursor=pointer]:
+                - /url: /api-reference/endpoint/create-response
+                - generic [ref=e1101]:
+                  - img [ref=e1103]
+                  - generic [ref=e1104]:
+                    - heading "Create Response" [level=2] [ref=e1105]
+                    - generic [ref=e1107]: Main API endpoint reference
+          - generic [ref=e621]:
+            - paragraph [ref=e622]: Was this page helpful?
+            - generic [ref=e624]:
+              - button "Yes" [ref=e625] [cursor=pointer]:
+                - img [ref=e626]
+                - generic [ref=e628]: "Yes"
+              - button "No" [ref=e629] [cursor=pointer]:
+                - img [ref=e630]
+                - generic [ref=e632]: "No"
+          - generic [ref=e633]:
+            - link "Tool Calling" [ref=e634] [cursor=pointer]:
+              - /url: /api-reference/endpoint/tool-calling
+              - img [ref=e635]
+              - generic [ref=e637]: Tool Calling
+            - link "Request Parameters Reference" [ref=e638] [cursor=pointer]:
+              - /url: /api-reference/endpoint/request-parameters
+              - generic [ref=e639]: Request Parameters Reference
+              - img [ref=e640]
+          - generic [ref=e643]:
+            - textbox "Ask a question..." [ref=e644]
+            - generic: Ctrl+I
+            - button "Send message" [disabled] [ref=e645]:
+              - img [ref=e646]
+          - contentinfo [ref=e648]:
+            - link "Powered by" [ref=e651] [cursor=pointer]:
+              - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=concentrateai-8b9c0315
+              - generic [ref=e652]: Powered by
+              - img [ref=e653]
+  - alert [ref=e1108]

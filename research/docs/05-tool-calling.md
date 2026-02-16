@@ -1,0 +1,1153 @@
+# Tool Calling
+> Source: https://docs.concentrate.ai/api-reference/endpoint/tool-calling
+> Fetched: 2026-02-16 via Playwright browser_snapshot (Claude Code)
+> Method: Full accessibility tree capture — verbatim page content
+
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - link "concentrate home page light logo" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e12]: concentrate home page
+          - img "light logo" [ref=e13]
+        - generic [ref=e15]:
+          - button "Open search" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]:
+              - img [ref=e18]
+              - generic [ref=e21]: Search...
+            - generic [ref=e22]: Ctrl K
+          - button "Toggle assistant panel" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - list
+          - generic [ref=e29]:
+            - heading "API documentation" [level=5] [ref=e31]
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "API Introduction" [ref=e34] [cursor=pointer]:
+                  - /url: /api-reference/introduction
+                  - generic [ref=e36]: API Introduction
+          - generic [ref=e37]:
+            - heading "Responses" [level=5] [ref=e39]
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "POST Create Response" [ref=e42] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-response
+                  - generic [ref=e44]: POST
+                  - generic [ref=e46]: Create Response
+          - generic [ref=e47]:
+            - heading "Messages (Beta)" [level=5] [ref=e49]
+            - list [ref=e50]:
+              - listitem [ref=e51]:
+                - link "POST Create Message" [ref=e52] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-message
+                  - generic [ref=e54]: POST
+                  - generic [ref=e56]: Create Message
+          - generic [ref=e57]:
+            - heading "Models" [level=5] [ref=e59]
+            - list [ref=e60]:
+              - listitem [ref=e61]:
+                - link "GET List Models" [ref=e62] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-models
+                  - generic [ref=e64]: GET
+                  - generic [ref=e66]: List Models
+              - listitem [ref=e67]:
+                - link "GET List Providers" [ref=e68] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-providers
+                  - generic [ref=e70]: GET
+                  - generic [ref=e72]: List Providers
+              - listitem [ref=e73]:
+                - link "GET Get Model" [ref=e74] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-model
+                  - generic [ref=e76]: GET
+                  - generic [ref=e78]: Get Model
+              - listitem [ref=e79]:
+                - link "GET Get Provider Info" [ref=e80] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-provider-info
+                  - generic [ref=e82]: GET
+                  - generic [ref=e84]: Get Provider Info
+          - generic [ref=e85]:
+            - heading "Utilities" [level=5] [ref=e87]
+            - list [ref=e88]:
+              - listitem [ref=e89]:
+                - link "GET Health Check" [ref=e90] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/health
+                  - generic [ref=e92]: GET
+                  - generic [ref=e94]: Health Check
+          - generic [ref=e95]:
+            - heading "Features" [level=5] [ref=e97]
+            - list [ref=e98]:
+              - listitem [ref=e99]:
+                - link "Streaming Responses" [ref=e100] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/streaming
+                  - generic [ref=e102]: Streaming Responses
+              - listitem [ref=e103]:
+                - link "Auto Routing" [ref=e104] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/auto-routing
+                  - generic [ref=e106]: Auto Routing
+              - listitem [ref=e107]:
+                - link "Tool Calling" [ref=e108] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/tool-calling
+                  - generic [ref=e110]: Tool Calling
+              - listitem [ref=e111]:
+                - link "Web Search" [ref=e112] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/web-search
+                  - generic [ref=e114]: Web Search
+          - generic [ref=e115]:
+            - heading "Reference" [level=5] [ref=e117]
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - link "Request Parameters Reference" [ref=e120] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/request-parameters
+                  - generic [ref=e122]: Request Parameters Reference
+              - listitem [ref=e123]:
+                - link "Prompt Caching" [ref=e124] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/prompt-caching
+                  - generic [ref=e126]: Prompt Caching
+              - listitem [ref=e127]:
+                - link "Error Handling" [ref=e128] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/errors
+                  - generic [ref=e130]: Error Handling
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e134]:
+            - link "API reference" [ref=e135] [cursor=pointer]:
+              - /url: /api-reference/introduction
+              - text: API reference
+            - link "Guides" [ref=e137] [cursor=pointer]:
+              - /url: /getting-started/quickstart
+              - text: Guides
+          - generic [ref=e139]:
+            - listitem [ref=e140]:
+              - link "Support" [ref=e141] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+            - listitem [ref=e142]:
+              - link "Dashboard" [ref=e143] [cursor=pointer]:
+                - /url: https://app.concentrate.ai
+                - generic [ref=e144]:
+                  - generic [ref=e145]: Dashboard
+                  - img [ref=e146]
+          - button "Toggle dark mode" [ref=e149] [cursor=pointer]:
+            - img [ref=e150]
+        - generic [ref=e157]:
+          - banner [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: Features
+              - generic [ref=e161]:
+                - heading "Tool Calling" [level=1] [ref=e162]
+                - generic [ref=e163]:
+                  - button "Copy page" [ref=e164] [cursor=pointer]:
+                    - generic [ref=e165]:
+                      - img [ref=e166]
+                      - generic [ref=e169]: Copy page
+                  - button "More actions" [ref=e170] [cursor=pointer]:
+                    - img [ref=e171]
+            - paragraph [ref=e1269]: Enable models to call functions and use external tools
+          - generic [ref=e175]:
+            - heading "Navigate to header Overview" [level=2] [ref=e1270]:
+              - link "Navigate to header" [ref=e1271] [cursor=pointer]:
+                - /url: "#overview"
+                - img [ref=e1273]
+              - generic [ref=e1275] [cursor=pointer]: Overview
+            - generic [ref=e1276]: Tool calling (also known as function calling) enables AI models to request the execution of external functions and tools. Instead of trying to generate structured data directly, the model can indicate it wants to call a function with specific parameters, your code executes the function, and then you send the result back to continue the conversation.
+            - strong [ref=e1278]: "Use tool calling when you need to:"
+            - list [ref=e1279]:
+              - listitem [ref=e1280]: Access real-time data (weather, stock prices, databases)
+              - listitem [ref=e1281]: Perform calculations or data processing
+              - listitem [ref=e1282]: Interact with external APIs and services
+              - listitem [ref=e1283]: Execute actions on behalf of users (send emails, create calendar events)
+              - listitem [ref=e1284]: Retrieve information the model doesn’t have in its training data
+            - heading "Navigate to header Prerequisites" [level=2] [ref=e1285]:
+              - link "Navigate to header" [ref=e1286] [cursor=pointer]:
+                - /url: "#prerequisites"
+                - img [ref=e1288]
+              - generic [ref=e1290] [cursor=pointer]: Prerequisites
+            - generic [ref=e1291]: "Before using tool calling, ensure you have:"
+            - list [ref=e1292]:
+              - listitem [ref=e1293]:
+                - text: A Concentrate AI API key (
+                - link "get one here" [ref=e1294] [cursor=pointer]:
+                  - /url: https://app.concentrate.ai
+                - text: )
+              - listitem [ref=e1295]:
+                - text: A model that supports tool calling (refer to the
+                - link "models endpoint" [ref=e1296] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-models
+                - text: to see models that support tool calling)
+              - listitem [ref=e1297]: An understanding of JSON Schema for defining function parameters
+            - heading "Navigate to header Quick Start" [level=2] [ref=e1298]:
+              - link "Navigate to header" [ref=e1299] [cursor=pointer]:
+                - /url: "#quick-start"
+                - img [ref=e1301]
+              - generic [ref=e1303] [cursor=pointer]: Quick Start
+            - generic [ref=e1304]: "Here’s a basic example of tool calling with a weather function:"
+            - generic [ref=e1305]:
+              - generic [ref=e1306]:
+                - tablist [ref=e1307]:
+                  - tab "cURL" [selected] [ref=e1308] [cursor=pointer]:
+                    - generic [ref=e1309]: cURL
+                  - tab "Python" [ref=e1311] [cursor=pointer]:
+                    - generic [ref=e1312]: Python
+                  - tab "TypeScript" [ref=e1313] [cursor=pointer]:
+                    - generic [ref=e1314]: TypeScript
+                  - tab "Go" [ref=e1315] [cursor=pointer]:
+                    - generic [ref=e1316]: Go
+                - generic [ref=e1317]:
+                  - generic [ref=e1318]:
+                    - button "Copy the contents from the code block" [ref=e1319] [cursor=pointer]:
+                      - img [ref=e1320]
+                    - generic [ref=e1323]: Copy
+                  - generic [ref=e1324]:
+                    - button "Ask AI" [ref=e1325] [cursor=pointer]:
+                      - img [ref=e1326]
+                    - generic [ref=e1329]: Ask AI
+              - tabpanel "cURL" [ref=e1331]:
+                - code [ref=e1335]:
+                  - generic [ref=e1336]: curl https://api.concentrate.ai/v1/responses \
+                  - generic [ref=e1337]: "-H \"Content-Type: application/json\" \\"
+                  - generic [ref=e1338]: "-H \"Authorization: Bearer YOUR_API_KEY\" \\"
+                  - generic [ref=e1339]: "-d '{"
+                  - generic [ref=e1340]: "\"model\": \"gpt-4o\","
+                  - generic [ref=e1341]: "\"input\": \"What is the weather in San Francisco?\","
+                  - generic [ref=e1342]: "\"tools\": ["
+                  - generic [ref=e1343]: "{"
+                  - generic [ref=e1344]: "\"type\": \"function\","
+                  - generic [ref=e1345]: "\"name\": \"get_weather\","
+                  - generic [ref=e1346]: "\"description\": \"Get current weather for a location\","
+                  - generic [ref=e1347]: "\"parameters\": {"
+                  - generic [ref=e1348]: "\"type\": \"object\","
+                  - generic [ref=e1349]: "\"properties\": {"
+                  - generic [ref=e1350]: "\"location\": {"
+                  - generic [ref=e1351]: "\"type\": \"string\","
+                  - generic [ref=e1352]: "\"description\": \"City and state, e.g. San Francisco, CA\""
+                  - generic [ref=e1353]: "},"
+                  - generic [ref=e1354]: "\"unit\": {"
+                  - generic [ref=e1355]: "\"type\": \"string\","
+                  - generic [ref=e1356]: "\"enum\": [\"celsius\", \"fahrenheit\"],"
+                  - generic [ref=e1357]: "\"description\": \"Temperature unit\""
+                  - generic [ref=e1358]: "}"
+                  - generic [ref=e1359]: "},"
+                  - generic [ref=e1360]: "\"required\": [\"location\"]"
+                  - generic [ref=e1361]: "}"
+                  - generic [ref=e1362]: "}"
+                  - generic [ref=e1363]: "]"
+                  - generic [ref=e1364]: "}'"
+            - heading "Navigate to header Defining Tools" [level=2] [ref=e1365]:
+              - link "Navigate to header" [ref=e1366] [cursor=pointer]:
+                - /url: "#defining-tools"
+                - img [ref=e1368]
+              - generic [ref=e1370] [cursor=pointer]: Defining Tools
+            - generic [ref=e1371]:
+              - text: Each tool is defined using the
+              - code [ref=e1372]: FunctionTool
+              - text: "schema. Here are the properties:"
+            - table [ref=e1375]:
+              - rowgroup [ref=e1376]:
+                - row "Property Type Required Description" [ref=e1377]:
+                  - columnheader "Property" [ref=e1378]
+                  - columnheader "Type" [ref=e1379]
+                  - columnheader "Required" [ref=e1380]
+                  - columnheader "Description" [ref=e1381]
+              - rowgroup [ref=e1382]:
+                - row "type string Yes Must be \"function\"" [ref=e1383]:
+                  - cell "type" [ref=e1384]:
+                    - code [ref=e1385]: type
+                  - cell "string" [ref=e1386]
+                  - cell "Yes" [ref=e1387]
+                  - cell "Must be \"function\"" [ref=e1388]:
+                    - text: Must be
+                    - code [ref=e1389]: "\"function\""
+                - row "name string Yes Function name (alphanumeric, underscores, dots, hyphens only)" [ref=e1390]:
+                  - cell "name" [ref=e1391]:
+                    - code [ref=e1392]: name
+                  - cell "string" [ref=e1393]
+                  - cell "Yes" [ref=e1394]
+                  - cell "Function name (alphanumeric, underscores, dots, hyphens only)" [ref=e1395]
+                - row "description string No Clear description of what the function does" [ref=e1396]:
+                  - cell "description" [ref=e1397]:
+                    - code [ref=e1398]: description
+                  - cell "string" [ref=e1399]
+                  - cell "No" [ref=e1400]
+                  - cell "Clear description of what the function does" [ref=e1401]
+                - row "parameters object Yes JSON Schema defining the function’s parameters" [ref=e1402]:
+                  - cell "parameters" [ref=e1403]:
+                    - code [ref=e1404]: parameters
+                  - cell "object" [ref=e1405]
+                  - cell "Yes" [ref=e1406]
+                  - cell "JSON Schema defining the function’s parameters" [ref=e1407]
+                - 'row "strict boolean No Enable strict schema validation (default: true)" [ref=e1408]':
+                  - cell "strict" [ref=e1409]:
+                    - code [ref=e1410]: strict
+                  - cell "boolean" [ref=e1411]
+                  - cell "No" [ref=e1412]
+                  - 'cell "Enable strict schema validation (default: true)" [ref=e1413]':
+                    - text: "Enable strict schema validation (default:"
+                    - code [ref=e1414]: "true"
+                    - text: )
+                - row "cache_control object No Cache this tool definition for better performance" [ref=e1415]:
+                  - cell "cache_control" [ref=e1416]:
+                    - code [ref=e1417]: cache_control
+                  - cell "object" [ref=e1418]
+                  - cell "No" [ref=e1419]
+                  - cell "Cache this tool definition for better performance" [ref=e1420]
+            - heading "Navigate to header Tool Name Pattern" [level=3] [ref=e1421]:
+              - link "Navigate to header" [ref=e1422] [cursor=pointer]:
+                - /url: "#tool-name-pattern"
+                - img [ref=e1424]
+              - generic [ref=e1426] [cursor=pointer]: Tool Name Pattern
+            - generic [ref=e1427]:
+              - text: "Tool names must match the pattern:"
+              - code [ref=e1428]: ^[a-zA-Z0-9_.-]+$
+            - generic [ref=e1429]: "Valid names:"
+            - list [ref=e1430]:
+              - listitem [ref=e1431]:
+                - code [ref=e1432]: get_weather
+              - listitem [ref=e1433]:
+                - code [ref=e1434]: send_email
+              - listitem [ref=e1435]:
+                - code [ref=e1436]: user.get_profile
+              - listitem [ref=e1437]:
+                - code [ref=e1438]: calculate-sum
+            - generic [ref=e1439]: "Invalid names:"
+            - list [ref=e1440]:
+              - listitem [ref=e1441]:
+                - code [ref=e1442]: get weather
+                - text: (contains space)
+              - listitem [ref=e1443]:
+                - code [ref=e1444]: send@email
+                - text: (contains @)
+            - heading "Navigate to header Parameters as JSON Schema" [level=3] [ref=e1445]:
+              - link "Navigate to header" [ref=e1446] [cursor=pointer]:
+                - /url: "#parameters-as-json-schema"
+                - img [ref=e1448]
+              - generic [ref=e1450] [cursor=pointer]: Parameters as JSON Schema
+            - generic [ref=e1451]:
+              - text: The
+              - code [ref=e1452]: parameters
+              - text: field uses JSON Schema to define the function’s inputs. This helps the model understand what data to provide.
+            - generic [ref=e1453]:
+              - generic [ref=e1454]:
+                - generic [ref=e1455]:
+                  - button "Copy the contents from the code block" [ref=e1456] [cursor=pointer]:
+                    - img [ref=e1457]
+                  - generic [ref=e1460]: Copy
+                - generic [ref=e1461]:
+                  - button "Ask AI" [ref=e1462] [cursor=pointer]:
+                    - img [ref=e1463]
+                  - generic [ref=e1466]: Ask AI
+              - code [ref=e1470]:
+                - generic [ref=e1471]: "{"
+                - generic [ref=e1472]: "\"parameters\": {"
+                - generic [ref=e1473]: "\"type\": \"object\","
+                - generic [ref=e1474]: "\"properties\": {"
+                - generic [ref=e1475]: "\"location\": {"
+                - generic [ref=e1476]: "\"type\": \"string\","
+                - generic [ref=e1477]: "\"description\": \"City and state, e.g. San Francisco, CA\""
+                - generic [ref=e1478]: "},"
+                - generic [ref=e1479]: "\"unit\": {"
+                - generic [ref=e1480]: "\"type\": \"string\","
+                - generic [ref=e1481]: "\"enum\": [\"celsius\", \"fahrenheit\"],"
+                - generic [ref=e1482]: "\"description\": \"Temperature unit\""
+                - generic [ref=e1483]: "},"
+                - generic [ref=e1484]: "\"include_forecast\": {"
+                - generic [ref=e1485]: "\"type\": \"boolean\","
+                - generic [ref=e1486]: "\"description\": \"Include 5-day forecast\""
+                - generic [ref=e1487]: "}"
+                - generic [ref=e1488]: "},"
+                - generic [ref=e1489]: "\"required\": [\"location\"]"
+                - generic [ref=e1490]: "}"
+                - generic [ref=e1491]: "}"
+            - strong [ref=e1493]: "Best practices for parameters:"
+            - list [ref=e1494]:
+              - listitem [ref=e1495]:
+                - text: Always include
+                - code [ref=e1496]: description
+                - text: fields to help the model understand the purpose
+              - listitem [ref=e1497]:
+                - text: Use
+                - code [ref=e1498]: enum
+                - text: for fields with fixed options
+              - listitem [ref=e1499]:
+                - text: Mark essential parameters in the
+                - code [ref=e1500]: required
+                - text: array
+              - listitem [ref=e1501]: Keep schemas simple and focused on the task
+            - heading "Navigate to header Strict Mode" [level=3] [ref=e1502]:
+              - link "Navigate to header" [ref=e1503] [cursor=pointer]:
+                - /url: "#strict-mode"
+                - img [ref=e1505]
+              - generic [ref=e1507] [cursor=pointer]: Strict Mode
+            - generic [ref=e1508]:
+              - text: By default,
+              - code [ref=e1509]: "strict: true"
+              - text: "is enabled. This ensures the model’s output strictly follows your schema:"
+            - generic [ref=e1510]:
+              - generic [ref=e1511]:
+                - generic [ref=e1512]:
+                  - button "Copy the contents from the code block" [ref=e1513] [cursor=pointer]:
+                    - img [ref=e1514]
+                  - generic [ref=e1517]: Copy
+                - generic [ref=e1518]:
+                  - button "Ask AI" [ref=e1519] [cursor=pointer]:
+                    - img [ref=e1520]
+                  - generic [ref=e1523]: Ask AI
+              - code [ref=e1527]:
+                - generic [ref=e1528]: "{"
+                - generic [ref=e1529]: "\"type\": \"function\","
+                - generic [ref=e1530]: "\"name\": \"create_user\","
+                - generic [ref=e1531]: "\"parameters\": {"
+                - generic [ref=e1532]: "\"type\": \"object\","
+                - generic [ref=e1533]: "\"properties\": {"
+                - generic [ref=e1534]: "\"name\": { \"type\": \"string\" },"
+                - generic [ref=e1535]: "\"email\": { \"type\": \"string\" }"
+                - generic [ref=e1536]: "},"
+                - generic [ref=e1537]: "\"required\": [\"name\", \"email\"]"
+                - generic [ref=e1538]: "},"
+                - generic [ref=e1539]: "\"strict\": true"
+                - generic [ref=e1540]: "}"
+            - generic [ref=e1541]:
+              - text: With
+              - code [ref=e1542]: "strict: true"
+              - text: ", the model will only include"
+              - code [ref=e1543]: name
+              - text: and
+              - code [ref=e1544]: email
+              - text: in its output—no additional properties.
+            - heading "Navigate to header Cache Control" [level=3] [ref=e1545]:
+              - link "Navigate to header" [ref=e1546] [cursor=pointer]:
+                - /url: "#cache-control"
+                - img [ref=e1548]
+              - generic [ref=e1550] [cursor=pointer]: Cache Control
+            - generic [ref=e1551]: "Cache tool definitions to improve performance and reduce costs:"
+            - generic [ref=e1552]:
+              - generic [ref=e1553]:
+                - generic [ref=e1554]:
+                  - button "Copy the contents from the code block" [ref=e1555] [cursor=pointer]:
+                    - img [ref=e1556]
+                  - generic [ref=e1559]: Copy
+                - generic [ref=e1560]:
+                  - button "Ask AI" [ref=e1561] [cursor=pointer]:
+                    - img [ref=e1562]
+                  - generic [ref=e1565]: Ask AI
+              - code [ref=e1569]:
+                - generic [ref=e1570]: "{"
+                - generic [ref=e1571]: "\"type\": \"function\","
+                - generic [ref=e1572]: "\"name\": \"get_weather\","
+                - generic [ref=e1573]: "\"description\": \"Get current weather for a location\","
+                - generic [ref=e1574]: "\"parameters\": { ... },"
+                - generic [ref=e1575]: "\"cache_control\": {"
+                - generic [ref=e1576]: "\"type\": \"ephemeral\","
+                - generic [ref=e1577]: "\"ttl\": \"5m\""
+                - generic [ref=e1578]: "}"
+                - generic [ref=e1579]: "}"
+            - generic [ref=e1580]:
+              - text: See
+              - link "Prompt Caching" [ref=e1581] [cursor=pointer]:
+                - /url: /api-reference/endpoint/prompt-caching
+              - text: for more details.
+            - heading "Navigate to header Tool Choice Modes" [level=2] [ref=e1582]:
+              - link "Navigate to header" [ref=e1583] [cursor=pointer]:
+                - /url: "#tool-choice-modes"
+                - img [ref=e1585]
+              - generic [ref=e1587] [cursor=pointer]: Tool Choice Modes
+            - generic [ref=e1588]:
+              - text: Control which tools the model can use with the
+              - code [ref=e1589]: tool_choice
+              - text: "parameter:"
+            - heading "Navigate to header None - Disable Tool Calling" [level=3] [ref=e1590]:
+              - link "Navigate to header" [ref=e1591] [cursor=pointer]:
+                - /url: "#none-disable-tool-calling"
+                - img [ref=e1593]
+              - generic [ref=e1595] [cursor=pointer]: None - Disable Tool Calling
+            - generic [ref=e1596]:
+              - generic [ref=e1597]:
+                - generic [ref=e1598]:
+                  - button "Copy the contents from the code block" [ref=e1599] [cursor=pointer]:
+                    - img [ref=e1600]
+                  - generic [ref=e1603]: Copy
+                - generic [ref=e1604]:
+                  - button "Ask AI" [ref=e1605] [cursor=pointer]:
+                    - img [ref=e1606]
+                  - generic [ref=e1609]: Ask AI
+              - code [ref=e1613]:
+                - generic [ref=e1614]: "{"
+                - generic [ref=e1615]: "\"tool_choice\": \"none\""
+                - generic [ref=e1616]: "}"
+            - generic [ref=e1617]: The model will respond normally without calling any tools, even if they’re available.
+            - heading "Navigate to header Auto - Let Model Decide (Default)" [level=3] [ref=e1618]:
+              - link "Navigate to header" [ref=e1619] [cursor=pointer]:
+                - /url: "#auto-let-model-decide-default"
+                - img [ref=e1621]
+              - generic [ref=e1623] [cursor=pointer]: Auto - Let Model Decide (Default)
+            - generic [ref=e1624]:
+              - generic [ref=e1625]:
+                - generic [ref=e1626]:
+                  - button "Copy the contents from the code block" [ref=e1627] [cursor=pointer]:
+                    - img [ref=e1628]
+                  - generic [ref=e1631]: Copy
+                - generic [ref=e1632]:
+                  - button "Ask AI" [ref=e1633] [cursor=pointer]:
+                    - img [ref=e1634]
+                  - generic [ref=e1637]: Ask AI
+              - code [ref=e1641]:
+                - generic [ref=e1642]: "{"
+                - generic [ref=e1643]: "\"tool_choice\": \"auto\""
+                - generic [ref=e1644]: "}"
+            - generic [ref=e1645]: The model decides whether to call a tool based on the user’s input. This is the default behavior.
+            - heading "Navigate to header Required - Force Tool Use" [level=3] [ref=e1646]:
+              - link "Navigate to header" [ref=e1647] [cursor=pointer]:
+                - /url: "#required-force-tool-use"
+                - img [ref=e1649]
+              - generic [ref=e1651] [cursor=pointer]: Required - Force Tool Use
+            - generic [ref=e1652]:
+              - generic [ref=e1653]:
+                - generic [ref=e1654]:
+                  - button "Copy the contents from the code block" [ref=e1655] [cursor=pointer]:
+                    - img [ref=e1656]
+                  - generic [ref=e1659]: Copy
+                - generic [ref=e1660]:
+                  - button "Ask AI" [ref=e1661] [cursor=pointer]:
+                    - img [ref=e1662]
+                  - generic [ref=e1665]: Ask AI
+              - code [ref=e1669]:
+                - generic [ref=e1670]: "{"
+                - generic [ref=e1671]: "\"tool_choice\": \"required\""
+                - generic [ref=e1672]: "}"
+            - generic [ref=e1673]: The model must call at least one tool before responding. Useful when you always need a function call.
+            - heading "Navigate to header Specific Tool - Force Specific Function" [level=3] [ref=e1674]:
+              - link "Navigate to header" [ref=e1675] [cursor=pointer]:
+                - /url: "#specific-tool-force-specific-function"
+                - img [ref=e1677]
+              - generic [ref=e1679] [cursor=pointer]: Specific Tool - Force Specific Function
+            - generic [ref=e1680]:
+              - generic [ref=e1681]:
+                - generic [ref=e1682]:
+                  - button "Copy the contents from the code block" [ref=e1683] [cursor=pointer]:
+                    - img [ref=e1684]
+                  - generic [ref=e1687]: Copy
+                - generic [ref=e1688]:
+                  - button "Ask AI" [ref=e1689] [cursor=pointer]:
+                    - img [ref=e1690]
+                  - generic [ref=e1693]: Ask AI
+              - code [ref=e1697]:
+                - generic [ref=e1698]: "{"
+                - generic [ref=e1699]: "\"tool_choice\": {"
+                - generic [ref=e1700]: "\"type\": \"function\","
+                - generic [ref=e1701]: "\"name\": \"get_weather\""
+                - generic [ref=e1702]: "}"
+                - generic [ref=e1703]: "}"
+            - generic [ref=e1704]: The model must call the specified tool. Use this when you know exactly which function should be called.
+            - heading "Navigate to header Allowed Tools - Limit to Subset" [level=3] [ref=e1705]:
+              - link "Navigate to header" [ref=e1706] [cursor=pointer]:
+                - /url: "#allowed-tools-limit-to-subset"
+                - img [ref=e1708]
+              - generic [ref=e1710] [cursor=pointer]: Allowed Tools - Limit to Subset
+            - generic [ref=e1711]:
+              - generic [ref=e1712]:
+                - generic [ref=e1713]:
+                  - button "Copy the contents from the code block" [ref=e1714] [cursor=pointer]:
+                    - img [ref=e1715]
+                  - generic [ref=e1718]: Copy
+                - generic [ref=e1719]:
+                  - button "Ask AI" [ref=e1720] [cursor=pointer]:
+                    - img [ref=e1721]
+                  - generic [ref=e1724]: Ask AI
+              - code [ref=e1728]:
+                - generic [ref=e1729]: "{"
+                - generic [ref=e1730]: "\"tool_choice\": {"
+                - generic [ref=e1731]: "\"type\": \"allowed_tools\","
+                - generic [ref=e1732]: "\"mode\": \"auto\","
+                - generic [ref=e1733]: "\"tools\": ["
+                - generic [ref=e1734]: "{ \"type\": \"function\", \"name\": \"get_weather\" },"
+                - generic [ref=e1735]: "{ \"type\": \"function\", \"name\": \"get_forecast\" }"
+                - generic [ref=e1736]: "]"
+                - generic [ref=e1737]: "}"
+                - generic [ref=e1738]: "}"
+            - generic [ref=e1739]:
+              - text: Restrict the model to only use specific tools from your full tool list. The
+              - code [ref=e1740]: mode
+              - text: "can be:"
+            - list [ref=e1741]:
+              - listitem [ref=e1742]:
+                - code [ref=e1743]: "\"auto\""
+                - text: "- Model can use these tools or skip them"
+              - listitem [ref=e1744]:
+                - code [ref=e1745]: "\"required\""
+                - text: "- Model must use at least one of these tools"
+            - heading "Navigate to header Parallel Tool Calls" [level=2] [ref=e1746]:
+              - link "Navigate to header" [ref=e1747] [cursor=pointer]:
+                - /url: "#parallel-tool-calls"
+                - img [ref=e1749]
+              - generic [ref=e1751] [cursor=pointer]: Parallel Tool Calls
+            - generic [ref=e1752]: "Enable the model to call multiple tools simultaneously:"
+            - generic [ref=e1753]:
+              - generic [ref=e1754]:
+                - generic [ref=e1755]:
+                  - button "Copy the contents from the code block" [ref=e1756] [cursor=pointer]:
+                    - img [ref=e1757]
+                  - generic [ref=e1760]: Copy
+                - generic [ref=e1761]:
+                  - button "Ask AI" [ref=e1762] [cursor=pointer]:
+                    - img [ref=e1763]
+                  - generic [ref=e1766]: Ask AI
+              - code [ref=e1770]:
+                - generic [ref=e1771]: "{"
+                - generic [ref=e1772]: "\"parallel_tool_calls\": true"
+                - generic [ref=e1773]: "}"
+            - strong [ref=e1775]: "When to enable:"
+            - list [ref=e1776]:
+              - listitem [ref=e1777]: Multiple independent operations (e.g., get weather for multiple cities)
+              - listitem [ref=e1778]: No dependencies between tool calls
+              - listitem [ref=e1779]: Want faster results through parallelization
+            - strong [ref=e1781]: "When to disable:"
+            - list [ref=e1782]:
+              - listitem [ref=e1783]: Sequential operations where order matters
+              - listitem [ref=e1784]: Tool calls depend on each other’s results
+              - listitem [ref=e1785]: Want more predictable, step-by-step execution
+            - strong [ref=e1787]: "Example of parallel tool calls:"
+            - generic [ref=e1788]:
+              - generic [ref=e1789]:
+                - generic [ref=e1790]:
+                  - button "Copy the contents from the code block" [ref=e1791] [cursor=pointer]:
+                    - img [ref=e1792]
+                  - generic [ref=e1795]: Copy
+                - generic [ref=e1796]:
+                  - button "Ask AI" [ref=e1797] [cursor=pointer]:
+                    - img [ref=e1798]
+                  - generic [ref=e1801]: Ask AI
+              - code [ref=e1805]:
+                - generic [ref=e1806]: "# User asks: \"What's the weather in SF, NYC, and London?\""
+                - generic [ref=e1807]: "# Model can call get_weather three times in parallel:"
+                - generic [ref=e1808]: "{"
+                - generic [ref=e1809]: "\"output\": ["
+                - generic [ref=e1810]: "{\"type\": \"function_call\", \"call_id\": \"call_1\", \"name\": \"get_weather\", \"arguments\": '{\"location\": \"San Francisco, CA\"}'},"
+                - generic [ref=e1811]: "{\"type\": \"function_call\", \"call_id\": \"call_2\", \"name\": \"get_weather\", \"arguments\": '{\"location\": \"New York, NY\"}'},"
+                - generic [ref=e1812]: "{\"type\": \"function_call\", \"call_id\": \"call_3\", \"name\": \"get_weather\", \"arguments\": '{\"location\": \"London, UK\"}'}"
+                - generic [ref=e1813]: "]"
+                - generic [ref=e1814]: "}"
+            - heading "Navigate to header Multi-Turn Workflow" [level=2] [ref=e1815]:
+              - link "Navigate to header" [ref=e1816] [cursor=pointer]:
+                - /url: "#multi-turn-workflow"
+                - img [ref=e1818]
+              - generic [ref=e1820] [cursor=pointer]: Multi-Turn Workflow
+            - generic [ref=e1821]: "Tool calling typically follows this pattern:"
+            - list [ref=e1822]:
+              - listitem [ref=e1823]:
+                - strong [ref=e1824]: User sends a message
+                - text: with tools available
+              - listitem [ref=e1825]:
+                - strong [ref=e1826]: Model responds with function_call
+                - text: indicating it wants to use a tool
+              - listitem [ref=e1827]:
+                - strong [ref=e1828]: You execute the function
+                - text: in your application
+              - listitem [ref=e1829]:
+                - strong [ref=e1830]: You send the result back
+                - text: with
+                - code [ref=e1831]: function_call_output
+              - listitem [ref=e1832]:
+                - strong [ref=e1833]: Model provides final response
+                - text: using the tool result
+            - generic [ref=e1834]: "Here’s a complete example:"
+            - generic [ref=e1835]:
+              - generic [ref=e1836]:
+                - tablist [ref=e1837]:
+                  - tab "Python - Complete Workflow" [selected] [ref=e1838] [cursor=pointer]:
+                    - generic [ref=e1839]: Python - Complete Workflow
+                  - tab "TypeScript - Complete Workflow" [ref=e1841] [cursor=pointer]:
+                    - generic [ref=e1842]: TypeScript - Complete Workflow
+                - generic [ref=e1843]:
+                  - generic [ref=e1844]:
+                    - button "Copy the contents from the code block" [ref=e1845] [cursor=pointer]:
+                      - img [ref=e1846]
+                    - generic [ref=e1849]: Copy
+                  - generic [ref=e1850]:
+                    - button "Ask AI" [ref=e1851] [cursor=pointer]:
+                      - img [ref=e1852]
+                    - generic [ref=e1855]: Ask AI
+              - tabpanel "Python - Complete Workflow" [ref=e1857]:
+                - code [ref=e1861]:
+                  - generic [ref=e1862]: import requests
+                  - generic [ref=e1863]: import json
+                  - generic [ref=e1864]: API_URL = "https://api.concentrate.ai/v1/responses"
+                  - generic [ref=e1865]: "HEADERS = {"
+                  - generic [ref=e1866]: "\"Authorization\": \"Bearer YOUR_API_KEY\","
+                  - generic [ref=e1867]: "\"Content-Type\": \"application/json\""
+                  - generic [ref=e1868]: "}"
+                  - generic [ref=e1869]: "# Define your tools"
+                  - generic [ref=e1870]: "tools = [{"
+                  - generic [ref=e1871]: "\"type\": \"function\","
+                  - generic [ref=e1872]: "\"name\": \"get_weather\","
+                  - generic [ref=e1873]: "\"description\": \"Get current weather for a location\","
+                  - generic [ref=e1874]: "\"parameters\": {"
+                  - generic [ref=e1875]: "\"type\": \"object\","
+                  - generic [ref=e1876]: "\"properties\": {"
+                  - generic [ref=e1877]: "\"location\": {\"type\": \"string\"},"
+                  - generic [ref=e1878]: "\"unit\": {\"type\": \"string\", \"enum\": [\"celsius\", \"fahrenheit\"]}"
+                  - generic [ref=e1879]: "},"
+                  - generic [ref=e1880]: "\"required\": [\"location\"]"
+                  - generic [ref=e1881]: "}"
+                  - generic [ref=e1882]: "}]"
+                  - generic [ref=e1883]: "# Step 1: Initial request"
+                  - generic [ref=e1884]: "response1 = requests.post(API_URL, headers=HEADERS, json={"
+                  - generic [ref=e1885]: "\"model\": \"gpt-4o\","
+                  - generic [ref=e1886]: "\"input\": \"What's the weather like in San Francisco?\","
+                  - generic [ref=e1887]: "\"tools\": tools"
+                  - generic [ref=e1888]: "})"
+                  - generic [ref=e1889]: data1 = response1.json()
+                  - generic [ref=e1890]: print("Step 1 - Model response:", data1)
+                  - generic [ref=e1891]: "# Step 2: Check if model wants to call a tool"
+                  - generic [ref=e1892]: function_call = None
+                  - generic [ref=e1893]: "for item in data1[\"output\"]:"
+                  - generic [ref=e1894]: "if item[\"type\"] == \"function_call\":"
+                  - generic [ref=e1895]: function_call = item
+                  - generic [ref=e1896]: break
+                  - generic [ref=e1897]: "if function_call:"
+                  - generic [ref=e1898]: "# Step 3: Execute the function"
+                  - generic [ref=e1899]: args = json.loads(function_call["arguments"])
+                  - generic [ref=e1900]: "# Your actual function implementation"
+                  - generic [ref=e1901]: "def get_weather(location, unit=\"fahrenheit\"):"
+                  - generic [ref=e1902]: "# In reality, you'd call a weather API"
+                  - generic [ref=e1903]: "return {"
+                  - generic [ref=e1904]: "\"location\": location,"
+                  - generic [ref=e1905]: "\"temperature\": 72,"
+                  - generic [ref=e1906]: "\"unit\": unit,"
+                  - generic [ref=e1907]: "\"conditions\": \"Sunny\""
+                  - generic [ref=e1908]: "}"
+                  - generic [ref=e1909]: result = get_weather(**args)
+                  - generic [ref=e1910]: print("Step 2 - Function result:", result)
+                  - generic [ref=e1911]: "# Step 4: Send result back to model"
+                  - generic [ref=e1912]: "response2 = requests.post(API_URL, headers=HEADERS, json={"
+                  - generic [ref=e1913]: "\"model\": \"gpt-4o\","
+                  - generic [ref=e1914]: "\"input\": ["
+                  - generic [ref=e1915]: "{\"role\": \"user\", \"content\": \"What's the weather like in San Francisco?\"},"
+                  - generic [ref=e1916]: "function_call, # Include the function call"
+                  - generic [ref=e1917]: "{"
+                  - generic [ref=e1918]: "\"type\": \"function_call_output\","
+                  - generic [ref=e1919]: "\"call_id\": function_call[\"call_id\"],"
+                  - generic [ref=e1920]: "\"output\": json.dumps(result)"
+                  - generic [ref=e1921]: "}"
+                  - generic [ref=e1922]: "],"
+                  - generic [ref=e1923]: "\"tools\": tools"
+                  - generic [ref=e1924]: "})"
+                  - generic [ref=e1925]: data2 = response2.json()
+                  - generic [ref=e1926]: print("Step 3 - Final response:", data2)
+                  - generic [ref=e1927]: "# Extract the assistant's final message"
+                  - generic [ref=e1928]: "for item in data2[\"output\"]:"
+                  - generic [ref=e1929]: "if item[\"type\"] == \"message\" and item[\"role\"] == \"assistant\":"
+                  - generic [ref=e1930]: print("\nAssistant:", item["content"][0]["text"])
+            - heading "Navigate to header Streaming with Tools" [level=2] [ref=e1931]:
+              - link "Navigate to header" [ref=e1932] [cursor=pointer]:
+                - /url: "#streaming-with-tools"
+                - img [ref=e1934]
+              - generic [ref=e1936] [cursor=pointer]: Streaming with Tools
+            - generic [ref=e1937]: "When streaming is enabled, tool calls are delivered incrementally:"
+            - heading "Navigate to header Event Types" [level=3] [ref=e1938]:
+              - link "Navigate to header" [ref=e1939] [cursor=pointer]:
+                - /url: "#event-types"
+                - img [ref=e1941]
+              - generic [ref=e1943] [cursor=pointer]: Event Types
+            - list [ref=e1944]:
+              - listitem [ref=e1945]:
+                - code [ref=e1946]: response.function_call_arguments.delta
+                - text: "- Incremental tool arguments as they’re generated"
+              - listitem [ref=e1947]:
+                - code [ref=e1948]: response.function_call_arguments.done
+                - text: "- Complete tool call with final arguments"
+            - heading "Navigate to header Example" [level=3] [ref=e1949]:
+              - link "Navigate to header" [ref=e1950] [cursor=pointer]:
+                - /url: "#example"
+                - img [ref=e1952]
+              - generic [ref=e1954] [cursor=pointer]: Example
+            - generic [ref=e1955]:
+              - generic [ref=e1956]:
+                - generic [ref=e1958]: TypeScript - Streaming Tool Calls
+                - generic [ref=e1959]:
+                  - generic [ref=e1960]:
+                    - button "Copy the contents from the code block" [ref=e1961] [cursor=pointer]:
+                      - img [ref=e1962]
+                    - generic [ref=e1965]: Copy
+                  - generic [ref=e1966]:
+                    - button "Ask AI" [ref=e1967] [cursor=pointer]:
+                      - img [ref=e1968]
+                    - generic [ref=e1971]: Ask AI
+              - code [ref=e1975]:
+                - generic [ref=e1976]: "const response = await fetch(\"https://api.concentrate.ai/v1/responses\", {"
+                - generic [ref=e1977]: "method: \"POST\","
+                - generic [ref=e1978]: "headers: {"
+                - generic [ref=e1979]: "\"Authorization\": \"Bearer YOUR_API_KEY\","
+                - generic [ref=e1980]: "\"Content-Type\": \"application/json\""
+                - generic [ref=e1981]: "},"
+                - generic [ref=e1982]: "body: JSON.stringify({"
+                - generic [ref=e1983]: "model: \"gpt-4o\","
+                - generic [ref=e1984]: "input: \"What's the weather in San Francisco?\","
+                - generic [ref=e1985]: "tools: [{"
+                - generic [ref=e1986]: "type: \"function\","
+                - generic [ref=e1987]: "name: \"get_weather\","
+                - generic [ref=e1988]: "description: \"Get current weather\","
+                - generic [ref=e1989]: "parameters: {"
+                - generic [ref=e1990]: "type: \"object\","
+                - generic [ref=e1991]: "properties: {"
+                - generic [ref=e1992]: "location: { type: \"string\" }"
+                - generic [ref=e1993]: "},"
+                - generic [ref=e1994]: "required: [\"location\"]"
+                - generic [ref=e1995]: "}"
+                - generic [ref=e1996]: "}],"
+                - generic [ref=e1997]: "stream: true"
+                - generic [ref=e1998]: "})"
+                - generic [ref=e1999]: "});"
+                - generic [ref=e2000]: const reader = response.body!.getReader();
+                - generic [ref=e2001]: const decoder = new TextDecoder();
+                - generic [ref=e2002]: let functionCallBuffer = "";
+                - generic [ref=e2003]: "while (true) {"
+                - generic [ref=e2004]: "const { done, value } = await reader.read();"
+                - generic [ref=e2005]: if (done) break;
+                - generic [ref=e2006]: const chunk = decoder.decode(value);
+                - generic [ref=e2007]: const lines = chunk.split("\n").filter(line => line.trim());
+                - generic [ref=e2008]: "for (const line of lines) {"
+                - generic [ref=e2009]: "if (line.startsWith(\"data: \")) {"
+                - generic [ref=e2010]: const data = JSON.parse(line.slice(6));
+                - generic [ref=e2011]: "if (data.event === \"response.function_call_arguments.delta\") {"
+                - generic [ref=e2012]: functionCallBuffer += data.data.arguments;
+                - generic [ref=e2013]: console.log("Building arguments:", functionCallBuffer);
+                - generic [ref=e2014]: "}"
+                - generic [ref=e2015]: "if (data.event === \"response.function_call_arguments.done\") {"
+                - generic [ref=e2016]: console.log("Complete function call:", data.data);
+                - generic [ref=e2017]: // Execute your function here
+                - generic [ref=e2018]: "}"
+                - generic [ref=e2019]: "}"
+                - generic [ref=e2020]: "}"
+                - generic [ref=e2021]: "}"
+            - generic [ref=e2022]:
+              - text: See
+              - link "Streaming" [ref=e2023] [cursor=pointer]:
+                - /url: /api-reference/endpoint/streaming
+              - text: for more details on streaming events.
+            - heading "Navigate to header Advanced Patterns" [level=2] [ref=e2024]:
+              - link "Navigate to header" [ref=e2025] [cursor=pointer]:
+                - /url: "#advanced-patterns"
+                - img [ref=e2027]
+              - generic [ref=e2029] [cursor=pointer]: Advanced Patterns
+            - heading "Navigate to header Error Handling" [level=3] [ref=e2030]:
+              - link "Navigate to header" [ref=e2031] [cursor=pointer]:
+                - /url: "#error-handling"
+                - img [ref=e2033]
+              - generic [ref=e2035] [cursor=pointer]: Error Handling
+            - generic [ref=e2036]:
+              - text: When a tool execution fails, use the
+              - code [ref=e2037]: is_error
+              - text: "flag:"
+            - generic [ref=e2038]:
+              - generic [ref=e2039]:
+                - generic [ref=e2040]:
+                  - button "Copy the contents from the code block" [ref=e2041] [cursor=pointer]:
+                    - img [ref=e2042]
+                  - generic [ref=e2045]: Copy
+                - generic [ref=e2046]:
+                  - button "Ask AI" [ref=e2047] [cursor=pointer]:
+                    - img [ref=e2048]
+                  - generic [ref=e2051]: Ask AI
+              - code [ref=e2055]:
+                - generic [ref=e2056]: "{"
+                - generic [ref=e2057]: "\"type\": \"function_call_output\","
+                - generic [ref=e2058]: "\"call_id\": \"call_abc123\","
+                - generic [ref=e2059]: "\"output\": json.dumps({\"error\": \"Weather API unavailable\"}),"
+                - generic [ref=e2060]: "\"is_error\": True"
+                - generic [ref=e2061]: "}"
+            - generic [ref=e2062]: The model will receive the error and can respond appropriately (e.g., apologizing or suggesting alternatives).
+            - heading "Navigate to header Caching Tool Definitions" [level=3] [ref=e2063]:
+              - link "Navigate to header" [ref=e2064] [cursor=pointer]:
+                - /url: "#caching-tool-definitions"
+                - img [ref=e2066]
+              - generic [ref=e2068] [cursor=pointer]: Caching Tool Definitions
+            - generic [ref=e2069]: "For frequently used tools, cache their definitions:"
+            - generic [ref=e2070]:
+              - generic [ref=e2071]:
+                - generic [ref=e2072]:
+                  - button "Copy the contents from the code block" [ref=e2073] [cursor=pointer]:
+                    - img [ref=e2074]
+                  - generic [ref=e2077]: Copy
+                - generic [ref=e2078]:
+                  - button "Ask AI" [ref=e2079] [cursor=pointer]:
+                    - img [ref=e2080]
+                  - generic [ref=e2083]: Ask AI
+              - code [ref=e2087]:
+                - generic [ref=e2088]: "{"
+                - generic [ref=e2089]: "\"tools\": ["
+                - generic [ref=e2090]: "{"
+                - generic [ref=e2091]: "\"type\": \"function\","
+                - generic [ref=e2092]: "\"name\": \"get_weather\","
+                - generic [ref=e2093]: "\"description\": \"Get current weather for a location\","
+                - generic [ref=e2094]: "\"parameters\": { ... },"
+                - generic [ref=e2095]: "\"cache_control\": {"
+                - generic [ref=e2096]: "\"type\": \"ephemeral\","
+                - generic [ref=e2097]: "\"ttl\": \"1h\""
+                - generic [ref=e2098]: "}"
+                - generic [ref=e2099]: "}"
+                - generic [ref=e2100]: "]"
+                - generic [ref=e2101]: "}"
+            - generic [ref=e2102]: This reduces costs and improves latency for repeated requests with the same tools.
+            - heading "Navigate to header Provider Support" [level=2] [ref=e2103]:
+              - link "Navigate to header" [ref=e2104] [cursor=pointer]:
+                - /url: "#provider-support"
+                - img [ref=e2106]
+              - generic [ref=e2108] [cursor=pointer]: Provider Support
+            - generic [ref=e2109]: "Tool calling is supported across all major providers:"
+            - table [ref=e2112]:
+              - rowgroup [ref=e2113]:
+                - row "Provider Supported Notes" [ref=e2114]:
+                  - columnheader "Provider" [ref=e2115]
+                  - columnheader "Supported" [ref=e2116]
+                  - columnheader "Notes" [ref=e2117]
+              - rowgroup [ref=e2118]:
+                - row "OpenAI ✅ Yes Full support including parallel calls" [ref=e2119]:
+                  - cell "OpenAI" [ref=e2120]
+                  - cell "✅ Yes" [ref=e2121]
+                  - cell "Full support including parallel calls" [ref=e2122]
+                - row "Anthropic ✅ Yes Full support with Claude models" [ref=e2123]:
+                  - cell "Anthropic" [ref=e2124]
+                  - cell "✅ Yes" [ref=e2125]
+                  - cell "Full support with Claude models" [ref=e2126]
+                - row "Azure OpenAI ✅ Yes Same as OpenAI" [ref=e2127]:
+                  - cell "Azure OpenAI" [ref=e2128]
+                  - cell "✅ Yes" [ref=e2129]
+                  - cell "Same as OpenAI" [ref=e2130]
+                - row "AWS Bedrock ✅ Yes Supported on compatible models" [ref=e2131]:
+                  - cell "AWS Bedrock" [ref=e2132]
+                  - cell "✅ Yes" [ref=e2133]
+                  - cell "Supported on compatible models" [ref=e2134]
+                - row "Google Vertex AI ✅ Yes Supported on Gemini models" [ref=e2135]:
+                  - cell "Google Vertex AI" [ref=e2136]
+                  - cell "✅ Yes" [ref=e2137]
+                  - cell "Supported on Gemini models" [ref=e2138]
+                - row "Cohere ✅ Yes Supported on Command models" [ref=e2139]:
+                  - cell "Cohere" [ref=e2140]
+                  - cell "✅ Yes" [ref=e2141]
+                  - cell "Supported on Command models" [ref=e2142]
+                - row "Mistral ✅ Yes Supported on recent models" [ref=e2143]:
+                  - cell "Mistral" [ref=e2144]
+                  - cell "✅ Yes" [ref=e2145]
+                  - cell "Supported on recent models" [ref=e2146]
+            - generic [ref=e2147]:
+              - text: Check specific model capabilities using the
+              - link "List Models" [ref=e2148] [cursor=pointer]:
+                - /url: /api-reference/endpoint/list-models
+              - text: endpoint.
+            - heading "Navigate to header Best Practices" [level=2] [ref=e2149]:
+              - link "Navigate to header" [ref=e2150] [cursor=pointer]:
+                - /url: "#best-practices"
+                - img [ref=e2152]
+              - generic [ref=e2154] [cursor=pointer]: Best Practices
+            - heading "Navigate to header Schema Design" [level=3] [ref=e2155]:
+              - link "Navigate to header" [ref=e2156] [cursor=pointer]:
+                - /url: "#schema-design"
+                - img [ref=e2158]
+              - generic [ref=e2160] [cursor=pointer]: Schema Design
+            - list [ref=e2161]:
+              - listitem [ref=e2162]:
+                - strong [ref=e2163]: Keep it simple
+                - text: "- Only include necessary parameters"
+              - listitem [ref=e2164]:
+                - strong [ref=e2165]: Clear descriptions
+                - text: "- Help the model understand what each field does"
+              - listitem [ref=e2166]:
+                - strong [ref=e2167]: Use enums
+                - text: "- For fields with fixed options"
+              - listitem [ref=e2168]:
+                - strong [ref=e2169]: Validate inputs
+                - text: "- Always validate tool arguments before execution"
+              - listitem [ref=e2170]:
+                - strong [ref=e2171]: Handle errors gracefully
+                - text: "- Return meaningful error messages"
+            - heading "Navigate to header Security Considerations" [level=3] [ref=e2172]:
+              - link "Navigate to header" [ref=e2173] [cursor=pointer]:
+                - /url: "#security-considerations"
+                - img [ref=e2175]
+              - generic [ref=e2177] [cursor=pointer]: Security Considerations
+            - list [ref=e2178]:
+              - listitem [ref=e2179]:
+                - strong [ref=e2180]: Validate all inputs
+                - text: "- Never trust model-generated arguments blindly"
+              - listitem [ref=e2181]:
+                - strong [ref=e2182]: Limit permissions
+                - text: "- Tools should have minimal necessary permissions"
+              - listitem [ref=e2183]:
+                - strong [ref=e2184]: Rate limiting
+                - text: "- Implement rate limits on expensive operations"
+              - listitem [ref=e2185]:
+                - strong [ref=e2186]: Audit logs
+                - text: "- Log all tool executions for monitoring"
+              - listitem [ref=e2187]:
+                - strong [ref=e2188]: Sanitize outputs
+                - text: "- Clean tool results before sending back to model"
+            - heading "Navigate to header Performance Optimization" [level=3] [ref=e2189]:
+              - link "Navigate to header" [ref=e2190] [cursor=pointer]:
+                - /url: "#performance-optimization"
+                - img [ref=e2192]
+              - generic [ref=e2194] [cursor=pointer]: Performance Optimization
+            - list [ref=e2195]:
+              - listitem [ref=e2196]:
+                - strong [ref=e2197]: Cache definitions
+                - text: "- Use"
+                - code [ref=e2198]: cache_control
+                - text: for frequently used tools
+              - listitem [ref=e2199]:
+                - strong [ref=e2200]: Parallel calls
+                - text: "- Enable when tools are independent"
+              - listitem [ref=e2201]:
+                - strong [ref=e2202]: Lazy loading
+                - text: "- Only load tools when needed"
+              - listitem [ref=e2203]:
+                - strong [ref=e2204]: Timeout handling
+                - text: "- Set reasonable timeouts for tool execution"
+              - listitem [ref=e2205]:
+                - strong [ref=e2206]: Batch operations
+                - text: "- Combine multiple related calls when possible"
+            - heading "Navigate to header Troubleshooting" [level=2] [ref=e2207]:
+              - link "Navigate to header" [ref=e2208] [cursor=pointer]:
+                - /url: "#troubleshooting"
+                - img [ref=e2210]
+              - generic [ref=e2212] [cursor=pointer]: Troubleshooting
+            - heading "Navigate to header Model doesn’t call the tool" [level=3] [ref=e2213]:
+              - link "Navigate to header" [ref=e2214] [cursor=pointer]:
+                - /url: "#model-doesn’t-call-the-tool"
+                - img [ref=e2216]
+              - generic [ref=e2218] [cursor=pointer]: Model doesn’t call the tool
+            - generic [ref=e2219]:
+              - strong [ref=e2220]: "Problem:"
+              - text: Model responds with text instead of calling the tool.
+            - strong [ref=e2222]: "Solutions:"
+            - list [ref=e2223]:
+              - listitem [ref=e2224]: Make the tool description clearer and more specific
+              - listitem [ref=e2225]:
+                - text: Use
+                - code [ref=e2226]: "tool_choice: \"required\""
+                - text: to force tool usage
+              - listitem [ref=e2227]: Ensure the user’s input clearly requires the tool’s functionality
+              - listitem [ref=e2228]: Check if the model supports tool calling
+            - heading "Navigate to header Invalid arguments" [level=3] [ref=e2229]:
+              - link "Navigate to header" [ref=e2230] [cursor=pointer]:
+                - /url: "#invalid-arguments"
+                - img [ref=e2232]
+              - generic [ref=e2234] [cursor=pointer]: Invalid arguments
+            - generic [ref=e2235]:
+              - strong [ref=e2236]: "Problem:"
+              - text: Model provides incorrect or incomplete arguments.
+            - strong [ref=e2238]: "Solutions:"
+            - list [ref=e2239]:
+              - listitem [ref=e2240]: Add detailed descriptions to parameter fields
+              - listitem [ref=e2241]:
+                - text: Use
+                - code [ref=e2242]: "strict: true"
+                - text: to enforce schema validation
+              - listitem [ref=e2243]: Include examples in parameter descriptions
+              - listitem [ref=e2244]:
+                - text: Mark essential fields as
+                - code [ref=e2245]: required
+            - heading "Navigate to header Tool not found error" [level=3] [ref=e2246]:
+              - link "Navigate to header" [ref=e2247] [cursor=pointer]:
+                - /url: "#tool-not-found-error"
+                - img [ref=e2249]
+              - generic [ref=e2251] [cursor=pointer]: Tool not found error
+            - generic [ref=e2252]:
+              - strong [ref=e2253]: "Problem:"
+              - code [ref=e2254]: "\"Tool 'xyz' not found\""
+              - text: error.
+            - strong [ref=e2256]: "Solutions:"
+            - list [ref=e2257]:
+              - listitem [ref=e2258]: Verify tool name matches exactly (case-sensitive)
+              - listitem [ref=e2259]:
+                - text: "Ensure tool name follows the pattern:"
+                - code [ref=e2260]: ^[a-zA-Z0-9_.-]+$
+              - listitem [ref=e2261]: Check that tools array is included in the request
+            - heading "Navigate to header Streaming issues" [level=3] [ref=e2262]:
+              - link "Navigate to header" [ref=e2263] [cursor=pointer]:
+                - /url: "#streaming-issues"
+                - img [ref=e2265]
+              - generic [ref=e2267] [cursor=pointer]: Streaming issues
+            - generic [ref=e2268]:
+              - strong [ref=e2269]: "Problem:"
+              - text: Tool calls not appearing in streaming mode.
+            - strong [ref=e2271]: "Solutions:"
+            - list [ref=e2272]:
+              - listitem [ref=e2273]:
+                - text: Listen for
+                - code [ref=e2274]: response.function_call_arguments.delta
+                - text: and
+                - code [ref=e2275]: .done
+                - text: events
+              - listitem [ref=e2276]:
+                - text: Buffer the arguments until the
+                - code [ref=e2277]: .done
+                - text: event
+              - listitem [ref=e2278]:
+                - text: Check that
+                - code [ref=e2279]: "stream: true"
+                - text: is set in the request
+            - separator [ref=e2280]
+            - heading "Navigate to header Related Pages" [level=2] [ref=e2281]:
+              - link "Navigate to header" [ref=e2282] [cursor=pointer]:
+                - /url: "#related-pages"
+                - img [ref=e2284]
+              - generic [ref=e2286] [cursor=pointer]: Related Pages
+            - generic [ref=e2287]:
+              - link "Create Response Main API endpoint for generating responses" [ref=e2288] [cursor=pointer]:
+                - /url: /api-reference/endpoint/create-response
+                - generic [ref=e2289]:
+                  - img [ref=e2291]
+                  - generic [ref=e2292]:
+                    - heading "Create Response" [level=2] [ref=e2293]
+                    - generic [ref=e2295]: Main API endpoint for generating responses
+              - link "Request Parameters Complete parameter reference" [ref=e2296] [cursor=pointer]:
+                - /url: /api-reference/endpoint/request-parameters
+                - generic [ref=e2297]:
+                  - img [ref=e2299]
+                  - generic [ref=e2300]:
+                    - heading "Request Parameters" [level=2] [ref=e2301]
+                    - generic [ref=e2303]: Complete parameter reference
+              - link "Streaming Real-time response streaming" [ref=e2304] [cursor=pointer]:
+                - /url: /api-reference/endpoint/streaming
+                - generic [ref=e2305]:
+                  - img [ref=e2307]
+                  - generic [ref=e2308]:
+                    - heading "Streaming" [level=2] [ref=e2309]
+                    - generic [ref=e2311]: Real-time response streaming
+              - link "Prompt Caching Cache tool definitions for better performance" [ref=e2312] [cursor=pointer]:
+                - /url: /api-reference/endpoint/prompt-caching
+                - generic [ref=e2313]:
+                  - img [ref=e2315]
+                  - generic [ref=e2316]:
+                    - heading "Prompt Caching" [level=2] [ref=e2317]
+                    - generic [ref=e2319]: Cache tool definitions for better performance
+          - generic [ref=e1227]:
+            - paragraph [ref=e1228]: Was this page helpful?
+            - generic [ref=e1230]:
+              - button "Yes" [ref=e1231] [cursor=pointer]:
+                - img [ref=e1232]
+                - generic [ref=e1234]: "Yes"
+              - button "No" [ref=e1235] [cursor=pointer]:
+                - img [ref=e1236]
+                - generic [ref=e1238]: "No"
+          - generic [ref=e1239]:
+            - link "Auto Routing" [ref=e1240] [cursor=pointer]:
+              - /url: /api-reference/endpoint/auto-routing
+              - img [ref=e1241]
+              - generic [ref=e1243]: Auto Routing
+            - link "Web Search" [ref=e1244] [cursor=pointer]:
+              - /url: /api-reference/endpoint/web-search
+              - generic [ref=e1245]: Web Search
+              - img [ref=e1246]
+          - generic [ref=e1249]:
+            - textbox "Ask a question..." [ref=e1250]
+            - generic: Ctrl+I
+            - button "Send message" [disabled] [ref=e1251]:
+              - img [ref=e1252]
+          - contentinfo [ref=e1254]:
+            - link "Powered by" [ref=e1257] [cursor=pointer]:
+              - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=concentrateai-8b9c0315
+              - generic [ref=e1258]: Powered by
+              - img [ref=e1259]
+  - alert [ref=e2320]

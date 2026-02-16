@@ -1,0 +1,790 @@
+# Create Response
+> Source: https://docs.concentrate.ai/api-reference/endpoint/create-response
+> Fetched: 2026-02-16 via Playwright browser_snapshot (Claude Code)
+> Method: Full accessibility tree capture — verbatim page content
+
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - link "concentrate home page light logo" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e12]: concentrate home page
+          - img "light logo" [ref=e13]
+        - generic [ref=e15]:
+          - button "Open search" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]:
+              - img [ref=e18]
+              - generic [ref=e21]: Search...
+            - generic [ref=e22]: Ctrl K
+          - button "Toggle assistant panel" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - list
+          - generic [ref=e29]:
+            - heading "API documentation" [level=5] [ref=e31]
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "API Introduction" [ref=e34] [cursor=pointer]:
+                  - /url: /api-reference/introduction
+                  - generic [ref=e36]: API Introduction
+          - generic [ref=e37]:
+            - heading "Responses" [level=5] [ref=e39]
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "POST Create Response" [ref=e42] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-response
+                  - generic [ref=e44]: POST
+                  - generic [ref=e46]: Create Response
+          - generic [ref=e47]:
+            - heading "Messages (Beta)" [level=5] [ref=e49]
+            - list [ref=e50]:
+              - listitem [ref=e51]:
+                - link "POST Create Message" [ref=e52] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-message
+                  - generic [ref=e54]: POST
+                  - generic [ref=e56]: Create Message
+          - generic [ref=e57]:
+            - heading "Models" [level=5] [ref=e59]
+            - list [ref=e60]:
+              - listitem [ref=e61]:
+                - link "GET List Models" [ref=e62] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-models
+                  - generic [ref=e64]: GET
+                  - generic [ref=e66]: List Models
+              - listitem [ref=e67]:
+                - link "GET List Providers" [ref=e68] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-providers
+                  - generic [ref=e70]: GET
+                  - generic [ref=e72]: List Providers
+              - listitem [ref=e73]:
+                - link "GET Get Model" [ref=e74] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-model
+                  - generic [ref=e76]: GET
+                  - generic [ref=e78]: Get Model
+              - listitem [ref=e79]:
+                - link "GET Get Provider Info" [ref=e80] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-provider-info
+                  - generic [ref=e82]: GET
+                  - generic [ref=e84]: Get Provider Info
+          - generic [ref=e85]:
+            - heading "Utilities" [level=5] [ref=e87]
+            - list [ref=e88]:
+              - listitem [ref=e89]:
+                - link "GET Health Check" [ref=e90] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/health
+                  - generic [ref=e92]: GET
+                  - generic [ref=e94]: Health Check
+          - generic [ref=e95]:
+            - heading "Features" [level=5] [ref=e97]
+            - list [ref=e98]:
+              - listitem [ref=e99]:
+                - link "Streaming Responses" [ref=e100] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/streaming
+                  - generic [ref=e102]: Streaming Responses
+              - listitem [ref=e103]:
+                - link "Auto Routing" [ref=e104] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/auto-routing
+                  - generic [ref=e106]: Auto Routing
+              - listitem [ref=e107]:
+                - link "Tool Calling" [ref=e108] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/tool-calling
+                  - generic [ref=e110]: Tool Calling
+              - listitem [ref=e111]:
+                - link "Web Search" [ref=e112] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/web-search
+                  - generic [ref=e114]: Web Search
+          - generic [ref=e115]:
+            - heading "Reference" [level=5] [ref=e117]
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - link "Request Parameters Reference" [ref=e120] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/request-parameters
+                  - generic [ref=e122]: Request Parameters Reference
+              - listitem [ref=e123]:
+                - link "Prompt Caching" [ref=e124] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/prompt-caching
+                  - generic [ref=e126]: Prompt Caching
+              - listitem [ref=e127]:
+                - link "Error Handling" [ref=e128] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/errors
+                  - generic [ref=e130]: Error Handling
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e134]:
+            - link "API reference" [ref=e135] [cursor=pointer]:
+              - /url: /api-reference/introduction
+              - text: API reference
+            - link "Guides" [ref=e137] [cursor=pointer]:
+              - /url: /getting-started/quickstart
+              - text: Guides
+          - generic [ref=e139]:
+            - listitem [ref=e140]:
+              - link "Support" [ref=e141] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+            - listitem [ref=e142]:
+              - link "Dashboard" [ref=e143] [cursor=pointer]:
+                - /url: https://app.concentrate.ai
+                - generic [ref=e144]:
+                  - generic [ref=e145]: Dashboard
+                  - img [ref=e146]
+          - button "Toggle dark mode" [ref=e149] [cursor=pointer]:
+            - img [ref=e150]
+        - generic [ref=e157]:
+          - banner [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: Responses
+              - generic [ref=e161]:
+                - heading "Create Response" [level=1] [ref=e162]
+                - generic [ref=e163]:
+                  - button "Copy page" [ref=e164] [cursor=pointer]:
+                    - generic [ref=e165]:
+                      - img [ref=e166]
+                      - generic [ref=e169]: Copy page
+                  - button "More actions" [ref=e170] [cursor=pointer]:
+                    - img [ref=e171]
+            - paragraph [ref=e1045]: Start a stateful conversation with your model of choice
+          - generic [ref=e175]:
+            - generic [ref=e176]:
+              - generic [ref=e178]:
+                - generic [ref=e179] [cursor=pointer]:
+                  - generic [ref=e180]: POST
+                  - generic [ref=e182]:
+                    - generic [ref=e183]: /
+                    - generic [ref=e184]: v1
+                    - generic [ref=e185]: /
+                    - generic [ref=e186]: responses
+                - button "Try it" [ref=e187] [cursor=pointer]:
+                  - generic [ref=e188]: Try it
+                  - img [ref=e189]
+              - generic [ref=e191]:
+                - generic [ref=e192]:
+                  - generic [ref=e193]:
+                    - generic [ref=e1047]: cURL
+                    - generic [ref=e196]:
+                      - button "cURL" [ref=e197]:
+                        - generic [ref=e198] [cursor=pointer]:
+                          - img [ref=e199]
+                          - paragraph [ref=e200]: cURL
+                          - img [ref=e201]
+                      - generic [ref=e204]:
+                        - button "Copy the contents from the code block" [ref=e205] [cursor=pointer]:
+                          - img [ref=e206]
+                        - generic [ref=e209]: Copy
+                      - generic [ref=e210]:
+                        - button "Ask AI" [ref=e211] [cursor=pointer]:
+                          - img [ref=e212]
+                        - generic [ref=e215]: Ask AI
+                  - tabpanel [ref=e217]:
+                    - code [ref=e1050]:
+                      - generic [ref=e1051]: curl --request POST \
+                      - generic [ref=e1052]: "--url https://api.example.com/v1/responses/ \\"
+                      - generic [ref=e1053]: "--header 'Content-Type: application/json' \\"
+                      - generic [ref=e1054]: "--data '"
+                      - generic [ref=e1055]: "{"
+                      - generic [ref=e1056]: "\"model\": \"<string>\","
+                      - generic [ref=e1057]: "\"input\": \"<string>\","
+                      - generic [ref=e1058]: "\"stream\": true,"
+                      - generic [ref=e1059]: "\"temperature\": 1,"
+                      - generic [ref=e1060]: "\"top_p\": 0.5,"
+                      - generic [ref=e1061]: "\"reasoning\": {"
+                      - generic [ref=e1062]: "\"effort\": \"medium\","
+                      - generic [ref=e1063]: "\"summary\": \"auto\""
+                      - generic [ref=e1064]: "},"
+                      - generic [ref=e1065]: "\"tools\": [],"
+                      - generic [ref=e1066]: "\"tool_choice\": {"
+                      - generic [ref=e1067]: "\"name\": \"<string>\","
+                      - generic [ref=e1068]: "\"type\": \"function\""
+                      - generic [ref=e1069]: "},"
+                      - generic [ref=e1070]: "\"parallel_tool_calls\": true,"
+                      - generic [ref=e1071]: "\"max_output_tokens\": 1,"
+                      - generic [ref=e1072]: "\"routing\": {"
+                      - generic [ref=e1073]: "\"strategy\": \"min\","
+                      - generic [ref=e1074]: "\"metric\": \"cost\","
+                      - generic [ref=e1075]: "\"interval\": \"15 minutes\""
+                      - generic [ref=e1076]: "},"
+                      - generic [ref=e1077]: "\"include\": ["
+                      - generic [ref=e1078]: "\"<string>\""
+                      - generic [ref=e1079]: "],"
+                      - generic [ref=e1080]: "\"metadata\": {},"
+                      - generic [ref=e1081]: "\"prompt_cache_retention\": \"<string>\","
+                      - generic [ref=e1082]: "\"user\": \"<string>\","
+                      - generic [ref=e1083]: "\"store\": true,"
+                      - generic [ref=e1084]: "\"text\": {"
+                      - generic [ref=e1085]: "\"format\": {"
+                      - generic [ref=e1086]: "\"Text\": {"
+                      - generic [ref=e1087]: "\"type\": \"text\""
+                      - generic [ref=e1088]: "}"
+                      - generic [ref=e1089]: "},"
+                      - generic [ref=e1090]: "\"verbosity\": \"medium\""
+                      - generic [ref=e1091]: "},"
+                      - generic [ref=e1092]: "\"stream_options\": {"
+                      - generic [ref=e1093]: "\"include_obfuscation\": true"
+                      - generic [ref=e1094]: "}"
+                      - generic [ref=e1095]: "}"
+                      - generic [ref=e1096]: "'"
+                - generic [ref=e268]:
+                  - generic [ref=e269]:
+                    - tablist [ref=e1097]:
+                      - tab "200" [selected] [ref=e1098] [cursor=pointer]:
+                        - generic [ref=e1099]: "200"
+                      - tab "400" [ref=e1101] [cursor=pointer]:
+                        - generic [ref=e1102]: "400"
+                      - tab "402" [ref=e1103] [cursor=pointer]:
+                        - generic [ref=e1104]: "402"
+                      - tab "424" [ref=e1105] [cursor=pointer]:
+                        - generic [ref=e1106]: "424"
+                      - tab "500" [ref=e1107] [cursor=pointer]:
+                        - generic [ref=e1108]: "500"
+                    - generic [ref=e282]:
+                      - generic [ref=e283]:
+                        - button "Copy the contents from the code block" [ref=e284] [cursor=pointer]:
+                          - img [ref=e285]
+                        - generic [ref=e288]: Copy
+                      - generic [ref=e289]:
+                        - button "Ask AI" [ref=e290] [cursor=pointer]:
+                          - img [ref=e291]
+                        - generic [ref=e294]: Ask AI
+                  - tabpanel "200" [ref=e296]:
+                    - code [ref=e1111]:
+                      - generic [ref=e1112]: "{"
+                      - generic [ref=e1113]: "\"id\": \"3c90c3cc-0d44-4b50-8888-8dd25736052a\","
+                      - generic [ref=e1114]: "\"object\": \"response\","
+                      - generic [ref=e1115]: "\"created_at\": 0,"
+                      - generic [ref=e1116]: "\"status\": \"completed\","
+                      - generic [ref=e1117]: "\"error\": null,"
+                      - generic [ref=e1118]: "\"incomplete_details\": null,"
+                      - generic [ref=e1119]: "\"instructions\": \"<string>\","
+                      - generic [ref=e1120]: "\"reasoning\": {"
+                      - generic [ref=e1121]: "\"effort\": \"medium\","
+                      - generic [ref=e1122]: "\"summary\": \"auto\""
+                      - generic [ref=e1123]: "},"
+                      - generic [ref=e1124]: "\"model\": \"<string>\","
+                      - generic [ref=e1125]: "\"output\": ["
+                      - generic [ref=e1126]: "{"
+                      - generic [ref=e1127]: "\"type\": \"message\","
+                      - generic [ref=e1128]: "\"role\": \"assistant\","
+                      - generic [ref=e1129]: "\"id\": \"<string>\","
+                      - generic [ref=e1130]: "\"status\": \"completed\","
+                      - generic [ref=e1131]: "\"content\": ["
+                      - generic [ref=e1132]: "{"
+                      - generic [ref=e1133]: "\"type\": \"output_text\","
+                      - generic [ref=e1134]: "\"text\": \"<string>\","
+                      - generic [ref=e1135]: "\"annotations\": [],"
+                      - generic [ref=e1136]: "\"logprobs\": ["
+                      - generic [ref=e1137]: "\"<unknown>\""
+                      - generic [ref=e1138]: "],"
+                      - generic [ref=e1139]: "\"cache_control\": {"
+                      - generic [ref=e1140]: "\"type\": \"ephemeral\","
+                      - generic [ref=e1141]: "\"ttl\": \"5m\""
+                      - generic [ref=e1142]: "}"
+                      - generic [ref=e1143]: "}"
+                      - generic [ref=e1144]: "],"
+                      - generic [ref=e1145]: "\"cache_control\": {"
+                      - generic [ref=e1146]: "\"type\": \"ephemeral\","
+                      - generic [ref=e1147]: "\"ttl\": \"5m\""
+                      - generic [ref=e1148]: "}"
+                      - generic [ref=e1149]: "}"
+                      - generic [ref=e1150]: "],"
+                      - generic [ref=e1151]: "\"tools\": ["
+                      - generic [ref=e1152]: "{"
+                      - generic [ref=e1153]: "\"type\": \"function\","
+                      - generic [ref=e1154]: "\"name\": \"<string>\","
+                      - generic [ref=e1155]: "\"parameters\": {},"
+                      - generic [ref=e1156]: "\"strict\": true,"
+                      - generic [ref=e1157]: "\"description\": \"<string>\","
+                      - generic [ref=e1158]: "\"cache_control\": {"
+                      - generic [ref=e1159]: "\"type\": \"ephemeral\","
+                      - generic [ref=e1160]: "\"ttl\": \"5m\""
+                      - generic [ref=e1161]: "}"
+                      - generic [ref=e1162]: "}"
+                      - generic [ref=e1163]: "],"
+                      - generic [ref=e1164]: "\"usage\": {"
+                      - generic [ref=e1165]: "\"input_tokens\": 1,"
+                      - generic [ref=e1166]: "\"input_tokens_details\": {"
+                      - generic [ref=e1167]: "\"cached_tokens\": 1,"
+                      - generic [ref=e1168]: "\"cached_tokens_created\": 1"
+                      - generic [ref=e1169]: "},"
+                      - generic [ref=e1170]: "\"output_tokens\": 1,"
+                      - generic [ref=e1171]: "\"output_tokens_details\": {"
+                      - generic [ref=e1172]: "\"reasoning_tokens\": 1"
+                      - generic [ref=e1173]: "},"
+                      - generic [ref=e1174]: "\"total_tokens\": 1,"
+                      - generic [ref=e1175]: "\"tool_calls\": {"
+                      - generic [ref=e1176]: "\"web_search\": 1"
+                      - generic [ref=e1177]: "}"
+                      - generic [ref=e1178]: "},"
+                      - generic [ref=e1179]: "\"stop_reason\": \"end_turn\","
+                      - generic [ref=e1180]: "\"temperature\": 1"
+                      - generic [ref=e1181]: "}"
+            - generic [ref=e371]:
+              - heading "Navigate to header Overview" [level=2] [ref=e1182]:
+                - link "Navigate to header" [ref=e1183] [cursor=pointer]:
+                  - /url: "#overview"
+                  - img [ref=e1185]
+                - generic [ref=e1187] [cursor=pointer]: Overview
+              - generic [ref=e1188]: The main endpoint for generating AI responses. Supports both streaming and non-streaming modes, with automatic normalization across all providers.
+              - generic [ref=e379]:
+                - generic [ref=e380]:
+                  - generic [ref=e382]:
+                    - heading "Body" [level=4] [ref=e383]
+                    - generic [ref=e385]: application/json
+                  - generic [ref=e390]:
+                    - generic [ref=e392]:
+                      - generic [ref=e395]:
+                        - link "Navigate to header" [ref=e396] [cursor=pointer]:
+                          - /url: "#body-model"
+                          - img [ref=e398]
+                        - generic [ref=e400] [cursor=pointer]: model
+                        - generic [ref=e401]:
+                          - generic [ref=e402]: string
+                          - text: required
+                      - paragraph [ref=e405]: Model identifier. Use /v1/models to list all available models. Supports canonical names (e.g. gpt-4o, claude-opus-4-6), aliases, and provider-prefixed formats (e.g. openai/gpt-4o). Use "auto" for automatic model selection.
+                    - generic [ref=e407]:
+                      - generic [ref=e410]:
+                        - link "Navigate to header" [ref=e411] [cursor=pointer]:
+                          - /url: "#body-input-one-of-0"
+                          - img [ref=e413]
+                        - generic [ref=e415] [cursor=pointer]: input
+                        - generic [ref=e416]:
+                          - generic [ref=e418]:
+                            - generic [ref=e419]:
+                              - combobox "Select schema type" [ref=e420] [cursor=pointer]:
+                                - option "string" [selected]
+                                - option "object · Message · object · Message · object · Function Call · object · Function Call Output · object · Custom Tool Call · object · Custom Tool Call Output · object · Reasoning · object · Web Search Call · object[]"
+                              - generic [ref=e421]: string
+                            - img
+                          - text: required
+                      - generic [ref=e423]:
+                        - text: "Minimum string length:"
+                        - code [ref=e424]: "1"
+                    - generic [ref=e429]:
+                      - link "Navigate to header" [ref=e430] [cursor=pointer]:
+                        - /url: "#body-stream"
+                        - img [ref=e432]
+                      - generic [ref=e434] [cursor=pointer]: stream
+                      - generic [ref=e436]: boolean
+                    - generic [ref=e438]:
+                      - generic [ref=e441]:
+                        - link "Navigate to header" [ref=e442] [cursor=pointer]:
+                          - /url: "#body-temperature"
+                          - img [ref=e444]
+                        - generic [ref=e446] [cursor=pointer]: temperature
+                        - generic [ref=e448]: number
+                      - generic [ref=e450]:
+                        - text: "Required range:"
+                        - code [ref=e451]: 0 <= x <= 2
+                    - generic [ref=e453]:
+                      - generic [ref=e456]:
+                        - link "Navigate to header" [ref=e457] [cursor=pointer]:
+                          - /url: "#body-top-p"
+                          - img [ref=e459]
+                        - generic [ref=e461] [cursor=pointer]: top_p
+                        - generic [ref=e463]: number
+                      - generic [ref=e465]:
+                        - text: "Required range:"
+                        - code [ref=e466]: 0 <= x <= 1
+                    - generic [ref=e468]:
+                      - generic [ref=e471]:
+                        - link "Navigate to header" [ref=e472] [cursor=pointer]:
+                          - /url: "#body-reasoning"
+                          - img [ref=e474]
+                        - generic [ref=e476] [cursor=pointer]: reasoning
+                        - generic [ref=e478]: object
+                      - group [ref=e482]:
+                        - generic "Show child attributes" [ref=e483] [cursor=pointer]:
+                          - img [ref=e484]
+                          - paragraph [ref=e486]: Show child attributes
+                    - generic [ref=e488]:
+                      - generic [ref=e491]:
+                        - link "Navigate to header" [ref=e492] [cursor=pointer]:
+                          - /url: "#body-tools"
+                          - img [ref=e494]
+                        - generic [ref=e496] [cursor=pointer]: tools
+                        - generic [ref=e498]: (Function Tool · object | Web Search Tool · object | Custom Tool · object)[]
+                      - generic [ref=e503]:
+                        - generic [ref=e505]:
+                          - tablist [ref=e506]:
+                            - tab "Function Tool" [selected] [ref=e507] [cursor=pointer]:
+                              - generic [ref=e508]: Function Tool
+                            - tab "Web Search Tool" [ref=e509] [cursor=pointer]:
+                              - generic [ref=e510]: Web Search Tool
+                            - tab "Custom Tool" [ref=e511] [cursor=pointer]:
+                              - generic [ref=e512]: Custom Tool
+                          - generic:
+                            - tabpanel "Function Tool Web Search Tool Custom Tool"
+                        - group [ref=e514]:
+                          - generic "Show child attributes" [ref=e515] [cursor=pointer]:
+                            - img [ref=e516]
+                            - paragraph [ref=e518]: Show child attributes
+                    - generic [ref=e520]:
+                      - generic [ref=e523]:
+                        - link "Navigate to header" [ref=e524] [cursor=pointer]:
+                          - /url: "#body-tool-choice-one-of-0"
+                          - img [ref=e526]
+                        - generic [ref=e528] [cursor=pointer]: tool_choice
+                        - generic [ref=e531]:
+                          - generic [ref=e532]:
+                            - combobox "Select schema type" [ref=e533] [cursor=pointer]:
+                              - option "Function Tool · object" [selected]
+                              - option "Custom Tool · object"
+                              - option "Web Search Tool · object"
+                              - option "Allowed Tools · object"
+                              - option "enum<string>"
+                            - generic [ref=e534]: Function Tool · object
+                          - img
+                      - group [ref=e538]:
+                        - generic "Show child attributes" [ref=e539] [cursor=pointer]:
+                          - img [ref=e540]
+                          - paragraph [ref=e542]: Show child attributes
+                    - generic [ref=e547]:
+                      - link "Navigate to header" [ref=e548] [cursor=pointer]:
+                        - /url: "#body-parallel-tool-calls"
+                        - img [ref=e550]
+                      - generic [ref=e552] [cursor=pointer]: parallel_tool_calls
+                      - generic [ref=e554]: boolean
+                    - generic [ref=e556]:
+                      - generic [ref=e559]:
+                        - link "Navigate to header" [ref=e560] [cursor=pointer]:
+                          - /url: "#body-max-output-tokens"
+                          - img [ref=e562]
+                        - generic [ref=e564] [cursor=pointer]: max_output_tokens
+                        - generic [ref=e566]: number
+                      - generic [ref=e568]:
+                        - text: "Required range:"
+                        - code [ref=e569]: x > 0
+                    - generic [ref=e571]:
+                      - generic [ref=e574]:
+                        - link "Navigate to header" [ref=e575] [cursor=pointer]:
+                          - /url: "#body-routing"
+                          - img [ref=e577]
+                        - generic [ref=e579] [cursor=pointer]: routing
+                        - generic [ref=e581]: object
+                      - group [ref=e585]:
+                        - generic "Show child attributes" [ref=e586] [cursor=pointer]:
+                          - img [ref=e587]
+                          - paragraph [ref=e589]: Show child attributes
+                    - generic [ref=e594]:
+                      - link "Navigate to header" [ref=e595] [cursor=pointer]:
+                        - /url: "#body-include"
+                        - img [ref=e597]
+                      - generic [ref=e599] [cursor=pointer]: include
+                      - generic [ref=e601]: string[]
+                    - generic [ref=e603]:
+                      - generic [ref=e606]:
+                        - link "Navigate to header" [ref=e607] [cursor=pointer]:
+                          - /url: "#body-metadata"
+                          - img [ref=e609]
+                        - generic [ref=e611] [cursor=pointer]: metadata
+                        - generic [ref=e613]: object
+                      - group [ref=e617]:
+                        - generic "Show child attributes" [ref=e618] [cursor=pointer]:
+                          - img [ref=e619]
+                          - paragraph [ref=e621]: Show child attributes
+                    - generic [ref=e626]:
+                      - link "Navigate to header" [ref=e627] [cursor=pointer]:
+                        - /url: "#body-prompt-cache-retention"
+                        - img [ref=e629]
+                      - generic [ref=e631] [cursor=pointer]: prompt_cache_retention
+                      - generic [ref=e633]: string
+                    - generic [ref=e638]:
+                      - link "Navigate to header" [ref=e639] [cursor=pointer]:
+                        - /url: "#body-user"
+                        - img [ref=e641]
+                      - generic [ref=e643] [cursor=pointer]: user
+                      - generic [ref=e645]: string
+                    - generic [ref=e650]:
+                      - link "Navigate to header" [ref=e651] [cursor=pointer]:
+                        - /url: "#body-store"
+                        - img [ref=e653]
+                      - generic [ref=e655] [cursor=pointer]: store
+                      - generic [ref=e657]: boolean
+                    - generic [ref=e659]:
+                      - generic [ref=e662]:
+                        - link "Navigate to header" [ref=e663] [cursor=pointer]:
+                          - /url: "#body-text"
+                          - img [ref=e665]
+                        - generic [ref=e667] [cursor=pointer]: text
+                        - generic [ref=e669]: object
+                      - group [ref=e673]:
+                        - generic "Show child attributes" [ref=e674] [cursor=pointer]:
+                          - img [ref=e675]
+                          - paragraph [ref=e677]: Show child attributes
+                    - generic [ref=e679]:
+                      - generic [ref=e682]:
+                        - link "Navigate to header" [ref=e683] [cursor=pointer]:
+                          - /url: "#body-stream-options"
+                          - img [ref=e685]
+                        - generic [ref=e687] [cursor=pointer]: stream_options
+                        - generic [ref=e689]: object
+                      - group [ref=e693]:
+                        - generic "Show child attributes" [ref=e694] [cursor=pointer]:
+                          - img [ref=e695]
+                          - paragraph [ref=e697]: Show child attributes
+                - generic [ref=e698]:
+                  - generic [ref=e699]:
+                    - generic [ref=e700]:
+                      - heading "Response" [level=4] [ref=e701]
+                      - generic [ref=e703]:
+                        - button "200" [ref=e705] [cursor=pointer]:
+                          - generic [ref=e706]:
+                            - generic [ref=e707]: "200"
+                            - img [ref=e708]
+                        - generic [ref=e710]:
+                          - button "application/json" [disabled]:
+                            - generic:
+                              - generic: application/json
+                    - paragraph [ref=e713]: Default Response
+                  - generic [ref=e718]:
+                    - generic [ref=e723]:
+                      - link "Navigate to header" [ref=e724] [cursor=pointer]:
+                        - /url: "#response-id"
+                        - img [ref=e726]
+                      - generic [ref=e728] [cursor=pointer]: id
+                      - generic [ref=e729]:
+                        - generic [ref=e730]: string<uuid>
+                        - text: required
+                    - generic [ref=e732]:
+                      - generic [ref=e735]:
+                        - link "Navigate to header" [ref=e736] [cursor=pointer]:
+                          - /url: "#response-object"
+                          - img [ref=e738]
+                        - generic [ref=e740] [cursor=pointer]: object
+                        - generic [ref=e741]:
+                          - generic [ref=e742]: enum<string>
+                          - text: required
+                      - generic [ref=e744]:
+                        - text: "Available options:"
+                        - code [ref=e746]: response
+                    - generic [ref=e748]:
+                      - generic [ref=e751]:
+                        - link "Navigate to header" [ref=e752] [cursor=pointer]:
+                          - /url: "#response-created-at"
+                          - img [ref=e754]
+                        - generic [ref=e756] [cursor=pointer]: created_at
+                        - generic [ref=e757]:
+                          - generic [ref=e758]: integer
+                          - text: required
+                      - generic [ref=e760]:
+                        - text: "Required range:"
+                        - code [ref=e761]: "-9007199254740991 <= x <= 9007199254740991"
+                    - generic [ref=e763]:
+                      - generic [ref=e766]:
+                        - link "Navigate to header" [ref=e767] [cursor=pointer]:
+                          - /url: "#response-status-one-of-0"
+                          - img [ref=e769]
+                        - generic [ref=e771] [cursor=pointer]: status
+                        - generic [ref=e772]:
+                          - generic [ref=e774]:
+                            - generic [ref=e775]:
+                              - combobox "Select schema type" [ref=e776] [cursor=pointer]:
+                                - option "Option 1 · enum<string>" [selected]
+                                - option "Option 2 · enum<string>"
+                              - generic [ref=e777]: Option 1 · enum<string>
+                            - img
+                          - text: required
+                      - generic [ref=e779]:
+                        - text: "Available options:"
+                        - generic [ref=e780]:
+                          - code [ref=e781]: completed
+                          - text: ","
+                        - generic [ref=e782]:
+                          - code [ref=e783]: in_progress
+                          - text: ","
+                        - code [ref=e785]: incomplete
+                    - generic [ref=e787]:
+                      - generic [ref=e790]:
+                        - link "Navigate to header" [ref=e791] [cursor=pointer]:
+                          - /url: "#response-error-one-of-0"
+                          - img [ref=e793]
+                        - generic [ref=e795] [cursor=pointer]: error
+                        - generic [ref=e796]:
+                          - generic [ref=e797]: object
+                          - text: required
+                      - group [ref=e801]:
+                        - generic "Show child attributes" [ref=e802] [cursor=pointer]:
+                          - img [ref=e803]
+                          - paragraph [ref=e805]: Show child attributes
+                    - generic [ref=e807]:
+                      - generic [ref=e810]:
+                        - link "Navigate to header" [ref=e811] [cursor=pointer]:
+                          - /url: "#response-incomplete-details-one-of-0"
+                          - img [ref=e813]
+                        - generic [ref=e815] [cursor=pointer]: incomplete_details
+                        - generic [ref=e816]:
+                          - generic [ref=e817]: object
+                          - text: required
+                      - group [ref=e821]:
+                        - generic "Show child attributes" [ref=e822] [cursor=pointer]:
+                          - img [ref=e823]
+                          - paragraph [ref=e825]: Show child attributes
+                    - generic [ref=e830]:
+                      - link "Navigate to header" [ref=e831] [cursor=pointer]:
+                        - /url: "#response-instructions-one-of-0"
+                        - img [ref=e833]
+                      - generic [ref=e835] [cursor=pointer]: instructions
+                      - generic [ref=e836]:
+                        - generic [ref=e838]:
+                          - generic [ref=e839]:
+                            - combobox "Select schema type" [ref=e840] [cursor=pointer]:
+                              - option "Option 1 · string" [selected]
+                              - option "Option 2 · object"
+                              - option "Message · Message · object"
+                              - option "Message · Message · object"
+                              - option "Function Call · Function Call · object"
+                              - option "Function Call Output · Function Call Output · object"
+                              - option "Custom Tool Call · Custom Tool Call · object"
+                              - option "Custom Tool Call Output · Custom Tool Call Output · object"
+                              - option "Reasoning · Reasoning · object"
+                              - option "Web Search Call · Web Search Call · object"
+                            - generic [ref=e841]: Option 1 · string
+                          - img
+                        - text: required
+                    - generic [ref=e843]:
+                      - generic [ref=e846]:
+                        - link "Navigate to header" [ref=e847] [cursor=pointer]:
+                          - /url: "#response-reasoning"
+                          - img [ref=e849]
+                        - generic [ref=e851] [cursor=pointer]: reasoning
+                        - generic [ref=e852]:
+                          - generic [ref=e853]: object
+                          - text: required
+                      - group [ref=e857]:
+                        - generic "Show child attributes" [ref=e858] [cursor=pointer]:
+                          - img [ref=e859]
+                          - paragraph [ref=e861]: Show child attributes
+                    - generic [ref=e863]:
+                      - generic [ref=e866]:
+                        - link "Navigate to header" [ref=e867] [cursor=pointer]:
+                          - /url: "#response-model"
+                          - img [ref=e869]
+                        - generic [ref=e871] [cursor=pointer]: model
+                        - generic [ref=e872]:
+                          - generic [ref=e873]: string
+                          - text: required
+                      - paragraph [ref=e876]: The model that generated the response, in provider/model format.
+                    - generic [ref=e878]:
+                      - generic [ref=e881]:
+                        - link "Navigate to header" [ref=e882] [cursor=pointer]:
+                          - /url: "#response-output"
+                          - img [ref=e884]
+                        - generic [ref=e886] [cursor=pointer]: output
+                        - generic [ref=e887]:
+                          - generic [ref=e888]: (Assistant Message · object | Reasoning · object | Function Call · object | Custom Tool Call · object | Web Search Call · object)[]
+                          - text: required
+                      - generic [ref=e893]:
+                        - generic [ref=e895]:
+                          - tablist [ref=e896]:
+                            - tab "Assistant Message" [selected] [ref=e897] [cursor=pointer]:
+                              - generic [ref=e898]: Assistant Message
+                            - tab "Reasoning" [ref=e899] [cursor=pointer]:
+                              - generic [ref=e900]: Reasoning
+                            - tab "Function Call" [ref=e901] [cursor=pointer]:
+                              - generic [ref=e902]: Function Call
+                            - tab "Custom Tool Call" [ref=e903] [cursor=pointer]:
+                              - generic [ref=e904]: Custom Tool Call
+                            - tab "Web Search Call" [ref=e905] [cursor=pointer]:
+                              - generic [ref=e906]: Web Search Call
+                          - generic:
+                            - tabpanel "Assistant Message Reasoning Function Call Custom Tool Call Web Search Call"
+                        - group [ref=e908]:
+                          - generic "Show child attributes" [ref=e909] [cursor=pointer]:
+                            - img [ref=e910]
+                            - paragraph [ref=e912]: Show child attributes
+                    - generic [ref=e914]:
+                      - generic [ref=e917]:
+                        - link "Navigate to header" [ref=e918] [cursor=pointer]:
+                          - /url: "#response-tools"
+                          - img [ref=e920]
+                        - generic [ref=e922] [cursor=pointer]: tools
+                        - generic [ref=e923]:
+                          - generic [ref=e924]: (Function Tool · object | Web Search Tool · object | Custom Tool · object)[]
+                          - text: required
+                      - generic [ref=e929]:
+                        - generic [ref=e931]:
+                          - tablist [ref=e932]:
+                            - tab "Function Tool" [selected] [ref=e933] [cursor=pointer]:
+                              - generic [ref=e934]: Function Tool
+                            - tab "Web Search Tool" [ref=e935] [cursor=pointer]:
+                              - generic [ref=e936]: Web Search Tool
+                            - tab "Custom Tool" [ref=e937] [cursor=pointer]:
+                              - generic [ref=e938]: Custom Tool
+                          - generic:
+                            - tabpanel "Function Tool Web Search Tool Custom Tool"
+                        - group [ref=e940]:
+                          - generic "Show child attributes" [ref=e941] [cursor=pointer]:
+                            - img [ref=e942]
+                            - paragraph [ref=e944]: Show child attributes
+                    - generic [ref=e946]:
+                      - generic [ref=e949]:
+                        - link "Navigate to header" [ref=e950] [cursor=pointer]:
+                          - /url: "#response-usage"
+                          - img [ref=e952]
+                        - generic [ref=e954] [cursor=pointer]: usage
+                        - generic [ref=e955]:
+                          - generic [ref=e956]: object
+                          - text: required
+                      - group [ref=e960]:
+                        - generic "Show child attributes" [ref=e961] [cursor=pointer]:
+                          - img [ref=e962]
+                          - paragraph [ref=e964]: Show child attributes
+                    - generic [ref=e966]:
+                      - generic [ref=e969]:
+                        - link "Navigate to header" [ref=e970] [cursor=pointer]:
+                          - /url: "#response-stop-reason-one-of-0"
+                          - img [ref=e972]
+                        - generic [ref=e974] [cursor=pointer]: stop_reason
+                        - generic [ref=e976]: enum<string> | null
+                      - generic [ref=e978]:
+                        - text: "Available options:"
+                        - generic [ref=e979]:
+                          - code [ref=e980]: end_turn
+                          - text: ","
+                        - generic [ref=e981]:
+                          - code [ref=e982]: max_tokens
+                          - text: ","
+                        - generic [ref=e983]:
+                          - code [ref=e984]: stop_sequence
+                          - text: ","
+                        - code [ref=e986]: tool_use
+                    - generic [ref=e988]:
+                      - generic [ref=e991]:
+                        - link "Navigate to header" [ref=e992] [cursor=pointer]:
+                          - /url: "#response-temperature-one-of-0"
+                          - img [ref=e994]
+                        - generic [ref=e996] [cursor=pointer]: temperature
+                        - generic [ref=e998]: number | null
+                      - generic [ref=e1000]:
+                        - text: "Required range:"
+                        - code [ref=e1001]: 0 <= x <= 2
+          - generic [ref=e1003]:
+            - paragraph [ref=e1004]: Was this page helpful?
+            - generic [ref=e1006]:
+              - button "Yes" [ref=e1007] [cursor=pointer]:
+                - img [ref=e1008]
+                - generic [ref=e1010]: "Yes"
+              - button "No" [ref=e1011] [cursor=pointer]:
+                - img [ref=e1012]
+                - generic [ref=e1014]: "No"
+          - generic [ref=e1015]:
+            - link "API Introduction" [ref=e1016] [cursor=pointer]:
+              - /url: /api-reference/introduction
+              - img [ref=e1017]
+              - generic [ref=e1019]: API Introduction
+            - link "Create Message" [ref=e1020] [cursor=pointer]:
+              - /url: /api-reference/endpoint/create-message
+              - generic [ref=e1021]: Create Message
+              - img [ref=e1022]
+          - generic [ref=e1025]:
+            - textbox "Ask a question..." [ref=e1026]
+            - generic: Ctrl+I
+            - button "Send message" [disabled] [ref=e1027]:
+              - img [ref=e1028]
+          - contentinfo [ref=e1030]:
+            - link "Powered by" [ref=e1033] [cursor=pointer]:
+              - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=concentrateai-8b9c0315
+              - generic [ref=e1034]: Powered by
+              - img [ref=e1035]
+  - alert [ref=e1189]

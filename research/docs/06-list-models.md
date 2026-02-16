@@ -1,0 +1,326 @@
+# List Models
+> Source: https://docs.concentrate.ai/api-reference/endpoint/list-models
+> Fetched: 2026-02-16 via Playwright browser_snapshot (Claude Code)
+> Method: Full accessibility tree capture — verbatim page content
+
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - link "concentrate home page light logo" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e12]: concentrate home page
+          - img "light logo" [ref=e13]
+        - generic [ref=e15]:
+          - button "Open search" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]:
+              - img [ref=e18]
+              - generic [ref=e21]: Search...
+            - generic [ref=e22]: Ctrl K
+          - button "Toggle assistant panel" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - list
+          - generic [ref=e29]:
+            - heading "API documentation" [level=5] [ref=e31]
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "API Introduction" [ref=e34] [cursor=pointer]:
+                  - /url: /api-reference/introduction
+                  - generic [ref=e36]: API Introduction
+          - generic [ref=e37]:
+            - heading "Responses" [level=5] [ref=e39]
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "POST Create Response" [ref=e42] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-response
+                  - generic [ref=e44]: POST
+                  - generic [ref=e46]: Create Response
+          - generic [ref=e47]:
+            - heading "Messages (Beta)" [level=5] [ref=e49]
+            - list [ref=e50]:
+              - listitem [ref=e51]:
+                - link "POST Create Message" [ref=e52] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/create-message
+                  - generic [ref=e54]: POST
+                  - generic [ref=e56]: Create Message
+          - generic [ref=e57]:
+            - heading "Models" [level=5] [ref=e59]
+            - list [ref=e60]:
+              - listitem [ref=e61]:
+                - link "GET List Models" [ref=e62] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-models
+                  - generic [ref=e64]: GET
+                  - generic [ref=e66]: List Models
+              - listitem [ref=e67]:
+                - link "GET List Providers" [ref=e68] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/list-providers
+                  - generic [ref=e70]: GET
+                  - generic [ref=e72]: List Providers
+              - listitem [ref=e73]:
+                - link "GET Get Model" [ref=e74] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-model
+                  - generic [ref=e76]: GET
+                  - generic [ref=e78]: Get Model
+              - listitem [ref=e79]:
+                - link "GET Get Provider Info" [ref=e80] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/get-provider-info
+                  - generic [ref=e82]: GET
+                  - generic [ref=e84]: Get Provider Info
+          - generic [ref=e85]:
+            - heading "Utilities" [level=5] [ref=e87]
+            - list [ref=e88]:
+              - listitem [ref=e89]:
+                - link "GET Health Check" [ref=e90] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/health
+                  - generic [ref=e92]: GET
+                  - generic [ref=e94]: Health Check
+          - generic [ref=e95]:
+            - heading "Features" [level=5] [ref=e97]
+            - list [ref=e98]:
+              - listitem [ref=e99]:
+                - link "Streaming Responses" [ref=e100] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/streaming
+                  - generic [ref=e102]: Streaming Responses
+              - listitem [ref=e103]:
+                - link "Auto Routing" [ref=e104] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/auto-routing
+                  - generic [ref=e106]: Auto Routing
+              - listitem [ref=e107]:
+                - link "Tool Calling" [ref=e108] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/tool-calling
+                  - generic [ref=e110]: Tool Calling
+              - listitem [ref=e111]:
+                - link "Web Search" [ref=e112] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/web-search
+                  - generic [ref=e114]: Web Search
+          - generic [ref=e115]:
+            - heading "Reference" [level=5] [ref=e117]
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - link "Request Parameters Reference" [ref=e120] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/request-parameters
+                  - generic [ref=e122]: Request Parameters Reference
+              - listitem [ref=e123]:
+                - link "Prompt Caching" [ref=e124] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/prompt-caching
+                  - generic [ref=e126]: Prompt Caching
+              - listitem [ref=e127]:
+                - link "Error Handling" [ref=e128] [cursor=pointer]:
+                  - /url: /api-reference/endpoint/errors
+                  - generic [ref=e130]: Error Handling
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e134]:
+            - link "API reference" [ref=e135] [cursor=pointer]:
+              - /url: /api-reference/introduction
+              - text: API reference
+            - link "Guides" [ref=e137] [cursor=pointer]:
+              - /url: /getting-started/quickstart
+              - text: Guides
+          - generic [ref=e139]:
+            - listitem [ref=e140]:
+              - link "Support" [ref=e141] [cursor=pointer]:
+                - /url: mailto:support@concentrate.ai
+            - listitem [ref=e142]:
+              - link "Dashboard" [ref=e143] [cursor=pointer]:
+                - /url: https://app.concentrate.ai
+                - generic [ref=e144]:
+                  - generic [ref=e145]: Dashboard
+                  - img [ref=e146]
+          - button "Toggle dark mode" [ref=e149] [cursor=pointer]:
+            - img [ref=e150]
+        - generic [ref=e157]:
+          - banner [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: Models
+              - generic [ref=e161]:
+                - heading "List Models" [level=1] [ref=e162]
+                - generic [ref=e163]:
+                  - button "Copy page" [ref=e164] [cursor=pointer]:
+                    - generic [ref=e165]:
+                      - img [ref=e166]
+                      - generic [ref=e169]: Copy page
+                  - button "More actions" [ref=e170] [cursor=pointer]:
+                    - img [ref=e171]
+            - paragraph [ref=e434]: List all available models with provider information
+          - generic [ref=e175]:
+            - generic [ref=e176]:
+              - generic [ref=e178]:
+                - generic [ref=e179] [cursor=pointer]:
+                  - generic [ref=e180]: GET
+                  - generic [ref=e182]:
+                    - generic [ref=e183]: /
+                    - generic [ref=e184]: v1
+                    - generic [ref=e185]: /
+                    - generic [ref=e186]: models
+                - button "Try it" [ref=e187] [cursor=pointer]:
+                  - generic [ref=e188]: Try it
+                  - img [ref=e189]
+              - generic [ref=e191]:
+                - generic [ref=e192]:
+                  - generic [ref=e193]:
+                    - generic [ref=e436]: cURL
+                    - generic [ref=e196]:
+                      - button "cURL" [ref=e197]:
+                        - generic [ref=e198] [cursor=pointer]:
+                          - img [ref=e199]
+                          - paragraph [ref=e200]: cURL
+                          - img [ref=e201]
+                      - generic [ref=e204]:
+                        - button "Copy the contents from the code block" [ref=e205] [cursor=pointer]:
+                          - img [ref=e206]
+                        - generic [ref=e209]: Copy
+                      - generic [ref=e210]:
+                        - button "Ask AI" [ref=e211] [cursor=pointer]:
+                          - img [ref=e212]
+                        - generic [ref=e215]: Ask AI
+                  - tabpanel [ref=e217]:
+                    - code [ref=e439]:
+                      - generic [ref=e440]: curl --request GET \
+                      - generic [ref=e441]: "--url https://api.example.com/v1/models/"
+                - generic [ref=e224]:
+                  - generic [ref=e225]:
+                    - tablist [ref=e442]:
+                      - tab "200" [selected] [ref=e443] [cursor=pointer]:
+                        - generic [ref=e444]: "200"
+                    - generic [ref=e230]:
+                      - generic [ref=e231]:
+                        - button "Copy the contents from the code block" [ref=e232] [cursor=pointer]:
+                          - img [ref=e233]
+                        - generic [ref=e236]: Copy
+                      - generic [ref=e237]:
+                        - button "Ask AI" [ref=e238] [cursor=pointer]:
+                          - img [ref=e239]
+                        - generic [ref=e242]: Ask AI
+                  - tabpanel "200" [ref=e244]:
+                    - code [ref=e448]:
+                      - generic [ref=e449]: "["
+                      - generic [ref=e450]: "{"
+                      - generic [ref=e451]: "\"slug\": \"<string>\","
+                      - generic [ref=e452]: "\"aliases\": ["
+                      - generic [ref=e453]: "\"<string>\""
+                      - generic [ref=e454]: "],"
+                      - generic [ref=e455]: "\"name\": \"<string>\","
+                      - generic [ref=e456]: "\"description\": \"<string>\","
+                      - generic [ref=e457]: "\"author\": {"
+                      - generic [ref=e458]: "\"slug\": \"openai\","
+                      - generic [ref=e459]: "\"display_name\": \"<string>\""
+                      - generic [ref=e460]: "},"
+                      - generic [ref=e461]: "\"providers\": {}"
+                      - generic [ref=e462]: "}"
+                      - generic [ref=e463]: "]"
+            - generic [ref=e264]:
+              - heading "Navigate to header Overview" [level=2] [ref=e464]:
+                - link "Navigate to header" [ref=e465] [cursor=pointer]:
+                  - /url: "#overview"
+                  - img [ref=e467]
+                - generic [ref=e469] [cursor=pointer]: Overview
+              - generic [ref=e470]: Retrieve the complete catalog of AI models available through Concentrate AI. This endpoint returns all models with their provider configurations, pricing, capabilities, and technical specifications.
+              - heading "Navigate to header Authentication" [level=2] [ref=e471]:
+                - link "Navigate to header" [ref=e472] [cursor=pointer]:
+                  - /url: "#authentication"
+                  - img [ref=e474]
+                - generic [ref=e476] [cursor=pointer]: Authentication
+              - generic [ref=e477]:
+                - img "Info" [ref=e479]
+                - generic [ref=e482]:
+                  - text: This endpoint
+                  - strong [ref=e483]: does not require
+                  - text: authentication. You can call it without an API key.
+              - generic [ref=e286]:
+                - generic [ref=e287]:
+                  - generic [ref=e288]:
+                    - heading "Response" [level=4] [ref=e289]
+                    - generic [ref=e291]: 200 - application/json
+                  - paragraph [ref=e294]: Default Response
+                - generic [ref=e302]:
+                  - generic [ref=e307]:
+                    - link "Navigate to header" [ref=e308] [cursor=pointer]:
+                      - /url: "#response-items-slug"
+                      - img [ref=e310]
+                    - generic [ref=e312] [cursor=pointer]: slug
+                    - generic [ref=e313]:
+                      - generic [ref=e314]: string
+                      - text: required
+                  - generic [ref=e319]:
+                    - link "Navigate to header" [ref=e320] [cursor=pointer]:
+                      - /url: "#response-items-aliases"
+                      - img [ref=e322]
+                    - generic [ref=e324] [cursor=pointer]: aliases
+                    - generic [ref=e325]:
+                      - generic [ref=e326]: string[]
+                      - text: required
+                  - generic [ref=e331]:
+                    - link "Navigate to header" [ref=e332] [cursor=pointer]:
+                      - /url: "#response-items-name"
+                      - img [ref=e334]
+                    - generic [ref=e336] [cursor=pointer]: name
+                    - generic [ref=e337]:
+                      - generic [ref=e338]: string
+                      - text: required
+                  - generic [ref=e343]:
+                    - link "Navigate to header" [ref=e344] [cursor=pointer]:
+                      - /url: "#response-items-description"
+                      - img [ref=e346]
+                    - generic [ref=e348] [cursor=pointer]: description
+                    - generic [ref=e349]:
+                      - generic [ref=e350]: string
+                      - text: required
+                  - generic [ref=e352]:
+                    - generic [ref=e355]:
+                      - link "Navigate to header" [ref=e356] [cursor=pointer]:
+                        - /url: "#response-items-author"
+                        - img [ref=e358]
+                      - generic [ref=e360] [cursor=pointer]: author
+                      - generic [ref=e361]:
+                        - generic [ref=e362]: object
+                        - text: required
+                    - group [ref=e366]:
+                      - generic "Show child attributes" [ref=e367] [cursor=pointer]:
+                        - img [ref=e368]
+                        - paragraph [ref=e370]: Show child attributes
+                  - generic [ref=e372]:
+                    - generic [ref=e375]:
+                      - link "Navigate to header" [ref=e376] [cursor=pointer]:
+                        - /url: "#response-items-providers"
+                        - img [ref=e378]
+                      - generic [ref=e380] [cursor=pointer]: providers
+                      - generic [ref=e381]:
+                        - generic [ref=e382]: object
+                        - text: required
+                    - group [ref=e386]:
+                      - generic "Show child attributes" [ref=e387] [cursor=pointer]:
+                        - img [ref=e388]
+                        - paragraph [ref=e390]: Show child attributes
+          - generic [ref=e392]:
+            - paragraph [ref=e393]: Was this page helpful?
+            - generic [ref=e395]:
+              - button "Yes" [ref=e396] [cursor=pointer]:
+                - img [ref=e397]
+                - generic [ref=e399]: "Yes"
+              - button "No" [ref=e400] [cursor=pointer]:
+                - img [ref=e401]
+                - generic [ref=e403]: "No"
+          - generic [ref=e404]:
+            - link "Create Message" [ref=e405] [cursor=pointer]:
+              - /url: /api-reference/endpoint/create-message
+              - img [ref=e406]
+              - generic [ref=e408]: Create Message
+            - link "List Providers" [ref=e409] [cursor=pointer]:
+              - /url: /api-reference/endpoint/list-providers
+              - generic [ref=e410]: List Providers
+              - img [ref=e411]
+          - generic [ref=e414]:
+            - textbox "Ask a question..." [ref=e415]
+            - generic: Ctrl+I
+            - button "Send message" [disabled] [ref=e416]:
+              - img [ref=e417]
+          - contentinfo [ref=e419]:
+            - link "Powered by" [ref=e422] [cursor=pointer]:
+              - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=concentrateai-8b9c0315
+              - generic [ref=e423]: Powered by
+              - img [ref=e424]
+  - alert [ref=e484]
