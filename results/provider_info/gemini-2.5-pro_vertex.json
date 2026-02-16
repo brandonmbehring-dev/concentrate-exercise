@@ -1,0 +1,38 @@
+{
+    "provider_slug": "vertex",
+    "pricing": {
+        "tokens": {
+            "input": {
+                "price": {
+                    "USD": 1.25
+                },
+                "units": 1000000
+            },
+            "output": {
+                "price": {
+                    "USD": 10
+                },
+                "units": 1000000
+            }
+        },
+        "tool_calls": {
+            "web_search": {
+                "price": {
+                    "USD": 35
+                },
+                "units": 1000
+            }
+        }
+    },
+    "context_window": 1000000,
+    "max_output_tokens": 65536,
+    "supports": {
+        "reasoning": true,
+        "streaming": true,
+        "temperature": true,
+        "tools": {
+            "function_calling": false,
+            "web_search": true
+        }
+    }
+}

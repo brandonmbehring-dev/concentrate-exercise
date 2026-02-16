@@ -131,7 +131,7 @@ spread vs DeepSeek's 20-50x.
 **Decision**:
 - `openai/gpt-5.1` — Comparator ($1.25/$10)
 - `anthropic/claude-sonnet-4-5` — Planner ($3/$15)
-- `google/gemini-2.5-pro` — Synthesizer ($1.25/$10)
+- `vertex/gemini-2.5-pro` — Synthesizer ($1.25/$10)
 - `xai/grok-4-1-fast-reasoning` — Researcher ($0.20/$0.50)
 
 **Reasoning**: Confirmed via /v1/models/ catalog. Agent roles assigned by cost-capability fit.

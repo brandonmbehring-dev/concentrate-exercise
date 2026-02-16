@@ -7,7 +7,7 @@
 MODELS = {
     "openai": "openai/gpt-5.1",
     "anthropic": "anthropic/claude-sonnet-4-5",
-    "google": "google/gemini-2.5-pro",
+    "google": "vertex/gemini-2.5-pro",
     "xai": "xai/grok-4-1-fast-reasoning",
 }
 ```
@@ -28,7 +28,7 @@ MODELS = {
 - **Pricing**: $3.00/M input, $15.00/M output
 - **Note**: Only provider (with Bedrock) that supports prompt caching on Concentrate
 
-### Google Gemini (`google/gemini-2.5-pro`)
+### Google Gemini (`vertex/gemini-2.5-pro`)
 - **Role in comparison**: The capability leader — Synthesizer
 - **Strengths**: #1 Chatbot Arena (1439), 1M-2M token context, native multimodal, IMO 2025 gold medal
 - **Weaknesses**: Premium output pricing, limited web search on Concentrate

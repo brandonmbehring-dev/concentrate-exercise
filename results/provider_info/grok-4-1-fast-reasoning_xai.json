@@ -1,0 +1,46 @@
+{
+    "provider_slug": "xai",
+    "pricing": {
+        "tokens": {
+            "input": {
+                "price": {
+                    "USD": 0.2
+                },
+                "units": 1000000
+            },
+            "output": {
+                "price": {
+                    "USD": 0.5
+                },
+                "units": 1000000
+            },
+            "cache": {
+                "read": {
+                    "price": {
+                        "USD": 0.05
+                    },
+                    "units": 1000000
+                }
+            }
+        },
+        "tool_calls": {
+            "web_search": {
+                "price": {
+                    "USD": 5
+                },
+                "units": 1000
+            }
+        }
+    },
+    "context_window": 2000000,
+    "max_output_tokens": 131072,
+    "supports": {
+        "reasoning": true,
+        "streaming": true,
+        "temperature": true,
+        "tools": {
+            "function_calling": false,
+            "web_search": true
+        }
+    }
+}

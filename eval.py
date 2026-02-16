@@ -16,7 +16,9 @@ Usage:
 
 import argparse
 import json
+import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -26,29 +28,52 @@ import re
 
 
 def extract_json(text: str) -> dict:
-    """Extract JSON object from model response, handling markdown fences and preamble."""
+    """Extract JSON object from model response, handling markdown fences and preamble.
+
+    Strategy (ordered by reliability):
+    1. Strip markdown fences → try json.loads() on full text
+    2. Right-to-left brace matching: find last '}', scan backward for matching '{'
+       This skips preamble text like "discusses {frequentist vs Bayesian}" that
+       contains curly braces but isn't JSON.
+    3. Line-by-line fallback: try json.loads() on each line individually
+    """
     # Strip markdown code fences
     cleaned = re.sub(r"```(?:json)?\s*", "", text).strip()
     cleaned = cleaned.rstrip("`").strip()
-    # Try direct parse first
+
+    # Strategy 1: Direct parse
     try:
         return json.loads(cleaned)
     except (json.JSONDecodeError, ValueError):
         pass
-    # Find first { ... } block
-    match = re.search(r"\{[^{}]*\}", cleaned, re.DOTALL)
-    if match:
-        try:
-            return json.loads(match.group())
-        except (json.JSONDecodeError, ValueError):
-            pass
-    # Find nested { ... { ... } ... } block
-    match = re.search(r"\{.*\}", cleaned, re.DOTALL)
-    if match:
-        try:
-            return json.loads(match.group())
-        except (json.JSONDecodeError, ValueError):
-            pass
+
+    # Strategy 2: Right-to-left brace matching
+    # Find the LAST '}' and scan backward for its matching '{'
+    last_brace = cleaned.rfind("}")
+    if last_brace >= 0:
+        depth = 0
+        for i in range(last_brace, -1, -1):
+            if cleaned[i] == "}":
+                depth += 1
+            elif cleaned[i] == "{":
+                depth -= 1
+            if depth == 0:
+                candidate = cleaned[i : last_brace + 1]
+                try:
+                    return json.loads(candidate)
+                except (json.JSONDecodeError, ValueError):
+                    pass
+                break
+
+    # Strategy 3: Line-by-line fallback (handles single-line JSON after prose)
+    for line in cleaned.split("\n"):
+        line = line.strip()
+        if line.startswith("{") and line.endswith("}"):
+            try:
+                return json.loads(line)
+            except (json.JSONDecodeError, ValueError):
+                continue
+
     return {}
 
 
@@ -230,6 +255,7 @@ def layer2_judge_all(research_results: list[dict]) -> list[dict]:
             response_text = result.get("text", "")
             if not response_text:
                 continue
+            response_status = result.get("status", "")
             judge_prompt = JUDGE_RUBRIC.format(
                 prompt=prompt_text[:500], response=response_text[:1500]
             )
@@ -239,12 +265,15 @@ def layer2_judge_all(research_results: list[dict]) -> list[dict]:
             parsed = extract_json(judge_result.get("text", "{}"))
             if not parsed:
                 parsed = {"accuracy": 0, "reasoning_depth": 0, "instruction_compliance": 0, "brief_note": "parse error"}
-            scores.append({
+            entry_data = {
                 "prompt": prompt_name,
                 "provider": provider,
                 "judge": JUDGE_FAST,
                 **parsed,
-            })
+            }
+            if response_status == "incomplete":
+                entry_data["response_incomplete"] = True
+            scores.append(entry_data)
             avg = sum(parsed.get(k, 0) for k in ["accuracy", "reasoning_depth", "instruction_compliance"]) / 3
             print(f"  {prompt_name:20s} | {provider:10s} | avg={avg:.1f} | {parsed.get('brief_note', '')[:60]}")
     return scores
@@ -355,8 +384,15 @@ def layer3_self_eval(research_results: list[dict]) -> list[dict]:
 
 
 def layer3_pairwise(research_results: list[dict]) -> list[dict]:
-    """Head-to-head ranking for top 3 prompts (6 pairs x 3 prompts = 18 comparisons)."""
-    print("\n[Layer 3] Pairwise ranking (top 3 prompts, all provider pairs)...")
+    """Head-to-head ranking with position-bias mitigation.
+
+    For each pair, run BOTH orderings (A vs B, then B vs A). A provider wins
+    only if it wins in both orderings or wins one + ties one. If the two
+    orderings disagree, mark as 'split' (position-biased).
+
+    See: Wang et al., "Large Language Models are not Fair Evaluators" (arXiv:2305.17926)
+    """
+    print("\n[Layer 3] Pairwise ranking (position-bias mitigated, 2x orderings)...")
     providers = list(MODELS.keys())
     pairs = [(a, b) for i, a in enumerate(providers) for b in providers[i + 1:]]
     rankings = []
@@ -371,23 +407,53 @@ def layer3_pairwise(research_results: list[dict]) -> list[dict]:
             rb = results.get(pb, {}).get("text", "")
             if not ra or not rb:
                 continue
-            pw_prompt = PAIRWISE_PROMPT.format(
+
+            # Ordering 1: A first, B second
+            pw_prompt_1 = PAIRWISE_PROMPT.format(
                 prompt=prompt_text[:400],
                 provider_a=pa, response_a=ra[:800],
                 provider_b=pb, response_b=rb[:800],
             )
-            pw_result = call_model(JUDGE_FAST, pw_prompt, temperature=0.0, max_output_tokens=100)
-            parsed = extract_json(pw_result.get("text", "{}"))
-            if not parsed:
-                parsed = {"winner": "?", "reason": "parse error"}
-            winner_provider = pa if parsed.get("winner") == "A" else pb if parsed.get("winner") == "B" else "tie"
+            pw_result_1 = call_model(JUDGE_FAST, pw_prompt_1, temperature=0.0, max_output_tokens=100)
+            parsed_1 = extract_json(pw_result_1.get("text", "{}"))
+            if not parsed_1:
+                parsed_1 = {"winner": "?", "reason": "parse error"}
+            winner_1 = pa if parsed_1.get("winner") == "A" else pb if parsed_1.get("winner") == "B" else "tie"
+
+            # Ordering 2: B first, A second (swap positions)
+            pw_prompt_2 = PAIRWISE_PROMPT.format(
+                prompt=prompt_text[:400],
+                provider_a=pb, response_a=rb[:800],
+                provider_b=pa, response_b=ra[:800],
+            )
+            pw_result_2 = call_model(JUDGE_FAST, pw_prompt_2, temperature=0.0, max_output_tokens=100)
+            parsed_2 = extract_json(pw_result_2.get("text", "{}"))
+            if not parsed_2:
+                parsed_2 = {"winner": "?", "reason": "parse error"}
+            # Note: in ordering 2, "A" means pb and "B" means pa
+            winner_2 = pb if parsed_2.get("winner") == "A" else pa if parsed_2.get("winner") == "B" else "tie"
+
+            # Determine consensus winner
+            if winner_1 == winner_2:
+                final_winner = winner_1
+                confidence = "consistent"
+            elif winner_1 == "tie" or winner_2 == "tie":
+                final_winner = winner_1 if winner_2 == "tie" else winner_2
+                confidence = "weak"
+            else:
+                final_winner = "split"
+                confidence = "position_biased"
+
             rankings.append({
                 "prompt": prompt_name,
                 "pair": f"{pa} vs {pb}",
-                "winner": winner_provider,
-                "reason": parsed.get("reason", ""),
+                "winner": final_winner,
+                "ordering_1_winner": winner_1,
+                "ordering_2_winner": winner_2,
+                "confidence": confidence,
+                "reason": parsed_1.get("reason", ""),
             })
-            print(f"  {prompt_name:20s} | {pa} vs {pb} -> {winner_provider}")
+            print(f"  {prompt_name:20s} | {pa} vs {pb} -> {final_winner} ({confidence})")
     return rankings
 
 
@@ -504,26 +570,47 @@ def main() -> None:
     print("=" * 70)
 
     all_costs = []
+    all_ground_truth = []
+    all_factor_counts = []
+    all_json_schema = []
+    incomplete_count = 0
     for entry in research_results:
         prompt_name = entry.get("prompt_name", "")
         for provider, result in entry.get("results", {}).items():
             text = result.get("text", "")
+            response_status = result.get("status", "")
+            if response_status == "incomplete":
+                incomplete_count += 1
             gt = layer1_ground_truth(prompt_name, text)
             if gt:
+                gt["provider"] = provider
+                gt["response_incomplete"] = response_status == "incomplete"
+                all_ground_truth.append(gt)
                 status = "PASS" if gt["pass"] else f"FAIL (missing: {gt['missing']})"
+                if response_status == "incomplete":
+                    status += " [INCOMPLETE RESPONSE]"
                 print(f"  [ground_truth] {prompt_name:20s} | {provider:10s} | {status}")
             fc = layer1_factor_count(prompt_name, text)
             if fc:
+                fc["provider"] = provider
+                fc["response_incomplete"] = response_status == "incomplete"
+                all_factor_counts.append(fc)
                 status = "PASS" if fc["pass"] else f"FAIL ({fc['factor_lines_found']}/{fc['minimum_required']})"
                 print(f"  [factor_count] {prompt_name:20s} | {provider:10s} | {status}")
             js = layer1_json_schema(prompt_name, text)
             if js:
+                js["provider"] = provider
+                js["response_incomplete"] = response_status == "incomplete"
+                all_json_schema.append(js)
                 status = "PASS" if js["pass"] else f"FAIL (valid={js['valid_json']}, array={js['is_array']}, items={js['item_count']})"
                 print(f"  [json_schema]  {prompt_name:20s} | {provider:10s} | {status}")
             cost = layer1_cost_per_response(result.get("model", MODELS.get(provider, "")), result.get("raw_response"))
             all_costs.append(cost)
             if cost["input_tokens"] > 0:
                 print(f"  [cost]         {prompt_name:20s} | {provider:10s} | ${cost['total_cost_usd']:.6f}")
+
+    if incomplete_count > 0:
+        print(f"\n  WARNING: {incomplete_count} responses had status='incomplete' (may be truncated)")
 
     if args.skip_llm:
         print("\n--skip-llm: Skipping Layers 2 and 3.")
@@ -551,8 +638,31 @@ def main() -> None:
     build_scoreboard(judge_scores, pairwise, all_costs)
 
     # ---- Save ----
+    git_sha = ""
+    try:
+        git_sha = subprocess.run(
+            ["git", "rev-parse", "HEAD"], capture_output=True, text=True
+        ).stdout.strip()
+    except Exception:
+        pass
+
     output = {
+        "manifest": {
+            "timestamp": datetime.now().isoformat(),
+            "commit": git_sha,
+            "models": dict(MODELS),
+            "judge_models": {
+                "fast": JUDGE_FAST,
+                "deep": JUDGE_DEEP,
+                "creative": JUDGE_CREATIVE,
+            },
+            "input_files": [str(f) for f in args.files],
+        },
+        "layer1_ground_truth": all_ground_truth,
+        "layer1_factor_counts": all_factor_counts,
+        "layer1_json_schema": all_json_schema,
         "layer1_costs": all_costs,
+        "layer1_incomplete_responses": incomplete_count,
         "layer2_judge_scores": judge_scores,
         "layer2_deep_evals": deep_evals,
         "layer2_creative_evals": creative_evals,

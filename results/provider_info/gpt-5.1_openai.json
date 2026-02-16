@@ -1,0 +1,46 @@
+{
+    "provider_slug": "openai",
+    "pricing": {
+        "tokens": {
+            "input": {
+                "price": {
+                    "USD": 1.25
+                },
+                "units": 1000000
+            },
+            "output": {
+                "price": {
+                    "USD": 10
+                },
+                "units": 1000000
+            },
+            "cache": {
+                "read": {
+                    "price": {
+                        "USD": 0.125
+                    },
+                    "units": 1000000
+                }
+            }
+        },
+        "tool_calls": {
+            "web_search": {
+                "price": {
+                    "USD": 10
+                },
+                "units": 1000
+            }
+        }
+    },
+    "context_window": 400000,
+    "max_output_tokens": 128000,
+    "supports": {
+        "reasoning": true,
+        "streaming": true,
+        "temperature": true,
+        "tools": {
+            "function_calling": false,
+            "web_search": true
+        }
+    }
+}

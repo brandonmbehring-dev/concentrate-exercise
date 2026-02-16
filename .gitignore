@@ -1,5 +1,8 @@
 .env
-results/
+results/*
+!results/eval_results.json
+!results/eval_results_v1.json
+!results/provider_info/
 __pycache__/
 *.pyc
 screenshots/

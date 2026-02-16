@@ -25,4 +25,7 @@
 
 ## Summary
 
-17 total documentation pages. Our code audit covered 12 of these (all except Get Model, Get Provider Info, Health Check, List Providers, and Claude Code integration).
+17 total documentation pages. **All 17 audited** (12 original + 5 added post-audit remediation).
+
+Post-audit captures (12-17) use clean markdown format with live API verification.
+Get Provider Info endpoint yielded 6 new empirical findings (C16-C22).

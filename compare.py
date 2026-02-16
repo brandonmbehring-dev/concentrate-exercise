@@ -928,6 +928,17 @@ def run_web_search_comparison() -> list[dict]:
                 for src in action.get("sources", []):
                     sources.append(src.get("url", ""))
 
+            # Also check for url_citation annotations in message content
+            # OpenAI/xAI return citations as annotations, not in action.sources
+            for item in output_items:
+                if item.get("type") == "message":
+                    for content in item.get("content", []):
+                        for ann in content.get("annotations", []):
+                            if ann.get("type") == "url_citation":
+                                url = ann.get("url", "")
+                                if url and url not in sources:
+                                    sources.append(url)
+
             print(f"  Status:       {status}")
             print(f"  Latency:      {result['latency_ms']:.0f}ms")
             print(f"  Web search:   {'YES' if has_web_search else 'NO'}")

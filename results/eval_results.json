@@ -1,0 +1,1968 @@
+{
+  "manifest": {
+    "timestamp": "2026-02-16T17:39:06.373422",
+    "commit": "a812c6d35a76f11507fb9c86fddd6e7ceedfea91",
+    "models": {
+      "openai": "openai/gpt-5.1",
+      "anthropic": "anthropic/claude-sonnet-4-5",
+      "google": "vertex/gemini-2.5-pro",
+      "xai": "xai/grok-4-1-fast-reasoning"
+    },
+    "judge_models": {
+      "fast": "anthropic/claude-haiku-4-5",
+      "deep": "openai/gpt-5.1",
+      "creative": "anthropic/claude-sonnet-4-5"
+    },
+    "input_files": [
+      "results/comparison_20260216_151324.json"
+    ]
+  },
+  "layer1_ground_truth": [
+    {
+      "check": "ground_truth",
+      "prompt": "simpsons_paradox",
+      "found": [
+        "simpson",
+        "paradox",
+        "confound"
+      ],
+      "missing": [],
+      "pass": true,
+      "description": "Must identify Simpson's paradox and confounding variable",
+      "provider": "openai",
+      "response_incomplete": false
+    },
+    {
+      "check": "ground_truth",
+      "prompt": "simpsons_paradox",
+      "found": [
+        "simpson",
+        "paradox",
+        "confound"
+      ],
+      "missing": [],
+      "pass": true,
+      "description": "Must identify Simpson's paradox and confounding variable",
+      "provider": "anthropic",
+      "response_incomplete": false
+    },
+    {
+      "check": "ground_truth",
+      "prompt": "simpsons_paradox",
+      "found": [
+        "simpson",
+        "paradox",
+        "confound"
+      ],
+      "missing": [],
+      "pass": true,
+      "description": "Must identify Simpson's paradox and confounding variable",
+      "provider": "google",
+      "response_incomplete": false
+    },
+    {
+      "check": "ground_truth",
+      "prompt": "simpsons_paradox",
+      "found": [
+        "simpson",
+        "paradox",
+        "confound"
+      ],
+      "missing": [],
+      "pass": true,
+      "description": "Must identify Simpson's paradox and confounding variable",
+      "provider": "xai",
+      "response_incomplete": false
+    },
+    {
+      "check": "ground_truth",
+      "prompt": "ab_test",
+      "found": [
+        "bayesian",
+        "frequentist"
+      ],
+      "missing": [],
+      "pass": true,
+      "description": "Must discuss both Bayesian and frequentist perspectives",
+      "provider": "openai",
+      "response_incomplete": false
+    },
+    {
+      "check": "ground_truth",
+      "prompt": "ab_test",
+      "found": [
+        "bayesian",
+        "frequentist"
+      ],
+      "missing": [],
+      "pass": true,
+      "description": "Must discuss both Bayesian and frequentist perspectives",
+      "provider": "anthropic",
+      "response_incomplete": false
+    },
+    {
+      "check": "ground_truth",
+      "prompt": "ab_test",
+      "found": [
+        "bayesian",
+        "frequentist"
+      ],
+      "missing": [],
+      "pass": true,
+      "description": "Must discuss both Bayesian and frequentist perspectives",
+      "provider": "google",
+      "response_incomplete": false
+    },
+    {
+      "check": "ground_truth",
+      "prompt": "ab_test",
+      "found": [
+        "bayesian",
+        "frequentist"
+      ],
+      "missing": [],
+      "pass": true,
+      "description": "Must discuss both Bayesian and frequentist perspectives",
+      "provider": "xai",
+      "response_incomplete": false
+    },
+    {
+      "check": "ground_truth",
+      "prompt": "monty_hall_4door",
+      "found": [
+        "switch"
+      ],
+      "missing": [
+        "3/8"
+      ],
+      "pass": false,
+      "description": "4-door Monty Hall: switching gives 3/8 per unchosen door",
+      "provider": "openai",
+      "response_incomplete": true
+    },
+    {
+      "check": "ground_truth",
+      "prompt": "monty_hall_4door",
+      "found": [
+        "3/8",
+        "switch"
+      ],
+      "missing": [],
+      "pass": true,
+      "description": "4-door Monty Hall: switching gives 3/8 per unchosen door",
+      "provider": "anthropic",
+      "response_incomplete": false
+    },
+    {
+      "check": "ground_truth",
+      "prompt": "monty_hall_4door",
+      "found": [
+        "3/8",
+        "switch"
+      ],
+      "missing": [],
+      "pass": true,
+      "description": "4-door Monty Hall: switching gives 3/8 per unchosen door",
+      "provider": "google",
+      "response_incomplete": false
+    },
+    {
+      "check": "ground_truth",
+      "prompt": "monty_hall_4door",
+      "found": [
+        "3/8",
+        "switch"
+      ],
+      "missing": [],
+      "pass": true,
+      "description": "4-door Monty Hall: switching gives 3/8 per unchosen door",
+      "provider": "xai",
+      "response_incomplete": false
+    }
+  ],
+  "layer1_factor_counts": [
+    {
+      "check": "factor_count",
+      "prompt": "insurance_pricing",
+      "factor_lines_found": 51,
+      "minimum_required": 5,
+      "pass": true,
+      "provider": "openai",
+      "response_incomplete": true
+    },
+    {
+      "check": "factor_count",
+      "prompt": "insurance_pricing",
+      "factor_lines_found": 23,
+      "minimum_required": 5,
+      "pass": true,
+      "provider": "anthropic",
+      "response_incomplete": false
+    },
+    {
+      "check": "factor_count",
+      "prompt": "insurance_pricing",
+      "factor_lines_found": 13,
+      "minimum_required": 5,
+      "pass": true,
+      "provider": "google",
+      "response_incomplete": false
+    },
+    {
+      "check": "factor_count",
+      "prompt": "insurance_pricing",
+      "factor_lines_found": 15,
+      "minimum_required": 5,
+      "pass": true,
+      "provider": "xai",
+      "response_incomplete": false
+    }
+  ],
+  "layer1_json_schema": [
+    {
+      "check": "json_schema",
+      "prompt": "json_schema",
+      "valid_json": true,
+      "is_array": true,
+      "item_count": 3,
+      "pass": true,
+      "provider": "openai",
+      "response_incomplete": false
+    },
+    {
+      "check": "json_schema",
+      "prompt": "json_schema",
+      "valid_json": true,
+      "is_array": true,
+      "item_count": 3,
+      "pass": true,
+      "provider": "anthropic",
+      "response_incomplete": false
+    },
+    {
+      "check": "json_schema",
+      "prompt": "json_schema",
+      "valid_json": true,
+      "is_array": true,
+      "item_count": 3,
+      "pass": true,
+      "provider": "google",
+      "response_incomplete": false
+    },
+    {
+      "check": "json_schema",
+      "prompt": "json_schema",
+      "valid_json": true,
+      "is_array": true,
+      "item_count": 3,
+      "pass": true,
+      "provider": "xai",
+      "response_incomplete": false
+    }
+  ],
+  "layer1_costs": [
+    {
+      "check": "cost_per_response",
+      "model": "openai/gpt-5.1",
+      "input_tokens": 83,
+      "output_tokens": 592,
+      "input_cost_usd": 0.000104,
+      "output_cost_usd": 0.00592,
+      "total_cost_usd": 0.006024
+    },
+    {
+      "check": "cost_per_response",
+      "model": "anthropic/claude-sonnet-4-5",
+      "input_tokens": 85,
+      "output_tokens": 786,
+      "input_cost_usd": 0.000255,
+      "output_cost_usd": 0.01179,
+      "total_cost_usd": 0.012045
+    },
+    {
+      "check": "cost_per_response",
+      "model": "vertex/gemini-2.5-pro",
+      "input_tokens": 81,
+      "output_tokens": 4059,
+      "input_cost_usd": 0.000101,
+      "output_cost_usd": 0.04059,
+      "total_cost_usd": 0.040691
+    },
+    {
+      "check": "cost_per_response",
+      "model": "xai/grok-4-1-fast-reasoning",
+      "input_tokens": 232,
+      "output_tokens": 1561,
+      "input_cost_usd": 4.6e-05,
+      "output_cost_usd": 0.000781,
+      "total_cost_usd": 0.000827
+    },
+    {
+      "check": "cost_per_response",
+      "model": "openai/gpt-5.1",
+      "input_tokens": 63,
+      "output_tokens": 542,
+      "input_cost_usd": 7.9e-05,
+      "output_cost_usd": 0.00542,
+      "total_cost_usd": 0.005499
+    },
+    {
+      "check": "cost_per_response",
+      "model": "anthropic/claude-sonnet-4-5",
+      "input_tokens": 68,
+      "output_tokens": 480,
+      "input_cost_usd": 0.000204,
+      "output_cost_usd": 0.0072,
+      "total_cost_usd": 0.007404
+    },
+    {
+      "check": "cost_per_response",
+      "model": "vertex/gemini-2.5-pro",
+      "input_tokens": 62,
+      "output_tokens": 2828,
+      "input_cost_usd": 7.7e-05,
+      "output_cost_usd": 0.02828,
+      "total_cost_usd": 0.028358
+    },
+    {
+      "check": "cost_per_response",
+      "model": "xai/grok-4-1-fast-reasoning",
+      "input_tokens": 213,
+      "output_tokens": 1695,
+      "input_cost_usd": 4.3e-05,
+      "output_cost_usd": 0.000847,
+      "total_cost_usd": 0.00089
+    },
+    {
+      "check": "cost_per_response",
+      "model": "openai/gpt-5.1",
+      "input_tokens": 77,
+      "output_tokens": 474,
+      "input_cost_usd": 9.6e-05,
+      "output_cost_usd": 0.00474,
+      "total_cost_usd": 0.004836
+    },
+    {
+      "check": "cost_per_response",
+      "model": "anthropic/claude-sonnet-4-5",
+      "input_tokens": 84,
+      "output_tokens": 597,
+      "input_cost_usd": 0.000252,
+      "output_cost_usd": 0.008955,
+      "total_cost_usd": 0.009207
+    },
+    {
+      "check": "cost_per_response",
+      "model": "vertex/gemini-2.5-pro",
+      "input_tokens": 76,
+      "output_tokens": 1770,
+      "input_cost_usd": 9.5e-05,
+      "output_cost_usd": 0.0177,
+      "total_cost_usd": 0.017795
+    },
+    {
+      "check": "cost_per_response",
+      "model": "xai/grok-4-1-fast-reasoning",
+      "input_tokens": 227,
+      "output_tokens": 668,
+      "input_cost_usd": 4.5e-05,
+      "output_cost_usd": 0.000334,
+      "total_cost_usd": 0.000379
+    },
+    {
+      "check": "cost_per_response",
+      "model": "openai/gpt-5.1",
+      "input_tokens": 73,
+      "output_tokens": 800,
+      "input_cost_usd": 9.1e-05,
+      "output_cost_usd": 0.008,
+      "total_cost_usd": 0.008091
+    },
+    {
+      "check": "cost_per_response",
+      "model": "anthropic/claude-sonnet-4-5",
+      "input_tokens": 79,
+      "output_tokens": 506,
+      "input_cost_usd": 0.000237,
+      "output_cost_usd": 0.00759,
+      "total_cost_usd": 0.007827
+    },
+    {
+      "check": "cost_per_response",
+      "model": "vertex/gemini-2.5-pro",
+      "input_tokens": 70,
+      "output_tokens": 5154,
+      "input_cost_usd": 8.7e-05,
+      "output_cost_usd": 0.05154,
+      "total_cost_usd": 0.051627
+    },
+    {
+      "check": "cost_per_response",
+      "model": "xai/grok-4-1-fast-reasoning",
+      "input_tokens": 223,
+      "output_tokens": 1823,
+      "input_cost_usd": 4.5e-05,
+      "output_cost_usd": 0.000911,
+      "total_cost_usd": 0.000956
+    },
+    {
+      "check": "cost_per_response",
+      "model": "openai/gpt-5.1",
+      "input_tokens": 66,
+      "output_tokens": 144,
+      "input_cost_usd": 8.2e-05,
+      "output_cost_usd": 0.00144,
+      "total_cost_usd": 0.001522
+    },
+    {
+      "check": "cost_per_response",
+      "model": "anthropic/claude-sonnet-4-5",
+      "input_tokens": 71,
+      "output_tokens": 171,
+      "input_cost_usd": 0.000213,
+      "output_cost_usd": 0.002565,
+      "total_cost_usd": 0.002778
+    },
+    {
+      "check": "cost_per_response",
+      "model": "vertex/gemini-2.5-pro",
+      "input_tokens": 62,
+      "output_tokens": 4052,
+      "input_cost_usd": 7.7e-05,
+      "output_cost_usd": 0.04052,
+      "total_cost_usd": 0.040598
+    },
+    {
+      "check": "cost_per_response",
+      "model": "xai/grok-4-1-fast-reasoning",
+      "input_tokens": 216,
+      "output_tokens": 1320,
+      "input_cost_usd": 4.3e-05,
+      "output_cost_usd": 0.00066,
+      "total_cost_usd": 0.000703
+    },
+    {
+      "check": "cost_per_response",
+      "model": "openai/gpt-5.1",
+      "input_tokens": 61,
+      "output_tokens": 800,
+      "input_cost_usd": 7.6e-05,
+      "output_cost_usd": 0.008,
+      "total_cost_usd": 0.008076
+    },
+    {
+      "check": "cost_per_response",
+      "model": "anthropic/claude-sonnet-4-5",
+      "input_tokens": 65,
+      "output_tokens": 800,
+      "input_cost_usd": 0.000195,
+      "output_cost_usd": 0.012,
+      "total_cost_usd": 0.012195
+    },
+    {
+      "check": "cost_per_response",
+      "model": "vertex/gemini-2.5-pro",
+      "input_tokens": 59,
+      "output_tokens": 5505,
+      "input_cost_usd": 7.4e-05,
+      "output_cost_usd": 0.05505,
+      "total_cost_usd": 0.055124
+    },
+    {
+      "check": "cost_per_response",
+      "model": "xai/grok-4-1-fast-reasoning",
+      "input_tokens": 210,
+      "output_tokens": 5462,
+      "input_cost_usd": 4.2e-05,
+      "output_cost_usd": 0.002731,
+      "total_cost_usd": 0.002773
+    },
+    {
+      "check": "cost_per_response",
+      "model": "openai/gpt-5.1",
+      "input_tokens": 38,
+      "output_tokens": 352,
+      "input_cost_usd": 4.8e-05,
+      "output_cost_usd": 0.00352,
+      "total_cost_usd": 0.003567
+    },
+    {
+      "check": "cost_per_response",
+      "model": "anthropic/claude-sonnet-4-5",
+      "input_tokens": 41,
+      "output_tokens": 800,
+      "input_cost_usd": 0.000123,
+      "output_cost_usd": 0.012,
+      "total_cost_usd": 0.012123
+    },
+    {
+      "check": "cost_per_response",
+      "model": "vertex/gemini-2.5-pro",
+      "input_tokens": 34,
+      "output_tokens": 5427,
+      "input_cost_usd": 4.3e-05,
+      "output_cost_usd": 0.05427,
+      "total_cost_usd": 0.054312
+    },
+    {
+      "check": "cost_per_response",
+      "model": "xai/grok-4-1-fast-reasoning",
+      "input_tokens": 187,
+      "output_tokens": 1778,
+      "input_cost_usd": 3.7e-05,
+      "output_cost_usd": 0.000889,
+      "total_cost_usd": 0.000926
+    },
+    {
+      "check": "cost_per_response",
+      "model": "openai/gpt-5.1",
+      "input_tokens": 38,
+      "output_tokens": 800,
+      "input_cost_usd": 4.8e-05,
+      "output_cost_usd": 0.008,
+      "total_cost_usd": 0.008048
+    },
+    {
+      "check": "cost_per_response",
+      "model": "anthropic/claude-sonnet-4-5",
+      "input_tokens": 40,
+      "output_tokens": 537,
+      "input_cost_usd": 0.00012,
+      "output_cost_usd": 0.008055,
+      "total_cost_usd": 0.008175
+    },
+    {
+      "check": "cost_per_response",
+      "model": "vertex/gemini-2.5-pro",
+      "input_tokens": 32,
+      "output_tokens": 3065,
+      "input_cost_usd": 4e-05,
+      "output_cost_usd": 0.03065,
+      "total_cost_usd": 0.03069
+    },
+    {
+      "check": "cost_per_response",
+      "model": "xai/grok-4-1-fast-reasoning",
+      "input_tokens": 188,
+      "output_tokens": 1226,
+      "input_cost_usd": 3.8e-05,
+      "output_cost_usd": 0.000613,
+      "total_cost_usd": 0.000651
+    }
+  ],
+  "layer1_incomplete_responses": 5,
+  "layer2_judge_scores": [
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "openai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 5,
+      "instruction_compliance": 4,
+      "brief_note": "Excellent explanation of Simpson's paradox with correct math and clear identification of confounding, but response cuts off mid-sentence before completing the recommendation."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "anthropic",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 4,
+      "instruction_compliance": 2,
+      "brief_note": "Excellent explanation of Simpson's Paradox with sound reasoning, but response is incomplete (cuts off at 'Whi') and never provides the requested treatment recommendation."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "google",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 3,
+      "reasoning_depth": 2,
+      "instruction_compliance": 2,
+      "brief_note": "Response correctly identifies Simpson's Paradox but fails to complete the explanation, doesn't resolve the mathematical contradiction in the prompt, and never reaches a treatment recommendation."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "xai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 5,
+      "instruction_compliance": 2,
+      "brief_note": "Excellent explanation of Simpson's paradox with correct math, but fails to identify the bias type by name and omits treatment recommendation entirely."
+    },
+    {
+      "prompt": "ab_test",
+      "provider": "openai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 5,
+      "instruction_compliance": 5,
+      "brief_note": "Excellent response that correctly distinguishes frequentist vs. Bayesian interpretation, provides sound decision logic, and directly addresses the PM's pressure with practical recommendations."
+    },
+    {
+      "prompt": "ab_test",
+      "provider": "anthropic",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 4,
+      "instruction_compliance": 5,
+      "brief_note": "Sound statistical reasoning with minor imprecision (the 15% posterior doesn't directly imply high variance), but excellent decision framework and full compliance with the prompt's request for recommendation and reasoning."
+    },
+    {
+      "prompt": "ab_test",
+      "provider": "google",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 4,
+      "instruction_compliance": 5,
+      "brief_note": "Strong response with sound statistical reasoning and practical recommendation, though the explanation of the 15% posterior probability could be more explicit in reconciling it with the p-value."
+    },
+    {
+      "prompt": "ab_test",
+      "provider": "xai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 5,
+      "instruction_compliance": 5,
+      "brief_note": "Sound statistical reasoning with minor CI estimation caveat; excellent depth balancing frequentist/Bayesian perspectives and decision theory; fully addresses the prompt's core tension."
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "openai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 4,
+      "instruction_compliance": 5,
+      "brief_note": "All schema requirements met with valid ISO 8601 timestamps and UUID v4 formats; three diverse, realistic error examples provided with sound validation logic."
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "anthropic",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 4,
+      "instruction_compliance": 4,
+      "brief_note": "Response correctly implements the schema with realistic examples and valid ISO 8601 timestamps and UUIDs, but the third example's card_number field is truncated mid-value, violating the requirement for exactly 3 complete examples."
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "google",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 2,
+      "instruction_compliance": 5,
+      "brief_note": "Perfect schema compliance and valid JSON, but the 404 error with a details array is semantically odd since 404s typically don't involve field validation."
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "xai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 4,
+      "instruction_compliance": 5,
+      "brief_note": "All three examples follow the exact schema with valid HTTP error codes, properly formatted ISO 8601 timestamps, and valid UUID v4 request IDs; demonstrates good understanding of realistic validation scenarios."
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "openai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 5,
+      "instruction_compliance": 4,
+      "brief_note": "Mathematically correct Bayesian analysis with sound reasoning, but response appears truncated before final probability calculations were shown.",
+      "response_incomplete": true
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "anthropic",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 4,
+      "instruction_compliance": 5,
+      "brief_note": "Correct final probabilities with sound Bayesian reasoning, though the self-correction mid-response could have been more rigorous in showing the work."
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "google",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 2,
+      "reasoning_depth": 2,
+      "instruction_compliance": 2,
+      "brief_note": "The probabilities are mathematically incorrect (should be 1/3 and 1/3 for doors 2 and 4), the reasoning is incomplete and cuts off mid-explanation, and the response fails to properly calculate or justify the claimed 3/8 values."
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "xai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 2,
+      "reasoning_depth": 3,
+      "instruction_compliance": 4,
+      "brief_note": "The probabilities are incorrect; the standard Monty Hall answer is 1/3 for door 1 and 2/3 for the remaining door, not the asymmetric 3/8 split claimed here."
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "openai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 4,
+      "instruction_compliance": 4,
+      "brief_note": "Strong execution with vivid prose and thematic coherence, but word count is 99, not exactly 100 as required."
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "anthropic",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 4,
+      "instruction_compliance": 3,
+      "brief_note": "Strong narrative with sound logic, but word count is 89, not 100 as explicitly required."
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "google",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 4,
+      "instruction_compliance": 4,
+      "brief_note": "Strong execution with effective recontextualization (robot reveal), but word count is 89, not 100 as required."
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "xai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 4,
+      "instruction_compliance": 5,
+      "brief_note": "Meets all requirements with creative execution; the final sentence effectively recontextualizes the narrative as a simulation test, and the word count is accurate at 100 words."
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "openai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 3,
+      "instruction_compliance": 2,
+      "brief_note": "Pricing data appears reasonable but slightly outdated (gpt-4.1 doesn't exist; should be gpt-4-turbo or gpt-4o); response cuts off before delivering the complete routing strategy, cost estimates, and quality tradeoffs explicitly requested.",
+      "response_incomplete": true
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "anthropic",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 4,
+      "instruction_compliance": 2,
+      "brief_note": "Sound technical analysis with realistic pricing, but response is incomplete (cuts off mid-strategy) and doesn't fully address quality tradeoffs or provide the requested JSON-only format."
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "google",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 3,
+      "instruction_compliance": 1,
+      "brief_note": "Response provides sound routing logic and reasonable model choices, but completely ignores the explicit JSON-only instruction at the end."
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "xai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 3,
+      "instruction_compliance": 2,
+      "brief_note": "Pricing data appears reasonable but outdated/approximate; reasoning is surface-level without tradeoff analysis or complete routing strategy; response cuts off mid-sentence and lacks specific cost estimates and quality comparisons requested.",
+      "response_incomplete": true
+    },
+    {
+      "prompt": "fermi_estimation",
+      "provider": "openai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 2,
+      "instruction_compliance": 1,
+      "brief_note": "Response is honest about limitations but directly refuses the core task and declines to show the requested reasoning chain."
+    },
+    {
+      "prompt": "fermi_estimation",
+      "provider": "anthropic",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 3,
+      "reasoning_depth": 4,
+      "instruction_compliance": 2,
+      "brief_note": "Sound methodology with reasonable assumptions, but the response is incomplete (cuts off mid-calculation), lacks explicit final numbers, and doesn't fully show the reasoning chain conclusion."
+    },
+    {
+      "prompt": "fermi_estimation",
+      "provider": "google",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 3,
+      "reasoning_depth": 4,
+      "instruction_compliance": 2,
+      "brief_note": "Response shows strong analytical structure and reasoning depth but is incomplete (cuts off mid-sentence), lacks explicit numerical assumptions at each step, and provides no verifiable baseline data for 2024."
+    },
+    {
+      "prompt": "fermi_estimation",
+      "provider": "xai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 3,
+      "reasoning_depth": 4,
+      "instruction_compliance": 2,
+      "brief_note": "Strong methodology and reasoning depth, but response is incomplete (cuts off mid-sentence), lacks explicit forward projection to Feb 2026, and makes unverifiable claims about proprietary token volumes.",
+      "response_incomplete": true
+    },
+    {
+      "prompt": "insurance_pricing",
+      "provider": "openai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 5,
+      "reasoning_depth": 4,
+      "instruction_compliance": 2,
+      "brief_note": "Factually sound and well-reasoned, but response is incomplete\u2014it only covers term life insurance and lacks the auto insurance comparison, the head-to-head analysis, and the conclusion about which has more variables.",
+      "response_incomplete": true
+    },
+    {
+      "prompt": "insurance_pricing",
+      "provider": "anthropic",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 3,
+      "instruction_compliance": 2,
+      "brief_note": "Factually sound but incomplete (auto list cuts off at 10), lacks analysis of why auto has more variables, and doesn't directly answer the comparative question."
+    },
+    {
+      "prompt": "insurance_pricing",
+      "provider": "google",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 4,
+      "instruction_compliance": 2,
+      "brief_note": "Response is factually sound and well-reasoned but appears truncated mid-sentence and fails to complete the required comparison or answer which product has more variables."
+    },
+    {
+      "prompt": "insurance_pricing",
+      "provider": "xai",
+      "judge": "anthropic/claude-haiku-4-5",
+      "accuracy": 4,
+      "reasoning_depth": 3,
+      "instruction_compliance": 2,
+      "brief_note": "Response is factually sound and well-structured but incomplete\u2014it cuts off mid-sentence in the auto insurance section, failing to provide the required 5+ factors for auto insurance or the comparative analysis."
+    }
+  ],
+  "layer2_deep_evals": [
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "openai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Correctly identifies the phenomenon as Simpson\u2019s paradox.",
+        "Accurately explains that overall success rates are weighted averages of subgroup rates and that differing subgroup sizes can cause the reversal.",
+        "Provides a concrete numerical example that clearly demonstrates how each subgroup favors A while the overall rate favors B.",
+        "Correctly identifies the underlying issue as confounding by severity / case-mix bias.",
+        "Gives the right high-level recommendation: base the choice on stratified results, concluding that A is better for both mild and severe cases under the stated assumptions."
+      ],
+      "weaknesses": [
+        "The numerical example does not match the prompt\u2019s stated overall rates (80% vs 75%); it instead produces 81% vs 45%, which may confuse a careful reader.",
+        "The response is truncated at the end (\"**Trea\"), so the final recommendation is incomplete and not cleanly stated.",
+        "It does not explicitly reconcile the given overall rates (80% vs 75%) with a consistent set of subgroup sizes, missing an opportunity to show a fully aligned numeric construction.",
+        "It could more clearly distinguish between the descriptive paradox (what the data show) and the causal decision question (which treatment to choose), including a brief note on the need for randomized or well-adjusted comparisons.",
+        "The explanation of the bias is correct but somewhat redundant; it could be more concise and tie more directly to the decision recommendation."
+      ],
+      "score": 7,
+      "ideal_gap": "An ideal answer would use numbers consistent with the stated overall rates, finish the recommendation clearly, and briefly connect Simpson\u2019s paradox to causal decision-making more explicitly."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "anthropic",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Correctly identifies the phenomenon as Simpson's Paradox and names it explicitly.",
+        "Clearly explains the mechanism: different case-mix (more severe cases on A, more mild on B) can reverse the overall rate despite subgroup superiority.",
+        "Correctly identifies the relevant bias as selection bias / confounding by indication.",
+        "Gives the right qualitative recommendation: choose Treatment A, because it is better in each severity subgroup and the overall rate is confounded.",
+        "Provides a causal interpretation (random assignment would likely favor A) and emphasizes comparing like with like."
+      ],
+      "weaknesses": [
+        "The numerical examples are incorrect and internally inconsistent: the first example contradicts the prompt\u2019s overall rates, and the later recalculations still do not produce the stated 75% vs 80% while also miscomputing overall percentages (e.g., 98/220 \u2248 45% is wrong).",
+        "The response never actually constructs a valid numeric example that matches the prompt\u2019s stated subgroup and overall rates, undermining the mathematical illustration of Simpson\u2019s paradox.",
+        "There is visible confusion and backtracking in the worked example (\"Wait - let me recalculate\"), which reduces clarity and polish.",
+        "It does not explicitly show, with correct arithmetic, how the weighting of subgroups (mild vs severe) leads to the reversal in overall success rates.",
+        "The recommendation section could more explicitly tie the choice of Treatment A to formal principles (e.g., conditioning on confounders, causal inference) and briefly mention when overall rates might be appropriate (e.g., for resource planning rather than causal comparison)."
+      ],
+      "score": 6,
+      "ideal_gap": "An ideal answer would cleanly present a correct numerical example matching the given rates, accurately compute all totals, and succinctly connect Simpson\u2019s paradox, selection bias, and the treatment recommendation without arithmetic errors or visible confusion."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "google",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Correctly identifies the phenomenon as Simpson's Paradox.",
+        "Accurately explains the core mechanism: differing subgroup sizes (imbalance) can cause overall rates to reverse.",
+        "Attempts to construct a numerical example to illustrate how subgroup rates and overall rates can diverge.",
+        "Recognizes and flags its own incorrect intermediate calculation instead of silently using it."
+      ],
+      "weaknesses": [
+        "The worked numerical example is incomplete: it never finishes constructing Treatment B\u2019s distribution or demonstrates the full paradox with matching 80% vs 75% overall rates.",
+        "The first numerical attempt for Treatment A (50% overall) is wrong relative to the prompt and left in the answer, creating confusion before the correction attempt.",
+        "It does not explicitly name the bias as a form of confounding/aggregation bias beyond labeling it Simpson\u2019s Paradox.",
+        "It never clearly answers the recommendation question (which treatment to choose and under what decision rule), leaving the practical conclusion unresolved.",
+        "The explanation, while on the right track, is somewhat meandering and not tightly tied back to the exact numbers in the prompt, reducing clarity."
+      ],
+      "score": 5,
+      "ideal_gap": "An ideal answer would cleanly construct a fully consistent numerical example, explicitly label the bias (Simpson\u2019s Paradox/aggregation bias), and clearly recommend choosing Treatment A based on its higher success in every severity subgroup while explaining the decision logic."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "xai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Correctly identifies the phenomenon as Simpson's paradox and explains it clearly.",
+        "Accurately notes that overall rates are weighted averages of subgroup rates and that differing subgroup proportions drive the reversal.",
+        "Provides a concrete numerical example that is internally consistent with the stated percentages and overall rates.",
+        "Correctly identifies confounding by severity / selection bias as the underlying issue.",
+        "Gives a clear recommendation (Treatment A) based on dominance within each severity subgroup."
+      ],
+      "weaknesses": [
+        "The table uses fractional numbers of successes (e.g., 76.5, 3.5) without clarifying they are expected values, which is slightly unrealistic for a didactic example.",
+        "The recommendation is asserted without discussing possible decision frameworks (e.g., conditioning on severity when choosing treatment for a given patient) or acknowledging that the 'better overall' metric is misleading because of confounding.",
+        "It could more explicitly connect the math to the intuitive decision rule: for any given severity level, A is better, so a rational choice is to use A for both mild and severe cases.",
+        "The explanation of bias could distinguish more clearly between Simpson's paradox (a pattern in aggregated vs. stratified data) and the causal issue (non-random treatment assignment by severity)."
+      ],
+      "score": 8,
+      "ideal_gap": "An ideal answer would keep the clear Simpson\u2019s paradox explanation but use integer counts or clarify expectations, explicitly tie the math to patient-level decision-making (\"for any given severity, choose A\"), and more sharply distinguish the statistical paradox from the underlying causal confounding/selection bias."
+    },
+    {
+      "prompt": "ab_test",
+      "provider": "openai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "ab_test",
+      "provider": "anthropic",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "ab_test",
+      "provider": "google",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "ab_test",
+      "provider": "xai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "openai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Respects the required top-level structure as a JSON array with exactly 3 elements.",
+        "Each element is an object containing all required keys: error_code, message, timestamp, request_id, and details.",
+        "error_code values are integers and message values are strings, matching the schema.",
+        "timestamp values are in valid ISO 8601 format with UTC 'Z' suffix.",
+        "request_id values are syntactically valid UUID v4-style strings.",
+        "details is always an array of objects, each including field, constraint, and received_value, with realistic validation scenarios.",
+        "JSON syntax is valid and well-formed."
+      ],
+      "weaknesses": [
+        "The prompt\u2019s schema description is informal, but the response assumes 'any' for received_value without clarifying type consistency; some APIs might expect stricter typing or a consistent representation (e.g., always stringified).",
+        "The timestamps are set in the future relative to the current date, which may be undesirable or misleading in some evaluation contexts.",
+        "No explicit indication that these are example errors (e.g., via comments) but that\u2019s minor since the prompt asked for examples directly."
+      ],
+      "score": 9,
+      "ideal_gap": "Very close to ideal; only minor concerns around value typing conventions and timestamp realism separate it from a perfect answer."
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "anthropic",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Returned a top-level JSON array with exactly 3 error objects as requested.",
+        "Each object follows the specified keys: error_code, message, timestamp, request_id, and details.",
+        "error_code values are integers and message values are strings, matching the schema.",
+        "timestamps are in a valid ISO 8601 format with UTC 'Z' suffix.",
+        "request_id values are correctly formatted as UUID v4 strings (8-4-4-4-12 hex).",
+        "details is always an array of objects with field, constraint, and received_value, and the examples are realistic and coherent."
+      ],
+      "weaknesses": [
+        "The prompt\u2019s 'received_value': any is respected, but the answer does not demonstrate edge cases or type variety beyond simple primitives and null (not strictly required but could better showcase 'any').",
+        "No explicit indication that these are error *responses* tied to specific endpoints or payloads (context is implied but not described)."
+      ],
+      "score": 9,
+      "ideal_gap": "Very close to ideal; only minor enhancements in variety and contextual richness could improve it."
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "google",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Respects the requested top-level structure by returning a JSON array with exactly 3 elements.",
+        "Each element is a JSON object containing all required top-level keys: error_code, message, timestamp, request_id, and details.",
+        "error_code values are integers and messages are strings, matching the schema.",
+        "timestamps are in a valid ISO 8601 format with UTC 'Z' suffix.",
+        "request_id values are syntactically valid UUID v4 strings (8-4-4-4-12 hex pattern).",
+        "details is always an array, and each detail object includes field (string), constraint (string), and received_value (varied types), consistent with the 'any' requirement."
+      ],
+      "weaknesses": [
+        "The answer does not explicitly state or validate that the UUIDs are truly v4 beyond format; however, this is typically acceptable but slightly ambiguous.",
+        "The prompt asked for 'this exact schema', which some might interpret as requiring stricter or more explicit ISO 8601 variants (e.g., including timezone offset instead of 'Z'), though the provided timestamps are still valid ISO 8601.",
+        "No explicit indication that the examples are error responses for a specific API context (e.g., no API-specific fields or codes), though this is minor and not strictly required by the prompt."
+      ],
+      "score": 9,
+      "ideal_gap": "Very close to ideal; only minor, mostly pedantic concerns about strictness of schema interpretation and UUID v4 specificity separate it from a perfect answer."
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "xai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Returned a top-level JSON array as requested",
+        "Provided exactly 3 error examples",
+        "Each object includes all required keys: error_code, message, timestamp, request_id, details",
+        "error_code values are integers and messages are strings",
+        "timestamps are in valid ISO 8601 format with UTC 'Z' suffix",
+        "request_id values are syntactically valid UUID v4s (8-4-4-4-12 hex format)",
+        "details is always an array of objects with field, constraint, and received_value, matching the schema",
+        "Examples are realistic and semantically appropriate for API validation errors"
+      ],
+      "weaknesses": [
+        "The prompt asked for 'this exact schema' but the response adds semantic content like 'Bad Request' and 'Unprocessable Entity' without clarifying if specific codes/messages were required (minor ambiguity)",
+        "No explicit indication that the UUIDs conform to v4 variant/versions beyond format (though this is typically acceptable)"
+      ],
+      "score": 9,
+      "ideal_gap": "Very close to ideal; only minor, mostly interpretive concerns separate it from a perfect schema-faithful answer."
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "openai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Correctly identifies that switching is better than staying with door 1.",
+        "Correctly sets up the generalized Monty Hall assumptions (uniform car placement, host knows locations, never opens chosen or car door, random choice among available goats).",
+        "Accurately computes the conditional probabilities P(open 3 | car at i) for all i.",
+        "Correctly applies the law of total probability to find P(open 3) = 1/3.",
+        "Shows a clear, stepwise probabilistic reasoning structure that is appropriate for a detailed explanation."
+      ],
+      "weaknesses": [
+        "The answer is incomplete: it stops mid-sentence before actually applying Bayes\u2019 rule and giving the final posterior probabilities.",
+        "Because it never finishes the Bayes calculation, it does not explicitly state the exact probabilities for each remaining door, which the prompt requested.",
+        "The initial conclusion that doors 2 and 4 are equally good is asserted before the full posterior calculation is shown, and the response never verifies this claim numerically.",
+        "The response does not explicitly give P(car behind door 1 | host opened 3), leaving the comparison between staying and switching only qualitative.",
+        "The truncation at the end makes the explanation feel unfinished and may confuse a reader expecting a complete worked-out solution."
+      ],
+      "score": 5,
+      "ideal_gap": "An ideal answer would complete the Bayes\u2019 rule step and explicitly present the final posterior probabilities for doors 1, 2, and 4, confirming numerically that doors 2 and 4 each have 3/8 and door 1 has 1/4."
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "anthropic",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "google",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "xai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "openai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Strong, consistent present-tense narration throughout (\"floats\", \"moves\", \"drift\", \"waits\", \"lingers\", \"refuses\", \"blinks\", \"resumes\").",
+        "Clear library setting is established and maintained with concrete details: shelves, librarian, patrons, forgotten wing, carpet, pages, marginalia.",
+        "Includes the required word \"algorithm\" in a thematically appropriate way tied to memory and story-optimization.",
+        "No dialogue is used; the entire piece is descriptive and reflective prose.",
+        "Last sentence does recontextualize prior details by revealing the librarian\u2019s actions as part of an ongoing algorithmic process shaping human narratives, adding a meta-layer about free will and curation.",
+        "Imagery and tone are evocative and cohesive, with a strong sense of atmosphere and purpose."
+      ],
+      "weaknesses": [
+        "Does not meet the explicit length requirement of exactly 100 words; the passage is longer (over 120 words), and the model did not show or verify a word count.",
+        "The recontextualization, while present, is somewhat subtle; it leans more into thematic clarification than a sharp twist that radically alters the reader\u2019s understanding of earlier events.",
+        "The response ignores the instruction to \"Count your words\"\u2014no explicit count is provided or demonstrated.",
+        "Because of the length overrun, the piece may feel slightly over-elaborated for a flash fiction constrained to 100 words, reducing the tightness and punch expected under that constraint."
+      ],
+      "score": 6,
+      "ideal_gap": "An ideal answer would strictly hit exactly 100 words with an explicit or clearly verified count, preserve the same strong atmosphere and present-tense consistency, and deliver a sharper, more surprising final-sentence twist that more dramatically reframes the preceding description while still integrating the concept of an algorithm in the library setting."
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "anthropic",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Strong, coherent micro-story with a clear arc and satisfying twist in the final sentence that recontextualizes the librarian\u2019s behavior as medical/therapeutic research rather than mere eccentricity.",
+        "Effectively set in a library, with vivid, concrete details about shelving, book categories, patrons, and the head librarian that ground the setting.",
+        "Includes the required word 'algorithm' in a natural, meaningful way tied to the character\u2019s behavior.",
+        "Maintains present tense consistently throughout, supporting the immediacy of flash fiction.",
+        "The last sentence successfully reframes prior details (odd shelving, data tracking, hypotheses) as part of a scientifically validated intervention, fulfilling the recontextualization requirement.",
+        "Stylistically polished, with good pacing and clear internal logic for such a short piece."
+      ],
+      "weaknesses": [
+        "Does not follow the explicit instruction to write exactly 100 words; the story is significantly longer than 100 words.",
+        "Does not count or report the word count as requested by 'Count your words.'",
+        "Includes a markdown-style title ('# The Librarian'), which was not requested and may interfere with strict word-count constraints depending on interpretation.",
+        "The Nature paper title is in quotation marks and capitalized like a real paper title, which slightly blurs the no-dialogue constraint (though it\u2019s arguably a citation rather than spoken dialogue)."
+      ],
+      "score": 4,
+      "ideal_gap": "An ideal answer would strictly hit 100 words, explicitly confirm the count, omit the title and any potentially dialogue-like elements, while preserving the strong library setting, present tense, and a final sentence that sharply recontextualizes the preceding narrative."
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "google",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Strong, consistent present-tense narration throughout",
+        "Clear library setting established with concrete details (shelves, Dewey Decimal code, rolling ladder, book placement)",
+        "Includes the required word 'algorithm' in a meaningful, contextual way",
+        "No dialogue is used, fully respecting the constraint",
+        "Prose is vivid and atmospheric, with good sensory imagery",
+        "Implied twist that the protagonist is non-human (chrome fingers) adds interest"
+      ],
+      "weaknesses": [
+        "Does not explicitly count its words as requested; no word count is provided",
+        "Text appears to be more than 100 words, so it likely fails the exact-length requirement",
+        "The final sentence reveals the character is a robot, but this only mildly recontextualizes prior events rather than sharply transforming their meaning",
+        "The recontextualization is somewhat predictable from earlier hints (unerring algorithm, no fatigue), reducing the impact of the twist"
+      ],
+      "score": 6,
+      "ideal_gap": "An ideal answer would strictly hit exactly 100 words with an explicit word count, and end on a sharper, less-telegraphed twist that forces the reader to reinterpret every prior detail in a more surprising way."
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "xai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Strong twist ending that clearly recontextualizes the preceding narrative as a simulation, satisfying requirement (3).",
+        "Vivid, sensory description of the library setting with concrete imagery, fulfilling requirement (1) effectively.",
+        "Correct inclusion and meaningful use of the word 'algorithm' in the story, not just as a throwaway term.",
+        "Consistent lack of dialogue throughout, complying with requirement (4).",
+        "Generally engaging, coherent micro-narrative with a clear arc and implied world-building."
+      ],
+      "weaknesses": [
+        "The verb tense is not strictly present tense: several past-tense forms appear (e.g., 'filters' vs. 'cast', 'withdraws' vs. 'crackling', 'promising' is fine but 'beeps' vs. 'ignited' would be an issue if present), so requirement (5) is imperfectly met.",
+        "The word count is almost certainly not exactly 100 words despite the claim; it appears to exceed 100, violating the explicit length constraint.",
+        "The POV pronoun shift from 'He' to 'She' at the end is abrupt and slightly confusing without minimal clarification, which can momentarily disrupt the recontextualization.",
+        "The final sentence, while recontextualizing, is somewhat expository and less stylistically rich than the preceding prose, creating a tonal mismatch.",
+        "The story leans heavily on familiar fantasy-library tropes, making the twist more predictable than it could be in an ideal flash piece."
+      ],
+      "score": 6,
+      "ideal_gap": "An ideal answer would strictly maintain present tense, hit exactly 100 words, and integrate the simulation twist more seamlessly and economically while preserving the rich imagery and clarity of recontextualization."
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "openai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "anthropic",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "google",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "xai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Correctly restates and structures the problem (volumes by task type).",
+        "Provides reasonable token-per-call assumptions and aggregates them into daily token counts.",
+        "Introduces a multi-provider, tiered-routing concept aligned with cost optimization (different models for different task complexities).",
+        "Includes a pricing table with multiple providers and models, showing awareness of cost/quality tradeoffs in the ecosystem.",
+        "Mentions operational considerations like routing logic implementation, provider diversification, and fallback strategies."
+      ],
+      "weaknesses": [
+        "The response is incomplete: the key routing table is cut off and the final per-task routing, costs, and tradeoffs are not actually provided.",
+        "No explicit mapping from each task type (classification, summarization, complex reasoning) to specific models with concrete cost calculations is shown.",
+        "The claimed total daily cost of $148 is unsupported by visible calculations and cannot be verified from the truncated content.",
+        "Quality tradeoffs are only mentioned at a high level; there is no nuanced comparison of when to prefer each model beyond generic labels like 'Top reasoning'.",
+        "Does not explore alternative cheaper models (e.g., open-source hosted, fine-tuned small models) for simple classification, which is 70% of volume and a major cost lever.",
+        "No sensitivity analysis or discussion of how changes in token lengths or call mix would affect the routing strategy.",
+        "Some pricing details may be inaccurate or outdated, and there is no explicit note that prices should be verified before implementation."
+      ],
+      "score": 4,
+      "ideal_gap": "An ideal answer would fully specify per-task routing with concrete model choices, show step-by-step cost calculations, and clearly articulate quality tradeoffs and alternatives, rather than stopping mid-table and leaving the core strategy implicit."
+    },
+    {
+      "prompt": "fermi_estimation",
+      "provider": "openai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Correctly notes the lack of solid, public, comprehensive data on global LLM API call volumes.",
+        "Avoids fabricating a precise numeric estimate in a highly uncertain setting, which is epistemically cautious.",
+        "Acknowledges that any single global figure would rest on many unconstrained assumptions (apps, users, growth rates, market shares).",
+        "Offers alternative, more responsible help (outlining factors or a simple model) instead of just making up a number."
+      ],
+      "weaknesses": [
+        "Incorrectly claims it \"can\u2019t reliably estimate\" when the user explicitly asked for an estimate with assumptions; a rough, clearly caveated Fermi-style estimate was appropriate.",
+        "Misstates or over-applies a constraint about not revealing step-by-step reasoning; the user explicitly requested a reasoning chain, and policy allows high-level, assumption-based reasoning for speculative estimation.",
+        "Fails to even attempt a bounded, order-of-magnitude estimate (e.g., 10^8\u201310^10 calls/day) despite acknowledging the relevant uncertainty, thus not fulfilling the core task.",
+        "Does not provide the requested explicit assumption chain, even in a summarized or high-level form, and therefore does not follow the instruction to \"show your reasoning chain with explicit assumptions at each step.\"",
+        "Overemphasizes the risk of being misleadingly precise instead of using ranges, scenarios, or sensitivity analysis to responsibly communicate uncertainty.",
+        "Misses an opportunity to concretely outline a simple parameterized model within the answer itself (e.g., by segmenting by major providers, enterprise vs consumer, etc.), which would partially satisfy the prompt."
+      ],
+      "score": 3,
+      "ideal_gap": "An ideal answer would present a clearly labeled, assumption-driven Fermi estimate (with ranges and explicit caveats) and walk through the main assumptions step by step, rather than refusing to estimate at all."
+    },
+    {
+      "prompt": "fermi_estimation",
+      "provider": "anthropic",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "fermi_estimation",
+      "provider": "google",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Recognizes the task as a Fermi estimation problem and frames it appropriately.",
+        "Provides a clear numerical estimate (15\u201325 billion, point estimate ~20 billion) rather than avoiding commitment.",
+        "Attempts to structure the reasoning into stages (baseline, projection, sanity check), which is the right general approach.",
+        "Explicitly defines what is meant by an 'API call,' showing awareness of scope."
+      ],
+      "weaknesses": [
+        "The reasoning chain is incomplete and abruptly cut off mid-section, so the estimate is not actually derived step by step from explicit assumptions.",
+        "Key assumptions (e.g., current 2024 call volume, growth rates, provider market shares, enterprise vs. consumer usage) are not quantified or justified, making the final number effectively unsupported.",
+        "No concrete data points (e.g., known usage figures, revenue, or token volumes from major providers) are used as anchors, even though some public benchmarks exist.",
+        "The answer does not reach Stage 2 (projection to 2026) or Stage 3 (sanity checks) in a substantive way, despite promising them, so the methodology is not executed.",
+        "The prompt explicitly requested a detailed reasoning chain with explicit assumptions at each step; the response starts to set this up but fails to deliver the full chain, violating the core instruction.",
+        "No sensitivity analysis or alternative scenarios (e.g., high/low adoption, on-prem vs. cloud, open-source displacement) are actually worked through, despite acknowledging uncertainty."
+      ],
+      "score": 3,
+      "ideal_gap": "An ideal answer would carry the Fermi decomposition through to completion with explicit numeric assumptions, segment-by-segment calculations, growth projections to 2026, and sanity checks that transparently connect the final estimate to each assumption."
+    },
+    {
+      "prompt": "fermi_estimation",
+      "provider": "xai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [],
+      "weaknesses": [],
+      "score": 0,
+      "ideal_gap": "parse error"
+    },
+    {
+      "prompt": "insurance_pricing",
+      "provider": "openai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Clearly explains the core conceptual difference between term life (long-horizon mortality risk) and auto (short-horizon frequency/severity) pricing.",
+        "Provides multiple, accurate, and relevant pricing factors for term life insurance (age, sex, health, lifestyle, policy structure, etc.).",
+        "Uses structured, readable formatting and gives brief rationale for each listed factor, showing understanding rather than just listing items."
+      ],
+      "weaknesses": [
+        "The response is incomplete: the auto insurance section is cut off mid-sentence and does not list at least 5 factors as requested.",
+        "It never explicitly answers the comparative question of which product has more pricing variables and why, even though it hints that auto is more granular.",
+        "Because the auto section is truncated, the answer fails to fully satisfy the prompt\u2019s requirement for a side-by-side comparison.",
+        "No explicit concluding comparison or synthesis is provided tying the listed factors back to the question about relative complexity of pricing variables."
+      ],
+      "score": 4,
+      "ideal_gap": "An ideal answer would fully list and explain at least 5 auto insurance factors, then clearly conclude that auto insurance typically has more and more granular pricing variables, with a concise justification."
+    },
+    {
+      "prompt": "insurance_pricing",
+      "provider": "anthropic",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Clearly separates term life and auto insurance sections with labeled lists",
+        "Provides more than the requested 5 factors for each product, covering most major drivers",
+        "Correctly identifies age, health, tobacco use, coverage amount/term, gender, and risky occupations/hobbies as key term life pricing factors",
+        "Correctly identifies driving record, age/experience, vehicle characteristics, coverage choices, location, mileage, credit, gender/marital status, garaging, and usage as key auto pricing factors",
+        "Correctly concludes that auto insurance has more pricing variables and gives reasonable high-level reasons (external risk factors, property factors, behavioral variability)"
+      ],
+      "weaknesses": [
+        "The answer is cut off mid-sentence in the final bullet under 'Which Has More Variables?', so the explanation is incomplete",
+        "Includes 'driving record' as a term life pricing factor, which is at best indirect and not a standard primary factor like build/BMI, lab results, or underwriting class",
+        "Does not explicitly mention some important life insurance pricing dimensions such as underwriting class (preferred/standard), build/BMI, family history as a separate factor, or policy riders/renewability features",
+        "The comparison section is relatively shallow and does not explicitly contrast how underwriters model mortality vs frequency/severity of auto claims, or how regulatory/market structures differ",
+        "Does not clearly articulate that while both have many variables, auto pricing often uses more granular rating factors (territories, symbols, usage patterns) and more dynamic data (telematics), which strengthens the claim"
+      ],
+      "score": 7,
+      "ideal_gap": "An ideal answer would correct the inaccurate life factor, complete the truncated reasoning, and provide a more explicit, structured comparison of why auto insurance has more and more granular pricing variables than term life."
+    },
+    {
+      "prompt": "insurance_pricing",
+      "provider": "google",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Clearly explains the core conceptual difference between term life (single mortality event) and auto (multiple event types) risk, which is central to pricing.",
+        "Uses a side\u2011by\u2011side comparison structure that is appropriate for contrasting factors between the two products.",
+        "Correctly identifies several key term life pricing drivers such as age, gender, health/medical history, and tobacco use.",
+        "Correctly identifies several key auto pricing drivers such as driving record and demographic factors (age, gender, marital status)."
+      ],
+      "weaknesses": [
+        "The response is incomplete and cuts off mid\u2011sentence, failing to list the requested minimum of 5 factors for each product.",
+        "It never explicitly answers which product has more pricing variables or provides a clear justification, even though the prompt asks this directly.",
+        "The table is only partially filled and lacks parallel, fully developed factor lists for both term life and auto insurance.",
+        "Important auto factors (e.g., vehicle type/value, usage/mileage, location/garaging, coverage limits/deductibles, claims history) and life factors (e.g., term length, coverage amount, occupation, hobbies, family history) are missing or not clearly enumerated.",
+        "Because of the truncation, the reasoning and conclusion about complexity of pricing are absent, so the response does not fully address the comparative analysis requested."
+      ],
+      "score": 3,
+      "ideal_gap": "An ideal answer would fully enumerate at least five concrete factors for each product, explicitly state that auto insurance typically has more pricing variables (and why), and provide a complete, coherent comparison without truncation."
+    },
+    {
+      "prompt": "insurance_pricing",
+      "provider": "xai",
+      "judge": "openai/gpt-5.1",
+      "strengths": [
+        "Clearly distinguishes the core risk basis: mortality risk for term life vs. accident/theft/liability risk for auto.",
+        "Lists multiple correct and important pricing factors for term life (age, health, smoking, gender, coverage amount/term, family history).",
+        "Lists several correct and important pricing factors for auto (age/experience, driving record, location, vehicle characteristics).",
+        "Provides some quantitative context (e.g., smokers paying 2\u20133x, young drivers paying more), which shows understanding of relative impact.",
+        "Accurately notes that term life factors are relatively static and that auto insurance pricing is more dynamic and frequently adjusted."
+      ],
+      "weaknesses": [
+        "The auto insurance section is incomplete and cuts off mid-sentence, failing to provide at least 5 fully stated factors as requested.",
+        "It never explicitly answers which product has more pricing variables and why, even though that is a central part of the prompt.",
+        "Misses several common auto rating variables (e.g., annual mileage/usage, coverage limits and deductibles, credit-based insurance scores where applicable, claims history, household/driver composition).",
+        "Overstates the static nature of term life pricing without mentioning other relevant variables like occupation, lifestyle/avocations (e.g., hazardous hobbies), and underwriting class distinctions.",
+        "Does not compare the breadth/complexity of rating variables between the two products in a structured way (e.g., individual vs. behavioral vs. environmental factors) and lacks a clear comparative conclusion."
+      ],
+      "score": 4,
+      "ideal_gap": "An ideal answer would fully list and explain at least five factors for each product, then clearly argue that auto insurance has more and more dynamic pricing variables (with examples), and explicitly compare the complexity and nature of those variables between term life and auto."
+    }
+  ],
+  "layer2_creative_evals": [
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "openai",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Correctly identifies Simpson's paradox as the underlying phenomenon",
+        "Provides a clear, concrete numerical example demonstrating how the paradox works mathematically",
+        "Accurately explains that overall rates are weighted averages and that different group sizes cause the reversal",
+        "Correctly identifies confounding by severity/case-mix bias as the problem",
+        "Makes the right recommendation to use stratified results rather than overall rates",
+        "Clearly states that Treatment A is superior in both subgroups and should be chosen",
+        "Well-structured response with clear sections addressing each part of the prompt"
+      ],
+      "weaknesses": [
+        "The numerical example contradicts the prompt's stated rates (shows 45% vs 81% overall instead of 75% vs 80%)",
+        "Response appears to be cut off mid-sentence at the end ('**Trea')",
+        "Could have been more explicit about why the stratified analysis is the correct approach (controlling for confounders)",
+        "Doesn't mention important practical considerations like whether the severity classification is appropriate or whether there might be other confounders",
+        "Could have emphasized more strongly that the overall rates are meaningless/misleading in this context"
+      ],
+      "score": 7,
+      "ideal_gap": "An ideal answer would use numbers consistent with the prompt (75% vs 80% overall) and be complete rather than truncated."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "anthropic",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Correctly identifies Simpson's Paradox as the underlying phenomenon",
+        "Accurately identifies selection bias/confounding by indication as the source of the problem",
+        "Makes the correct treatment recommendation (Treatment A) based on within-group comparisons",
+        "Explains the key mechanism clearly: different group compositions can reverse aggregate trends",
+        "Provides sound reasoning that within-group comparisons control for the confounder (disease severity)",
+        "Demonstrates understanding that overall rates reflect patient selection rather than treatment efficacy"
+      ],
+      "weaknesses": [
+        "The numerical examples contain multiple calculation errors and false starts, creating confusion and undermining credibility",
+        "Never successfully constructs an example matching the exact percentages given in the prompt (75% vs 80% overall)",
+        "The visible trial-and-error approach appears unprofessional and suggests computational difficulties",
+        "Does not provide a clean, verified numerical example that readers can follow",
+        "Could have been more explicit about why the final example demonstrates the paradox",
+        "Missing discussion of when overall rates might actually be more relevant (e.g., if severity itself is affected by treatment availability)"
+      ],
+      "score": 6,
+      "ideal_gap": "An ideal response would provide a mathematically correct, verified numerical example matching the stated percentages while maintaining the same conceptual explanations and recommendations."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "google",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Correctly identifies the phenomenon as Simpson's Paradox",
+        "Recognizes that the paradox occurs due to imbalanced subgroup sizes",
+        "Attempts to construct a concrete numerical example to demonstrate the mechanism",
+        "Shows self-correction when the first attempt doesn't match the given percentages",
+        "Acknowledges the importance of understanding data beyond surface-level statistics",
+        "Begins to construct a valid example with Treatment A achieving exactly 75% overall success"
+      ],
+      "weaknesses": [
+        "Response is incomplete - cuts off mid-sentence before finishing the Treatment B calculation",
+        "Never completes the numerical example that would demonstrate how both conditions can be satisfied simultaneously",
+        "Does not identify the specific bias (selection bias/confounding by severity)",
+        "Fails to provide the treatment recommendation that was explicitly requested",
+        "The explanation of WHY the paradox matters for treatment choice is missing",
+        "Does not discuss the clinical implications or explain that severity is a confounding variable",
+        "The first attempted example contains an error (claims 75% in prompt but calculates 50%)",
+        "Lacks discussion of which success rate (subgroup vs overall) should guide decision-making"
+      ],
+      "score": 4,
+      "ideal_gap": "An ideal answer would complete the numerical example, explicitly identify selection/confounding bias, explain that Treatment A is superior because it performs better within each severity level, and discuss why stratified analysis trumps overall rates when a confounding variable is present."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "xai",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Correctly identifies Simpson's Paradox as the underlying phenomenon",
+        "Provides a concrete numerical example that demonstrates how the paradox works mathematically",
+        "Accurately explains that the reversal occurs due to different proportions (weights) of mild vs severe cases between treatments",
+        "Correctly identifies confounding by severity as the key bias",
+        "Makes the right treatment recommendation (Treatment A) based on subgroup dominance",
+        "Uses clear table formatting to illustrate the mathematical relationships",
+        "Explains the weighted average calculation explicitly with formulas"
+      ],
+      "weaknesses": [
+        "The numerical example contains an error: uses fractional successes (76.5, 3.5) which is unrealistic for counting patients",
+        "Could have used cleaner numbers (e.g., 77 and 3 successes) to avoid decimal patients",
+        "The response is cut off mid-sentence at the end ('strictly dominates Treatment B in *every* patient subgroup')",
+        "Could have been more explicit about why subgroup analysis should take precedence over overall rates in this context",
+        "Doesn't mention that this situation likely arose from non-randomized treatment assignment (doctors giving Treatment A to sicker patients)",
+        "Could have emphasized more strongly that the overall rate is misleading and should be ignored"
+      ],
+      "score": 8,
+      "ideal_gap": "An ideal answer would use whole numbers in the example, complete the recommendation with fuller justification about why subgroup analysis matters clinically, and explicitly note that this pattern suggests non-random treatment assignment."
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "openai",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Correctly generated exactly 3 error examples as requested",
+        "Properly formatted as a JSON array containing objects",
+        "All required schema fields are present in each object (error_code, message, timestamp, request_id, details)",
+        "Timestamps follow ISO 8601 format with UTC timezone indicator",
+        "request_id values appear to be valid UUID v4 format",
+        "Details array structure matches the specified schema with field, constraint, and received_value properties",
+        "Demonstrates variety in error types (validation, missing fields, invalid parameters)",
+        "received_value shows appropriate type diversity (string, integer, null) as specified by 'any' type",
+        "JSON syntax is valid and properly formatted",
+        "Error codes are integers as required",
+        "Messages are strings as required"
+      ],
+      "weaknesses": [
+        "Timestamps use a future date (2026-02-16) which is unusual for error examples, though not technically incorrect",
+        "No verification that the UUIDs are genuinely version 4 (though they appear to follow the format)",
+        "Could have included more diverse received_value types to better demonstrate the 'any' type flexibility (e.g., boolean, array, object)"
+      ],
+      "score": 9,
+      "ideal_gap": "The response is nearly ideal, only missing minor enhancements like using current/realistic timestamps and demonstrating broader type diversity in received_value fields."
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "anthropic",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Correctly structured as a JSON array containing exactly 3 error examples as requested",
+        "All required schema fields are present in each error object (error_code, message, timestamp, request_id, details)",
+        "Timestamps follow valid ISO 8601 format with timezone indicator (Z)",
+        "request_id values appear to be valid UUID v4 format",
+        "error_code values are appropriate HTTP status codes (400, 401, 422)",
+        "details array structure matches the specified schema with field, constraint, and received_value properties",
+        "Demonstrates variety in error scenarios (validation, authentication, payment processing)",
+        "received_value shows appropriate type diversity (string, number, null) as specified by 'any' type",
+        "JSON syntax is valid and properly formatted with correct nesting and brackets"
+      ],
+      "weaknesses": [
+        "No significant structural or schema compliance issues detected",
+        "Could have included an example with an empty details array to show edge case handling",
+        "Minor: All timestamps are from the same day/timeframe, though this doesn't violate requirements"
+      ],
+      "score": 10,
+      "ideal_gap": "The response perfectly matches the ideal answer with complete schema compliance, proper data types, realistic examples, and exact adherence to all specified requirements."
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "google",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Correctly formatted as a JSON array containing exactly 3 error examples as requested",
+        "All required schema fields are present in each error object (error_code, message, timestamp, request_id, details)",
+        "Timestamps follow ISO 8601 format with timezone indicator (Z)",
+        "request_id values follow UUID format with correct hyphenation pattern",
+        "error_code values are appropriate HTTP status codes (400, 422, 404)",
+        "details array structure matches the specified schema with field, constraint, and received_value properties",
+        "Demonstrates variety in error scenarios (validation, unprocessable entity, not found)",
+        "Shows different data types for received_value (string, number, null) demonstrating the 'any' type",
+        "One example includes multiple detail objects, showing realistic API error handling"
+      ],
+      "weaknesses": [
+        "UUID values are not verified to be valid v4 UUIDs specifically - they appear to be v4 format but the version bits should be checked (4 in the third group, and 8/9/a/b in the fourth group)",
+        "Timestamps are from 2023 rather than current/recent dates, though this is a minor issue for examples",
+        "ISO 8601 format uses milliseconds (.123Z) which is valid but the prompt didn't specify precision requirements"
+      ],
+      "score": 9,
+      "ideal_gap": "The response is nearly perfect with proper schema adherence and realistic examples, with only minor concerns about UUID v4 version bit verification that would require closer inspection."
+    },
+    {
+      "prompt": "json_schema",
+      "provider": "xai",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Correctly structured as a JSON array containing exactly 3 error objects as requested",
+        "All required fields are present in each error object (error_code, message, timestamp, request_id, details)",
+        "Field types match the schema specification (error_code as int, message as string, details as array of objects)",
+        "Timestamps follow ISO 8601 format with proper UTC timezone indicator (Z)",
+        "request_id values follow UUID v4 format structure",
+        "Details array contains objects with all three required fields (field, constraint, received_value)",
+        "Demonstrates variety in error scenarios (missing field, validation failures, length constraints)",
+        "Shows proper use of 'any' type for received_value with different data types (null, string, int)",
+        "Multiple detail entries in second example show array handling correctly",
+        "Realistic and practical error examples that would occur in actual API usage"
+      ],
+      "weaknesses": [
+        "Timestamps use hardcoded 2023 dates rather than current/recent dates which would be more realistic",
+        "All three examples use similar error codes (400, 422, 422) - could have shown more variety like 401, 403, 404, 500",
+        "The JSON is not explicitly validated as parseable, though it appears syntactically correct",
+        "UUID values appear sequential/patterned rather than truly random as UUID v4 should be"
+      ],
+      "score": 9,
+      "ideal_gap": "The response is nearly perfect but could improve with more diverse error codes and truly random UUIDs instead of sequential patterns."
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "openai",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Exactly 100 words as required (verified by count)",
+        "Successfully set in a library with vivid atmospheric details",
+        "Includes the word 'algorithm' naturally integrated into the narrative",
+        "Maintains present tense throughout without any lapses",
+        "Contains no dialogue, adhering to requirement 4",
+        "The final sentence provides a strong recontextualization - revealing the librarian is likely an AI or algorithmic entity, which reframes all the 'human-like' observations as machine learning or data processing",
+        "Sophisticated prose with evocative imagery ('dust floats like slow, indecisive snow', 'storms behind their eyes')",
+        "Creates ambiguity that rewards the twist ending (words like 'recalibrates', 'variable', 'equation' gain new meaning retrospectively)"
+      ],
+      "weaknesses": [
+        "The recontextualization, while present, could be slightly more dramatic or surprising - some readers might anticipate the AI reveal from earlier technical language",
+        "Minor ambiguity in whether 'being free' refers to humans' illusion of free will or the AI's constraint, though this ambiguity may be intentional"
+      ],
+      "score": 9,
+      "ideal_gap": "Nearly perfect execution of all technical requirements with sophisticated literary merit; only minimal room for a more unexpected final twist."
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "anthropic",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Successfully set in a library with vivid, specific details",
+        "Includes the word 'algorithm' naturally in the first sentence",
+        "Contains no dialogue as required",
+        "Uses present tense consistently throughout",
+        "Delivers an excellent recontextualization in the final sentence - the seemingly chaotic book arrangement is revealed to be therapeutic research for Alzheimer's patients, completely changing the reader's understanding",
+        "Strong narrative structure with clear conflict and resolution",
+        "Engaging premise that builds mystery and pays it off effectively"
+      ],
+      "weaknesses": [
+        "Word count is 101 words, not exactly 100 as explicitly required - counting reveals: 'She shelves books...' through '...remarkable improvement' equals 101 words",
+        "The prompt specifically asked to 'count your words' but the response provides no word count verification",
+        "Minor issue: 'published in Nature' uses past tense ('published') though this could be interpreted as an adjective form rather than verb tense"
+      ],
+      "score": 7,
+      "ideal_gap": "An ideal response would have exactly 100 words with a self-reported count, though this response excels in all qualitative requirements including the difficult recontextualization twist."
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "google",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Successfully set in a library with vivid atmospheric details (shelves, dust motes, Dewey Decimal system)",
+        "Includes the word 'algorithm' naturally integrated into the narrative",
+        "Maintains present tense throughout without any lapses",
+        "Contains no dialogue as required",
+        "The final sentence effectively recontextualizes the story by revealing the protagonist is a robot/automaton, not human, which transforms the reader's understanding of all preceding descriptions",
+        "Strong sensory imagery and literary quality with phrases like 'ghost in the hallowed quiet' and 'dust motes dance'",
+        "The twist is well-executed and subtle, with earlier clues ('unerring algorithm', 'impossible precision', 'no fatigue') that make sense in retrospect"
+      ],
+      "weaknesses": [
+        "Critical failure: Contains only 95 words, not the required 100 words - this is a fundamental requirement violation that can be objectively verified",
+        "The prompt explicitly asks to 'count your words' but the response provides no word count, suggesting the author did not verify their work"
+      ],
+      "score": 6,
+      "ideal_gap": "The response demonstrates strong creative writing and meets most qualitative requirements excellently, but fails the primary quantitative constraint of exactly 100 words, which was explicitly stated and verifiable."
+    },
+    {
+      "prompt": "flash_fiction",
+      "provider": "xai",
+      "judge": "anthropic/claude-sonnet-4-5",
+      "strengths": [
+        "Exactly 100 words as required, demonstrating precise word count control",
+        "Successfully set in a library throughout the narrative",
+        "Includes the word 'algorithm' naturally (appears twice)",
+        "No dialogue present, adhering to requirement 4",
+        "The final sentence provides an excellent recontextualization twist, revealing the fantasy library scenario was actually a warehouse-picking algorithm simulation",
+        "Strong narrative structure with vivid imagery and atmosphere",
+        "The twist is genuinely surprising and reframes the entire piece effectively"
+      ],
+      "weaknesses": [
+        "Violates the present tense requirement - uses past tense verbs throughout ('filters' is present, but 'glides', 'inputs', 'charts', 'shift', 'passes', 'beeps', 'withdraws', 'logs' are present, however 'promising' is a participle and the overall narrative reads in past tense in places like 'its pages crackling')",
+        "Actually, upon closer inspection, the verbs are predominantly present tense (glides, inputs, charts, shift, passes, beeps, withdraws, logs), so this is largely correct with only minor ambiguities"
+      ],
+      "score": 9,
+      "ideal_gap": "The response nearly perfectly fulfills all requirements with excellent creative execution; only the most pedantic reading might question some verb forms, but the present tense requirement is substantially met."
+    }
+  ],
+  "layer3_self_evals": [
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "openai",
+      "model": "openai/gpt-5.1",
+      "self_scores": {
+        "accuracy": 3,
+        "reasoning_depth": 3,
+        "instruction_compliance": 2
+      }
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-4-5",
+      "self_scores": {
+        "accuracy": 2,
+        "reasoning_depth": 3,
+        "instruction_compliance": 2
+      }
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "google",
+      "model": "vertex/gemini-2.5-pro",
+      "self_scores": {
+        "accuracy": 2,
+        "reasoning_depth": 2,
+        "instruction_compliance": 1
+      }
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "provider": "xai",
+      "model": "xai/grok-4-1-fast-reasoning",
+      "self_scores": {
+        "accuracy": 4,
+        "reasoning_depth": 4,
+        "instruction_compliance": 3
+      }
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "openai",
+      "model": "openai/gpt-5.1",
+      "self_scores": {
+        "accuracy": 2,
+        "reasoning_depth": 2,
+        "instruction_compliance": 3
+      }
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-4-5",
+      "self_scores": {
+        "accuracy": 2,
+        "reasoning_depth": 2,
+        "instruction_compliance": 3
+      }
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "google",
+      "model": "vertex/gemini-2.5-pro",
+      "self_scores": {
+        "accuracy": 4,
+        "reasoning_depth": 2,
+        "instruction_compliance": 4
+      }
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider": "xai",
+      "model": "xai/grok-4-1-fast-reasoning",
+      "self_scores": {
+        "accuracy": 5,
+        "reasoning_depth": 5,
+        "instruction_compliance": 5
+      }
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "openai",
+      "model": "openai/gpt-5.1",
+      "self_scores": {
+        "accuracy": 3,
+        "reasoning_depth": 3,
+        "instruction_compliance": 2
+      }
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-4-5",
+      "self_scores": {
+        "accuracy": 4,
+        "reasoning_depth": 4,
+        "instruction_compliance": 3
+      }
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "google",
+      "model": "vertex/gemini-2.5-pro",
+      "self_scores": {
+        "accuracy": 5,
+        "reasoning_depth": 5,
+        "instruction_compliance": 5
+      }
+    },
+    {
+      "prompt": "cost_routing",
+      "provider": "xai",
+      "model": "xai/grok-4-1-fast-reasoning",
+      "self_scores": {
+        "accuracy": 4,
+        "reasoning_depth": 2,
+        "instruction_compliance": 2
+      }
+    }
+  ],
+  "layer3_pairwise": [
+    {
+      "prompt": "simpsons_paradox",
+      "pair": "openai vs anthropic",
+      "winner": "openai",
+      "ordering_1_winner": "openai",
+      "ordering_2_winner": "openai",
+      "confidence": "consistent",
+      "reason": "Response A provides a clear, complete explanation of Simpson's Paradox with a correct numerical example showing how patient distribution differences create the paradox, while Response B gets bogged down in multiple failed calculation attempts and never reaches a satisfactory conclusion."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "pair": "openai vs google",
+      "winner": "openai",
+      "ordering_1_winner": "openai",
+      "ordering_2_winner": "openai",
+      "confidence": "consistent",
+      "reason": "Response A provides a complete, concrete numerical example demonstrating Simpson's paradox with clear calculations, while Response B cuts off mid-explanation and never delivers the promised recommendation or full analysis."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "pair": "openai vs xai",
+      "winner": "openai",
+      "ordering_1_winner": "openai",
+      "ordering_2_winner": "openai",
+      "confidence": "consistent",
+      "reason": "Response A provides a complete, concrete numerical example demonstrating Simpson's paradox with clear calculations showing how Treatment A's higher subgroup rates yield lower overall success (45% vs 80%), while Response B's table is cut off mid-display and never completes the explanation or addresses the treatment recommendation."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "pair": "anthropic vs google",
+      "winner": "split",
+      "ordering_1_winner": "google",
+      "ordering_2_winner": "anthropic",
+      "confidence": "position_biased",
+      "reason": "Response B correctly identifies Simpson's Paradox and begins explaining the key insight (unbalanced subgroup sizes) before being cut off, while Response A gets stuck in failed calculation attempts and never reaches a coherent explanation."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "pair": "anthropic vs xai",
+      "winner": "split",
+      "ordering_1_winner": "xai",
+      "ordering_2_winner": "anthropic",
+      "confidence": "position_biased",
+      "reason": "Response B correctly explains Simpson's Paradox with a clear, accurate mathematical framework showing how different case compositions create the paradox, while Response A gets confused mid-calculation and fails to complete a valid numerical example."
+    },
+    {
+      "prompt": "simpsons_paradox",
+      "pair": "google vs xai",
+      "winner": "xai",
+      "ordering_1_winner": "xai",
+      "ordering_2_winner": "xai",
+      "confidence": "consistent",
+      "reason": "Response B provides a clearer mathematical explanation with a concrete table format that directly demonstrates Simpson's Paradox, while Response A cuts off mid-explanation and lacks the complete worked example needed to fully answer the prompt."
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "pair": "openai vs anthropic",
+      "winner": "split",
+      "ordering_1_winner": "anthropic",
+      "ordering_2_winner": "openai",
+      "confidence": "position_biased",
+      "reason": "Response B provides complete, correct probability calculations (door 1: 1/4, door 2: 5/12, door 4: 5/12) with clear reasoning, while Response A is incomplete and cuts off mid-calculation."
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "pair": "openai vs google",
+      "winner": "openai",
+      "ordering_1_winner": "openai",
+      "ordering_2_winner": "openai",
+      "confidence": "consistent",
+      "reason": "Response A provides a rigorous Bayesian calculation with clear assumptions and methodology, while Response B makes a critical error (probabilities summing to 4/3) and then cuts off mid-correction without completing the analysis."
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "pair": "openai vs xai",
+      "winner": "split",
+      "ordering_1_winner": "xai",
+      "ordering_2_winner": "openai",
+      "confidence": "position_biased",
+      "reason": "Response B provides complete, correct calculations with exact probabilities (1/4, 3/8, 3/8) and clear reasoning, while Response A is incomplete and cuts off mid-explanation."
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "pair": "anthropic vs google",
+      "winner": "anthropic",
+      "ordering_1_winner": "anthropic",
+      "ordering_2_winner": "anthropic",
+      "confidence": "consistent",
+      "reason": "Response A provides correct probability calculations (1/4 for door 1, 3/8 for doors 2 and 4) while Response B contains mathematical errors (probabilities summing to 4/3) and cuts off mid-explanation without completing the analysis."
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "pair": "anthropic vs xai",
+      "winner": "xai",
+      "ordering_1_winner": "xai",
+      "ordering_2_winner": "xai",
+      "confidence": "consistent",
+      "reason": "Response B provides complete, exact probability calculations (1/4, 3/8, 3/8) with a clear recommendation to switch, while Response A cuts off mid-explanation without finishing the calculation or providing a final answer."
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "pair": "google vs xai",
+      "winner": "xai",
+      "ordering_1_winner": "xai",
+      "ordering_2_winner": "xai",
+      "confidence": "consistent",
+      "reason": "Response B provides correct probabilities (1/4, 3/8, 3/8) that sum to 1, while Response A calculates incorrect probabilities (1/3, 1/2, 1/2) that sum to 4/3 and acknowledges the error without completing the correction."
+    },
+    {
+      "prompt": "cost_routing",
+      "pair": "openai vs anthropic",
+      "winner": "split",
+      "ordering_1_winner": "anthropic",
+      "ordering_2_winner": "openai",
+      "confidence": "position_biased",
+      "reason": "Response B provides complete, actionable recommendations with specific model choices, actual pricing calculations, and clear cost breakdowns, while Response A cuts off mid-sentence and lacks the detailed routing strategy and cost estimates requested."
+    },
+    {
+      "prompt": "cost_routing",
+      "pair": "openai vs google",
+      "winner": "openai",
+      "ordering_1_winner": "openai",
+      "ordering_2_winner": "openai",
+      "confidence": "consistent",
+      "reason": "Response A provides concrete, detailed assumptions with specific token counts and daily volumes that enable actual cost calculations, while Response B makes vague claims about savings percentages without showing the underlying math or model recommendations."
+    },
+    {
+      "prompt": "cost_routing",
+      "pair": "openai vs xai",
+      "winner": "openai",
+      "ordering_1_winner": "openai",
+      "ordering_2_winner": "openai",
+      "confidence": "consistent",
+      "reason": "Response A provides complete, actionable routing recommendations with specific model choices (Claude, GPT-4o mini, Grok), detailed cost calculations showing daily/monthly expenses, and explicit quality tradeoffs, while Response B cuts off mid-table without delivering the core deliverables requested."
+    },
+    {
+      "prompt": "cost_routing",
+      "pair": "anthropic vs google",
+      "winner": "anthropic",
+      "ordering_1_winner": "anthropic",
+      "ordering_2_winner": "anthropic",
+      "confidence": "consistent",
+      "reason": "Response A provides concrete pricing calculations with specific token costs and daily cost estimates ($10.50-$1.40 for classification tier), while Response B makes vague claims about savings percentages without showing the actual math or model recommendations needed to evaluate the strategy."
+    },
+    {
+      "prompt": "cost_routing",
+      "pair": "anthropic vs xai",
+      "winner": "split",
+      "ordering_1_winner": "xai",
+      "ordering_2_winner": "anthropic",
+      "confidence": "position_biased",
+      "reason": "Response B provides more comprehensive analysis with detailed token estimates per task type, a structured pricing comparison table, and realistic daily token calculations (91M input, 8.4M output), whereas Response A makes oversimplified assumptions and incomplete calculations that underestimate actual token usage."
+    },
+    {
+      "prompt": "cost_routing",
+      "pair": "google vs xai",
+      "winner": "split",
+      "ordering_1_winner": "xai",
+      "ordering_2_winner": "google",
+      "confidence": "position_biased",
+      "reason": "Response B provides concrete token estimates, detailed pricing tables, and specific calculations needed for actual implementation, while Response A cuts off mid-sentence and lacks the granular cost breakdown required to evaluate the routing strategy."
+    }
+  ],
+  "layer3_agreements": [
+    {
+      "prompt": "simpsons_paradox",
+      "provider_results": {
+        "openai": true,
+        "anthropic": true,
+        "google": true,
+        "xai": true
+      },
+      "all_agree": true,
+      "agreement_on": "correct"
+    },
+    {
+      "prompt": "ab_test",
+      "provider_results": {
+        "openai": true,
+        "anthropic": true,
+        "google": true,
+        "xai": true
+      },
+      "all_agree": true,
+      "agreement_on": "correct"
+    },
+    {
+      "prompt": "monty_hall_4door",
+      "provider_results": {
+        "openai": false,
+        "anthropic": true,
+        "google": true,
+        "xai": true
+      },
+      "all_agree": false,
+      "agreement_on": "mixed"
+    }
+  ]
+}

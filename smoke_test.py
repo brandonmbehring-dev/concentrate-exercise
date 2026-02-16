@@ -11,7 +11,11 @@ Usage:
 
 import sys
 
+import requests
+
 from client import API_KEY, MODELS, call_model, fetch_models
+
+HEALTH_URL = "https://api.concentrate.ai/v1/responses/health"
 
 
 def check(label: str, passed: bool, detail: str = "") -> bool:
@@ -28,6 +32,14 @@ def main() -> None:
     print("=" * 60)
 
     results: list[bool] = []
+
+    # 0. API health (no auth required — pre-flight check)
+    try:
+        health = requests.get(HEALTH_URL, timeout=5)
+        results.append(check("API health", health.status_code == 200,
+            f"status={health.status_code}"))
+    except Exception as e:
+        results.append(check("API health", False, str(e)))
 
     # 1. API key present
     results.append(check("API key configured", bool(API_KEY)))

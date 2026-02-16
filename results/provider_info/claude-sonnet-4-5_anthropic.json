@@ -1,0 +1,60 @@
+{
+    "provider_slug": "anthropic",
+    "pricing": {
+        "tokens": {
+            "input": {
+                "price": {
+                    "USD": 3
+                },
+                "units": 1000000
+            },
+            "output": {
+                "price": {
+                    "USD": 15
+                },
+                "units": 1000000
+            },
+            "cache": {
+                "read": {
+                    "price": {
+                        "USD": 0.3
+                    },
+                    "units": 1000000
+                },
+                "write": {
+                    "ephemeral_5m_input_tokens": {
+                        "price": {
+                            "USD": 3.75
+                        },
+                        "units": 1000000
+                    },
+                    "ephemeral_1h_input_tokens": {
+                        "price": {
+                            "USD": 6
+                        },
+                        "units": 1000000
+                    }
+                }
+            }
+        },
+        "tool_calls": {
+            "web_search": {
+                "price": {
+                    "USD": 10
+                },
+                "units": 1000
+            }
+        }
+    },
+    "context_window": 200000,
+    "max_output_tokens": 64000,
+    "supports": {
+        "reasoning": true,
+        "streaming": true,
+        "temperature": true,
+        "tools": {
+            "function_calling": false,
+            "web_search": true
+        }
+    }
+}

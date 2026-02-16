@@ -70,12 +70,17 @@ Results are saved as JSON in `results/`.
 
 ## Findings
 
-See writeup.pdf
+See `research/FINDINGS.md` for the complete log of 20+ empirical findings, documentation
+inconsistencies, and behavioral observations. A Tufte handout writeup will be submitted
+separately.
 
 ## Friction / API Feedback
 
-See writeup.pdf
+See `research/FINDINGS.md` — Categories A (doc inconsistencies) and C (behavioral findings)
+document specific DX friction points with severity ratings and reproduction steps.
 
 ## Screenshots
 
-See writeup.pdf
+Dashboard screenshots are in `research/docs/dashboard/`:
+- `billing_final.png` — $8.27 remaining of $10 budget
+- `guardrails_enabled.png` — SSN/EMAIL/PHONE guardrails enabled
