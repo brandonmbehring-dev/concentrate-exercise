@@ -22,6 +22,36 @@ from typing import Any
 
 from client import MODELS, call_model
 
+import re
+
+
+def extract_json(text: str) -> dict:
+    """Extract JSON object from model response, handling markdown fences and preamble."""
+    # Strip markdown code fences
+    cleaned = re.sub(r"```(?:json)?\s*", "", text).strip()
+    cleaned = cleaned.rstrip("`").strip()
+    # Try direct parse first
+    try:
+        return json.loads(cleaned)
+    except (json.JSONDecodeError, ValueError):
+        pass
+    # Find first { ... } block
+    match = re.search(r"\{[^{}]*\}", cleaned, re.DOTALL)
+    if match:
+        try:
+            return json.loads(match.group())
+        except (json.JSONDecodeError, ValueError):
+            pass
+    # Find nested { ... { ... } ... } block
+    match = re.search(r"\{.*\}", cleaned, re.DOTALL)
+    if match:
+        try:
+            return json.loads(match.group())
+        except (json.JSONDecodeError, ValueError):
+            pass
+    return {}
+
+
 # Models used for judging
 JUDGE_FAST = "anthropic/claude-haiku-4-5"
 JUDGE_DEEP = "openai/gpt-5.1"
@@ -206,9 +236,8 @@ def layer2_judge_all(research_results: list[dict]) -> list[dict]:
             judge_result = call_model(
                 JUDGE_FAST, judge_prompt, temperature=0.0, max_output_tokens=200
             )
-            try:
-                parsed = json.loads(judge_result.get("text", "{}"))
-            except (json.JSONDecodeError, ValueError):
+            parsed = extract_json(judge_result.get("text", "{}"))
+            if not parsed:
                 parsed = {"accuracy": 0, "reasoning_depth": 0, "instruction_compliance": 0, "brief_note": "parse error"}
             scores.append({
                 "prompt": prompt_name,
@@ -240,9 +269,8 @@ def layer2_deep_eval(research_results: list[dict]) -> list[dict]:
             judge_result = call_model(
                 JUDGE_DEEP, judge_prompt, temperature=0.0, max_output_tokens=400
             )
-            try:
-                parsed = json.loads(judge_result.get("text", "{}"))
-            except (json.JSONDecodeError, ValueError):
+            parsed = extract_json(judge_result.get("text", "{}"))
+            if not parsed:
                 parsed = {"strengths": [], "weaknesses": [], "score": 0, "ideal_gap": "parse error"}
             evals.append({"prompt": prompt_name, "provider": provider, "judge": JUDGE_DEEP, **parsed})
             print(f"  {prompt_name:20s} | {provider:10s} | score={parsed.get('score', '?')}/10 | gap: {parsed.get('ideal_gap', '')[:60]}")
@@ -268,9 +296,8 @@ def layer2_creative_eval(research_results: list[dict]) -> list[dict]:
             judge_result = call_model(
                 JUDGE_CREATIVE, judge_prompt, temperature=0.0, max_output_tokens=400
             )
-            try:
-                parsed = json.loads(judge_result.get("text", "{}"))
-            except (json.JSONDecodeError, ValueError):
+            parsed = extract_json(judge_result.get("text", "{}"))
+            if not parsed:
                 parsed = {"strengths": [], "weaknesses": [], "score": 0, "ideal_gap": "parse error"}
             evals.append({"prompt": prompt_name, "provider": provider, "judge": JUDGE_CREATIVE, **parsed})
             print(f"  {prompt_name:20s} | {provider:10s} | score={parsed.get('score', '?')}/10")
@@ -318,9 +345,8 @@ def layer3_self_eval(research_results: list[dict]) -> list[dict]:
                 prompt=prompt_text[:400], response=response_text[:1200]
             )
             self_result = call_model(model, self_prompt, temperature=0.0, max_output_tokens=150)
-            try:
-                parsed = json.loads(self_result.get("text", "{}"))
-            except (json.JSONDecodeError, ValueError):
+            parsed = extract_json(self_result.get("text", "{}"))
+            if not parsed:
                 parsed = {"accuracy": 0, "reasoning_depth": 0, "instruction_compliance": 0}
             evals.append({"prompt": prompt_name, "provider": provider, "model": model, "self_scores": parsed})
             avg = sum(parsed.get(k, 0) for k in ["accuracy", "reasoning_depth", "instruction_compliance"]) / 3
@@ -351,9 +377,8 @@ def layer3_pairwise(research_results: list[dict]) -> list[dict]:
                 provider_b=pb, response_b=rb[:800],
             )
             pw_result = call_model(JUDGE_FAST, pw_prompt, temperature=0.0, max_output_tokens=100)
-            try:
-                parsed = json.loads(pw_result.get("text", "{}"))
-            except (json.JSONDecodeError, ValueError):
+            parsed = extract_json(pw_result.get("text", "{}"))
+            if not parsed:
                 parsed = {"winner": "?", "reason": "parse error"}
             winner_provider = pa if parsed.get("winner") == "A" else pb if parsed.get("winner") == "B" else "tie"
             rankings.append({
