@@ -1,0 +1,241 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - img [ref=e10]
+          - generic [ref=e76]: CONCENTRATE
+        - button "Toggle Sidebar" [ref=e77]:
+          - img
+          - generic [ref=e78]: Toggle Sidebar
+      - generic [ref=e80]:
+        - generic [ref=e81]: Navigation
+        - list [ref=e83]:
+          - listitem [ref=e84]:
+            - link "Dashboard" [ref=e85] [cursor=pointer]:
+              - /url: /dashboard
+              - img [ref=e86]
+              - generic [ref=e91]: Dashboard
+          - listitem [ref=e92]:
+            - link "Getting Started" [ref=e93] [cursor=pointer]:
+              - /url: /getting-started
+              - img [ref=e94]
+              - generic [ref=e97]: Getting Started
+          - listitem [ref=e98]:
+            - link "Model Fortress" [ref=e99] [cursor=pointer]:
+              - /url: /model-fortress
+              - img [ref=e100]
+              - generic [ref=e103]: Model Fortress
+          - listitem [ref=e104]:
+            - link "Teams" [ref=e105] [cursor=pointer]:
+              - /url: /teams
+              - img [ref=e106]
+              - generic [ref=e111]: Teams
+          - listitem [ref=e112]:
+            - link "API Keys" [ref=e113] [cursor=pointer]:
+              - /url: /api-keys
+              - img [ref=e114]
+              - generic [ref=e118]: API Keys
+          - listitem [ref=e119]:
+            - link "Guardrails" [ref=e120] [cursor=pointer]:
+              - /url: /guardrails
+              - img [ref=e121]
+              - generic [ref=e123]: Guardrails
+          - listitem [ref=e124]:
+            - link "Playground" [ref=e125] [cursor=pointer]:
+              - /url: /playground
+              - img [ref=e126]
+              - generic [ref=e129]: Playground
+          - listitem [ref=e130]:
+            - link "Billing" [ref=e131] [cursor=pointer]:
+              - /url: /billing
+              - img [ref=e132]
+              - generic [ref=e134]: Billing
+          - listitem [ref=e135]:
+            - link "Logs" [ref=e136] [cursor=pointer]:
+              - /url: /logs
+              - img [ref=e137]
+              - generic [ref=e140]: Logs
+      - list [ref=e142]:
+        - listitem [ref=e143]:
+          - button "User menu" [ref=e144]:
+            - generic [ref=e146]: B
+            - generic [ref=e148]: Brandon Behring
+            - img [ref=e149]
+    - main [ref=e151]:
+      - generic [ref=e152]:
+        - heading "Welcome back, Brandon Behring" [level=1] [ref=e153]
+        - generic [ref=e154]:
+          - generic [ref=e156]:
+            - generic [ref=e157]:
+              - generic [ref=e158]: Total Requests
+              - img [ref=e159]
+            - generic [ref=e161]: "28"
+          - generic [ref=e163]:
+            - generic [ref=e164]:
+              - generic [ref=e165]: Total Tokens
+              - img [ref=e166]
+            - generic [ref=e169]: 7,609
+          - generic [ref=e171]:
+            - generic [ref=e172]:
+              - generic [ref=e173]: Total Spend
+              - img [ref=e174]
+            - generic [ref=e176]: $0.05
+          - generic [ref=e178]:
+            - generic [ref=e179]:
+              - generic [ref=e180]: Active API Keys
+              - img [ref=e181]
+            - generic [ref=e183]: "1"
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - generic [ref=e186]:
+              - generic [ref=e187]: Cost Over Time
+              - generic [ref=e188]: Daily spending over the last 30 days
+            - application [ref=e193]:
+              - generic [ref=e199]: Feb 15
+              - generic [ref=e201]:
+                - generic [ref=e203]: $0.00
+                - generic [ref=e205]: $0.01
+                - generic [ref=e207]: $0.03
+                - generic [ref=e209]: $0.04
+                - generic [ref=e211]: $0.06
+          - generic [ref=e215]:
+            - generic [ref=e216]:
+              - generic [ref=e217]: Usage Over Time
+              - generic [ref=e218]: Token consumption over the last 30 days
+            - generic [ref=e222]:
+              - application [ref=e223]:
+                - generic [ref=e229]: Feb 15
+                - generic [ref=e231]:
+                  - generic [ref=e233]: 0K
+                  - generic [ref=e235]: 2K
+                  - generic [ref=e237]: 4K
+                  - generic [ref=e239]: 6K
+                  - generic [ref=e241]: 8K
+              - generic [ref=e252]:
+                - generic [ref=e253]: Total Tokens
+                - generic [ref=e255]: Input Tokens
+                - generic [ref=e257]: Output Tokens
+        - generic [ref=e259]:
+          - generic [ref=e260]:
+            - generic [ref=e261]:
+              - generic [ref=e262]: Spend by Provider
+              - generic [ref=e263]: Usage breakdown by AI provider (last 30 days)
+            - generic [ref=e266]:
+              - generic [ref=e267]:
+                - generic [ref=e268]:
+                  - generic [ref=e269]:
+                    - generic [ref=e270]: vertex
+                    - generic [ref=e271]:
+                      - img
+                      - text: 100.0%
+                  - generic [ref=e272]:
+                    - generic [ref=e273]: $0.03
+                    - generic [ref=e274]: (77%)
+                - progressbar [ref=e275]
+              - generic [ref=e277]:
+                - generic [ref=e278]:
+                  - generic [ref=e279]:
+                    - generic [ref=e280]: anthropic
+                    - generic [ref=e281]:
+                      - img
+                      - text: 100.0%
+                  - generic [ref=e282]:
+                    - generic [ref=e283]: $0.01
+                    - generic [ref=e284]: (16%)
+                - progressbar [ref=e285]
+              - generic [ref=e287]:
+                - generic [ref=e288]:
+                  - generic [ref=e289]:
+                    - generic [ref=e290]: openai
+                    - generic [ref=e291]:
+                      - img
+                      - text: 100.0%
+                  - generic [ref=e292]:
+                    - generic [ref=e293]: $0.00
+                    - generic [ref=e294]: (6%)
+                - progressbar [ref=e295]
+              - generic [ref=e297]:
+                - generic [ref=e298]:
+                  - generic [ref=e299]:
+                    - generic [ref=e300]: xai
+                    - generic [ref=e301]:
+                      - img
+                      - text: 100.0%
+                  - generic [ref=e302]:
+                    - generic [ref=e303]: $0.00
+                    - generic [ref=e304]: (1%)
+                - progressbar [ref=e305]
+          - generic [ref=e307]:
+            - generic [ref=e308]:
+              - generic [ref=e309]: Spend by Model
+              - generic [ref=e310]: Usage breakdown by AI model (last 30 days)
+            - generic [ref=e313]:
+              - generic [ref=e314]:
+                - generic [ref=e315]:
+                  - generic [ref=e316]:
+                    - generic [ref=e317]: gemini-2.5-pro
+                    - generic [ref=e318]:
+                      - img
+                      - text: 100.0%
+                  - generic [ref=e319]:
+                    - generic [ref=e320]: $0.03
+                    - generic [ref=e321]: (77%)
+                - progressbar [ref=e322]
+              - generic [ref=e324]:
+                - generic [ref=e325]:
+                  - generic [ref=e326]:
+                    - generic [ref=e327]: claude-sonnet-4-5
+                    - generic [ref=e328]:
+                      - img
+                      - text: 100.0%
+                  - generic [ref=e329]:
+                    - generic [ref=e330]: $0.01
+                    - generic [ref=e331]: (16%)
+                - progressbar [ref=e332]
+              - generic [ref=e334]:
+                - generic [ref=e335]:
+                  - generic [ref=e336]:
+                    - generic [ref=e337]: gpt-5.1
+                    - generic [ref=e338]:
+                      - img
+                      - text: 100.0%
+                  - generic [ref=e339]:
+                    - generic [ref=e340]: $0.00
+                    - generic [ref=e341]: (6%)
+                - progressbar [ref=e342]
+              - generic [ref=e344]:
+                - generic [ref=e345]:
+                  - generic [ref=e346]:
+                    - generic [ref=e347]: grok-4-1-fast-reasoning
+                    - generic [ref=e348]:
+                      - img
+                      - text: 100.0%
+                  - generic [ref=e349]:
+                    - generic [ref=e350]: $0.00
+                    - generic [ref=e351]: (1%)
+                - progressbar [ref=e352]
+        - generic [ref=e355]:
+          - generic [ref=e356]:
+            - generic [ref=e357]: Spend by Key
+            - generic [ref=e358]: Top API keys by request volume (current month)
+          - table [ref=e361]:
+            - rowgroup [ref=e362]:
+              - row "Key Status Team Requests Spend" [ref=e363]:
+                - columnheader "Key" [ref=e364]
+                - columnheader "Status" [ref=e365]
+                - columnheader "Team" [ref=e366]
+                - columnheader "Requests" [ref=e367]
+                - columnheader "Spend" [ref=e368]
+            - rowgroup [ref=e369]:
+              - row "brandon_m_behr Active N/A 28 $0.05" [ref=e370]:
+                - cell "brandon_m_behr" [ref=e371]:
+                  - generic [ref=e372]: brandon_m_behr
+                - cell "Active" [ref=e373]:
+                  - generic [ref=e374]: Active
+                - cell "N/A" [ref=e375]
+                - cell "28" [ref=e376]
+                - cell "$0.05" [ref=e377]
+  - alert [ref=e378]
+  - generic [ref=e379]: 0K

@@ -1,0 +1,242 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - img [ref=e10]
+          - generic [ref=e76]: CONCENTRATE
+        - button "Toggle Sidebar" [ref=e77]:
+          - img
+          - generic [ref=e78]: Toggle Sidebar
+      - generic [ref=e80]:
+        - generic [ref=e81]: Navigation
+        - list [ref=e83]:
+          - listitem [ref=e84]:
+            - link "Dashboard" [ref=e85] [cursor=pointer]:
+              - /url: /dashboard
+              - img [ref=e86]
+              - generic [ref=e91]: Dashboard
+          - listitem [ref=e92]:
+            - link "Getting Started" [ref=e93] [cursor=pointer]:
+              - /url: /getting-started
+              - img [ref=e94]
+              - generic [ref=e97]: Getting Started
+          - listitem [ref=e98]:
+            - link "Model Fortress" [ref=e99] [cursor=pointer]:
+              - /url: /model-fortress
+              - img [ref=e100]
+              - generic [ref=e103]: Model Fortress
+          - listitem [ref=e104]:
+            - link "Teams" [ref=e105] [cursor=pointer]:
+              - /url: /teams
+              - img [ref=e106]
+              - generic [ref=e111]: Teams
+          - listitem [ref=e112]:
+            - link "API Keys" [ref=e113] [cursor=pointer]:
+              - /url: /api-keys
+              - img [ref=e114]
+              - generic [ref=e118]: API Keys
+          - listitem [ref=e119]:
+            - link "Guardrails" [ref=e120] [cursor=pointer]:
+              - /url: /guardrails
+              - img [ref=e121]
+              - generic [ref=e123]: Guardrails
+          - listitem [ref=e124]:
+            - link "Playground" [ref=e125] [cursor=pointer]:
+              - /url: /playground
+              - img [ref=e126]
+              - generic [ref=e129]: Playground
+          - listitem [ref=e130]:
+            - link "Billing" [ref=e131] [cursor=pointer]:
+              - /url: /billing
+              - img [ref=e132]
+              - generic [ref=e134]: Billing
+          - listitem [ref=e135]:
+            - link "Logs" [ref=e136] [cursor=pointer]:
+              - /url: /logs
+              - img [ref=e137]
+              - generic [ref=e140]: Logs
+      - list [ref=e142]:
+        - listitem [ref=e143]:
+          - button "User menu" [ref=e144]:
+            - generic [ref=e146]: B
+            - generic [ref=e148]: Brandon Behring
+            - img [ref=e149]
+    - main [ref=e151]:
+      - generic [ref=e153]:
+        - generic [ref=e154]:
+          - heading "Billing" [level=1] [ref=e155]
+          - paragraph [ref=e156]: Manage your credits and view transaction history
+        - generic [ref=e157]:
+          - tablist [ref=e158]:
+            - tab "Personal" [selected] [ref=e159]
+          - tabpanel "Personal" [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162]:
+                - paragraph [ref=e163]: Personal Balance
+                - paragraph [ref=e164]: $9.95
+              - button "Buy credits" [ref=e165]: Buy Credits
+            - generic [ref=e166]:
+              - generic [ref=e168]: Recent Transactions
+              - generic [ref=e169]:
+                - table [ref=e171]:
+                  - rowgroup [ref=e172]:
+                    - row "Description Type Amount" [ref=e173]:
+                      - columnheader "Description" [ref=e174]
+                      - columnheader "Type" [ref=e175]
+                      - columnheader "Amount" [ref=e176]
+                  - rowgroup [ref=e177]:
+                    - row "API usage - grok-4-1-fast-reasoning Usage -$0.0001967" [ref=e178]:
+                      - cell "API usage - grok-4-1-fast-reasoning" [ref=e179]
+                      - cell "Usage" [ref=e180]:
+                        - generic [ref=e181]: Usage
+                      - cell "-$0.0001967" [ref=e182]
+                    - row "API usage - gemini-2.5-pro Usage -$0.0046875" [ref=e183]:
+                      - cell "API usage - gemini-2.5-pro" [ref=e184]
+                      - cell "Usage" [ref=e185]:
+                        - generic [ref=e186]: Usage
+                      - cell "-$0.0046875" [ref=e187]
+                    - row "API usage - claude-sonnet-4-5 Usage -$0.004332" [ref=e188]:
+                      - cell "API usage - claude-sonnet-4-5" [ref=e189]
+                      - cell "Usage" [ref=e190]:
+                        - generic [ref=e191]: Usage
+                      - cell "-$0.004332" [ref=e192]
+                    - row "API usage - gpt-5.1 Usage -$0.001005" [ref=e193]:
+                      - cell "API usage - gpt-5.1" [ref=e194]
+                      - cell "Usage" [ref=e195]:
+                        - generic [ref=e196]: Usage
+                      - cell "-$0.001005" [ref=e197]
+                    - row "API usage - gpt-5.1 Usage -$0.0003" [ref=e198]:
+                      - cell "API usage - gpt-5.1" [ref=e199]
+                      - cell "Usage" [ref=e200]:
+                        - generic [ref=e201]: Usage
+                      - cell "-$0.0003" [ref=e202]
+                    - row "API usage - grok-4-1-fast-reasoning Usage -$0.00007065" [ref=e203]:
+                      - cell "API usage - grok-4-1-fast-reasoning" [ref=e204]
+                      - cell "Usage" [ref=e205]:
+                        - generic [ref=e206]: Usage
+                      - cell "-$0.00007065" [ref=e207]
+                    - row "API usage - gemini-2.5-pro Usage -$0.00312" [ref=e208]:
+                      - cell "API usage - gemini-2.5-pro" [ref=e209]
+                      - cell "Usage" [ref=e210]:
+                        - generic [ref=e211]: Usage
+                      - cell "-$0.00312" [ref=e212]
+                    - row "API usage - claude-sonnet-4-5 Usage -$0.000108" [ref=e213]:
+                      - cell "API usage - claude-sonnet-4-5" [ref=e214]
+                      - cell "Usage" [ref=e215]:
+                        - generic [ref=e216]: Usage
+                      - cell "-$0.000108" [ref=e217]
+                    - row "API usage - gpt-5.1 Usage -$0.0001275" [ref=e218]:
+                      - cell "API usage - gpt-5.1" [ref=e219]
+                      - cell "Usage" [ref=e220]:
+                        - generic [ref=e221]: Usage
+                      - cell "-$0.0001275" [ref=e222]
+                    - row "API usage - gpt-5.1 Usage -$0.00014625" [ref=e223]:
+                      - cell "API usage - gpt-5.1" [ref=e224]
+                      - cell "Usage" [ref=e225]:
+                        - generic [ref=e226]: Usage
+                      - cell "-$0.00014625" [ref=e227]
+                    - row "API usage - gpt-5.1 Usage -$0.00014625" [ref=e228]:
+                      - cell "API usage - gpt-5.1" [ref=e229]
+                      - cell "Usage" [ref=e230]:
+                        - generic [ref=e231]: Usage
+                      - cell "-$0.00014625" [ref=e232]
+                    - row "API usage - claude-sonnet-4-5 Usage -$0.002574" [ref=e233]:
+                      - cell "API usage - claude-sonnet-4-5" [ref=e234]
+                      - cell "Usage" [ref=e235]:
+                        - generic [ref=e236]: Usage
+                      - cell "-$0.002574" [ref=e237]
+                    - row "API usage - gpt-5.1 Usage -$0.00038375" [ref=e238]:
+                      - cell "API usage - gpt-5.1" [ref=e239]
+                      - cell "Usage" [ref=e240]:
+                        - generic [ref=e241]: Usage
+                      - cell "-$0.00038375" [ref=e242]
+                    - row "API usage - gpt-5.1 Usage -$0.00032125" [ref=e243]:
+                      - cell "API usage - gpt-5.1" [ref=e244]
+                      - cell "Usage" [ref=e245]:
+                        - generic [ref=e246]: Usage
+                      - cell "-$0.00032125" [ref=e247]
+                    - row "API usage - grok-4-1-fast-reasoning Usage -$0.00006985" [ref=e248]:
+                      - cell "API usage - grok-4-1-fast-reasoning" [ref=e249]
+                      - cell "Usage" [ref=e250]:
+                        - generic [ref=e251]: Usage
+                      - cell "-$0.00006985" [ref=e252]
+                    - row "API usage - gemini-2.5-pro Usage -$0.00442" [ref=e253]:
+                      - cell "API usage - gemini-2.5-pro" [ref=e254]
+                      - cell "Usage" [ref=e255]:
+                        - generic [ref=e256]: Usage
+                      - cell "-$0.00442" [ref=e257]
+                    - row "API usage - claude-sonnet-4-5 Usage -$0.000108" [ref=e258]:
+                      - cell "API usage - claude-sonnet-4-5" [ref=e259]
+                      - cell "Usage" [ref=e260]:
+                        - generic [ref=e261]: Usage
+                      - cell "-$0.000108" [ref=e262]
+                    - row "API usage - gpt-5.1 Usage -$0.0001275" [ref=e263]:
+                      - cell "API usage - gpt-5.1" [ref=e264]
+                      - cell "Usage" [ref=e265]:
+                        - generic [ref=e266]: Usage
+                      - cell "-$0.0001275" [ref=e267]
+                    - row "API usage - gemini-2.5-pro Usage -$0.0062925" [ref=e268]:
+                      - cell "API usage - gemini-2.5-pro" [ref=e269]
+                      - cell "Usage" [ref=e270]:
+                        - generic [ref=e271]: Usage
+                      - cell "-$0.0062925" [ref=e272]
+                    - row "API usage - gemini-2.5-pro Usage -$0.0045325" [ref=e273]:
+                      - cell "API usage - gemini-2.5-pro" [ref=e274]
+                      - cell "Usage" [ref=e275]:
+                        - generic [ref=e276]: Usage
+                      - cell "-$0.0045325" [ref=e277]
+                    - row "API usage - grok-4-1-fast-reasoning Usage -$0.00008445" [ref=e278]:
+                      - cell "API usage - grok-4-1-fast-reasoning" [ref=e279]
+                      - cell "Usage" [ref=e280]:
+                        - generic [ref=e281]: Usage
+                      - cell "-$0.00008445" [ref=e282]
+                    - row "API usage - claude-sonnet-4-5 Usage -$0.000102" [ref=e283]:
+                      - cell "API usage - claude-sonnet-4-5" [ref=e284]
+                      - cell "Usage" [ref=e285]:
+                        - generic [ref=e286]: Usage
+                      - cell "-$0.000102" [ref=e287]
+                    - row "API usage - gpt-5.1 Usage -$0.00013" [ref=e288]:
+                      - cell "API usage - gpt-5.1" [ref=e289]
+                      - cell "Usage" [ref=e290]:
+                        - generic [ref=e291]: Usage
+                      - cell "-$0.00013" [ref=e292]
+                    - row "API usage - gemini-2.5-pro Usage -$0.0063125" [ref=e293]:
+                      - cell "API usage - gemini-2.5-pro" [ref=e294]
+                      - cell "Usage" [ref=e295]:
+                        - generic [ref=e296]: Usage
+                      - cell "-$0.0063125" [ref=e297]
+                    - row "API usage - gemini-2.5-pro Usage -$0.0053625" [ref=e298]:
+                      - cell "API usage - gemini-2.5-pro" [ref=e299]
+                      - cell "Usage" [ref=e300]:
+                        - generic [ref=e301]: Usage
+                      - cell "-$0.0053625" [ref=e302]
+                    - row "API usage - grok-4-1-fast-reasoning Usage -$0.00005665" [ref=e303]:
+                      - cell "API usage - grok-4-1-fast-reasoning" [ref=e304]
+                      - cell "Usage" [ref=e305]:
+                        - generic [ref=e306]: Usage
+                      - cell "-$0.00005665" [ref=e307]
+                    - row "API usage - claude-sonnet-4-5 Usage -$0.000108" [ref=e308]:
+                      - cell "API usage - claude-sonnet-4-5" [ref=e309]
+                      - cell "Usage" [ref=e310]:
+                        - generic [ref=e311]: Usage
+                      - cell "-$0.000108" [ref=e312]
+                    - row "API usage - gpt-5.1 Usage -$0.0001275" [ref=e313]:
+                      - cell "API usage - gpt-5.1" [ref=e314]
+                      - cell "Usage" [ref=e315]:
+                        - generic [ref=e316]: Usage
+                      - cell "-$0.0001275" [ref=e317]
+                - navigation "pagination" [ref=e319]:
+                  - list [ref=e320]:
+                    - listitem [ref=e321]:
+                      - generic "Go to previous page":
+                        - img
+                        - generic: Previous
+                    - listitem [ref=e322]:
+                      - generic "Current page 1" [ref=e323]: "1"
+                    - listitem [ref=e324]:
+                      - generic "Go to next page":
+                        - generic: Next
+                        - img
+  - alert [ref=e325]

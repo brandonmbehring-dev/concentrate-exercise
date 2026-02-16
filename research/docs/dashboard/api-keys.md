@@ -1,0 +1,124 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - img [ref=e10]
+          - generic [ref=e76]: CONCENTRATE
+        - button "Toggle Sidebar" [ref=e77]:
+          - img
+          - generic [ref=e78]: Toggle Sidebar
+      - generic [ref=e80]:
+        - generic [ref=e81]: Navigation
+        - list [ref=e83]:
+          - listitem [ref=e84]:
+            - link "Dashboard" [ref=e85] [cursor=pointer]:
+              - /url: /dashboard
+              - img [ref=e86]
+              - generic [ref=e91]: Dashboard
+          - listitem [ref=e92]:
+            - link "Getting Started" [ref=e93] [cursor=pointer]:
+              - /url: /getting-started
+              - img [ref=e94]
+              - generic [ref=e97]: Getting Started
+          - listitem [ref=e98]:
+            - link "Model Fortress" [ref=e99] [cursor=pointer]:
+              - /url: /model-fortress
+              - img [ref=e100]
+              - generic [ref=e103]: Model Fortress
+          - listitem [ref=e104]:
+            - link "Teams" [ref=e105] [cursor=pointer]:
+              - /url: /teams
+              - img [ref=e106]
+              - generic [ref=e111]: Teams
+          - listitem [ref=e112]:
+            - link "API Keys" [ref=e113] [cursor=pointer]:
+              - /url: /api-keys
+              - img [ref=e114]
+              - generic [ref=e118]: API Keys
+          - listitem [ref=e119]:
+            - link "Guardrails" [ref=e120] [cursor=pointer]:
+              - /url: /guardrails
+              - img [ref=e121]
+              - generic [ref=e123]: Guardrails
+          - listitem [ref=e124]:
+            - link "Playground" [ref=e125] [cursor=pointer]:
+              - /url: /playground
+              - img [ref=e126]
+              - generic [ref=e129]: Playground
+          - listitem [ref=e130]:
+            - link "Billing" [ref=e131] [cursor=pointer]:
+              - /url: /billing
+              - img [ref=e132]
+              - generic [ref=e134]: Billing
+          - listitem [ref=e135]:
+            - link "Logs" [ref=e136] [cursor=pointer]:
+              - /url: /logs
+              - img [ref=e137]
+              - generic [ref=e140]: Logs
+      - list [ref=e142]:
+        - listitem [ref=e143]:
+          - button "User menu" [ref=e144]:
+            - generic [ref=e146]: B
+            - generic [ref=e148]: Brandon Behring
+            - img [ref=e149]
+    - main [ref=e151]:
+      - generic [ref=e153]:
+        - generic [ref=e155]:
+          - heading "API Keys" [level=1] [ref=e156]
+          - paragraph [ref=e157]: Create and manage your API keys
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - heading "Personal API Keys" [level=2] [ref=e161]:
+              - img [ref=e162]
+              - text: Personal API Keys
+            - paragraph [ref=e164]: Keys for your personal use
+          - generic [ref=e171]:
+            - heading "Personal 1 key create API key" [level=3] [ref=e172]:
+              - button "Personal 1 key create API key" [expanded] [ref=e173]:
+                - generic [ref=e174]:
+                  - generic [ref=e176]: Personal
+                  - generic [ref=e177]:
+                    - generic [ref=e178]: 1 key
+                    - button "create API key" [ref=e179] [cursor=pointer]:
+                      - img
+                      - text: Create
+                - img
+            - region "Personal 1 key create API key" [ref=e180]:
+              - table [ref=e184]:
+                - rowgroup [ref=e185]:
+                  - row "Key Last Used Usage Limit Refresh Period Next Refresh" [ref=e186]:
+                    - columnheader "Key" [ref=e187]
+                    - columnheader "Last Used" [ref=e188]
+                    - columnheader "Usage" [ref=e189]
+                    - columnheader "Limit" [ref=e190]
+                    - columnheader "Refresh Period" [ref=e191]
+                    - columnheader "Next Refresh" [ref=e192]
+                    - columnheader [ref=e193]
+                - rowgroup [ref=e194]:
+                  - row "brandon_m_behr sk-cn-v1...cf3a 41 minutes ago $0.045 unlimited N/A N/A copy API key brandon_m_behr edit API key brandon_m_behr add guardrails for API key brandon_m_behr delete API key brandon_m_behr" [ref=e195]:
+                    - cell "brandon_m_behr sk-cn-v1...cf3a" [ref=e196]:
+                      - generic [ref=e197]: brandon_m_behr
+                      - generic [ref=e198]: sk-cn-v1...cf3a
+                    - cell "41 minutes ago" [ref=e199]:
+                      - generic [ref=e200]: 41 minutes ago
+                    - cell "$0.045" [ref=e201]:
+                      - generic [ref=e202]: $0.045
+                    - cell "unlimited" [ref=e203]:
+                      - generic [ref=e204]: unlimited
+                    - cell "N/A" [ref=e205]:
+                      - generic [ref=e206]: N/A
+                    - cell "N/A" [ref=e207]:
+                      - generic [ref=e208]: N/A
+                    - cell "copy API key brandon_m_behr edit API key brandon_m_behr add guardrails for API key brandon_m_behr delete API key brandon_m_behr" [ref=e209]:
+                      - generic [ref=e210]:
+                        - button "copy API key brandon_m_behr" [ref=e211]:
+                          - img
+                        - button "edit API key brandon_m_behr" [ref=e212]:
+                          - img
+                        - button "add guardrails for API key brandon_m_behr" [ref=e213]:
+                          - img
+                        - button "delete API key brandon_m_behr" [ref=e214]:
+                          - img
+  - alert [ref=e215]

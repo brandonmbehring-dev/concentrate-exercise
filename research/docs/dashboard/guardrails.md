@@ -1,0 +1,373 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - img [ref=e10]
+          - generic [ref=e76]: CONCENTRATE
+        - button "Toggle Sidebar" [ref=e77]:
+          - img
+          - generic [ref=e78]: Toggle Sidebar
+      - generic [ref=e80]:
+        - generic [ref=e81]: Navigation
+        - list [ref=e83]:
+          - listitem [ref=e84]:
+            - link "Dashboard" [ref=e85] [cursor=pointer]:
+              - /url: /dashboard
+              - img [ref=e86]
+              - generic [ref=e91]: Dashboard
+          - listitem [ref=e92]:
+            - link "Getting Started" [ref=e93] [cursor=pointer]:
+              - /url: /getting-started
+              - img [ref=e94]
+              - generic [ref=e97]: Getting Started
+          - listitem [ref=e98]:
+            - link "Model Fortress" [ref=e99] [cursor=pointer]:
+              - /url: /model-fortress
+              - img [ref=e100]
+              - generic [ref=e103]: Model Fortress
+          - listitem [ref=e104]:
+            - link "Teams" [ref=e105] [cursor=pointer]:
+              - /url: /teams
+              - img [ref=e106]
+              - generic [ref=e111]: Teams
+          - listitem [ref=e112]:
+            - link "API Keys" [ref=e113] [cursor=pointer]:
+              - /url: /api-keys
+              - img [ref=e114]
+              - generic [ref=e118]: API Keys
+          - listitem [ref=e119]:
+            - link "Guardrails" [ref=e120] [cursor=pointer]:
+              - /url: /guardrails
+              - img [ref=e121]
+              - generic [ref=e123]: Guardrails
+          - listitem [ref=e124]:
+            - link "Playground" [ref=e125] [cursor=pointer]:
+              - /url: /playground
+              - img [ref=e126]
+              - generic [ref=e129]: Playground
+          - listitem [ref=e130]:
+            - link "Billing" [ref=e131] [cursor=pointer]:
+              - /url: /billing
+              - img [ref=e132]
+              - generic [ref=e134]: Billing
+          - listitem [ref=e135]:
+            - link "Logs" [ref=e136] [cursor=pointer]:
+              - /url: /logs
+              - img [ref=e137]
+              - generic [ref=e140]: Logs
+      - list [ref=e142]:
+        - listitem [ref=e143]:
+          - button "User menu" [ref=e144]:
+            - generic [ref=e146]: B
+            - generic [ref=e148]: Brandon Behring
+            - img [ref=e149]
+    - main [ref=e151]:
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - generic [ref=e154]:
+            - img [ref=e155]
+            - heading "Guardrails" [level=1] [ref=e157]
+          - paragraph [ref=e158]: Configure redaction and security settings for your API keys
+        - generic [ref=e159]:
+          - generic [ref=e162]:
+            - combobox "Select API key" [ref=e164]:
+              - generic [ref=e165]: Select a key...
+              - img
+            - generic [ref=e166]:
+              - generic [ref=e167]:
+                - generic [ref=e168]: Disabled
+                - switch "Disabled" [disabled] [ref=e169]
+              - button "Save redaction settings" [disabled]: Save Changes
+          - generic [ref=e170]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic: "Redact on:"
+                  - radiogroup:
+                    - generic:
+                      - radio "Input only" [disabled]
+                      - generic: Input only
+                    - generic:
+                      - radio "Output only" [disabled]
+                      - generic: Output only
+                    - generic:
+                      - radio "Both" [checked] [disabled]:
+                        - generic:
+                          - img
+                      - generic: Both
+                - alert:
+                  - img
+                  - generic: Streaming limitation
+                  - generic: Output will not be redacted if the response is streamed. Redaction only applies to non-streamed outputs.
+              - generic:
+                - generic:
+                  - generic: Entity types to redact
+                - paragraph: Select which types of sensitive information should be detected and redacted
+                - generic:
+                  - generic:
+                    - heading "Personally Identifiable Information" [level=3]:
+                      - button "Personally Identifiable Information" [expanded]:
+                        - generic:
+                          - generic:
+                            - generic: Personally Identifiable Information
+                        - img
+                    - region "Personally Identifiable Information":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - paragraph: Information that can identify an individual
+                            - button "Toggle all Personally Identifiable Information entities" [disabled]: Select All
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: PERSON
+                              - switch "Toggle PERSON" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: EMAIL
+                              - switch "Toggle EMAIL" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: PHONE
+                              - switch "Toggle PHONE" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: SSN
+                              - switch "Toggle SSN" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: DATE OF BIRTH
+                              - switch "Toggle DATE_OF_BIRTH" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: AGE
+                              - switch "Toggle AGE" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: DRIVERS LICENSE
+                              - switch "Toggle DRIVERS_LICENSE" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: PASSPORT
+                              - switch "Toggle PASSPORT" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: LOCATION
+                              - switch "Toggle LOCATION" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: USERNAME
+                              - switch "Toggle USERNAME" [disabled]
+                  - generic:
+                    - heading "Payment Card Industry" [level=3]:
+                      - button "Payment Card Industry" [expanded]:
+                        - generic:
+                          - generic:
+                            - generic: Payment Card Industry
+                        - img
+                    - region "Payment Card Industry":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - paragraph: Financial and payment card data
+                            - button "Toggle all Payment Card Industry entities" [disabled]: Select All
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: CREDIT CARD
+                              - switch "Toggle CREDIT_CARD" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: CREDIT CARD CVV
+                              - switch "Toggle CREDIT_CARD_CVV" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: ACCOUNT NUMBER
+                              - switch "Toggle ACCOUNT_NUMBER" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: IBAN
+                              - switch "Toggle IBAN" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: AMOUNT
+                              - switch "Toggle AMOUNT" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: CRYPTO ADDRESS
+                              - switch "Toggle CRYPTO_ADDRESS" [disabled]
+                  - generic:
+                    - heading "Protected Health Information" [level=3]:
+                      - button "Protected Health Information" [expanded]:
+                        - generic:
+                          - generic:
+                            - generic: Protected Health Information
+                        - img
+                    - region "Protected Health Information":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - paragraph: HIPAA-protected health information
+                            - button "Toggle all Protected Health Information entities" [disabled]: Select All
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: PATIENT
+                              - switch "Toggle PATIENT" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: STAFF
+                              - switch "Toggle STAFF" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: HOSPITAL
+                              - switch "Toggle HOSPITAL" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: PATIENT ID
+                              - switch "Toggle PATIENT_ID" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: MEDICAL RECORD NUMBER
+                              - switch "Toggle MEDICAL_RECORD_NUMBER" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: NPI
+                              - switch "Toggle NPI" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: MEDICAL CONDITION
+                              - switch "Toggle MEDICAL_CONDITION" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: MEDICATION
+                              - switch "Toggle MEDICATION" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: OTHER PHI
+                              - switch "Toggle OTHER_PHI" [disabled]
+                  - generic:
+                    - heading "Credentials & Secrets" [level=3]:
+                      - button "Credentials & Secrets" [expanded]:
+                        - generic:
+                          - generic:
+                            - generic: Credentials & Secrets
+                        - img
+                    - region "Credentials & Secrets":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - paragraph: Authentication credentials and API keys
+                            - button "Toggle all Credentials & Secrets entities" [disabled]: Select All
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: PASSWORD
+                              - switch "Toggle PASSWORD" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: JWT TOKEN
+                              - switch "Toggle JWT_TOKEN" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: AWS ACCESS KEY
+                              - switch "Toggle AWS_ACCESS_KEY" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: AWS SECRET KEY
+                              - switch "Toggle AWS_SECRET_KEY" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: OPENAI API KEY
+                              - switch "Toggle OPENAI_API_KEY" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: ANTHROPIC API KEY
+                              - switch "Toggle ANTHROPIC_API_KEY" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: GOOGLE API KEY
+                              - switch "Toggle GOOGLE_API_KEY" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: AZURE API KEY
+                              - switch "Toggle AZURE_API_KEY" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: GCP SERVICE ACCOUNT
+                              - switch "Toggle GCP_SERVICE_ACCOUNT" [disabled]
+                  - generic:
+                    - heading "Technical Identifiers" [level=3]:
+                      - button "Technical Identifiers" [expanded]:
+                        - generic:
+                          - generic:
+                            - generic: Technical Identifiers
+                        - img
+                    - region "Technical Identifiers":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - paragraph: Network and technical identifiers
+                            - button "Toggle all Technical Identifiers entities" [disabled]: Select All
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: IP ADDRESS
+                              - switch "Toggle IP_ADDRESS" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: MAC ADDRESS
+                              - switch "Toggle MAC_ADDRESS" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: URL
+                              - switch "Toggle URL" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: UUID
+                              - switch "Toggle UUID" [disabled]
+                            - generic:
+                              - generic:
+                                - generic: VIN
+                              - switch "Toggle VIN" [disabled]
+                  - generic:
+                    - heading "Organizations" [level=3]:
+                      - button "Organizations" [expanded]:
+                        - generic:
+                          - generic:
+                            - generic: Organizations
+                        - img
+                    - region "Organizations":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - paragraph: Business and organizational entities
+                            - button "Toggle all Organizations entities" [disabled]: Select All
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: ORGANIZATION
+                              - switch "Toggle ORGANIZATION" [disabled]
+                  - generic:
+                    - heading "Temporal Data" [level=3]:
+                      - button "Temporal Data" [expanded]:
+                        - generic:
+                          - generic:
+                            - generic: Temporal Data
+                        - img
+                    - region "Temporal Data":
+                      - generic:
+                        - generic:
+                          - generic:
+                            - paragraph: Dates and time-related information
+                            - button "Toggle all Temporal Data entities" [disabled]: Select All
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: DATE
+                              - switch "Toggle DATE" [disabled]
+            - generic [ref=e171]:
+              - button "Save redaction settings" [disabled]: Save Changes
+  - alert [ref=e172]
