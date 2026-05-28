@@ -61,10 +61,11 @@ def main() -> None:
         f"{len(models_data)} models found" if models_data else (catalog_error or "empty"),
     ))
 
-    # 3. One call per provider
+    # 3. One call per provider — prints token counts for margin analysis
     for provider, model in MODELS.items():
         result = call_model(model, "Say 'hello' in one word.", max_output_tokens=10, temperature=0.0)
-        usage = (result.get("raw_response") or {}).get("usage", {})
+        raw = result.get("raw_response") or {}
+        usage = raw.get("usage", {})
         inp = usage.get("input_tokens") or usage.get("prompt_tokens") or 0
         out = usage.get("output_tokens") or usage.get("completion_tokens") or 0
         ok = result["status"] == "completed"
@@ -73,6 +74,10 @@ def main() -> None:
             ok,
             f"completed, {inp} input + {out} output tokens" if ok else f"status={result['status']}, error={result.get('error', 'N/A')}",
         ))
+        # Print full token details for reproducibility (C5 evidence: Gemini max_output_tokens behavior)
+        print(f"    raw usage: input_tokens={inp}, output_tokens={out}, model_returned={result.get('model', 'N/A')}")
+        if out > 10:
+            print(f"    NOTE: Requested max_output_tokens=10, received {out} — parameter may be advisory for this provider")
 
     # 4. Tool calling (verifies strict: false works)
     tool_def = {

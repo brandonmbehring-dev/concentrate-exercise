@@ -16,14 +16,14 @@
 
 **Decision**: **(C) 4 providers — OpenAI, Anthropic, Google Gemini, xAI**
 
-**Reasoning**: Gemini explicitly in JD. xAI creates cost-quality spectrum (75x cheaper input) that demonstrates Concentrate's routing value prop. 4 providers is enough to show breadth without diluting analysis.
+**Reasoning**: Gemini explicitly in JD. xAI creates cost-quality spectrum (15x cheaper input, 30x cheaper output) that demonstrates Concentrate's routing value prop. 4 providers is enough to show breadth without diluting analysis.
 
 **Tradeoffs**: More providers = more data but less depth per provider. 4 is the sweet spot.
 
 **Amendment (2026-02-16)**: Originally selected DeepSeek as 4th provider. Switched to xAI
 (grok-4-1-fast-reasoning) because it is strictly cheaper ($0.20/$0.50 vs $0.27-0.55/$1.10-2.19)
-with stronger reasoning capabilities. The cost-quality spectrum narrative is stronger: 75x input
-spread vs DeepSeek's 20-50x.
+with stronger reasoning capabilities. The cost-quality spectrum narrative is stronger: 15x input
+spread, 30x output spread vs DeepSeek's narrower range.
 
 ---
 

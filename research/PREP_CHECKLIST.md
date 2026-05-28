@@ -47,7 +47,7 @@
 |----------|----------------|
 | "Why these prompts?" | "I chose prompts that produce measurable cross-provider differences: structured output compliance, reasoning depth, instruction-following. Statistical reasoning prompts are my domain and show real differentiation." |
 | "What surprised you?" | "[Fill with actual finding from testing]" |
-| "How would you use this in production?" | "The cost-quality spectrum (xAI 75x cheaper input) maps directly to routing optimization. I'd route simple tasks to xAI, complex reasoning to Claude/GPT-5.1, and use Concentrate's auto-routing to validate." |
+| "How would you use this in production?" | "The cost-quality spectrum (xAI 15x cheaper input, 30x cheaper output) maps directly to routing optimization. I'd route simple tasks to xAI, complex reasoning to Claude/GPT-5.1, and use Concentrate's auto-routing to validate." |
 | "What would you build on day 1?" | "An eval pipeline — Promptfoo + Concentrate's routing = automated quality/cost monitoring across providers. Then a circuit breaker for provider failover." |
 | "Why 4 providers?" | "Two is the minimum. Four gives you the cost-quality spectrum that IS Concentrate's value prop. xAI at $0.20/M vs Anthropic at $15/M output — that's the routing story." |
 | "What friction did you find?" | "[Fill with actual friction from testing]" |

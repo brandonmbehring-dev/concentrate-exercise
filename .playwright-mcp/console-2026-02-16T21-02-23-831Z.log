@@ -1,0 +1,2 @@
+[     887ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://concentrate.ai/favicon.ico:0
+[    1831ms] [WARNING] Error while trying to use the following icon from the Manifest: https://concentrate.ai/favicon.ico (Download error or resource isn't a valid image) @ https://concentrate.ai/:0

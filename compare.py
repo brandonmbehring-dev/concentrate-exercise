@@ -36,7 +36,7 @@ RESULTS_DIR.mkdir(exist_ok=True)
 ROUTING_STRATEGIES = [
     {"strategy": "min", "metric": "cost"},
     {"strategy": "max", "metric": "performance"},
-    {"strategy": "min", "metric": "latency"},
+    {"strategy": "min", "metric": "avg_latency"},
 ]
 
 # Test prompts — chosen to surface provider differences

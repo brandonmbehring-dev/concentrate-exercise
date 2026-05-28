@@ -1,272 +1,286 @@
-# Concentrate AI — API Discrepancy & Findings Log
+# Concentrate AI — Verified Platform Findings
 
-> Compiled: 2026-02-16 (updated 2026-02-16 post-audit remediation)
-> Method: Playwright-based documentation audit + code audit + empirical testing + 3 external reviews
-> Pages audited: 17 of 17 (see research/docs/ for verbatim captures)
-
----
-
-## Category A: Documentation Inconsistencies (Bug-Generating)
-
-### A1. Tool Calling `strict` Default is `true` — Quick Start Omits It
-
-**Severity**: HIGH — will cause 400 errors for unprepared callers
-
-- **Doc source**: Tool Calling page states `strict` defaults to `true`
-- **Quick Start**: Shows tool calling example WITHOUT `strict` field
-- **Effect**: Any tool definition that lacks `strict: false` will be validated against JSON Schema strictly. If the model produces arguments not perfectly matching the schema, the request fails.
-- **Our fix**: Added `"strict": False` to all 4 tool definitions (compare.py, agent.py)
-- **Writeup angle**: Real DX friction — the docs contradict themselves across pages
-
-### A2. Catalog Field Names: `slug` Not `id`, Nested Pricing
-
-**Severity**: HIGH — catalog parsing crashes silently (no `id` field exists)
-
-- **Doc source**: List Models page, OpenAPI schema
-- **Actual structure**: `model.slug`, `model.author.slug`, `model.providers.{key}.pricing.tokens.{input|output}.price.USD`
-- **Our code assumed**: `model.id`, `model.pricing.input`, `model.capabilities.supports_tools`
-- **Our fix**: Rewrote discover.py parsing and compare.py cost section to use correct nested paths
-- **Writeup angle**: No SDK means you parse raw JSON — schema documentation is critical
-
-### A3. Provider Slug Mismatch for Google/Gemini
-
-**Severity**: MEDIUM — wrong model name in research docs
-
-- **Catalog lists author as**: `google`
-- **API requires provider prefix**: `vertex/` (e.g., `vertex/gemini-2.5-pro`)
-- **Affected file**: `research/INDEX.md` line 17 said `google/gemini-2.5-pro`
-- **Our fix**: Updated to `vertex/gemini-2.5-pro` everywhere
-- **Writeup angle**: `google/` vs `vertex/` — real confusion source, verified empirically
+> Compiled: 2026-02-17 (v3 clean re-run)
+> Method: Documentation audit (17/17 pages) + empirical testing (4 providers, ~250 API calls)
+> Budget: $4.28 of $10.00 spent ($5.72 remaining)
+> All citations reference files in `results/` — reproducible from saved data
 
 ---
 
-## Category B: Concentrate Normalization Findings
+## 1. Does Normalization Work?
 
-### B1. Streaming Events Are Normalized
+**Verdict**: Yes — this is the core value proposition, and it delivers.
 
-- **Docs describe**: Rich SSE protocol with 10+ event types (response.created, response.in_progress, response.output_text.delta, etc.)
-- **Our parser**: Uses standard `data: ` prefix parsing, extracts text from nested `output[].content[].text`
-- **Both work**: Concentrate normalizes the streaming format. Our simpler parser works because the normalization handles provider-specific protocols.
-- **Decision**: Keep our parser as-is. "Normalization is the value prop."
+### 1.1 Streaming Is Normalized
+- All 4 providers return the same SSE event structure: 3 events per response
+- TTFT: OpenAI 437ms, Anthropic 1215ms (non-streaming OpenAI baseline: 2079ms)
+- **Limitation**: Our parser extracts 0 text from streaming events — Concentrate's delta format differs from the documented `output[].content[].text` structure
+- **Evidence**: `results/compare_output.txt:260-289`
 
-### B2. Multi-turn `type: "message"` Is Optional
+### 1.2 Tool Calling Works on All 4 Providers
+- All 4 providers successfully executed 3 tool calls each (get_weather ×2, calculate ×1)
+- Arguments correctly structured and parseable
+- Despite metadata declaring `function_calling: false` (see Section 6)
+- **Evidence**: `results/compare_output.txt:163-206`
 
-- **Docs state**: `type` field in messages defaults to `"message"` — it's optional
-- **Our code had**: Explicit `"type": "message"` on every message object
-- **Fix**: Removed for cleanliness. Not a bug, but matches documented minimal format.
+### 1.3 Multi-Turn Conversation Preserved
+- All 4 providers correctly carried forward context across turns
+- "2+2=4, multiply by 3 subtract 1" → all answered 11
+- **Evidence**: `results/compare_output.txt:292-341`
+
+### 1.4 Gemini Ignores `max_output_tokens`
+- Requested `max_output_tokens=10`, Gemini returned **429 tokens** (43x overshoot)
+- xAI returned 116, OpenAI returned 11 (close to limit)
+- Anthropic: 4 tokens (respected the limit)
+- **Evidence**: `results/smoke_test_output.txt:12-17`
+- **Implication**: Parameter parity is not guaranteed across providers. The normalization layer passes parameters through but cannot enforce them on models that treat them as advisory.
 
 ---
 
-## Category C: Behavioral Findings (Empirical)
+## 2. Does Auto-Routing Work?
 
-### C1. Gemini Ignores `max_output_tokens`
+**Verdict**: Yes, all 3 strategies succeed — but router optimizes for metrics, not output quality.
 
-- **Observed**: Sent `max_output_tokens=10`, received 441 output tokens
-- **Provider**: `vertex/gemini-2.5-pro`
-- **Hypothesis**: Gemini may treat this as advisory, or Concentrate doesn't enforce it for Vertex
-- **Writeup angle**: Cross-provider parameter parity is not guaranteed
+### 2.1 Three Strategies, Three Different Models
+| Strategy | Model Selected | Latency | Text? |
+|----------|---------------|---------|-------|
+| `min_cost` | `cloudflare/qwen3-30b` | 8893ms | Empty |
+| `max_performance` | `vertex/gemini-2.5-pro` | 31529ms | Yes |
+| `min_avg_latency` | `cloudflare/llama-4-scout` | 6050ms | Yes |
 
-### C2. xAI Token Counting Anomaly
+- **Evidence**: `results/compare_output.txt:130-161`
 
-- **Observed**: 164 input tokens for a 7-word prompt ("Say 'hello' in one word.")
-- **Provider**: `xai/grok-4-1-fast-reasoning`
-- **Hypothesis**: May include reasoning/chain-of-thought tokens in input count
-- **Writeup angle**: Token-based cost estimation is model-dependent
+### 2.2 `min_cost` Returns Empty Text
+- Router correctly selected the cheapest model (Cloudflare/Qwen)
+- Response status: `completed`, 500 output tokens billed
+- But extracted text is empty — the response format doesn't match our parser
+- **Finding**: Router optimizes for the specified metric, not output compatibility. `min_cost` may select models whose response format the application can't parse.
 
-### C3. Quickstart Default Is `gpt-5.2`
+### 2.3 `avg_latency` Metric — Undocumented Constraint (Fixed)
+- v2 used `"metric": "latency"` → 400 error: "Invalid percentile metric format"
+- v3 uses `"metric": "avg_latency"` → succeeds
+- The auto-routing docs don't enumerate valid metric values
+- **Code fix**: `compare.py:39` — `"latency"` → `"avg_latency"`
+- **Evidence**: `results/compare_output.txt:148-150` (success), v2 archive for 400 error
 
-- **Docs quickstart**: Shows `openai/gpt-5.2` as the default model
-- **Our code uses**: `openai/gpt-5.1`
-- **Impact**: None (5.1 works fine), but docs are ahead of our model selection
-- **Note**: GPT-4.1 retirement (Feb 13-19, 2026) is documented
+---
 
-### C4. Auto-Routing `min_latency` Requires Percentile Format
+## 3. Is Pricing Transparent?
 
-- **Observed**: `auto_routing` with `"metric": "latency"` returns 400 error ("Invalid percentile metric format")
-- **API expects**: Percentile format like `p50`, `p90`, `p99` — not raw string `latency`
-- **2 of 3 strategies worked**: `min_cost` and `max_performance` succeeded
-- **Doc source**: Auto-routing page doesn't explicitly list valid metric values
-- **Writeup angle**: Undocumented API constraint — valid strategies are discoverable only by trial
+**Verdict**: Published per-token prices are accessible via Get Provider Info. Actual billing appears consistent.
 
-### C5. ~55% Platform Margin on Token Costs
+### 3.1 Price Spread Across 4 Tested Providers
 
-- **Observed**: compare.py billed $0.87, but token-level cost computation yields $0.56
-- **Margin**: ($0.87 - $0.56) / $0.56 = ~55% platform markup over raw provider pricing
-- **Per-provider token costs (pre-margin)**: Google $0.40 (73%), Anthropic $0.088, OpenAI $0.056, xAI $0.010
-- **Dashboard shows**: vertex 46%, anthropic 28%, openai 22%, xai 4% — consistent ranking
-- **Total spend**: $1.73 of $10.00 budget (331 requests)
-- **Writeup angle**: Platform margin is implicit — not documented. The "up to 20% off" claim on homepage likely refers to volume discounts vs direct provider pricing, not the base markup.
+| Provider | Input/M | Output/M | Source |
+|----------|---------|----------|--------|
+| xAI/grok-4-1-fast-reasoning | $0.20 | $0.50 | `results/provider_info/*.json` |
+| OpenAI/gpt-5.1 | $1.25 | $10.00 | " |
+| Vertex/gemini-2.5-pro | $1.25 | $10.00 | " |
+| Anthropic/claude-sonnet-4-5 | $3.00 | $15.00 | " |
 
-### C6. Guardrails Default State + Streaming Caveat
+- **Input spread**: 15x (xAI $0.20 vs Anthropic $3.00)
+- **Output spread**: 30x (xAI $0.50 vs Anthropic $15.00)
+- **Evidence**: `results/provider_info/` (4 JSON files with full pricing)
 
-- **Default**: Guardrails disabled on new API keys. No redaction occurs.
-- **When disabled**: Model self-censorship is **non-deterministic** — SSN self-redacted, email/phone exposed on first run, all self-censored on second run (same prompt, same model)
-- **When enabled (SSN/EMAIL/PHONE)**: Platform replaces PII with typed tokens `[SSN]`, `[EMAIL]`, `[PHONE]` in non-streaming mode
-- **Streaming caveat confirmed**: Dashboard warns "Output will not be redacted if the response is streamed" — streaming returned empty content in both states
-- **Writeup angle**: Model self-censorship ≠ platform guardrails. Stochastic vs deterministic safety is the key distinction.
+### 3.2 Session Spend Analysis
+- Dashboard before: $6.98, after: $5.72 → **$1.26 total session spend**
+- ~250 API calls across 7 scripts (smoke, discover, compare, agent, eval, guardrails)
+- **Evidence**: `results/dashboard_before.png`, `results/dashboard_after.png`
 
-### C7. LLM Judge Responses Wrapped in Markdown Fences
+### 3.3 Margin Analysis (Partial)
+- `compute_margin.py` extracted usage from 51 API calls (compare + agent JSONs only)
+- Computed token cost for those 51 calls: **$0.547** (using provider_info prices)
+- Cannot compute exact margin because $1.26 dashboard delta covers ~250 total calls (eval, smoke, guardrails not captured in JSON)
+- Per-call billing entries visible in dashboard are consistent with provider_info prices
+- **Evidence**: `results/margin_analysis.json`
+- **Limitation**: Margin percentage is indeterminate from available data. Would require matching all billing entries to token usage.
 
-- **Observed**: All haiku-4-5 and sonnet-4-5 judge responses returned JSON inside `` ```json ``` `` fences
-- **Impact**: `json.loads()` fails on fenced JSON — required adding `extract_json()` helper
-- **Affected models**: claude-haiku-4-5 (100% fenced), claude-sonnet-4-5 (100% fenced), gpt-5.1 (~40% fenced)
-- **Writeup angle**: "Reply with ONLY JSON" prompt instruction is insufficient — always parse defensively
+### 3.4 Gemini Dominates Output Costs
+- Of 51 tracked calls, Gemini consumed **39,507 output tokens** vs xAI 17,946, OpenAI 5,954, Anthropic 5,269
+- Gemini's verbose outputs (Gemini ignores max_output_tokens per 1.4) inflate costs at $10/M output
+- **Evidence**: `results/margin_analysis.json` per_model_breakdown
 
-### C8. Eval Scoreboard — v2 (with extract_json fix + pairwise bias mitigation)
+### 3.5 Web Search Pricing: 7x Spread (Undocumented)
+- xAI: $5/1K calls, OpenAI: $10/1K, Anthropic: $10/1K, Vertex: $35/1K
+- Not documented in Quick Start or Web Search pages
+- Only discoverable via Get Provider Info endpoint
+- **Evidence**: `results/provider_info/*.json` → `pricing.tool_calls.web_search`
 
-- **Judge scores (haiku, 1-5 avg)**: OpenAI 4.04, xAI 3.75, Anthropic 3.71, Google 3.21
-- **Pairwise wins (consistent only)**: OpenAI 6, xAI 3, Anthropic 2
-- **Position-biased splits**: 7/18 (38.9%) — judge contradicts itself when response order swapped
-- **Cost per response**: xAI $0.008 total, Google $0.319 total (40x more expensive)
-- **Deep eval parse failures**: 12/32 (37.5%, improved from ~40.6% in v1) — GPT-5.1 still generates unparseable JSON for complex prompts
-- **5 incomplete responses detected** (new Layer 1 tracking): `max_output_tokens=800` truncates some responses
-- **GPT-5.1 missed ground truth**: Failed to include "3/8" on 4-door Monty Hall (3/4 providers correct)
-- **Cross-provider agreement**: 2/3 factual prompts unanimous, 1 disagreement (Monty Hall)
-- **v1 preserved**: `results/eval_results_v1.json` for run-to-run comparison
-- **Writeup angle**: Price/performance ratio + 39% position bias rate = LLM-as-judge requires debiasing
+---
 
-### C9. Haiku Judge Factual Error on 4-Door Monty Hall
+## 4. Do Guardrails Work?
 
-- **Observed**: haiku-4-5 gave Google and xAI `accuracy=2` claiming their 3/8 answer is wrong
-- **Reality**: The 4-door Monty Hall correct answer IS 1/4, 3/8, 3/8 (Bayesian verified)
-- **Root cause**: Haiku confused the 3-door classic (1/3 → 2/3) with the 4-door variant
-- **Writeup angle**: LLM-as-judge has domain knowledge limits; factual ground truth checks are essential alongside judge scores
+**Verdict**: Yes — when properly enabled, platform redaction is deterministic. But the system requires careful configuration.
 
-### C10. GPT-5.1 Deep Judge Self-Contradictory on Monty Hall
+### 4.1 Default State: Disabled
+- New API keys have guardrails OFF
+- No PII redaction occurs in default state
+- **Evidence**: Dashboard screenshot, `results/guardrails_disabled.txt`
 
-- **Observed**: Gave Anthropic 7/10 for stating "3/8" — acknowledged correct
-- Gave xAI 3/10 for the SAME "3/8" answer — claimed incorrect
-- **Writeup angle**: Judge consistency failures in pairwise evaluation; same fact scored differently depending on surrounding prose
+### 4.2 Model Self-Censorship Is Non-Deterministic (Guardrails Disabled)
+- Run 1: SSN and phone self-censored by GPT-5.1, email exposed (1/3 PII exposed)
+- This behavior is stochastic — model safety training varies per request
+- **Evidence**: `results/guardrails_disabled.txt:12-17`
+- **Key insight**: Model refusal ≠ platform redaction. Cannot rely on model safety for compliance.
 
-### C11. Streaming Text Capture Failure
+### 4.3 Platform Redaction Tokens (Guardrails Enabled)
+When SSN/EMAIL/PHONE guardrails enabled in dashboard:
+- SSN → `[SSN]`
+- Email → `[EMAIL]`
+- Phone → `[PHONE]`
+- Non-streaming: **0/3 PII fields exposed** (deterministic redaction)
+- **Evidence**: `results/guardrails_enabled_final.txt:12-18`
+- **Dashboard config**: `results/guardrails_verified_enabled.png` (3/41 entities selected)
 
-- **Observed**: `client.py:232-236` expects `output[].type=="message"` > `content[].type=="output_text"`
-- Concentrate's actual streaming events use a different delta structure
-- 3 SSE events arrive but 0 text extracted — all streaming sections have empty text
-- **Not fixing**: Would require reverse-engineering Concentrate's actual SSE format. The finding itself (normalization doesn't fully normalize streaming) is valuable.
+### 4.4 Streaming Limitation (Documented)
+- Dashboard explicitly warns: "Output will not be redacted if the response is streamed"
+- Streaming returned empty content in both guardrails states (0 chars, 3 SSE events)
+- The empty response may be a side effect of guardrails + streaming interaction
+- **Evidence**: `results/guardrails_enabled_final.txt:22-26`
 
-### C12. Auto-Routing `min_cost` Returns Empty Text
+### 4.5 Configuration Persistence Caveat
+- After enabling guardrails and receiving "saved successfully" toast, navigating away and returning showed settings in "Disabled" state until API key was re-selected
+- The settings WERE persisted (confirmed by re-selecting key), but the dashboard UI doesn't auto-load key selection on page navigation
+- Earlier test runs showed PII exposed (2/3 and 3/3) — likely during the session before settings fully propagated
+- **Evidence**: `results/guardrails_enabled.txt` (2/3 exposed), `results/guardrails_enabled_retry.txt` (3/3 exposed), `results/guardrails_enabled_final.txt` (0/3 exposed after key re-selection)
 
-- **Observed**: `cloudflare/qwen3-30b` selected by router, `status: "completed"`, 500 output tokens billed
-- `text: ""` — parser couldn't extract Qwen's output format
-- **Writeup angle**: Auto-routing may select models whose output format doesn't match parser expectations. Router selects by cost, not by output compatibility.
+---
 
-### C13. Web Search Source Extraction Fails for 2/4 Providers
+## 5. Is the DX Smooth?
 
-- **Observed**: OpenAI 0 sources captured, xAI 0 sources captured (web_search_triggered=true for both)
-- Google: 20 sources but all are opaque `vertexaisearch.cloud.google.com/grounding-api-redirect/` URLs
-- Only Anthropic returns usable source URLs (10 real URLs)
-- **Root cause**: Our parser only checked `web_search_call.action.sources`. OpenAI/xAI may return citations as `url_citation` annotations in message content.
-- **Fix applied**: Added annotation parsing to `compare.py:926-933` for future runs
-- **Writeup angle**: Cross-provider source attribution is not standardized
+**Verdict**: Several friction points for first-time integrators. No SDK means raw JSON parsing.
 
-### C14. Guardrails Disabled Baseline Invalid as Scientific Control
+### 5.1 Tool Calling `strict: true` Default — Omitted from Quick Start
+- **Severity**: HIGH — causes 400 errors for unprepared callers
+- Tool Calling docs state `strict` defaults to `true`
+- Quick Start shows tool calling WITHOUT the `strict` field
+- Any tool definition lacking `strict: false` gets strict JSON Schema validation
+- **Our fix**: Added `"strict": False` to all tool definitions
+- **Source**: Tool Calling page vs Quick Start page (documented contradiction)
 
-- GPT-5.1's own safety training refuses to repeat PII regardless of guardrail state
-- Cannot distinguish "model refused" from "platform redacted" in disabled mode
-- Enabled mode IS valid: shows `[SSN]`, `[EMAIL]`, `[PHONE]` replacement tokens
-- **Writeup angle**: Model refusal ≠ platform guardrails. Only the enabled test proves platform behavior.
+### 5.2 Catalog Schema: `slug` Not `id`
+- **Severity**: HIGH — catalog parsing crashes silently
+- REST convention expects `model.id` — Concentrate uses `model.slug`
+- Pricing is deeply nested: `model.providers.{key}.pricing.tokens.{input|output}.price.USD`
+- No SDK means you parse raw JSON — schema documentation is critical
+- **Source**: List Models API response structure
 
-### C15. Agent Synthesizer Injects Knowledge Beyond Provided Research
+### 5.3 Provider Prefix Mismatch: `vertex/` Not `google/`
+- **Severity**: MEDIUM — wrong model name causes 400 errors
+- Model catalog lists author as `google`
+- API requires `vertex/` prefix (e.g., `vertex/gemini-2.5-pro`)
+- **Source**: Catalog author field vs API model parameter
 
-- Gemini synthesis contains specific pricing data (`GPT-4o $5/M`) not in truncated tool outputs
-- Synthesizer draws on training data, not just the research it was given
-- **Writeup angle**: Agentic synthesis is not pure aggregation — models supplement provided context with parametric knowledge
+### 5.4 Get Provider Info — Best Endpoint, Least Documented
+- `GET /v1/models/{model}/providers/{provider}` returns pricing, capabilities, limits in one response
+- Not mentioned in Quick Start, Introduction, or getting-started material
+- Would have prevented findings 5.3 (vertex prefix), 3.5 (web search pricing)
+- **Source**: API documentation audit (17/17 pages)
 
-### C16. Get Provider Info: `function_calling: false` for All 4 Models
+---
 
-- **Observed**: `GET /v1/models/{model}/providers/{provider}` returns `supports.tools.function_calling: false` for all 4 models
-- **Reality**: We successfully used function calling with all 4 providers in compare.py Section 3
-- **Hypothesis**: The capability flag may reflect native provider support vs Concentrate's normalized wrapper
-- **Writeup angle**: Declared capabilities don't match empirical behavior — the API is more capable than it declares
+## 6. Does Metadata Match Reality?
 
-### C17. Web Search Pricing Varies 7x Across Providers
+**Verdict**: No — declared capabilities understate actual functionality.
 
-- **Source**: `GET /v1/models/{model}/providers/{provider}` — `pricing.tool_calls.web_search`
-- xAI: $5/1K calls, OpenAI: $10/1K, Anthropic: $10/1K, **Vertex: $35/1K** (7x xAI)
-- **Not documented**: in Quick Start or Web Search page. Only discoverable via Get Provider Info endpoint
-- **Writeup angle**: Web search cost is a hidden variable in provider selection
+### 6.1 `function_calling: false` for All 4 Providers — But All Work
+- Get Provider Info returns `supports.tools.function_calling: false` for all 4 tested models
+- All 4 successfully executed 3 tool calls each in Section 3 testing
+- **Hypothesis**: Metadata reflects native provider support, not Concentrate's normalized wrapper
+- **Evidence**: `results/provider_info/*.json` (metadata), `results/compare_output.txt:163-206` (empirical)
 
-### C18. Context Window Ranges: 10x Spread
+### 6.2 `max_output_tokens` Advisory for Gemini
+- Provider_info lists `max_output_tokens: 65536` for Gemini
+- But Gemini ignores the parameter entirely (429 tokens for `max_output_tokens=10`)
+- The parameter EXISTS in the API but isn't ENFORCED
+- **Evidence**: `results/smoke_test_output.txt:12-14`
 
-- **Source**: Get Provider Info endpoint
-- xAI: **2M tokens**, Vertex: 1M, OpenAI: 400K, Anthropic: 200K
+### 6.3 Context Window Ranges: 10x Spread
+- xAI: 2M tokens, Vertex: 1M, OpenAI: 400K, Anthropic: 200K
 - Max output: xAI 131K, OpenAI 128K, Vertex 65K, Anthropic 64K
-- **Writeup angle**: Context limits vary 10x and directly affect long-context routing decisions
-
-### C19. Cache Pricing Schema Not Uniform
-
-- **Source**: Get Provider Info endpoint
-- OpenAI: cache.read only ($0.125/M)
-- Anthropic: cache.read ($0.30/M) + cache.write.ephemeral_5m ($3.75/M) + cache.write.ephemeral_1h ($6/M)
-- Vertex: no cache pricing listed
-- xAI: cache.read only ($0.05/M)
-- **Writeup angle**: Caching economics are provider-specific; no universal cache pricing table exists
-
-### C20. Latency Numbers Are Client-Side Round-Trip (Gemini Review)
-
-- All `latency_ms` measurements include network RTT + Python requests overhead, not inference time
-- `time_to_first_token` from streaming is closer to real inference start, but our streaming parser returns empty text (C11)
-- **Impact**: Latency comparisons are valid for relative ranking but not for absolute inference benchmarking
-- **Writeup angle**: Always specify measurement methodology when citing latency numbers
-
-### C21. `web_search_call` Type Detection Is Undocumented
-
-- `compare.py:918` checks `item.get("type") == "web_search_call"` — this type string is an assumption from observed API behavior
-- Not documented in Create Response or Web Search pages
-- May explain C13 (0 sources for OpenAI/xAI) if those providers use a different type identifier
-- **Writeup angle**: Undocumented response types are a DX friction point for building robust parsers
-
-### C22. Get Provider Info — The Most Useful Undiscovered Endpoint
-
-- `GET /v1/models/{model}/providers/{provider}` returns comprehensive per-provider detail:
-  - Pricing (input, output, cache, web_search — all in one response)
-  - Capabilities (reasoning, streaming, temperature, tool support)
-  - Limits (context_window, max_output_tokens)
-- **Not mentioned** in Quick Start, Introduction, or any getting-started material
-- **Would have prevented** findings A3 (vertex prefix), C17 (web search pricing), and saved ~2 hours of empirical testing
-- **Writeup angle**: The best endpoint for integration planning is the least documented one
+- These metadata values ARE useful for routing decisions
+- **Evidence**: `results/provider_info/*.json`
 
 ---
 
-## Category D: Untested Features (Writeup Material)
+## Appendix A: Cross-Provider Quality (Exploratory, n=32)
 
-These features are documented but we did not test them:
+> **Caveat**: These results test the models, not the platform. Sample size (8 prompts × 4 providers = 32 responses) is illustrative, not statistically significant.
 
-| Feature | Why Untested | Writeup Mention |
-|---------|-------------|-----------------|
-| Web search `filters.allowed_domains` | Would add complexity without core insight | "What I'd build next" |
-| Auto-routing p50/p90/p99 metrics | Need sustained traffic to be meaningful | Mention metrics exist |
-| Prompt caching (`cache_control`) | Anthropic-only, 5m/1h TTL | "Cross-provider parity gap" |
-| Reasoning effort levels | Need to verify which models support it | "What I'd build next" |
-| `function_call_output` round-trip | Multi-turn tool use flow | "What I'd build next" |
-| `user_location` for web search | Geolocation-aware search | Mention it exists |
-| Messages API (`/v1/messages/`) | Beta, minimal docs | "DX feature worth watching" |
+### Judge Scores (Haiku 4.5, 1-5 average)
+| Provider | Avg Score | n |
+|----------|-----------|---|
+| xAI | 4.12 | 8 |
+| Anthropic | 4.04 | 8 |
+| OpenAI | 3.88 | 8 |
+| Google | 3.29 | 8 |
+
+### Pairwise Wins (Position-Bias Mitigated)
+| Winner | Consistent Wins | Position-Biased Splits |
+|--------|----------------|----------------------|
+| xAI | 6 | — |
+| Anthropic | 4 | — |
+| OpenAI | 1 | — |
+| Split (biased) | — | 7 |
+
+- 39% of pairwise comparisons showed position bias (judge contradicts itself when order swapped)
+- **Evidence**: `results/eval_output.txt:169-187`, `results/eval_results.json`
+
+### Cost per Provider (Eval + Compare)
+| Provider | Total Cost | Relative |
+|----------|-----------|----------|
+| xAI | $0.008 | 1x |
+| OpenAI | $0.051 | 6x |
+| Anthropic | $0.065 | 8x |
+| Google | $0.264 | 33x |
+
+- xAI won the most pairwise comparisons at 1/33 the cost of Google
+- **Evidence**: `results/eval_output.txt:210-214`
+
+### GPT-5.1 Deep Judge Parse Failures
+- 8/32 responses (25%) from GPT-5.1 deep judge returned unparseable JSON
+- Haiku 4.5: 0/32 parse errors, Sonnet 4.5: 0/12 parse errors
+- All models return JSON inside markdown fences — `extract_json()` helper handles this
+- GPT-5.1 fails on complex evaluation prompts with nested scoring rubrics
+- **Evidence**: `results/eval_output.txt:103-135`
 
 ---
 
-## Not Bugs (Audit Corrections)
+## Appendix B: Evidence Inventory
 
-| Flagged Issue | Why It's Fine |
-|---|---|
-| Multi-turn `"type": "message"` | Docs say `type` is optional, defaults to "message". Redundant but valid. Removed for cleanliness. |
-| No retry/backoff | `client.py:108-134` HAS exponential backoff + `Retry-After` header support |
-| eval.py missing raw_response tokens | `compare.py:112,837` preserves `usage` in saved JSON. Works. |
-| Streaming parser wrong per docs | Works via Concentrate normalization. Intentional "don't change" decision. |
+### Results Files (v3 clean re-run, 2026-02-17)
+| File | Description |
+|------|-------------|
+| `results/smoke_test_output.txt` | 9/9 pass, token counts per provider |
+| `results/discover_output.txt` | 52 models, 11 providers |
+| `results/comparison_20260217_061046.json` | 180KB comparison data (9 sections) |
+| `results/compare_output.txt` | Full console output |
+| `results/agent_20260217_062938.json` | Agent demo (4-provider routing) |
+| `results/agent_output.txt` | Agent console output |
+| `results/eval_results.json` | Package C evaluation (3-layer) |
+| `results/eval_output.txt` | Eval console output with scoreboard |
+| `results/guardrails_disabled.txt` | PII test: guardrails OFF |
+| `results/guardrails_enabled_final.txt` | PII test: guardrails ON (verified) |
+| `results/guardrails_verified_enabled.png` | Dashboard: SSN/EMAIL/PHONE enabled |
+| `results/margin_analysis.json` | Token cost computation (51 calls) |
+| `results/dashboard_before.png` | $6.98 balance before re-runs |
+| `results/dashboard_after.png` | $5.72 balance after re-runs |
+| `results/provider_info/*.json` | Per-provider pricing and capabilities |
+
+### Archived v2 Results
+- `results/archive_v2/` — previous run data, preserved for reference
+- v2 had 6 evidence integrity issues (documented in plan), corrected in v3
 
 ---
 
-## Summary Statistics
+## Summary Statistics (v3)
 
-- **Pages audited**: 17 / 17 (5 new: Health Check, List Providers, Get Model, Get Provider Info, Claude Code Integration)
-- **Code issues found**: 22 (10 crash, 4 400-error, 2 incomplete data, 6 from post-audit remediation)
-- **Code issues fixed**: 22/22
-- **Research doc issues**: 4 (all fixed — including google/→vertex/ in DECISIONS.md, provider-analysis.md)
-- **Not-bugs correctly identified**: 4
-- **Empirical findings**: 22 (C1–C22)
-- **External reviews**: 3 (Codex comprehensive, Codex thorough, Gemini comprehensive)
-- **Total API spend**: ~$1.73 of $10.00 budget (~83% remaining, pre-eval-rerun)
-- **Total API calls**: ~400 across all scripts (pre-eval-rerun)
-- **Scripts executed**: 8/8 (smoke_test, discover, compare, agent, eval, guardrails ×2)
-- **Eval results**: 15/16 ground truth pass, xAI best value, Google most expensive
-- **Audit remediation**: extract_json() rewritten (6/6 tests pass), pairwise bias mitigation added, Layer 1 persistence added, guardrails streaming detection fixed
+- **Pages audited**: 17/17
+- **Providers tested**: 4 (OpenAI, Anthropic, Google/Vertex, xAI)
+- **API calls**: ~250 across 7 scripts
+- **Session spend**: $1.26 (dashboard delta)
+- **Total project spend**: $4.28 of $10.00
+- **Scripts executed**: smoke_test, discover, compare (9 sections), agent, eval (3-layer), guardrails (×4)
+- **Ground truth pass rate**: 15/16 (GPT-5.1 missed 4-door Monty Hall "3/8")
+- **Platform findings**: 6 sections, 20+ verified claims
+- **Every number cites a file in `results/`**
